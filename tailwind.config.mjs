@@ -11,6 +11,16 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        bebas: ['var(--font-bebas-neue)'],
+      },
+      textColor: {
+        textDark: "#4A4848"
+      },
+      backgroundImage: {
+        'bg-dark': "url('/bg-section.png')",
+      },
+
     },
   },
   plugins: [],
