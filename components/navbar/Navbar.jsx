@@ -55,6 +55,7 @@ const Navbar = () => {
             alt="Logo TSpace"
             width={70}
             height={70}
+            className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
           />
           ) : (
             // </a>
@@ -65,6 +66,7 @@ const Navbar = () => {
             alt="Logo TSpace"
             width={70}
             height={70}
+            className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
           />
 
             </a>
