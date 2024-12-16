@@ -15,7 +15,7 @@ export default {
         bebas: ['var(--font-bebas-neue)'],
       },
       textColor: {
-        textDark: "#4A4848"
+        textDark: "#303638"
       },
       backgroundImage: {
         'bg-dark': "url('/bg-section.png')",
