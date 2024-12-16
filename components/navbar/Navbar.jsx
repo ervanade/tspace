@@ -71,7 +71,7 @@ const Navbar = () => {
             </a>
           )}
         </div>
-        <div className="center-navbar lg:flex space-x-6 hidden justify-center items-center">
+        <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-6 hidden items-center">
           {navbarMenu.map((item) => {
             return (
               <a

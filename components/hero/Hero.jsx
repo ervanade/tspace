@@ -16,12 +16,12 @@ const Hero = () => {
   const data = [
     {
       link: "/",
-      image_default: "/hero-1.png",
+      image_default: "/hero-2.png",
       title: "",
     },
     {
       link: "/",
-      image_default: "/hero-2.png",
+      image_default: "/hero-1.png",
       title: "",
     },
   ];
