@@ -1,3 +1,4 @@
+import About from "@/components/beyoutiful/About";
 import Hero from "@/components/hero/Hero";
 import RecomendedArticles from "@/components/recomended/RecomendedArticles";
 import Space from "@/components/space/Space";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <Space />
       <RecomendedArticles />
     </>

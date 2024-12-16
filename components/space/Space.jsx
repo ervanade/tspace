@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HTMLDecoderEncoder = require("html-encoder-decoder");
 
@@ -14,7 +14,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { FaArrowRight } from "react-icons/fa";
 const Space = ({ title, subTitle }) => {
-  const dataVolus = [
+  const [isLoading, setIsLoading] = useState(true);
+  const dataSpace = [
     {
       id: "41",
       model: "100Z670M",
@@ -61,18 +62,39 @@ const Space = ({ title, subTitle }) => {
     },
   ];
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 10); // 2 detik simulasi delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="w-full bg-bg-dark bg-cover bg-center py-20 px-6 text-white">
       <h1 className="text-white text-3xl xl:text-5xl text-center font-bebas mb-6 leading-tight">
-        OUR COLLABORATIVE HUB
+        Range Space
       </h1>
       <p className="text-white/80 text-center text-lg xl:text-2xl">
         Discover a space to create, connect, and collaborate in the heart of
         Bintaro.
       </p>
 
-      <div className="max-w-[1280px] mx-auto w-full py-8 xl:py-16 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto w-full py-8 overflow-hidden">
         <div className="">
+        {isLoading ? (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[...Array(4)].map((_, index) => (
+              <div
+                key={index}
+                className="animate-pulse flex flex-col gap-2 bg-gray-200 p-4 rounded-md"
+              >
+                <div className="h-[250px] bg-gray-300 rounded"></div>
+                <div className="h-6 bg-gray-300 rounded mt-2"></div>
+              </div>
+            ))}
+          </div>
+        ) :
+        (
           <Swiper
             // install Swiper modules
             className="h-auto md:!h-400px overflow-hidden relative"
@@ -89,8 +111,8 @@ const Space = ({ title, subTitle }) => {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
           >
-            {dataVolus
-              ? dataVolus.map((item, index) => (
+            {dataSpace
+              ? dataSpace.map((item, index) => (
                   <SwiperSlide className="mr-2" key={index}>
                     <div
                       className="recomended-card flex flex-col justify-center gap-2"
@@ -106,24 +128,17 @@ const Space = ({ title, subTitle }) => {
                         sizes="100vw"
                         style={{ width: "100%", height: "auto" }} // optional
                       />
-                      {/* <img src={item?.image_mid} alt={item?.name} className='w-full object-cover' /> */}
-                      {/* </div> */}
                       <div className="mt-2">
                         <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
                           {HTMLDecoderEncoder.decode(item?.name)}
                         </h3>
                       </div>
-                      {/* <Link
-                        href={`/tvs/all-tvs/${item?.model || "43C350L"}`}
-                        className="bg-[#303638] text-white w-full text-center py-2 rounded-md text-xl lg:text-[24px] font-semibold mt-4"
-                      >
-                        View More
-                      </Link> */}
                     </div>
                   </SwiperSlide>
                 ))
               : ""}
           </Swiper>
+        )}
         </div>
       </div>
     </div>

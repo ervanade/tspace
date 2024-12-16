@@ -31,11 +31,10 @@ const Navbar = () => {
   const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
   const buttonOnChangeClose = () => setMenuButton(false);
 
-  if (!isClient) return null; // Jangan render di server
-
   const navbarMenu = [
     { id: 1, name: "Home", link: "#hero" },
-    { id: 2, name: "Our Space", link: "#our-space" },
+    { id: 2, name: "Range Space", link: "#range-space" },
+    { id: 6, name: "Our Tenant", link: "#our-tenant" },
     { id: 3, name: "Articles", link: "#articles" },
     { id: 4, name: "Gallery", link: "#gallery" },
     { id: 5, name: "Contact Us", link: "#contact" },

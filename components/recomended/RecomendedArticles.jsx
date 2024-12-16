@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
@@ -8,6 +8,8 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
 const RecomendedArticles = ({ data }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const tvPromotions = [
     {
       name: "Promo Good Thing Festival",
@@ -35,6 +37,14 @@ const RecomendedArticles = ({ data }) => {
       link: "#",
     },
   ];
+
+   // Simulasi loading
+   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 10); // 2 detik simulasi delay
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="promotions bg-white">
       <div className="max-w-[1280px] mx-auto w-full py-8 xl:py-16 px-6 overflow-hidden">
@@ -42,6 +52,21 @@ const RecomendedArticles = ({ data }) => {
           ARTICLES
         </h1>
 
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[...Array(3)].map((_, index) => (
+              <div
+                key={index}
+                className="animate-pulse flex flex-col space-y-4 rounded-xl shadow-md p-6 bg-gray-200"
+              >
+                <div className="h-56 bg-gray-300 rounded-t-lg"></div>
+                <div className="h-6 w-3/4 bg-gray-300 rounded"></div>
+                <div className="h-4 w-full bg-gray-300 rounded"></div>
+                <div className="h-4 w-5/6 bg-gray-300 rounded"></div>
+              </div>
+            ))}
+          </div>
+        ) : (
         <Swiper
           // install Swiper modules
           className="h-auto md:!h-400px overflow-hidden"
@@ -87,7 +112,8 @@ const RecomendedArticles = ({ data }) => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> )
+}
         <div className="flex justify-end mt-8">
           <button className="bg-[#303638] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold">
             View More
