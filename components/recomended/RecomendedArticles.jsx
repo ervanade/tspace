@@ -53,8 +53,8 @@ const RecomendedArticles = ({ data }) => {
             },
           }}
           spaceBetween={10}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
         >
           {tvPromotions.map((category, index) => (
             <SwiperSlide className="mr-2" key={index}>

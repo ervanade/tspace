@@ -10,41 +10,28 @@ const Navbar = () => {
   const [color, setColor] = useState(false);
   const [menuButton, setMenuButton] = useState(false);
 
-  const buttonOnChangeBars = () => {
-    setMenuButton((prev) => !prev);
-  };
-  const buttonOnChangeClose = () => {
-    setMenuButton(false);
-  };
-  useEffect(() => {
-    const changeColor = () => {
-      if (typeof window !== "undefined") {
-        // Client-side-only code
-        if (window.scrollY > 5) {
-          setColor(true);
-        } else {
-          setColor(false);
-        }
-      }
-    };
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", changeColor);
-    }
-  }, []);
+  const [isClient, setIsClient] = useState(false);
 
-  const changeColor = () => {
-    if (typeof window !== "undefined") {
-      // Client-side-only code
+  // Pastikan ini hanya berjalan di sisi klien
+  useEffect(() => {
+    setIsClient(true);
+
+    const changeColor = () => {
       if (window.scrollY > 5) {
         setColor(true);
       } else {
         setColor(false);
       }
-    }
-  };
-  if (typeof window !== "undefined") {
+    };
+
     window.addEventListener("scroll", changeColor);
-  }
+    return () => window.removeEventListener("scroll", changeColor);
+  }, []);
+
+  const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
+  const buttonOnChangeClose = () => setMenuButton(false);
+
+  if (!isClient) return null; // Jangan render di server
 
   const navbarMenu = [
     { id: 1, name: "Home", link: "#hero" },
