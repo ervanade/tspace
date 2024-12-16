@@ -49,11 +49,24 @@ const Navbar = () => {
         <div className="left-navbar mr-auto">
           {color ? (
             // <a href="#hero">
-            <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
+            // <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
+            <Image
+            src="/logo_tspace_black.png"
+            alt="Logo TSpace"
+            width={70}
+            height={70}
+          />
           ) : (
             // </a>
             <a href="#hero">
-              <p className="font-bebas text-[40px] text-white">T-SPACE</p>
+              {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
+              <Image
+            src="/logo_tspace_white.png"
+            alt="Logo TSpace"
+            width={70}
+            height={70}
+          />
+
             </a>
           )}
         </div>
