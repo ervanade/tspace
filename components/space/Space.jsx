@@ -111,7 +111,7 @@ const Space = ({ title, subTitle }) => {
             <Swiper
               // install Swiper modules
               className="h-auto md:!h-400px overflow-hidden relative"
-              slidesPerView={1.5}
+              slidesPerView={2.2}
               breakpoints={{
                 768: {
                   // width: 768,
