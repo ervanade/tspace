@@ -111,11 +111,14 @@ const Gallery = ({ title, subTitle }) => {
             <Swiper
               // install Swiper modules
               className="h-auto md:!h-400px overflow-hidden relative"
-              slidesPerView={2.2}
+              slidesPerView={1.5}
               breakpoints={{
                 768: {
                   // width: 768,
                   slidesPerView: 3.2,
+                },
+                500: {
+                  slidesPerView: 2.2,
                 },
               }}
               spaceBetween={10}
