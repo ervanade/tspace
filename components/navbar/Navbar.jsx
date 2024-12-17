@@ -35,8 +35,8 @@ const Navbar = () => {
     { id: 1, name: "Home", link: "#hero" },
     { id: 2, name: "Range Space", link: "#range-space" },
     { id: 6, name: "Our Tenant", link: "#our-tenant" },
-    { id: 3, name: "Articles", link: "#articles" },
     { id: 4, name: "Gallery", link: "#gallery" },
+    { id: 3, name: "Articles", link: "#articles" },
     { id: 5, name: "Contact Us", link: "#contact" },
   ];
   return (

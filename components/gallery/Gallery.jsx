@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { FaArrowRight } from "react-icons/fa";
-const Space = ({ title, subTitle }) => {
+const Gallery = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dataSpace = [
     {
@@ -83,10 +83,10 @@ const Space = ({ title, subTitle }) => {
   return (
     <div
       className="w-full bg-bg-dark bg-cover bg-center py-20 px-6 text-white scroll-mt-12"
-      id="range-space"
+      id="gallery"
     >
       <div className="mb-6">
-        <h1 className="header-title">Range Space</h1>
+        <h1 className="header-title">T-GALLERY</h1>
         <p className="text-white/80 text-center text-lg xl:text-2xl">
           Discover a space to create, connect, and collaborate in the heart of
           Bintaro.
@@ -145,12 +145,12 @@ const Space = ({ title, subTitle }) => {
                           <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
                             {HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
-                          <button
+                          {/* <button
                             className="align-middle select-none font-sans font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#fff] text-[#303638] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                             type="button"
                           >
                             View Detail
-                          </button>
+                          </button> */}
                         </div>
                       </div>
                     </SwiperSlide>
@@ -164,4 +164,4 @@ const Space = ({ title, subTitle }) => {
   );
 };
 
-export default Space;
+export default Gallery;

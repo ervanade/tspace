@@ -26,7 +26,7 @@ const Hero = () => {
     },
   ];
   return (
-    <div className="mx-auto w-full text-black">
+    <div className="mx-auto w-full text-black" id="hero">
       {/* Hero Desktop */}
       <div className="">
         <Swiper
