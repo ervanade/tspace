@@ -51,24 +51,23 @@ const Navbar = () => {
             // <a href="#hero">
             // <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
             <Image
-            src="/logo_tspace_black.png"
-            alt="Logo TSpace"
-            width={70}
-            height={70}
-            className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-          />
+              src="/logo_tspace_black.png"
+              alt="Logo TSpace"
+              width={70}
+              height={70}
+              className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
+            />
           ) : (
             // </a>
             <a href="#hero">
               {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
               <Image
-            src="/logo_tspace_white.png"
-            alt="Logo TSpace"
-            width={70}
-            height={70}
-            className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-          />
-
+                src="/logo_tspace_white.png"
+                alt="Logo TSpace"
+                width={70}
+                height={70}
+                className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
+              />
             </a>
           )}
         </div>
@@ -78,7 +77,7 @@ const Navbar = () => {
               <a
                 key={item.id}
                 href={item.link}
-                className={`${
+                className={`text-center ${
                   color
                     ? "text-textDark hover:text-black"
                     : "text-[#f1efefce] hover:text-white "
@@ -108,7 +107,7 @@ const Navbar = () => {
             <FaBars
               className={`text-2xl font-bold ${
                 color
-                  ? "text-textDark hover:text-white"
+                  ? "text-textDark hover:text-gray-800"
                   : "text-white/85 hover:text-white"
               } `}
             />
@@ -117,7 +116,7 @@ const Navbar = () => {
         <div
           className={`right-navbar z-50 space-y-4 flex flex-col items-center fixed top-0 ${
             menuButton ? "right-0" : "-right-[999px]"
-          } lg:hidden w-full max-w-[300px] py-10 xs:py-16 px-8 xs:px-14 bg-gray-600 text-white h-full duration-300 transition-all ease-in-out`}
+          } lg:hidden w-full max-w-[300px] py-10 xs:py-16 px-8 xs:px-14 bg-[#303638] text-white h-full duration-300 transition-all ease-in-out`}
         >
           <button
             className="absolute top-5 right-6"
@@ -140,15 +139,15 @@ const Navbar = () => {
             );
           })}
           <Image
-            src="/beyoutiful_logo.png"
+            src="/beyoutiful_white.svg"
             alt="Logo Beyoutiful"
-            width={102}
+            width={183}
             height={48}
           />
         </div>
       </div>
       <div
-        className={`overlay w-screen h-screen absolute top-0 left-0 bg-black bg-opacity-20 z-[2] transition-all duration-300 lg:hidden ${
+        className={`overlay w-screen h-screen absolute -top-5 left-0 bg-black bg-opacity-20 z-[2] transition-all duration-300 lg:hidden ${
           menuButton ? "block" : "hidden"
         } `}
         onClick={() => setMenuButton(false)}

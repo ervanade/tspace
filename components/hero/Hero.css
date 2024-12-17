@@ -3,8 +3,8 @@
 }
 
 .swiper-pagination-bullet {
-  width: 40px !important;
-  height: 6px !important;
+  width: 28px !important;
+  height: 8px !important;
   background: rgba(255, 255, 255, 0.3) !important;
   border-radius: 5px !important;
 
@@ -14,20 +14,18 @@
 
 .swiper-pagination-bullet-active {
   width: 40px !important;
-  height: 4px !important;
+  height: 8px !important;
   transition: width 0.5s !important;
   border-radius: 5px !important;
-  background: #F4F9FC !important;
+  background: #f4f9fc !important;
   /* border: 1px solid transparent !important; */
 }
 
 @media screen and (max-width: 768px) {
-
   .swiper-button-prev:after,
   .swiper-button-next:after {
     font-size: 24px !important;
   }
-
 }
 
 @media screen and (max-width: 450px) {
@@ -46,10 +44,9 @@
     height: 4px !important;
     transition: width 0.5s !important;
     border-radius: 5px !important;
-    background: #F4F9FC !important;
+    background: #f4f9fc !important;
     /* border: 1px solid transparent !important; */
   }
-
 }
 
 .swiper-button-prev,
@@ -57,7 +54,6 @@
   width: 40px;
   height: 24px;
   color: rgba(255, 255, 255, 0.8) !important;
-  ;
 }
 
 .swiper-button-prev:after,

@@ -37,6 +37,7 @@ const Hero = () => {
           speed={1000}
           loop={true}
           navigation={true}
+          pagination={{ clickable: true }}
         >
           {data?.map((item, index) => (
             <SwiperSlide key={index}>
@@ -78,6 +79,7 @@ const Hero = () => {
               </Link>
             </SwiperSlide>
           ))}
+          <div className="swiper-pagination"></div>
         </Swiper>
       </div>
     </div>
