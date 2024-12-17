@@ -7,13 +7,13 @@ const Tenants = () => {
       <div className="w-full max-w-6xl px-4 md:px-5 lg:px-5 mx-auto">
         <div className="mb-16">
           <h1 className="header-title !text-textDark">Our Tenant</h1>
-          <p className="text-textDark text-center text-lg xl:text-2xl">
+          <p className="sub-title">
             Discover a tenants to create, connect, and collaborate in the heart
             of Bintaro.
           </p>
         </div>
         <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
-          <div className="relative w-2/3 lg:w-4/5 h-full rounded-3xl lg:px-4 overflow-hidden mr-auto">
+          <div className="relative w-2/3 lg:w-4/5 h-full rounded-3xl lg:px-4 overflow-hidden mx-auto lg:ml-0">
             <Image
               src="/assets/elprofesor.png"
               alt="about Us image"
@@ -61,9 +61,9 @@ const Tenants = () => {
         </div>
 
         <div className="w-full justify-start items-center mt-12 gap-8 grid lg:grid-cols-2 grid-cols-1">
-          <div className="order-first lg:order-last relative ml-auto w-2/3 lg:w-4/5 h-full rounded-3xl lg:px-4 overflow-hidden">
+          <div className="order-first lg:order-last relative mx-auto lg:mr-0 w-2/3 lg:w-4/5 h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
-              src="/assets/elprofesor.png"
+              src="/assets/rejuve.png"
               alt="about Us image"
               layout="responsive"
               width={388} // Set the actual width of the image
@@ -86,8 +86,8 @@ const Tenants = () => {
             height={96}
           /> */}
               <Image
-                src="/elprofessor_logo.svg"
-                alt="Logo Beyoutiful"
+                src="/rejuve_logo.svg"
+                alt="Logo Rejuve"
                 width={120}
                 height={80}
                 className="mt-4"
@@ -109,7 +109,7 @@ const Tenants = () => {
         </div>
 
         <div className="w-full justify-start items-center mt-12 gap-8 grid lg:grid-cols-2 grid-cols-1">
-          <div className="relative mr-auto w-2/3 lg:w-4/5 h-full rounded-3xl lg:px-4 overflow-hidden">
+          <div className="relative mx-auto lg:ml-0 w-2/3 lg:w-4/5 h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
               src="/assets/dental.png"
               alt="about Us image"

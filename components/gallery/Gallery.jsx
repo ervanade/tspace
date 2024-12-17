@@ -87,7 +87,7 @@ const Gallery = ({ title, subTitle }) => {
     >
       <div className="mb-6">
         <h1 className="header-title">T-GALLERY</h1>
-        <p className="text-white/80 text-center text-lg xl:text-2xl">
+        <p className="!text-white/80 sub-title">
           Discover a space to create, connect, and collaborate in the heart of
           Bintaro.
         </p>
