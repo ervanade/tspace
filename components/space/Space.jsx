@@ -93,7 +93,7 @@ const Space = ({ title, subTitle }) => {
         </p>
       </div>
 
-      <div className="max-w-[1280px] mx-auto w-full py-8 overflow-hidden xl:py-16 px-6">
+      <div className="max-w-[1280px] mx-auto w-full py-8 overflow-hidden xl:py-16">
         <div className="">
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
