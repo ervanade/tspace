@@ -8,68 +8,49 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import { FaArrowRight } from "react-icons/fa";
 const Gallery = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dataSpace = [
     {
       id: "41",
-      model: "100Z670M",
       name: "T-HALL",
-      series: "Rp. 140.000",
-      image_default: "/assets/hall.png",
-      image_big: "/assets/hall.png",
-      image_slider: "/assets/hall.png",
+      price: "Rp. 140.000",
+      description: "Ruang serbaguna untuk acara formal dan non-formal.",
       image_mid: "/assets/hall.png",
-      image_small: "/assets/hall.png",
+      image_map: "/assets/map-hall.png",
     },
     {
       id: "40",
-      model: "85M450N",
       name: "T-GARDEN",
-      series: "Pr. 120.000",
-      image_default: "/assets/garden.png",
-      image_big: "/assets/garden.png",
-      image_slider: "/assets/garden.png",
+      price: "Rp. 120.000",
+      description: "Taman luar ruangan untuk acara santai dan pesta kecil.",
       image_mid: "/assets/garden.png",
-      image_small: "/assets/garden.png",
+      image_map: "/assets/map-garden.png",
     },
     {
-      id: "40",
-      model: "85M450N",
+      id: "42",
       name: "T-STUDIO",
-      series: "Rp. 60.000",
-      image_default: "/assets/studio.png",
-      image_big: "/assets/studio.png",
-      image_slider: "/assets/studio.png",
+      price: "Rp. 60.000",
+      description: "Studio yang ideal untuk perekaman dan sesi fotografi.",
       image_mid: "/assets/studio.png",
-      image_small: "/assets/studio.png",
+      image_map: "/assets/map-studio.png",
     },
     {
-      id: "40",
-      model: "85M450N",
+      id: "43",
       name: "T-ROOFTOP",
-      series: "Rp. 120.000",
-      image_default: "/assets/rooftop.png",
-      image_big: "/assets/rooftop.png",
-      image_slider: "/assets/rooftop.png",
+      price: "Rp. 120.000",
+      description: "Area rooftop dengan pemandangan indah untuk acara malam.",
       image_mid: "/assets/rooftop.png",
-      image_small: "/assets/rooftop.png",
+      image_map: "/assets/map-rooftop.png",
     },
     {
-      id: "40",
-      model: "85M450N",
+      id: "44",
       name: "ALL T-SPACE AREA",
-      series: "Rp. 120.000",
-      image_default: "/assets/tspace-area.png",
-      image_big: "/assets/tspace-area.png",
-      image_slider: "/assets/tspace-area.png",
+      price: "Rp. 120.000",
+      description: "Seluruh area T-Space untuk acara besar dan eksklusif.",
       image_mid: "/assets/tspace-area.png",
-      image_small: "/assets/tspace-area.png",
+      image_map: "/assets/map-tspace-area.png",
     },
   ];
 
@@ -79,6 +60,12 @@ const Gallery = ({ title, subTitle }) => {
     }, 10); // 2 detik simulasi delay
     return () => clearTimeout(timer);
   }, []);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleImageClick = (index) => {
+    setCurrentIndex(index);
+    setIsPopupOpen(true);
+  };
 
   return (
     <div
@@ -110,7 +97,7 @@ const Gallery = ({ title, subTitle }) => {
           ) : (
             <Swiper
               // install Swiper modules
-              className="h-auto md:!h-400px overflow-hidden relative"
+              className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
               slidesPerView={2.2}
               breakpoints={{
                 768: {
@@ -123,7 +110,7 @@ const Gallery = ({ title, subTitle }) => {
               }}
               spaceBetween={10}
               modules={[Navigation]}
-              navigation={true}
+              // navigation={true}
               // onSwiper={(swiper) => console.log(swiper)}
               // onSlideChange={() => console.log("slide change")}
             >
@@ -139,6 +126,7 @@ const Gallery = ({ title, subTitle }) => {
                           src={item.image_mid}
                           width={0}
                           height={0}
+                          onClick={() => handleImageClick(index)}
                           // className='aspect-square'
                           alt={item?.name || "Toshiba Tv Indonesia"}
                           sizes="100vw"
@@ -160,6 +148,45 @@ const Gallery = ({ title, subTitle }) => {
                   ))
                 : ""}
             </Swiper>
+          )}
+
+          {isPopupOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
+              onClick={() => setIsPopupOpen(false)} // Klik area luar untuk menutup
+            >
+              <div
+                className="relative"
+                onClick={(e) => e.stopPropagation()} // Cegah penutupan saat gambar diklik
+              >
+                <button
+                  className="absolute top-4 right-4 text-white text-2xl z-[51] bg-black/20 rounded-full p-2"
+                  onClick={() => setIsPopupOpen(false)}
+                >
+                  ✖
+                </button>
+                <Swiper
+                  initialSlide={currentIndex}
+                  className="w-full max-w-4xl"
+                  slidesPerView={1}
+                  modules={[Navigation]}
+                  navigation
+                >
+                  {dataSpace.map((item, index) => (
+                    <SwiperSlide key={index}>
+                      <Image
+                        src={item.image_mid}
+                        width={0}
+                        height={0}
+                        alt={item?.name || "Image"}
+                        sizes="100vw"
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
           )}
         </div>
       </div>
