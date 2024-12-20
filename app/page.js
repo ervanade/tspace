@@ -1,4 +1,5 @@
 import About from "@/components/beyoutiful/About";
+import Event from "@/components/event/Event";
 import Gallery from "@/components/gallery/Gallery";
 import Hero from "@/components/hero/Hero";
 import RecomendedArticles from "@/components/recomended/RecomendedArticles";
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Event />
       <Space />
       <Tenants />
       <Gallery />

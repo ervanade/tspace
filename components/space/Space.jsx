@@ -16,7 +16,9 @@ const Space = ({ title, subTitle }) => {
       id: "41",
       name: "T-HALL",
       price: "Rp. 140.000",
-      description: "Ruang serbaguna untuk acara formal dan non-formal.",
+      opsi_acara: "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+      spesifikasi: "Indoor, 200m2 Non smoking No pet allowed",
       image_mid: "/assets/hall.png",
       image_map: "/assets/map-hall.png",
     },
@@ -24,7 +26,9 @@ const Space = ({ title, subTitle }) => {
       id: "40",
       name: "T-GARDEN",
       price: "Rp. 120.000",
-      description: "Taman luar ruangan untuk acara santai dan pesta kecil.",
+      opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs",
+      spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
       image_mid: "/assets/garden.png",
       image_map: "/assets/map-garden.png",
     },
@@ -32,7 +36,10 @@ const Space = ({ title, subTitle }) => {
       id: "42",
       name: "T-STUDIO",
       price: "Rp. 60.000",
-      description: "Studio yang ideal untuk perekaman dan sesi fotografi.",
+      opsi_acara:
+        "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+      spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
       image_mid: "/assets/studio.png",
       image_map: "/assets/map-studio.png",
     },
@@ -40,7 +47,10 @@ const Space = ({ title, subTitle }) => {
       id: "43",
       name: "T-ROOFTOP",
       price: "Rp. 120.000",
-      description: "Area rooftop dengan pemandangan indah untuk acara malam.",
+      opsi_acara:
+        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs",
+      spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
       image_mid: "/assets/rooftop.png",
       image_map: "/assets/map-rooftop.png",
     },
@@ -48,7 +58,10 @@ const Space = ({ title, subTitle }) => {
       id: "44",
       name: "ALL T-SPACE AREA",
       price: "Rp. 120.000",
-      description: "Seluruh area T-Space untuk acara besar dan eksklusif.",
+      opsi_acara:
+        "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc…",
+      fasilitas: "All T-SPACE AREA",
+      spesifikasi: "Indoor & Outdoor, 3.500m2 ",
       image_mid: "/assets/tspace-area.png",
       image_map: "/assets/map-tspace-area.png",
     },
@@ -69,7 +82,7 @@ const Space = ({ title, subTitle }) => {
       className="w-full bg-bg-dark bg-cover bg-center py-20 px-6 text-white scroll-mt-12"
       id="range-space"
     >
-      <div className="mb-6">
+      <div className="mb-12">
         <h1 className="header-title">Range Space</h1>
         <p className="!text-white/80 sub-title">
           Discover a space to create, connect, and collaborate in the heart of
@@ -77,7 +90,7 @@ const Space = ({ title, subTitle }) => {
         </p>
       </div>
 
-      <div className="max-w-[1280px] mx-auto w-full py-8 overflow-hidden xl:py-16">
+      <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
         <div className="">
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -175,9 +188,32 @@ const Space = ({ title, subTitle }) => {
                 <h2 className="text-2xl font-bold mt-4 text-textDark">
                   {selectedItem?.name}
                 </h2>
-                <p className="text-textDark mt-2">
-                  {selectedItem?.description}
-                </p>
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Opsi Acara
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    {selectedItem?.opsi_acara}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Fasilitas
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    {selectedItem?.fasilitas}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Spesifikasi Area
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    {selectedItem?.spesifikasi}
+                  </p>
+                </div>
               </div>
             </div>
           )}

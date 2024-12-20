@@ -16,7 +16,8 @@ const Gallery = ({ title, subTitle }) => {
       id: "41",
       name: "T-HALL",
       price: "Rp. 140.000",
-      description: "Ruang serbaguna untuk acara formal dan non-formal.",
+      description:
+        "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc…",
       image_mid: "/assets/hall.png",
       image_map: "/assets/map-hall.png",
     },
@@ -72,7 +73,7 @@ const Gallery = ({ title, subTitle }) => {
       className="w-full bg-bg-dark bg-cover bg-center py-20 px-6 text-white scroll-mt-12"
       id="gallery"
     >
-      <div className="mb-6">
+      <div className="mb-12">
         <h1 className="header-title">T-GALLERY</h1>
         <p className="!text-white/80 sub-title">
           Discover a space to create, connect, and collaborate in the heart of
@@ -80,7 +81,7 @@ const Gallery = ({ title, subTitle }) => {
         </p>
       </div>
 
-      <div className="max-w-[1280px] mx-auto w-full py-8 overflow-hidden xl:py-16">
+      <div className="max-w-[1280px] mx-auto w-fulloverflow-hidden">
         <div className="">
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -167,7 +168,7 @@ const Gallery = ({ title, subTitle }) => {
                 </button>
                 <Swiper
                   initialSlide={currentIndex}
-                  className="w-full max-w-4xl"
+                  className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
                   slidesPerView={1}
                   modules={[Navigation]}
                   navigation
