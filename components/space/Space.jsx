@@ -30,7 +30,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
       image_mid: "/assets/garden.png",
-      image_map: "/assets/map-garden.png",
+      image_map: "/assets/map-hall.png",
     },
     {
       id: "42",
@@ -41,7 +41,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
       spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
       image_mid: "/assets/studio.png",
-      image_map: "/assets/map-studio.png",
+      image_map: "/assets/map-hall.png",
     },
     {
       id: "43",
@@ -52,7 +52,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
       image_mid: "/assets/rooftop.png",
-      image_map: "/assets/map-rooftop.png",
+      image_map: "/assets/map-hall.png",
     },
     {
       id: "44",
@@ -63,7 +63,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "All T-SPACE AREA",
       spesifikasi: "Indoor & Outdoor, 3.500m2 ",
       image_mid: "/assets/tspace-area.png",
-      image_map: "/assets/map-tspace-area.png",
+      image_map: "/assets/map-hall.png",
     },
   ];
 
@@ -163,60 +163,61 @@ const Space = ({ title, subTitle }) => {
             </Swiper>
           )}
           {isPopupOpen && selectedItem && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
-              onClick={() => setIsPopupOpen(false)}
-            >
-              <div
-                className="relative max-w-4xl bg-white p-6 rounded-md"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  className="absolute top-4 right-4 text-white text-2xl z-[51] bg-black/20 rounded-full p-2"
-                  onClick={() => setIsPopupOpen(false)}
-                >
-                  ✖
-                </button>
-                <Image
-                  src={selectedItem.image_mid}
-                  width={0}
-                  height={0}
-                  alt={selectedItem?.name || "Image"}
-                  sizes="100vw"
-                  style={{ width: "100%", height: "auto" }}
-                />
-                <h2 className="text-2xl font-bold mt-4 text-textDark">
-                  {selectedItem?.name}
-                </h2>
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Opsi Acara
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.opsi_acara}
-                  </p>
-                </div>
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
+    onClick={() => setIsPopupOpen(false)}
+  >
+    <div
+      className="relative max-w-4xl w-full bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="absolute top-4 right-4 text-white text-2xl z-[51] bg-black/20 rounded-full p-2"
+        onClick={() => setIsPopupOpen(false)}
+      >
+        ✖
+      </button>
+      <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
 
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Fasilitas
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.fasilitas}
-                  </p>
-                </div>
+      <Image
+        src={selectedItem.image_mid}
+        width={0}
+        height={0}
+        alt={selectedItem?.name || "Image"}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+      />
+      <Image
+        src={selectedItem.image_map}
+        width={0}
+        height={0}
+        alt={selectedItem?.name || "Image"}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+      />
+ </div>
+      <h2 className="text-2xl font-bold mt-4 text-textDark">
+        {selectedItem?.name}
+      </h2>
 
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Spesifikasi Area
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.spesifikasi}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
+      <div>
+        <h3 className="text-lg font-bold mt-3 text-textDark">Opsi Acara</h3>
+        <p className="text-textDark mt-2">{selectedItem?.opsi_acara}</p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-bold mt-3 text-textDark">Fasilitas</h3>
+        <p className="text-textDark mt-2">{selectedItem?.fasilitas}</p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-bold mt-3 text-textDark">Spesifikasi Area</h3>
+        <p className="text-textDark mt-2">{selectedItem?.spesifikasi}</p>
+      </div>
+    </div>
+  </div>
+)}
+
         </div>
       </div>
     </div>
