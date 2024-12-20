@@ -1,0 +1,58 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22
+
+    - name: Install dependencies
+      run: npm install --force
+
+    - name: Build Project
+      run: npm run build
+
+    - name: Check Secrets
+      run: |
+        echo "SSH_HOST: ${{ secrets.SSH_HOST }}"
+        echo "SSH_PORT: ${{ secrets.SSH_PORT }}"
+        echo "SSH_USERNAME: ${{ secrets.SSH_USERNAME }}"
+        echo "SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}"
+
+    - name: Deploy to Server
+      env:
+        HOST: ${{ secrets.SSH_HOST }}
+        PORT: ${{ secrets.SSH_PORT }}
+        USER: ${{ secrets.SSH_USERNAME }}
+        PASSWORD: ${{ secrets.SSH_PASSWORD }}
+      run: |
+        sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST << 'EOF'
+          # Pindah ke direktori proyek
+          cd /var/www/html/tspace
+
+          # Tarik perubahan terbaru
+          git pull
+
+          # Install dependencies dan build
+          npm install --force
+          npm run build
+
+          # Cek apakah instance PM2 sudah berjalan
+          if pm2 list | grep -q "tspace"; then
+            pm2 restart tspace
+          else
+            pm2 start npm --name "tspace" -- start
+          fi
+        EOF
