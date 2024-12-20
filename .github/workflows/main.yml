@@ -49,10 +49,8 @@ jobs:
           npm install --force
           npm run build
 
-          # Install pm2 jika belum terinstal
-          if ! command -v pm2 &> /dev/null; then
-            npm install -g pm2
-          fi
+          echo "PATH=\$PATH:`npm config get prefix`/bin" >> ~/.bashrc
+          source ~/.bashrc
 
           # Cek apakah instance PM2 sudah berjalan
           if pm2 list | grep -q "tspace"; then
