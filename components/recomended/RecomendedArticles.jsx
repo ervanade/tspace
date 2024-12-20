@@ -71,27 +71,25 @@ const RecomendedArticles = ({ data }) => {
           </div>
         ) : (
           <Swiper
-            // install Swiper modules
             className="h-auto md:!h-400px overflow-hidden"
             slidesPerView={1.15}
             breakpoints={{
               768: {
-                // width: 768,
                 slidesPerView: 3.15,
               },
             }}
             spaceBetween={10}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log("slide change")}
           >
             {tvPromotions.map((category, index) => (
               <SwiperSlide className="mr-2" key={index}>
                 <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl ">
                   <div className="relative h-56 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-t-lg bg-blue-gray-500 shadow-blue-gray-500/40">
-                    <img
+                    <Image
                       src={category.image}
                       alt="card-image"
-                      className="w-full object-cover h-full"
+                      fill
+                      className="object-cover"
+                      priority={index === 0} // Prioritas pada slide pertama untuk performance
                     />
                   </div>
                   <div className="p-6">
@@ -99,9 +97,9 @@ const RecomendedArticles = ({ data }) => {
                       Article T-Space
                     </h5>
                     <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                      The place is close to Barceloneta Beach and bus stop just
-                      2 min by walk and near to "Naviglio" where you can enjoy
-                      the main night life in Barcelona.
+                      The place is close to Barceloneta Beach and bus stop just 2 min by
+                      walk and near to "Naviglio" where you can enjoy the main night life
+                      in Barcelona.
                     </p>
                   </div>
                   <div className="p-6 pt-0">
