@@ -70,7 +70,7 @@ const Gallery = ({ title, subTitle }) => {
 
   return (
     <div
-      className="w-full bg-bg-dark bg-cover bg-center py-20 px-6 text-white scroll-mt-12"
+      className="w-full bg-bg-dark bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-white scroll-mt-12"
       id="gallery"
     >
       <div className="mb-12">

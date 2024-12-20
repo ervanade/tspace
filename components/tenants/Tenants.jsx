@@ -3,7 +3,10 @@ import React from "react";
 
 const Tenants = () => {
   return (
-    <section className="py-20 relative scroll-mt-12" id="our-tenant">
+    <section
+      className="py-12 md:py-16 xl:py-20 relative scroll-mt-12"
+      id="our-tenant"
+    >
       <div className="w-full max-w-6xl px-4 md:px-5 lg:px-5 mx-auto">
         <div className="mb-16">
           <h1 className="header-title !text-textDark">Our Tenant</h1>
