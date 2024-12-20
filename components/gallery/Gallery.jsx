@@ -129,7 +129,7 @@ const Gallery = ({ title, subTitle }) => {
                           height={0}
                           onClick={() => handleImageClick(index)}
                           // className='aspect-square'
-                          alt={item?.name || "Toshiba Tv Indonesia"}
+                          alt={item?.name || "T-Space Gallery"}
                           sizes="100vw"
                           style={{ width: "100%", height: "auto" }} // optional
                         />

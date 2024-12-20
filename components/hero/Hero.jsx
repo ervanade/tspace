@@ -45,22 +45,12 @@ const Hero = () => {
                 <div className="w-full relative h-screen">
                   <Image
                     src={item.image_default}
-                    alt={item.title || "Toshiba TV Indonesia"}
+                    alt={item.title || "T-Space Hero"}
                     layout="fill" // Membuat gambar memenuhi kontainer
                     objectFit="cover" // Menjaga rasio aspek dan memotong bagian luar
                     objectPosition="center" // Memusatkan gambar
                     priority={index === 0} // Memuat gambar pertama lebih awal
                   />
-                  {/* <Image
-                    src={item.image_default}
-                    width={0}
-                    height={0}
-                    alt={item.title || "Toshiba TV Indonesia"}
-                    sizes="(min-width: 640px) 100vw"
-                    media="(min-width: 640px)"
-                    style={{ width: "100%", height: "auto" }}
-                    priority={index === 0} // Muat gambar pertama lebih awal
-                  /> */}
                   <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/50" />
 
                   <div className="absolute flex flex-col gap-2 items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white space-y-4 lg:space-y-8">

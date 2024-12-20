@@ -137,7 +137,7 @@ const Space = ({ title, subTitle }) => {
                           width={0}
                           height={0}
                           // className='aspect-square'
-                          alt={item?.name || "Toshiba Tv Indonesia"}
+                          alt={item?.name || "T-Space Gallery"}
                           sizes="100vw"
                           style={{ width: "100%", height: "auto" }} // optional
                         />
