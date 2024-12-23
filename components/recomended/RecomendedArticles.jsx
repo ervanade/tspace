@@ -48,7 +48,7 @@ const RecomendedArticles = ({ data }) => {
   return (
     <div className="promotions bg-white">
       <div
-        className="max-w-[1280px] mx-auto w-full py-8 xl:py-16 px-6 overflow-hidden !scroll-mt-24"
+        className="max-w-[1280px] mx-auto w-full py-8 xl:py-16 px-6 overflow-hidden !scroll-mt-12"
         id="articles"
       >
         <h1 className="text-textDark mb-12 text-3xl xl:text-5xl text-center font-bebas leading-tight">
