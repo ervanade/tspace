@@ -4,6 +4,7 @@ import Event from "@/components/event/Event";
 import Footer from "@/components/footer/Footer";
 import Gallery from "@/components/gallery/Gallery";
 import Hero from "@/components/hero/Hero";
+import Navbar from "@/components/navbar/Navbar";
 import RecomendedArticles from "@/components/recomended/RecomendedArticles";
 import Space from "@/components/space/Space";
 import Tenants from "@/components/tenants/Tenants";
@@ -17,6 +18,7 @@ import 'swiper/css/scrollbar';
 export default function Home() {
   return (
     <>
+            <Navbar className="" />
       <Hero />
       <About />
       <Event />

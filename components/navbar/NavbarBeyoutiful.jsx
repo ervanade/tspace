@@ -8,28 +8,24 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-const Navbar = () => {
-  const [color, setColor] = useState(false);
+const NavbarBeyoutiful = () => {
+  const [color, setColor] = useState(true);
   const [menuButton, setMenuButton] = useState(false);
   const pathname = usePathname()
 
   const [isClient, setIsClient] = useState(false);
 
   // Pastikan ini hanya berjalan di sisi klien
+
   useEffect(() => {
     setIsClient(true);
 
-    const changeColor = () => {
-      if (window.scrollY > 5) {
+      if (pathname?.includes('/beyoutiful')) {
         setColor(true);
       } else {
         setColor(false);
       }
-    };
-
-    window.addEventListener("scroll", changeColor);
-    return () => window.removeEventListener("scroll", changeColor);
-  }, []);
+  }, [pathname]);
 
   const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
   const buttonOnChangeClose = () => setMenuButton(false);
@@ -64,7 +60,7 @@ const Navbar = () => {
             </Link>
           ) : (
             // </a>
-            <Link href="#hero">
+            <Link href="/#hero">
               {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
               <Image
                 src="/logo_tspace_white.png"
@@ -79,7 +75,7 @@ const Navbar = () => {
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-6 hidden items-center">
           {navbarMenu.map((item) => {
             return (
-              <Link
+              <a
                 key={item.id}
                 href={item.link}
                 className={`text-center ${
@@ -91,7 +87,7 @@ const Navbar = () => {
                 }`}
               >
                 {item.name}
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -136,13 +132,13 @@ const Navbar = () => {
           </button>
           {navbarMenu.map((item) => {
             return (
-              <Link
+              <a
                 key={item.id}
                 href={item.link}
                 className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
               >
                 {item.name}
-              </Link>
+              </a>
             );
           })}
            <Link href={`/beyoutiful`} >
@@ -165,4 +161,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarBeyoutiful;
