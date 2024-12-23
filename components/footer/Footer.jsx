@@ -51,21 +51,21 @@ const Footer = () => {
                 <div className="center flex-1 space-y-4">
                     <ul className="space-y-4 lg:pt-8">
                     <li>
-                            <Link href="/" className="text-sm font-semibold hover:text-white">HOME</Link>
+                            <a href="#hero" className="text-sm font-semibold hover:text-white">HOME</a>
                         </li>
-                        <li><Link href="/tvs/all-tvs?size=all" className="text-sm font-semibold hover:text-white">RANGE SPACE</Link></li>
-                        <li><Link href="/support" className="text-sm font-semibold hover:text-white">BEYOUTIFUL</Link></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="https://tcc.toshiba.co.id/ticket/request-ticket" className="text-sm font-semibold hover:text-white">EVENT</a></li>
+                        <li><a href="#range-space" className="text-sm font-semibold hover:text-white">RANGE SPACE</a></li>
+                        <li><a href="/beyoutiful" className="text-sm font-semibold hover:text-white">BEYOUTIFUL</a></li>
+                        <li><a href="#event" className="text-sm font-semibold hover:text-white">EVENT</a></li>
 
                     </ul>
                 </div>
                 <div className="center flex-1 space-y-4">
                     <ul className="space-y-4 lg:pt-8">
                         <li>
-                            <Link href="/news" className="text-sm font-semibold hover:text-white">GALLERY</Link>
+                            <a href="#gallery" className="text-sm font-semibold hover:text-white">GALLERY</a>
                         </li>
-                        <li><Link href="/authorize-service-partners" className="text-sm font-semibold hover:text-white">ARTICLES</Link></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="https://ewarranty.tvmi.id/" className="text-sm font-semibold hover:text-white">CONTACT</a></li>
+                        <li><a href="/articles" className="text-sm font-semibold hover:text-white">ARTICLES</a></li>
+                        <li><a href="#contact" className="text-sm font-semibold hover:text-white">CONTACT</a></li>
                     </ul>
                 </div>
                 <div className="right flex-1 space-y-4 flex flex-col lg:items-end lg:pt-8">
