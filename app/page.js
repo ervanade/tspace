@@ -1,5 +1,7 @@
 import About from "@/components/beyoutiful/About";
+import Contact from "@/components/contact/Contact";
 import Event from "@/components/event/Event";
+import Footer from "@/components/footer/Footer";
 import Gallery from "@/components/gallery/Gallery";
 import Hero from "@/components/hero/Hero";
 import RecomendedArticles from "@/components/recomended/RecomendedArticles";
@@ -22,6 +24,8 @@ export default function Home() {
       <Tenants />
       <Gallery />
       <RecomendedArticles />
+      <Contact />
+      <Footer />
       <a
         href="https://wa.me/+621181110556
 "

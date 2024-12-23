@@ -168,7 +168,7 @@ const Gallery = ({ title, subTitle }) => {
                 </button>
                 <Swiper
                   initialSlide={currentIndex}
-                  className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
+                  className="w-full max-w-[280px] xs:max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
                   slidesPerView={1}
                   modules={[Navigation]}
                   navigation

@@ -9,6 +9,9 @@
   .sub-title {
     @apply text-textDark text-center text-base md:text-lg xl:text-2xl;
   }
+  .container-default {
+    @apply w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto;
+  }
 }
 html {
   scroll-behavior: smooth;
