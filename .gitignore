@@ -42,3 +42,4 @@ next-env.d.ts
 
 # server
 info.php
+package-lock.json
