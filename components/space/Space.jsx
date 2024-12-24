@@ -79,12 +79,12 @@ const Space = ({ title, subTitle }) => {
 
   return (
     <div
-      className="w-full bg-bg-dark bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-white scroll-mt-12"
-      id="range-space"
+      className="w-full bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-textDark scroll-mt-12"
+      id="rent-space"
     >
       <div className="mb-12">
-        <h1 className="header-title">Range Space</h1>
-        <p className="!text-white/80 sub-title">
+        <h1 className="header-title !text-textDark">Rent Space</h1>
+        <p className="!text-textDark/80 sub-title">
           Discover a space to create, connect, and collaborate in the heart of
           Bintaro.
         </p>
@@ -142,11 +142,11 @@ const Space = ({ title, subTitle }) => {
                           style={{ width: "100%", height: "auto" }} // optional
                         />
                         <div className="mt-2 flex flex-col items-center gap-4">
-                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
+                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-textDark text-center line-clamp-3 mt-4">
                             {HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
                           <button
-                            className="align-middle select-none font-sans font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#fff] text-[#303638] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                            className="align-middle select-none font-sans font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#303638] text-[#fff] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                             type="button"
                             onClick={() => {
                               setSelectedItem(item);
@@ -163,61 +163,71 @@ const Space = ({ title, subTitle }) => {
             </Swiper>
           )}
           {isPopupOpen && selectedItem && (
-  <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
-    onClick={() => setIsPopupOpen(false)}
-  >
-    <div
-      className="relative max-w-4xl w-full bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <button
-        className="absolute top-4 right-4 text-white text-2xl z-[51] bg-black/20 rounded-full p-2"
-        onClick={() => setIsPopupOpen(false)}
-      >
-        ✖
-      </button>
-      <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
+              onClick={() => setIsPopupOpen(false)}
+            >
+              <div
+                className="relative max-w-4xl w-full bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
+                  onClick={() => setIsPopupOpen(false)}
+                >
+                  ✖
+                </button>
+                <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
+                  <Image
+                    src={selectedItem.image_mid}
+                    width={0}
+                    height={0}
+                    alt={selectedItem?.name || "Image"}
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                  <Image
+                    src={selectedItem.image_map}
+                    width={0}
+                    height={0}
+                    alt={selectedItem?.name || "Image"}
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </div>
+                <h2 className="text-2xl font-bold mt-4 text-textDark">
+                  {selectedItem?.name}
+                </h2>
 
-      <Image
-        src={selectedItem.image_mid}
-        width={0}
-        height={0}
-        alt={selectedItem?.name || "Image"}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-      />
-      <Image
-        src={selectedItem.image_map}
-        width={0}
-        height={0}
-        alt={selectedItem?.name || "Image"}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-      />
- </div>
-      <h2 className="text-2xl font-bold mt-4 text-textDark">
-        {selectedItem?.name}
-      </h2>
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Opsi Acara
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    {selectedItem?.opsi_acara}
+                  </p>
+                </div>
 
-      <div>
-        <h3 className="text-lg font-bold mt-3 text-textDark">Opsi Acara</h3>
-        <p className="text-textDark mt-2">{selectedItem?.opsi_acara}</p>
-      </div>
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Fasilitas
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    {selectedItem?.fasilitas}
+                  </p>
+                </div>
 
-      <div>
-        <h3 className="text-lg font-bold mt-3 text-textDark">Fasilitas</h3>
-        <p className="text-textDark mt-2">{selectedItem?.fasilitas}</p>
-      </div>
-
-      <div>
-        <h3 className="text-lg font-bold mt-3 text-textDark">Spesifikasi Area</h3>
-        <p className="text-textDark mt-2">{selectedItem?.spesifikasi}</p>
-      </div>
-    </div>
-  </div>
-)}
-
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Spesifikasi Area
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    {selectedItem?.spesifikasi}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

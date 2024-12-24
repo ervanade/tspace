@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { FaCalendar, FaClock, FaMap } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaCalendar,
+  FaClock,
+  FaMap,
+} from "react-icons/fa";
 import { FaLocationPin } from "react-icons/fa6";
 const events = [
   {
@@ -78,6 +84,39 @@ const events = [
 ];
 
 const Event = () => {
+  const [hoveredDate, setHoveredDate] = useState(null);
+
+  const daysInMonth = 31; // Sesuaikan dengan jumlah hari di bulan
+  const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
+  const events = [
+    { date: "2024-12-01", title: "Rock Fest 2024", time: "10:00 - 18:00" },
+    { date: "2024-12-05", title: "Jazz Night Live", time: "10:00 - 18:00" },
+    {
+      date: "2024-12-10",
+      title: "Indie Music Showcase",
+      time: "10:00 - 18:00",
+    },
+    {
+      date: "2024-12-15",
+      title: "Electronic Dance Party",
+      time: "10:00 - 18:00",
+    },
+    {
+      date: "2024-12-20",
+      title: "Classical Symphony Gala",
+      time: "10:00 - 18:00",
+    },
+    {
+      date: "2024-12-25",
+      title: "Christmas Acoustic Night",
+      time: "10:00 - 18:00",
+    },
+  ];
+
+  const getEventByDate = (day) => {
+    const date = `2024-12-${String(day).padStart(2, "0")}`;
+    return events.find((event) => event.date === date);
+  };
   const [currentPage, setCurrentPage] = useState(0);
   const eventsPerPage = 6;
 
@@ -86,9 +125,9 @@ const Event = () => {
 
   const startIndex = currentPage * eventsPerPage;
   const paginatedEvents = events.slice(startIndex, startIndex + eventsPerPage);
-
+  console.log(hoveredDate);
   return (
-    <section className="w-full bg-[#EE5A2A] bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
+    <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
       <div className="mb-12">
         <h1 className="header-title !text-[#fff]">Upcoming Events</h1>
         <p className="!text-white/80 sub-title">
@@ -96,7 +135,65 @@ const Event = () => {
         </p>
       </div>
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+        {/* Calendar */}
+        <div className="bg-white rounded-xl p-4">
+          <div className="flex justify-between items-center mb-4">
+            <button className="text-gray-500 hover:text-gray-700">
+              <FaArrowLeft />
+            </button>
+            <h2 className="text-xl font-semibold text-textDark">
+              December 2024
+            </h2>
+            <button className="text-gray-500 hover:text-gray-700">
+              <FaArrowRight />
+            </button>
+          </div>
+          <div className="grid grid-cols-7 gap-2">
+            {Array.from({ length: startDay }).map((_, i) => (
+              <div key={`empty-${i}`} className="h-16"></div>
+            ))}
+            {Array.from({ length: daysInMonth }).map((_, i) => {
+              const day = i + 1;
+              const event = getEventByDate(day);
+
+              return (
+                <div
+                  key={`day-${day}`}
+                  className={`h-16 flex justify-center items-center rounded-lg cursor-pointer transition-all ${
+                    event
+                      ? "bg-orange-500 text-white"
+                      : "bg-gray-200 text-gray-700"
+                  } hover:shadow-md`}
+                  onMouseEnter={() => setHoveredDate(day)}
+                  onMouseLeave={() => setHoveredDate(null)}
+                >
+                  {day}
+                </div>
+              );
+            })}
+          </div>
+          {hoveredDate ? (
+            <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg">
+              <h3 className="text-lg font-semibold text-orange-500">
+                {getEventByDate(hoveredDate)?.title || "No Event"}
+              </h3>
+              <p className="flex items-center">
+                <FaCalendar className="h-5 w-5 text-textDark mr-2" />
+                Date: {`2024-12-${String(hoveredDate).padStart(2, "0")}`}
+              </p>
+              <p className="flex items-center">
+                <FaClock className="h-5 w-5 text-textDark mr-2" />
+                {getEventByDate(hoveredDate)?.time || "No Event"}
+              </p>
+            </div>
+          ) : (
+            <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg h-20">
+              {" "}
+              <p className="text-center">Hover Date to see upcoming events</p>
+            </div>
+          )}
+        </div>
+        {/* <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {paginatedEvents.map((event) => (
             <div
               key={event.id}
@@ -141,7 +238,7 @@ const Event = () => {
               Next
             </button>
           )}
-        </div>
+        </div> */}
       </div>
     </section>
   );

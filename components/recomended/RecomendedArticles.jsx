@@ -46,11 +46,9 @@ const RecomendedArticles = ({ data }) => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="promotions bg-white scroll-mt-12"  id="articles">
-      <div
-        className="max-w-[1280px] mx-auto w-full py-8 xl:py-16 px-6 overflow-hidden"
-      >
-        <h1 className="text-textDark mb-12 text-3xl xl:text-5xl text-center font-bebas leading-tight">
+    <div className="promotions bg-[#1B1D1C] scroll-mt-12" id="articles">
+      <div className="max-w-[1280px] mx-auto w-full py-8 xl:py-16 px-6 overflow-hidden">
+        <h1 className="text-white mb-12 text-3xl xl:text-5xl text-center font-bebas leading-tight">
           ARTICLES
         </h1>
 
@@ -96,9 +94,9 @@ const RecomendedArticles = ({ data }) => {
                       Article T-Space
                     </h5>
                     <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                      The place is close to Barceloneta Beach and bus stop just 2 min by
-                      walk and near to "Naviglio" where you can enjoy the main night life
-                      in Barcelona.
+                      The place is close to Barceloneta Beach and bus stop just
+                      2 min by walk and near to "Naviglio" where you can enjoy
+                      the main night life in Barcelona.
                     </p>
                   </div>
                   <div className="p-6 pt-0">
@@ -115,7 +113,7 @@ const RecomendedArticles = ({ data }) => {
           </Swiper>
         )}
         <div className="flex justify-end mt-8">
-          <button className="bg-[#303638] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold">
+          <button className="bg-[#fff] text-[#303638] px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold">
             View More
           </button>
         </div>

@@ -18,13 +18,13 @@ import 'swiper/css/scrollbar';
 export default function Home() {
   return (
     <>
-            <Navbar className="" />
+      <Navbar className="" />
       <Hero />
       <About />
-      <Event />
-      <Space />
-      <Tenants />
       <Gallery />
+      <Space />
+      <Event />
+      <Tenants />
       <RecomendedArticles />
       <Contact />
       <Footer />

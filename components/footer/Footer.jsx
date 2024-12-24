@@ -59,10 +59,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#range-space"
+                    href="#rent-space"
                     className="text-sm font-semibold hover:text-white"
                   >
-                    RANGE SPACE
+                    RENT SPACE
                   </a>
                 </li>
                 <li>

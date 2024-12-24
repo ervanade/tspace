@@ -11,7 +11,7 @@ import Link from "next/link";
 const NavbarBeyoutiful = () => {
   const [color, setColor] = useState(true);
   const [menuButton, setMenuButton] = useState(false);
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const [isClient, setIsClient] = useState(false);
 
@@ -20,11 +20,11 @@ const NavbarBeyoutiful = () => {
   useEffect(() => {
     setIsClient(true);
 
-      if (pathname?.includes('/beyoutiful')) {
-        setColor(true);
-      } else {
-        setColor(false);
-      }
+    if (pathname?.includes("/beyoutiful")) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
   }, [pathname]);
 
   const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
@@ -32,9 +32,9 @@ const NavbarBeyoutiful = () => {
 
   const navbarMenu = [
     { id: 1, name: "Home", link: "/#hero" },
-    { id: 2, name: "Range Space", link: "/#range-space" },
-    { id: 6, name: "Our Tenant", link: "/#our-tenant" },
     { id: 4, name: "Gallery", link: "/#gallery" },
+    { id: 2, name: "Rent Space", link: "/#rent-space" },
+    { id: 6, name: "Our Tenant", link: "/#our-tenant" },
     { id: 3, name: "Articles", link: "/#articles" },
     { id: 5, name: "Contact Us", link: "/#contact" },
   ];
@@ -50,13 +50,13 @@ const NavbarBeyoutiful = () => {
             // <a href="#hero">
             // <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
             <Link href="/#hero">
-            <Image
-              src="/logo_tspace_black.png"
-              alt="Logo TSpace"
-              width={70}
-              height={70}
-              className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-            />
+              <Image
+                src="/logo_tspace_black.png"
+                alt="Logo TSpace"
+                width={70}
+                height={70}
+                className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
+              />
             </Link>
           ) : (
             // </a>
@@ -92,13 +92,13 @@ const NavbarBeyoutiful = () => {
           })}
         </div>
         <div className="right-navbar lg:flex hidden ml-auto">
-          <Link href={`/beyoutiful`} >
-          <Image
-            src="/beyoutiful_white.svg"
-            alt="Logo Beyoutiful"
-            width={183}
-            height={48}
-          />
+          <Link href={`/beyoutiful`}>
+            <Image
+              src="/beyoutiful_orange.png"
+              alt="Logo Beyoutiful"
+              width={183}
+              height={48}
+            />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -141,13 +141,13 @@ const NavbarBeyoutiful = () => {
               </a>
             );
           })}
-           <Link href={`/beyoutiful`} >
-          <Image
-            src="/beyoutiful_white.svg"
-            alt="Logo Beyoutiful"
-            width={183}
-            height={48}
-          />
+          <Link href={`/beyoutiful`}>
+            <Image
+              src="/beyoutiful_orange.png"
+              alt="Logo Beyoutiful"
+              width={183}
+              height={48}
+            />
           </Link>
         </div>
       </div>
