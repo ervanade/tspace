@@ -112,10 +112,24 @@ const Event = () => {
       time: "10:00 - 18:00",
     },
   ];
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   const getEventByDate = (day) => {
     const date = `2024-12-${String(day).padStart(2, "0")}`;
     return events.find((event) => event.date === date);
+  };
+
+  const getDayName = (day) => {
+    const date = new Date(`2024-12-${String(day).padStart(2, "0")}`);
+    return daysOfWeek[date.getDay()]; // Menggunakan `getDay()` untuk mendapatkan indeks hari dalam minggu
   };
   const [currentPage, setCurrentPage] = useState(0);
   const eventsPerPage = 6;
@@ -179,7 +193,10 @@ const Event = () => {
               </h3>
               <p className="flex items-center">
                 <FaCalendar className="h-5 w-5 text-textDark mr-2" />
-                Date: {`2024-12-${String(hoveredDate).padStart(2, "0")}`}
+                {`${getDayName(hoveredDate)}, 2024-12-${String(
+                  hoveredDate
+                ).padStart(2, "0")}`}{" "}
+                {/* Menampilkan Hari, Tanggal */}
               </p>
               <p className="flex items-center">
                 <FaClock className="h-5 w-5 text-textDark mr-2" />
