@@ -11,84 +11,84 @@ import { FaLocationPin } from "react-icons/fa6";
 const doctorSchedules = [
   {
     id: 1,
-    day: "Mon",
-    date: "01 Jan 2025",
+    day: "Monday",
     title: "Bedah Plastik",
     subtitle: "Consultation & Surgery",
     location: "T-Space Clinic",
     time: "09:00 - 12:00",
+    doctor: "Dr. John Doe",
   },
   {
     id: 2,
-    day: "Tue",
-    date: "02 Jan 2025",
+    day: "Tuesday",
     title: "Perawatan Estetika",
     subtitle: "Facial & Skin Care",
     location: "T-Space Aesthetic Center",
     time: "10:00 - 14:00",
+    doctor: "Dr. Jane Smith",
   },
   {
     id: 3,
-    day: "Wed",
-    date: "03 Jan 2025",
+    day: "Wednesday",
     title: "Bedah Vaskular",
     subtitle: "Vascular Surgery Consultation",
     location: "T-Space Medical Center",
     time: "08:00 - 11:00",
+    doctor: "Dr. Michael Lee",
   },
   {
     id: 4,
-    day: "Thu",
-    date: "04 Jan 2025",
+    day: "Thursday",
     title: "Urologi",
     subtitle: "Men's Health Consultation",
     location: "T-Space Health Clinic",
     time: "13:00 - 16:00",
+    doctor: "Dr. Sarah White",
   },
   {
     id: 5,
-    day: "Fri",
-    date: "05 Jan 2025",
+    day: "Friday",
     title: "Ortopedi",
     subtitle: "Bone & Joint Consultation",
     location: "T-Space Orthopedic Center",
     time: "09:00 - 12:00",
+    doctor: "Dr. James Brown",
   },
   {
     id: 6,
-    day: "Sat",
-    date: "06 Jan 2025",
+    day: "Saturday",
     title: "Klinik Gigi",
     subtitle: "Dental Check-up & Treatment",
     location: "T-Space Dental Clinic",
     time: "10:00 - 13:00",
+    doctor: "Dr. Emily Green",
   },
   {
     id: 7,
-    day: "Mon",
-    date: "08 Jan 2025",
+    day: "Monday",
     title: "Sleep Therapy",
     subtitle: "Consultation for Sleep Disorders",
     location: "T-Space Wellness Center",
     time: "14:00 - 17:00",
+    doctor: "Dr. Chris Adams",
   },
   {
     id: 8,
-    day: "Tue",
-    date: "09 Jan 2025",
+    day: "Tuesday",
     title: "Hyperbaric Oxygen Therapy",
     subtitle: "Oxygen Therapy Sessions",
     location: "T-Space Hyperbaric Center",
     time: "08:00 - 12:00",
+    doctor: "Dr. Linda Carter",
   },
   {
     id: 9,
-    day: "Wed",
-    date: "10 Jan 2025",
+    day: "Wednesday",
     title: "Slimming & Obesity Centre",
     subtitle: "Weight Loss Consultation",
     location: "T-Space Slimming Clinic",
     time: "10:00 - 14:00",
+    doctor: "Dr. Robert King",
   },
 ];
 
@@ -175,7 +175,7 @@ const DoctorSchedule = () => {
               <div className="mt-2 text-gray-800 text-sm space-y-2">
                 <p className="flex items-center">
                   <FaCalendar className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.day}, {event.date}
+                  {event.day}, {event.doctor}
                 </p>
                 <p className="flex items-center">
                   <FaLocationPin className="h-5 w-5 text-[#303638] mr-2" />
