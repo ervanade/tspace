@@ -27,12 +27,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        secondary: "#E0582A"
       },
       fontFamily: {
         bebas: ['var(--font-bebas-neue)'],
+        poppins: ['var(--font-poppins)'],
+        montserrat: ['var(--font-montserrat)'],
       },
       textColor: {
-        textDark: "#303638"
+        textDark: "#303638",
+        textSecondary: '#E0582A'
       },
       backgroundImage: {
         'bg-dark': "url('/bg-section.png')",

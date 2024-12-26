@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Poppins, Bebas_Neue } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Bebas_Neue, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 
@@ -12,6 +12,11 @@ const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: ["400"],
 });
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 
 export const metadata = {
   title: "TSpace Home Page",
@@ -22,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${bebasNeue.variable} ${poppins.variable} antialiased`}
+        className={`${bebasNeue.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
       >
         <Navbar className="" />
         {children}

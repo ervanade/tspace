@@ -9,60 +9,60 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
-const Space = ({ title, subTitle }) => {
+const Facility = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dataSpace = [
     {
       id: "41",
-      name: "T-HALL",
+      name: "Lobby",
       price: "Rp. 140.000",
       opsi_acara: "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
       spesifikasi: "Indoor, 200m2 Non smoking No pet allowed",
-      image_mid: "/assets/hall.png",
+      image_mid: "/assets/beyoutiful/faciliy-1.png",
       image_map: "/assets/map-hall.png",
     },
     {
       id: "40",
-      name: "T-GARDEN",
+      name: "Poli Dental",
       price: "Rp. 120.000",
       opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
-      image_mid: "/assets/garden.png",
+      image_mid: "/assets/beyoutiful/faciliy-2.png",
       image_map: "/assets/map-hall.png",
     },
     {
       id: "42",
-      name: "T-STUDIO",
+      name: "Poli Ginekologi",
       price: "Rp. 60.000",
       opsi_acara:
         "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
       spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
-      image_mid: "/assets/studio.png",
+      image_mid: "/assets/beyoutiful/faciliy-3.png",
       image_map: "/assets/map-hall.png",
     },
     {
       id: "43",
-      name: "T-ROOFTOP",
+      name: "Hyperbaric Chamber",
       price: "Rp. 120.000",
       opsi_acara:
         "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
-      image_mid: "/assets/rooftop.png",
+      image_mid: "/assets/beyoutiful/faciliy-5.png",
       image_map: "/assets/map-hall.png",
     },
     {
       id: "44",
-      name: "ALL T-SPACE AREA",
+      name: "Poli",
       price: "Rp. 120.000",
       opsi_acara:
         "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc…",
       fasilitas: "All T-SPACE AREA",
       spesifikasi: "Indoor & Outdoor, 3.500m2 ",
-      image_mid: "/assets/tspace-area.png",
+      image_mid: "/assets/beyoutiful/faciliy-4.png",
       image_map: "/assets/map-hall.png",
     },
   ];
@@ -79,14 +79,15 @@ const Space = ({ title, subTitle }) => {
 
   return (
     <div
-      className="w-full bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-textDark scroll-mt-12"
+      className="w-full bg-white bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-textDark scroll-mt-12"
       id="rent-space"
     >
       <div className="mb-12">
-        <h1 className="header-title !text-textDark">Rent Space</h1>
+        <h1 className="title-beyoutiful !text-secondary !font-semibold">
+          Our Facility
+        </h1>
         <p className="!text-textDark/80 sub-title">
-          Discover a space to create, connect, and collaborate in the heart of
-          Bintaro.
+          Experience Premium Comfort and Advanced Technology
         </p>
       </div>
 
@@ -139,22 +140,13 @@ const Space = ({ title, subTitle }) => {
                           // className='aspect-square'
                           alt={item?.name || "T-Space Gallery"}
                           sizes="100vw"
+                          className="rounded-xl"
                           style={{ width: "100%", height: "auto" }} // optional
                         />
                         <div className="mt-2 flex flex-col items-center gap-4">
-                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-textDark text-center line-clamp-3 mt-4">
+                          <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-textDark text-center line-clamp-3 mt-4">
                             {HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
-                          <button
-                            className="align-middle select-none font-poppins font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#303638] text-[#fff] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                            type="button"
-                            onClick={() => {
-                              setSelectedItem(item);
-                              setIsPopupOpen(true);
-                            }}
-                          >
-                            View Detail
-                          </button>
                         </div>
                       </div>
                     </SwiperSlide>
@@ -234,4 +226,4 @@ const Space = ({ title, subTitle }) => {
   );
 };
 
-export default Space;
+export default Facility;

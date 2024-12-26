@@ -42,9 +42,9 @@ const NavbarBeyoutiful = () => {
     <div
       className={`${
         color ? "!bg-white text-textDark !top-0 shadow-md" : ""
-      } navbar-fixed fixed top-5 left-0 w-full z-50 bg-transparent`}
+      } navbar-fixed sticky top-0 left-0 w-full z-50 bg-transparent`}
     >
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center font-poppins">
         <div className="left-navbar mr-auto">
           {color ? (
             // <a href="#hero">
@@ -152,7 +152,7 @@ const NavbarBeyoutiful = () => {
         </div>
       </div>
       <div
-        className={`overlay w-screen h-screen absolute -top-5 left-0 bg-black bg-opacity-20 z-[2] transition-all duration-300 lg:hidden ${
+        className={`overlay w-screen h-screen absolute top-0 left-0 bg-black bg-opacity-20 z-[2] transition-all duration-300 lg:hidden ${
           menuButton ? "block" : "hidden"
         } `}
         onClick={() => setMenuButton(false)}

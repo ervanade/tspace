@@ -12,6 +12,9 @@
   .container-default {
     @apply w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto;
   }
+  .title-beyoutiful {
+    @apply text-white text-3xl lg:text-4xl xl:text-5xl text-center font-montserrat mb-6 font-medium;
+  }
 }
 html {
   scroll-behavior: smooth;
