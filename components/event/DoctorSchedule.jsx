@@ -154,7 +154,7 @@ const DoctorSchedule = () => {
   return (
     <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
       <div className="mb-12">
-        <h1 className="title-beyoutiful !text-[#fff]">Doctor Schedule</h1>
+        <h1 className="title-beyoutiful !text-[#fff] !font-semibold">Doctor Schedule</h1>
         <p className="!text-white/80 sub-title">
           Find Out When Your Preferred Specialist Is Available
         </p>
