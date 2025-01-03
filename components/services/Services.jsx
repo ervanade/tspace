@@ -7,7 +7,7 @@ const HTMLDecoderEncoder = require("html-encoder-decoder");
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
 const Services = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -107,69 +107,61 @@ const Services = ({ title, subTitle }) => {
             </div>
           ) : (
             <Swiper
-              // install Swiper modules
-              className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
-              slidesPerView={2.2}
-              breakpoints={{
-                768: {
-                  // width: 768,
-                  slidesPerView: 3.2,
-                },
-                500: {
-                  slidesPerView: 2.2,
-                },
-              }}
-              spaceBetween={10}
-              modules={[Navigation]}
-              // navigation={true}
-              // onSwiper={(swiper) => console.log(swiper)}
-              // onSlideChange={() => console.log("slide change")}
-            >
-              {dataSpace
-                ? dataSpace.map((item, index) => (
-                    <SwiperSlide className="mr-2" key={index}>
-                      <div
-                        className="recomended-card flex flex-col justify-center gap-2"
-                        key={index}
-                      >
-                        {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
-                        <Image
-                          src={item.image_mid}
-                          width={0}
-                          height={0}
-                          // className='aspect-square'
-                          alt={item?.name || "T-Space Gallery"}
-                          sizes="100vw"
-                          className="rounded-xl"
-                          style={{ width: "100%", height: "auto" }} // optional
-                        />
-                        <div className="mt-2 flex flex-col items-center gap-4">
-                          <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-white text-center line-clamp-3 mt-4">
-                            {HTMLDecoderEncoder.decode(item?.name)}
-                          </h3>
-                          <button
-                            className="align-middle select-none font-montserrat font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-white text-secondary shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                            type="button"
-                            // onClick={() => {
-                            //   setSelectedItem(item);
-                            //   setIsPopupOpen(true);
-                            // }}
-                          >
-                            <a
-                              href="https://wa.me/+621181110556
-"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Konsultasi Sekarang
-                            </a>
-                          </button>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))
-                : ""}
-            </Swiper>
+  className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
+  slidesPerView={2.2}
+  breakpoints={{
+    768: {
+      slidesPerView: 3.2,
+    },
+    500: {
+      slidesPerView: 2.2,
+    },
+  }}
+  spaceBetween={10}
+  modules={[Navigation, Autoplay]} // Add Autoplay module
+  autoplay={{
+    delay: 3000, // 3 seconds
+    disableOnInteraction: false, // Keeps autoplay running after user interaction
+  }}
+>
+  {dataSpace
+    ? dataSpace.map((item, index) => (
+        <SwiperSlide className="mr-2" key={index}>
+          <div
+            className="recomended-card flex flex-col justify-center gap-2"
+            key={index}
+          >
+            <Image
+              src={item.image_mid}
+              width={0}
+              height={0}
+              alt={item?.name || "T-Space Gallery"}
+              sizes="100vw"
+              className="rounded-xl"
+              style={{ width: "100%", height: "auto" }} // optional
+            />
+            <div className="mt-2 flex flex-col items-center gap-4">
+              <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-white text-center line-clamp-3 mt-4">
+                {HTMLDecoderEncoder.decode(item?.name)}
+              </h3>
+              <button
+                className="align-middle select-none font-montserrat font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-white text-secondary shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                type="button"
+              >
+                <a
+                  href="https://wa.me/+621181110556"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Konsultasi Sekarang
+                </a>
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))
+    : ""}
+</Swiper>
           )}
           {isPopupOpen && selectedItem && (
             <div

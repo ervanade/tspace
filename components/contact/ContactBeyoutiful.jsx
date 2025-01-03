@@ -28,7 +28,7 @@ const ContactBeyoutiful = () => {
           </div>
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
-              <h2 className="!text-textDark header-title">
+              <h2 className="!text-textDark title-beyoutiful">
               Contact Us
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">

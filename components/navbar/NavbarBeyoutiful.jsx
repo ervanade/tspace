@@ -50,12 +50,19 @@ const NavbarBeyoutiful = () => {
             // <a href="#hero">
             // <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
             <Link href="/#hero">
-              <Image
+              {/* <Image
                 src="/logo_tspace_black.png"
                 alt="Logo TSpace"
                 width={70}
                 height={70}
                 className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
+              /> */}
+                <Image
+                src="/logo_ori.svg"
+                alt="Logo TSpace"
+                width={60}
+                height={75}
+                className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
               />
             </Link>
           ) : (
