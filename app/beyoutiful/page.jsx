@@ -1,4 +1,5 @@
 import AboutBeyoutiful from "@/components/beyoutiful/AboutBeyoutiful";
+import ContactBeyoutiful from "@/components/contact/ContactBeyoutiful";
 import DoctorSchedule from "@/components/event/DoctorSchedule";
 import Facility from "@/components/facility/Facility";
 import Footer from "@/components/footer/Footer";
@@ -21,6 +22,7 @@ const page = () => {
       <Services />
       <Facility />
       <DoctorSchedule />
+      <ContactBeyoutiful />
       <Footer />
       <a
         href="https://wa.me/+621181110556
