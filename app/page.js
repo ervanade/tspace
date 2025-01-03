@@ -4,6 +4,7 @@ import Event from "@/components/event/Event";
 import Footer from "@/components/footer/Footer";
 import Gallery from "@/components/gallery/Gallery";
 import Hero from "@/components/hero/Hero";
+import PopupEvent from "@/components/Modal/PopupEvent";
 import Navbar from "@/components/navbar/Navbar";
 import RecomendedArticles from "@/components/recomended/RecomendedArticles";
 import Space from "@/components/space/Space";
@@ -27,6 +28,7 @@ export default function Home() {
       <Tenants />
       <RecomendedArticles />
       <Contact />
+      <PopupEvent />
       <Footer />
       <a
         href="https://wa.me/+621181110556
