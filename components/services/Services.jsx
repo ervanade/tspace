@@ -107,61 +107,65 @@ const Services = ({ title, subTitle }) => {
             </div>
           ) : (
             <Swiper
-  className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
-  slidesPerView={2.2}
-  breakpoints={{
-    768: {
-      slidesPerView: 3.2,
-    },
-    500: {
-      slidesPerView: 2.2,
-    },
-  }}
-  spaceBetween={10}
-  modules={[Navigation, Autoplay]} // Add Autoplay module
-  autoplay={{
-    delay: 3000, // 3 seconds
-    disableOnInteraction: false, // Keeps autoplay running after user interaction
-  }}
->
-  {dataSpace
-    ? dataSpace.map((item, index) => (
-        <SwiperSlide className="mr-2" key={index}>
-          <div
-            className="recomended-card flex flex-col justify-center gap-2"
-            key={index}
+            className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
+            slidesPerView={2.2}
+            breakpoints={{
+              768: {
+                slidesPerView: 3.2,
+              },
+              500: {
+                slidesPerView: 2.2,
+              },
+            }}
+            spaceBetween={10}
+            modules={[Navigation, Autoplay]} // Add Autoplay module
+            autoplay={{
+              delay: 3000, // 3 seconds
+              disableOnInteraction: false, // Keeps autoplay running after user interaction
+            }}
           >
-            <Image
-              src={item.image_mid}
-              width={0}
-              height={0}
-              alt={item?.name || "T-Space Gallery"}
-              sizes="100vw"
-              className="rounded-xl"
-              style={{ width: "100%", height: "auto" }} // optional
-            />
-            <div className="mt-2 flex flex-col items-center gap-4">
-              <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-white text-center line-clamp-3 mt-4">
-                {HTMLDecoderEncoder.decode(item?.name)}
-              </h3>
-              <button
-                className="align-middle select-none font-montserrat font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-white text-secondary shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                type="button"
-              >
-                <a
-                  href="https://wa.me/+621181110556"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Konsultasi Sekarang
-                </a>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))
-    : ""}
-</Swiper>
+            {dataSpace
+              ? dataSpace.map((item, index) => (
+                  <SwiperSlide className="mr-2" key={index}>
+                    <div
+                      className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-4 h-full"
+                    >
+                      {/* Image Section */}
+                      <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                        <Image
+                          src={item.image_mid}
+                          alt={item?.name || "T-Space Gallery"}
+                          sizes="100vw"
+                          fill
+                          className="object-cover"
+                          priority={index === 0} // Prioritize first image
+                        />
+                      </div>
+          
+                      {/* Text Section */}
+                      <div className="flex flex-col items-center">
+                        <h3 className="font-montserrat text-[16px] lg:text-[24px] font-medium text-white text-center line-clamp-3 min-h-9 lg:min-h-[56px]">
+                          {HTMLDecoderEncoder.decode(item?.name)}
+                        </h3>
+                        <button
+                          className="mt-4 py-2.5 px-6 text-xs font-bold uppercase rounded-full bg-white text-secondary shadow-md hover:shadow-lg hover:opacity-90 transition-all"
+                          type="button"
+                        >
+                          <a
+                            href="https://wa.me/+621181110556"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Konsultasi Sekarang
+                          </a>
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))
+              : ""}
+          </Swiper>
+          
           )}
           {isPopupOpen && selectedItem && (
             <div
