@@ -63,7 +63,7 @@ const PopupEvent = () => {
               onClick={() => setIsDrawerOpen(false)}
             >
               <div
-                className="relative max-w-4xl w-full bg-slate-50 p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
+                className="relative max-w-4xl w-[80%] bg-slate-50 p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
