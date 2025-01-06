@@ -117,7 +117,7 @@ const Services = ({ title, subTitle }) => {
                 slidesPerView: 2.2,
               },
             }}
-            spaceBetween={10}
+            spaceBetween={8}
             modules={[Navigation, Autoplay]} // Add Autoplay module
             autoplay={{
               delay: 3000, // 3 seconds
@@ -126,9 +126,9 @@ const Services = ({ title, subTitle }) => {
           >
             {dataSpace
               ? dataSpace.map((item, index) => (
-                  <SwiperSlide className="mr-2" key={index}>
+                  <SwiperSlide className="" key={index}>
                     <div
-                      className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-4 h-full"
+                      className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-2 lg:p-4 h-full"
                     >
                       {/* Image Section */}
                       <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
