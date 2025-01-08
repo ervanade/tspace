@@ -6,13 +6,40 @@ import { FaBars } from "react-icons/fa6";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 const NavbarBeyoutiful = () => {
   const [color, setColor] = useState(true);
   const [menuButton, setMenuButton] = useState(false);
-  const pathname = usePathname();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const [selectedLang, setSelectedLang] = useState("id");
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter()
+
+
+  // Load preferensi bahasa dari localStorage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("preferredLanguage" || "id");
+      if (savedLang) {
+        setSelectedLang(savedLang);
+      }
+    }
+  }, []);
+
+  // Ganti bahasa dan simpan preferensi
+  const changeLanguage = (lang) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("preferredLanguage", lang || "id");
+      setSelectedLang(lang);
+      const params = new URLSearchParams(searchParams);
+      params.set("lang", lang); // Tambahkan query lang
+      const href = `${pathname}?${params.toString()}`;
+      router.push(href)
+    }
+  };
   const [isClient, setIsClient] = useState(false);
 
   // Pastikan ini hanya berjalan di sisi klien
@@ -97,6 +124,44 @@ const NavbarBeyoutiful = () => {
               </a>
             );
           })}
+          <div className="relative ">
+      <button
+        className="flex items-center bg-white text-white rounded px-2 py-2"
+        onClick={() => setIsDropdownOpen((prev) => !prev)}
+      >
+        <Image
+          src={`/assets/icon/flag_${selectedLang == "en"? "us": "id"}.svg`}
+          width={24}
+          height={18}
+          alt="Current Language"
+        />
+        {/* <span className="capitalize">{selectedLang}</span> */}
+      </button>
+
+      {/* Dropdown */}
+      {isDropdownOpen && (
+        <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+          <button
+            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+            onClick={() => {
+              changeLanguage("id");
+              setIsDropdownOpen(false);
+            }}
+          >
+            <Image src="/assets/icon/flag_id.svg" width={24} height={18} alt="Bahasa Indonesia" />
+          </button>
+          <button
+            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+            onClick={() => {
+              changeLanguage("en");
+              setIsDropdownOpen(false);
+            }}
+          >
+            <Image src="/assets/icon/flag_us.svg" width={24} height={18} alt="English" />
+          </button>
+        </div>
+      )}
+    </div>
         </div>
         <div className="right-navbar lg:flex hidden ml-auto">
           <Link href={`/beyoutiful`}>
@@ -148,6 +213,44 @@ const NavbarBeyoutiful = () => {
               </a>
             );
           })}
+          <div className="relative ">
+      <button
+        className="flex items-center bg-white text-white rounded px-2 py-2"
+        onClick={() => setIsDropdownOpen((prev) => !prev)}
+      >
+        <Image
+          src={`/assets/icon/flag_${selectedLang == "en"? "us": "id"}.svg`}
+          width={24}
+          height={18}
+          alt="Current Language"
+        />
+        {/* <span className="capitalize">{selectedLang}</span> */}
+      </button>
+
+      {/* Dropdown */}
+      {isDropdownOpen && (
+        <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+          <button
+            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+            onClick={() => {
+              changeLanguage("id");
+              setIsDropdownOpen(false);
+            }}
+          >
+            <Image src="/assets/icon/flag_id.svg" width={24} height={18} alt="Bahasa Indonesia" />
+          </button>
+          <button
+            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+            onClick={() => {
+              changeLanguage("en");
+              setIsDropdownOpen(false);
+            }}
+          >
+            <Image src="/assets/icon/flag_us.svg" width={24} height={18} alt="English" />
+          </button>
+        </div>
+      )}
+    </div>
           <Link href={`/beyoutiful`}>
             <Image
               src="/beyoutiful_orange.png"

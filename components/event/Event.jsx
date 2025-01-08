@@ -139,7 +139,7 @@ const Event = () => {
 
   const startIndex = currentPage * eventsPerPage;
   const paginatedEvents = events.slice(startIndex, startIndex + eventsPerPage);
-  console.log(hoveredDate);
+
   return (
     <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
       <div className="mb-12">

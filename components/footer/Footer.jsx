@@ -23,12 +23,12 @@ const Footer = () => {
                 <a href="#hero" className="">
                   {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
                   <Image
-                    src="/logo_tspace_white.png"
-                    alt="Logo TSpace"
-                    width={70}
-                    height={70}
-                    className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-                  />
+                src="/logo_ori_white.svg"
+                alt="Logo TSpace"
+                width={60}
+                height={75}
+                className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
+              />
                 </a>
                 <li className="flex items-center gap-2">
                   <FaMapMarker size={24} className="!text-2xl" />
@@ -111,9 +111,53 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="right flex-1 space-y-4 flex flex-col lg:items-end lg:pt-8">
-              <h2 className="text-white/80 font-bold text-base">
-                SOCIAL MEDIA
+            <div className="right flex-1 space-y-4 flex flex-col lg:pt-8">
+              <h2 className="text-white/80 font-bold text-sm">
+                SOCIAL MEDIA T-SPACE
+              </h2>
+              <div className="flex items-center gap-4 pb-5 w-max">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={data.facebook || "https://facebook.com"}
+                >
+                  <Image
+                    src="/assets/icon/facebook-icon.png"
+                    width={24}
+                    height={24}
+                    alt="Social Media Icons"
+                  />{" "}
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={data.instagram || "https://instagram.com"}
+                >
+                  <Image
+                    src="/assets/icon/ig-icon.png"
+                    width={24}
+                    height={24}
+                    alt="Social Media Icons"
+                  />{" "}
+                </a>
+                {/* <a target="_blank" rel="noopener noreferrer" href={data.threads || "https://threads.com"} ><Image src="/assets/icon/threads-icon.png" width={24} height={24} alt='Social Media Icons' /> </a>
+                        <a target="_blank" rel="noopener noreferrer" href={data.twitter || "https://twitter.com"} ><Image src="/assets/icon/x-icon.png" width={24} height={24} alt='Social Media Icons' /> </a> */}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={data.tiktok || "https://tiktok.com"}
+                >
+                  <Image
+                    src="/assets/icon/tiktok-icon.png"
+                    width={24}
+                    height={24}
+                    alt="Social Media Icons"
+                  />{" "}
+                </a>
+              </div>
+
+              <h2 className="text-white/80 font-bold text-sm mt-2">
+                SOCIAL MEDIA BEYOUTIFUL 
               </h2>
               <div className="flex items-center gap-4 pb-5 w-max">
                 <a

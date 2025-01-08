@@ -15,6 +15,7 @@ const PopupEvent = () => {
           subtitle: "Night of Joy",
           location: "T-Space Hall",
           time: "18:00 - 22:00",
+          image: "/hero-2.png"
         },
         {
           id: 2,
@@ -24,6 +25,7 @@ const PopupEvent = () => {
           subtitle: "Countdown 2025",
           location: "T-Space Rooftop",
           time: "20:00 - 00:30",
+          image: "/hero-2.png"
         },
         {
           id: 3,
@@ -33,6 +35,7 @@ const PopupEvent = () => {
           subtitle: "Art & Music",
           location: "T-Garden",
           time: "14:00 - 22:00",
+          image: "/hero-2.png"
         },
         {
           id: 4,
@@ -42,6 +45,7 @@ const PopupEvent = () => {
           subtitle: "Future of Tech",
           location: "T-Studio",
           time: "09:00 - 16:00",
+          image: "/hero-2.png"
         },
        
       ];
@@ -73,33 +77,47 @@ const PopupEvent = () => {
                   ✖
                 </button>
                 <h2 className="text-center header-title !text-secondary">This Week Event</h2>
-         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 w-full">
-          {events.map((event) => (
-            <div
-              key={event.id}
-              className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition"
-            >
-              <h3 className="text-lg font-semibold text-orange-600">
-                {event.title}
-              </h3>
-              <p className="text-sm text-gray-600">{event.subtitle}</p>
-              <div className="mt-2 text-gray-800 text-sm space-y-2">
-                <p className="flex items-center">
-                  <FaCalendar className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.day}, {event.date}
-                </p>
-                <p className="flex items-center">
-                  <FaLocationPin className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.location}
-                </p>
-                <p className="flex items-center">
-                  <FaClock className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.time}
-                </p>
-              </div>
-            </div>
-          ))}
+                <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full">
+  {events.map((event) => (
+    <div
+      key={event.id}
+      className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition"
+    >
+      <div className="flex flex-col md:flex-row">
+        {/* Gambar */}
+        <div className="flex-shrink-0 w-full md:w-1/2">
+          <img
+            src={event.image} // Ganti dengan URL gambar event
+            alt={event.title}
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
+
+        {/* Deskripsi */}
+        <div className="md:ml-4 mt-4 md:mt-0 flex flex-col justify-between w-full">
+          <h3 className="text-base font-semibold text-orange-600">{event.title}</h3>
+          <p className="text-sm text-gray-600">{event.subtitle}</p>
+
+          <div className="mt-2 text-gray-800 text-sm space-y-2">
+            <p className="flex items-center">
+              <FaCalendar className="h-5 w-5 text-[#303638] mr-2" />
+              {event.day}, {event.date}
+            </p>
+            <p className="flex items-center">
+              <FaLocationPin className="h-5 w-5 text-[#303638] mr-2" />
+              {event.location}
+            </p>
+            <p className="flex items-center">
+              <FaClock className="h-5 w-5 text-[#303638] mr-2" />
+              {event.time}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
               </div>
           )}
