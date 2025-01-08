@@ -1,6 +1,9 @@
-import { Geist, Geist_Mono, Poppins, Bebas_Neue, Montserrat } from "next/font/google";
+import { Geist, Poppins, Bebas_Neue, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import { Suspense } from "react";
+import Loading from "@/components/Loading";
+import ClientProvider from "@/components/ClientProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -20,7 +23,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: "TSpace Home Page",
-  description: "  Discover a space to create, connect, and collaborate in the heart of Bintaro",
+  description: "Discover a space to create, connect, and collaborate in the heart of Bintaro",
 };
 
 export default function RootLayout({ children }) {
@@ -29,8 +32,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${bebasNeue.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
       >
-        <Navbar className="" />
-        {children}
+        <ClientProvider>
+          <Suspense fallback={<Loading />}>
+            <Navbar />
+            {children}
+          </Suspense>
+        </ClientProvider>
       </body>
     </html>
   );

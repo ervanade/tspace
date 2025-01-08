@@ -8,6 +8,8 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { setLang } from "@/store/langSlice";
 const NavbarBeyoutiful = () => {
   const [color, setColor] = useState(true);
   const [menuButton, setMenuButton] = useState(false);
@@ -20,26 +22,15 @@ const NavbarBeyoutiful = () => {
 
 
   // Load preferensi bahasa dari localStorage
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedLang = localStorage.getItem("preferredLanguage" || "id");
-      if (savedLang) {
-        setSelectedLang(savedLang);
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const savedLang = localStorage.getItem("preferredLanguage" || "id");
+  //     if (savedLang) {
+  //       setSelectedLang(savedLang);
+  //     }
+  //   }
+  // }, []);
 
-  // Ganti bahasa dan simpan preferensi
-  const changeLanguage = (lang) => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("preferredLanguage", lang || "id");
-      setSelectedLang(lang);
-      const params = new URLSearchParams(searchParams);
-      params.set("lang", lang); // Tambahkan query lang
-      const href = `${pathname}?${params.toString()}`;
-      router.push(href)
-    }
-  };
   const [isClient, setIsClient] = useState(false);
 
   // Pastikan ini hanya berjalan di sisi klien
@@ -65,6 +56,13 @@ const NavbarBeyoutiful = () => {
     { id: 3, name: "Articles", link: "/#articles" },
     { id: 5, name: "Contact Us", link: "/#contact" },
   ];
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
+  const handleChangeLang = (newLang) => {
+    dispatch(setLang(newLang)); // Update language in Redux and localStorage
+  };
+  console.log(lang)
   return (
     <div
       className={`${
@@ -111,7 +109,7 @@ const NavbarBeyoutiful = () => {
             return (
               <a
                 key={item.id}
-                href={item.link}
+                href={item.link + `?lang=${lang || "id"}`}
                 className={`text-center ${
                   color
                     ? "text-textDark hover:text-black"
@@ -130,12 +128,12 @@ const NavbarBeyoutiful = () => {
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <Image
-          src={`/assets/icon/flag_${selectedLang == "en"? "us": "id"}.svg`}
+          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
           width={24}
           height={18}
           alt="Current Language"
         />
-        {/* <span className="capitalize">{selectedLang}</span> */}
+        {/* <span className="capitalize">{lang}</span> */}
       </button>
 
       {/* Dropdown */}
@@ -144,7 +142,7 @@ const NavbarBeyoutiful = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("id");
+              handleChangeLang("id");
               setIsDropdownOpen(false);
             }}
           >
@@ -153,7 +151,7 @@ const NavbarBeyoutiful = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("en");
+              handleChangeLang("en");
               setIsDropdownOpen(false);
             }}
           >
@@ -219,7 +217,7 @@ const NavbarBeyoutiful = () => {
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <Image
-          src={`/assets/icon/flag_${selectedLang == "en"? "us": "id"}.svg`}
+          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
           width={24}
           height={18}
           alt="Current Language"
@@ -233,7 +231,7 @@ const NavbarBeyoutiful = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("id");
+              handleChangeLang("id");
               setIsDropdownOpen(false);
             }}
           >
@@ -242,7 +240,7 @@ const NavbarBeyoutiful = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("en");
+              handleChangeLang("en");
               setIsDropdownOpen(false);
             }}
           >

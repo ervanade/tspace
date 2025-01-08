@@ -8,6 +8,8 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { setLang } from "@/store/langSlice";
 
 const Navbar = () => {
   const [color, setColor] = useState(false);
@@ -23,14 +25,14 @@ const Navbar = () => {
 
 
   // Load preferensi bahasa dari localStorage
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedLang = localStorage.getItem("preferredLanguage" || "id");
-      if (savedLang) {
-        setSelectedLang(savedLang);
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const savedLang = localStorage.getItem("preferredLanguage" || "id");
+  //     if (savedLang) {
+  //       setSelectedLang(savedLang);
+  //     }
+  //   }
+  // }, []);
 
   // Ganti bahasa dan simpan preferensi
   const changeLanguage = (lang) => {
@@ -82,6 +84,13 @@ const Navbar = () => {
     { id: 3, name: "Articles", link: "/#articles" },
     { id: 5, name: "Contact Us", link: "/#contact" },
   ];
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
+  const handleChangeLang = (newLang) => {
+    dispatch(setLang(newLang)); // Update language in Redux and localStorage
+  };
+  console.log(lang)
   return (
     <div
       className={`${
@@ -135,7 +144,7 @@ const Navbar = () => {
             return (
               <Link
                 key={item.id}
-                href={item.link}
+                href={item.link + `?lang=${lang || "id"}`}
                 className={`text-center ${
                   color
                     ? "text-textDark hover:text-black"
@@ -155,7 +164,7 @@ const Navbar = () => {
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <Image
-          src={`/assets/icon/flag_${selectedLang == "en"? "us": "id"}.svg`}
+          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
           width={24}
           height={18}
           alt="Current Language"
@@ -169,7 +178,7 @@ const Navbar = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("id");
+              handleChangeLang("id");
               setIsDropdownOpen(false);
             }}
           >
@@ -178,7 +187,7 @@ const Navbar = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("en");
+              handleChangeLang("en");
               setIsDropdownOpen(false);
             }}
           >
@@ -245,7 +254,7 @@ const Navbar = () => {
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <Image
-          src={`/assets/icon/flag_${selectedLang == "en"? "us": "id"}.svg`}
+          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
           width={24}
           height={18}
           alt="Current Language"
@@ -259,7 +268,7 @@ const Navbar = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("id");
+              handleChangeLang("id");
               setIsDropdownOpen(false);
             }}
           >
@@ -268,7 +277,7 @@ const Navbar = () => {
           <button
             className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
             onClick={() => {
-              changeLanguage("en");
+              handleChangeLang("en");
               setIsDropdownOpen(false);
             }}
           >
