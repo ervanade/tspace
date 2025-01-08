@@ -37,6 +37,11 @@ const Footer = () => {
                     Kota Tangerang Selatan, Banten 15229
                   </span>
                 </li>
+                <div className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">
+                <div>
+                <h2 className="text-white/80 font-bold text-sm my-2">
+                T-Space
+              </h2>
                 <li className="flex items-center gap-2">
                   <FaPhoneAlt />
                   <span className="text-sm">08111 3307 692</span>
@@ -45,6 +50,22 @@ const Footer = () => {
                   <FaMessage />
                   <span className="text-sm">tspace@email.com</span>
                 </li>
+                </div>
+                <div>
+                <h2 className="text-white/80 font-bold text-sm my-2">
+                Beyoutiful
+              </h2>
+                <li className="flex items-center gap-2">
+                  <FaPhoneAlt />
+                  <span className="text-sm">08111 3307 692</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaMessage />
+                  <span className="text-sm">tspace@email.com</span>
+                </li>
+                </div>
+
+                </div>
               </ul>
             </div>
             <div className="center flex-1 space-y-4">
