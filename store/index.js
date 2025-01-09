@@ -1,21 +1,27 @@
-import { configureStore } from '@reduxjs/toolkit';
-import langSlice from './langSlice';  // import langSlice
-import storage from 'redux-persist/lib/storage';
-import { persistStore, persistReducer } from 'redux-persist';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import langSlice from "./langSlice";
+import storage from "redux-persist/lib/storage";
+import { persistReducer, persistStore } from "redux-persist";
 
-const persistLangConfig = {
-  key: 'lang',
+const rootReducer = combineReducers({
+  lang: langSlice,
+});
+
+const persistConfig = {
+  key: "root",
   storage,
-  whitelist: ['lang'], // Only persist lang
+  whitelist: ["lang"], // Hanya persist lang
 };
 
-const persistedLang = persistReducer(persistLangConfig, langSlice);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    lang: persistedLang,
-  },
+  reducer: persistedReducer,
   devTools: true,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false, // Matikan serializable check untuk redux-persist
+    }),
 });
 
 export const persistor = persistStore(store);

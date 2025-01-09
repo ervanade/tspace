@@ -33,10 +33,10 @@ export default function RootLayout({ children }) {
         className={`${bebasNeue.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
       >
         <ClientProvider>
-          <Suspense fallback={<Loading />}>
-            <Navbar />
-            {children}
-          </Suspense>
+          {/* <Suspense fallback={<Loading />}> */}
+          <Navbar />
+          {children}
+          {/* </Suspense> */}
         </ClientProvider>
       </body>
     </html>

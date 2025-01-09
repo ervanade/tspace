@@ -1,10 +1,6 @@
 "use client";
-import React from "react";
-import { useState, useEffect } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa6";
-
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -15,66 +11,28 @@ const Navbar = () => {
   const [color, setColor] = useState(false);
   const [menuButton, setMenuButton] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const [isClient, setIsClient] = useState(false);
-  
-  const [selectedLang, setSelectedLang] = useState("id");
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const router = useRouter()
+  const router = useRouter();
+  const buttonOnChangeClose = () => setMenuButton(false);
 
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
-  // Load preferensi bahasa dari localStorage
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const savedLang = localStorage.getItem("preferredLanguage" || "id");
-  //     if (savedLang) {
-  //       setSelectedLang(savedLang);
-  //     }
-  //   }
-  // }, []);
-
-  // Ganti bahasa dan simpan preferensi
-  const changeLanguage = (lang) => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("preferredLanguage", lang || "id");
-      setSelectedLang(lang);
-      const params = new URLSearchParams(searchParams);
-      params.set("lang", lang); // Tambahkan query lang
-      const href = `${pathname}?${params.toString()}`;
-      router.push(href)
-    }
+  const handleChangeLang = (newLang) => {
+    dispatch(setLang(newLang)); // Update language in Redux store
+    const params = new URLSearchParams(searchParams);
+    params.set("lang", newLang); // Update query parameter
+    const href = `${pathname}?${params.toString()}`;
+    router.push(href);
   };
 
   // Perubahan warna navbar saat scroll
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const changeColor = () => {
-        setColor(window.scrollY > 5);
-      };
-      window.addEventListener("scroll", changeColor);
-      return () => window.removeEventListener("scroll", changeColor);
-    }
-  }, []);
-
-  // Pastikan ini hanya berjalan di sisi klien
-  useEffect(() => {
-    setIsClient(true);
-
-    const changeColor = () => {
-      if (window.scrollY > 5) {
-        setColor(true);
-      } else {
-        setColor(false);
-      }
-    };
-
+    const changeColor = () => setColor(window.scrollY > 5);
     window.addEventListener("scroll", changeColor);
     return () => window.removeEventListener("scroll", changeColor);
   }, []);
-
-  const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
-  const buttonOnChangeClose = () => setMenuButton(false);
 
   const navbarMenu = [
     { id: 1, name: "Home", link: "/#hero" },
@@ -84,13 +42,7 @@ const Navbar = () => {
     { id: 3, name: "Articles", link: "/#articles" },
     { id: 5, name: "Contact Us", link: "/#contact" },
   ];
-  const dispatch = useDispatch();
-  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
-  const handleChangeLang = (newLang) => {
-    dispatch(setLang(newLang)); // Update language in Redux and localStorage
-  };
-  console.log(lang)
   return (
     <div
       className={`${
@@ -100,17 +52,8 @@ const Navbar = () => {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center">
         <div className="left-navbar mr-auto">
           {color ? (
-            // <a href="#hero">
-            // <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
             <Link href="/#hero">
-              {/* <Image
-                src="/logo_tspace_black.png"
-                alt="Logo TSpace"
-                width={70}
-                height={70}
-                className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-              /> */}
-               <Image
+              <Image
                 src="/logo_ori.svg"
                 alt="Logo TSpace"
                 width={60}
@@ -119,17 +62,8 @@ const Navbar = () => {
               />
             </Link>
           ) : (
-            // </a>
             <Link href="#hero">
-              {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
-              {/* <Image
-                src="/logo_tspace_white.png"
-                alt="Logo TSpace"
-                width={70}
-                height={70}
-                className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-              /> */}
-               <Image
+              <Image
                 src="/logo_ori_white.svg"
                 alt="Logo TSpace"
                 width={60}
@@ -140,63 +74,84 @@ const Navbar = () => {
           )}
         </div>
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-6 hidden items-center">
-          {navbarMenu.map((item) => {
-            return (
-              <Link
-                key={item.id}
-                href={item.link + `?lang=${lang || "id"}`}
-                className={`text-center ${
-                  color
-                    ? "text-textDark hover:text-black"
-                    : "text-[#f1efefce] hover:text-white "
-                } text-base ${item.name === "Home" ? "font-normal" : ""} ${
-                  item.name === "Home" && !color ? "!text-white" : ""
-                }`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
+          {navbarMenu.map((item) => (
+            <button
+              key={item.id}
+              onClick={(e) => {
+                e.preventDefault();
+                handleChangeLang(lang); // Update language in query params
+                const elementId = item.link.replace("/#", ""); // Extract ID from link
+                const element = document.getElementById(elementId);
+                if (element) {
+                  const headerHeight =
+                    document.querySelector("header")?.offsetHeight || 0;
+                  const elementPosition =
+                    element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
+                  const adjustedPosition = elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
+                  window.scrollTo({
+                    top: adjustedPosition,
+                    behavior: "smooth",
+                  });
+                  history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
+                } else {
+                  console.warn(`Element with ID ${elementId} not found`);
+                }
+              }}
+              className={`text-center ${
+                color
+                  ? "text-textDark hover:text-black"
+                  : "text-[#f1efefce] hover:text-white "
+              } text-base`}
+            >
+              {item.name}
+            </button>
+          ))}
 
-<div className="relative ">
-      <button
-        className="flex items-center bg-white text-white rounded px-2 py-2"
-        onClick={() => setIsDropdownOpen((prev) => !prev)}
-      >
-        <Image
-          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
-          width={24}
-          height={18}
-          alt="Current Language"
-        />
-        {/* <span className="capitalize">{selectedLang}</span> */}
-      </button>
-
-      {/* Dropdown */}
-      {isDropdownOpen && (
-        <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("id");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_id.svg" width={24} height={18} alt="Bahasa Indonesia" />
-          </button>
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("en");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_us.svg" width={24} height={18} alt="English" />
-          </button>
-        </div>
-      )}
-    </div>
-
+          <div className="relative">
+            <button
+              className="flex items-center bg-white text-white rounded px-2 py-2"
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+            >
+              <Image
+                src={`/assets/icon/flag_${lang === "en" ? "us" : "id"}.svg`}
+                width={24}
+                height={18}
+                alt="Current Language"
+              />
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("id");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_id.svg"
+                    width={24}
+                    height={18}
+                    alt="Bahasa Indonesia"
+                  />
+                </button>
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("en");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_us.svg"
+                    width={24}
+                    height={18}
+                    alt="English"
+                  />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
         <div className="right-navbar lg:flex hidden ml-auto">
           <Link href={`/beyoutiful`}>
@@ -208,21 +163,13 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className="flex lg:hidden">
-          <button
-            className="lg:hidden"
-            onClick={buttonOnChangeBars}
-            aria-label="menu bar button"
-          >
-            <FaBars
-              className={`text-2xl font-bold ${
-                color
-                  ? "text-textDark hover:text-gray-800"
-                  : "text-white/85 hover:text-white"
-              } `}
-            />
-          </button>
-        </div>
+        {/* Menu Mobile */}
+        <button
+          className="lg:hidden text-2xl"
+          onClick={() => setMenuButton((prev) => !prev)}
+        >
+          <FaBars className={color ? "text-textDark" : "text-white"} />
+        </button>
         <div
           className={`right-navbar z-50 space-y-4 flex flex-col items-center fixed top-0 ${
             menuButton ? "right-0" : "-right-[999px]"
@@ -237,55 +184,82 @@ const Navbar = () => {
               aria-label="close menu bar button"
             />
           </button>
-          {navbarMenu.map((item) => {
-            return (
-              <Link
-                key={item.id}
-                href={item.link}
-                className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
-             <div className="relative ">
-      <button
-        className="flex items-center gap-2 bg-white text-white rounded px-2 py-2"
-        onClick={() => setIsDropdownOpen((prev) => !prev)}
-      >
-        <Image
-          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
-          width={24}
-          height={18}
-          alt="Current Language"
-        />
-        {/* <span className="capitalize">{selectedLang}</span> */}
-      </button>
+          {navbarMenu.map((item) => (
+            <button
+              key={item.id}
+              onClick={(e) => {
+                e.preventDefault();
+                handleChangeLang(lang); // Update language in query params
+                const elementId = item.link.replace("/#", ""); // Extract ID from link
+                const element = document.getElementById(elementId);
+                if (element) {
+                  const headerHeight =
+                    document.querySelector("header")?.offsetHeight || 0;
+                  const elementPosition =
+                    element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
+                  const adjustedPosition = elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
+                  window.scrollTo({
+                    top: adjustedPosition,
+                    behavior: "smooth",
+                  });
+                  history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
+                } else {
+                  console.warn(`Element with ID ${elementId} not found`);
+                }
+              }}
+              className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+            >
+              {item.name}
+            </button>
+          ))}
+          <div className="relative ">
+            <button
+              className="flex items-center bg-white text-white rounded px-2 py-2"
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+            >
+              <Image
+                src={`/assets/icon/flag_${lang == "en" ? "us" : "id"}.svg`}
+                width={24}
+                height={18}
+                alt="Current Language"
+              />
+              {/* <span className="capitalize">{selectedLang}</span> */}
+            </button>
 
-      {/* Dropdown */}
-      {isDropdownOpen && (
-        <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("id");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_id.svg" width={24} height={18} alt="Bahasa Indonesia" />
-          </button>
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("en");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_us.svg" width={24} height={18} alt="English" />
-          </button>
-        </div>
-      )}
-    </div>
+            {/* Dropdown */}
+            {isDropdownOpen && (
+              <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("id");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_id.svg"
+                    width={24}
+                    height={18}
+                    alt="Bahasa Indonesia"
+                  />
+                </button>
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("en");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_us.svg"
+                    width={24}
+                    height={18}
+                    alt="English"
+                  />
+                </button>
+              </div>
+            )}
+          </div>
           <Link href={`/beyoutiful`}>
             <Image
               src="/beyoutiful_orange.png"
@@ -297,7 +271,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`overlay w-screen h-screen absolute -top-5 left-0 bg-black bg-opacity-20 z-[2] transition-all duration-300 lg:hidden ${
+        className={`overlay w-screen h-screen absolute top-0 left-0 bg-black bg-opacity-20 z-[2] transition-all duration-300 lg:hidden ${
           menuButton ? "block" : "hidden"
         } `}
         onClick={() => setMenuButton(false)}

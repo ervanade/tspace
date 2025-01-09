@@ -1,23 +1,19 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const About = () => {
   const contentAbout = {
-    title : "Beyoutiful Aesthetic",
+    title: "Beyoutiful Aesthetic",
     desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
-    desc_en: "Experience the beauty of holistic wellness at Beyoutiful Aesthetic. Our services, ranging from aesthetic surgery to specialized therapies, are designed to enhance your appearance and improve your overall well-being.",
-    logo: "/logo_ori.svg"
-    
-  }
-  const [selectedLang, setSelectedLang] = useState("id");
-  const searchParams = useSearchParams();
+    desc_en:
+      "Experience the beauty of holistic wellness at Beyoutiful Aesthetic. Our services, ranging from aesthetic surgery to specialized therapies, are designed to enhance your appearance and improve your overall well-being.",
+    logo: "/logo_ori.svg",
+  };
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
-  // Mengambil nilai language dari URL query parameter
-  useEffect(() => {
-    setSelectedLang(searchParams.get('lang') || "id"); // default ke 'id' jika tidak ada query lang
-  }, [searchParams]);
   return (
     <section className="py-20 relative">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
@@ -38,7 +34,7 @@ const About = () => {
                 {contentAbout.title}
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-              {selectedLang === "en" ? contentAbout.desc_en : contentAbout.desc}
+                {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
               </p>
               {/* <Image
             src="/beyoutiful_logo.png"
@@ -47,8 +43,8 @@ const About = () => {
             height={96}
           /> */}
               <Image
-              src="/beyoutiful_orange.png"
-              alt="Logo Beyoutiful"
+                src="/beyoutiful_orange.png"
+                alt="Logo Beyoutiful"
                 width={183}
                 height={48}
                 className="mt-4"

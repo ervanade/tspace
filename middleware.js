@@ -1,22 +1,20 @@
 import { NextResponse } from "next/server";
+import { parseCookies, setCookie } from "nookies";
 
 export function middleware(request) {
-  const url = request.nextUrl;
-  const lang = url.searchParams.get("lang") || "id"; // default ke 'id'
+  const cookies = parseCookies({ req: request });
+  let lang = cookies.lang || "id";
 
-  // Validasi lang
-  const validLocales = ["id", "en"];
-  const defaultLocale = "id";
+  const url = request.nextUrl.clone();
+  const queryLang = url.searchParams.get("lang");
 
-  if (!validLocales.includes(lang)) {
-    url.searchParams.set("lang", defaultLocale);
-    return NextResponse.redirect(url);
+  if (queryLang) {
+    lang = queryLang;
+    setCookie({ res: request }, "lang", lang, { path: "/" });
   }
 
-  // Simpan lang di cookie untuk persistensi
-  const response = NextResponse.next();
-  response.cookies.set("lang", lang);
-  return response;
+  url.searchParams.set("lang", lang);
+  return NextResponse.rewrite(url);
 }
 
 export const config = {

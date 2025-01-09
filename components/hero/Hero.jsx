@@ -11,16 +11,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import Image from "next/image";
 import "./Hero.css";
-import { useSearchParams } from "next/navigation";
+import { useSelector } from "react-redux";
 
 const Hero = () => {
-  const [selectedLang, setSelectedLang] = useState("id");
-  const searchParams = useSearchParams();
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
-  // Mengambil nilai language dari URL query parameter
-  useEffect(() => {
-    setSelectedLang(searchParams.get('lang') || "id"); // default ke 'id' jika tidak ada query lang
-  }, [searchParams]);
   const data = [
     {
       link: "/",
@@ -28,7 +23,8 @@ const Hero = () => {
       title: "RUANG INSPIRATIF UNTUK BERKARYA DAN BERKOLABORASI DI BINTARO",
       title_en: "INSPIRATIONAL SPACE TO CREATE AND COLLABORATE ",
       desc: "Temukan ruang untuk berkreasi, dan berkolaborasi di jantung Bintaro.",
-      desc_en: "Experience a space to create, connect, and collaborate in the heart of Bintaro."
+      desc_en:
+        "Experience a space to create, connect, and collaborate in the heart of Bintaro.",
     },
     {
       link: "/",
@@ -36,7 +32,8 @@ const Hero = () => {
       title: "RUANG INSPIRATIF UNTUK BERKARYA DAN BERKOLABORASI DI BINTARO",
       title_en: "INSPIRATIONAL SPACE TO CREATE AND COLLABORATE ",
       desc: "Temukan ruang untuk berkreasi, dan berkolaborasi di jantung Bintaro.",
-      desc_en: "Experience a space to create, connect, and collaborate in the heart of Bintaro."
+      desc_en:
+        "Experience a space to create, connect, and collaborate in the heart of Bintaro.",
     },
   ];
   return (
@@ -69,13 +66,13 @@ const Hero = () => {
 
                   <div className="absolute flex flex-col gap-2 items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white space-y-4 lg:space-y-8">
                     <p className="font-bebas text-4xl md:text-5xl lg:text-[54px] 2xl:text-[60px] text-center leading-tight">
-                      {selectedLang === "en" ? item.title_en : item.title}
+                      {lang === "en" ? item.title_en : item.title}
                     </p>
                     <p className="text-base sm:text-lg lg:text-xl text-white/85 text-center leading-relaxed">
-                    {selectedLang === "en" ? item.desc_en : item.desc}
+                      {lang === "en" ? item.desc_en : item.desc}
                     </p>
                     <button className="bg-white text-textDark px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold">
-                      Hubungi Kami
+                      {lang === "en" ? "Contact Us" : "Hubungi Kami"}
                     </button>
                   </div>
                 </div>

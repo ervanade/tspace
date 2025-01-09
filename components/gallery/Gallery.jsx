@@ -1,71 +1,93 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
 const HTMLDecoderEncoder = require("html-encoder-decoder");
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import Link from "next/link";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { FaArrowRight } from "react-icons/fa";
+import { Navigation } from "swiper/modules";
+import { useSelector } from "react-redux";
+
 const Gallery = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   const dataSpace = [
     {
-      id: "41",
-      name: "T-HALL",
-      price: "Rp. 140.000",
-      description:
-        "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc…",
-      image_mid: "/assets/hall.png",
-      image_map: "/assets/map-hall.png",
+      id: "1",
+      name: "CASCADE OF SOUL #1",
+      price: "IDR 35.000.000",
+      description: "Lukisan pemandangan alam dengan warna yang menenangkan.",
+      dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
+      image_mid: "/assets/gallery/art-1.JPG", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
-      id: "40",
-      name: "T-GARDEN",
-      price: "Rp. 120.000",
-      description: "Taman luar ruangan untuk acara santai dan pesta kecil.",
-      image_mid: "/assets/garden.png",
-      image_map: "/assets/map-garden.png",
+      id: "2",
+      name: "CASCADE OF SOUL #2 ",
+      price: "IDR 35.000.000",
+      description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+      dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
+      image_mid: "/assets/gallery/art-2.JPG", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
-      id: "42",
-      name: "T-STUDIO",
-      price: "Rp. 60.000",
-      description: "Studio yang ideal untuk perekaman dan sesi fotografi.",
-      image_mid: "/assets/studio.png",
-      image_map: "/assets/map-studio.png",
+      id: "3",
+      name: "CASCADE OF SOUL #3 ",
+      price: "IDR 35.000.000",
+      description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+      dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
+      image_mid: "/assets/gallery/art-3.JPG", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
-      id: "43",
-      name: "T-ROOFTOP",
-      price: "Rp. 120.000",
-      description: "Area rooftop dengan pemandangan indah untuk acara malam.",
-      image_mid: "/assets/rooftop.png",
-      image_map: "/assets/map-rooftop.png",
+      id: "4",
+      name: " FLOW OF REDEMPTION #1",
+      price: "IDR 25.000.000",
+      description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+      dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
+      image_mid: "/assets/gallery/art-4.JPG", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
-      id: "44",
-      name: "ALL T-SPACE AREA",
-      price: "Rp. 120.000",
-      description: "Seluruh area T-Space untuk acara besar dan eksklusif.",
-      image_mid: "/assets/tspace-area.png",
-      image_map: "/assets/map-tspace-area.png",
+      id: "5",
+      name: " FLOW OF REDEMPTION #2",
+      price: "IDR 25.000.000",
+      description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+      dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
+      image_mid: "/assets/gallery/art-5.JPG", // Ganti dengan URL gambar lukisan yang sesuai
     },
+    // Tambahkan data lainnya sesuai kebutuhan
   ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 10); // 2 detik simulasi delay
+    }, 10); // Simulasi delay untuk loading
     return () => clearTimeout(timer);
   }, []);
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const handleImageClick = (index) => {
     setCurrentIndex(index);
     setIsPopupOpen(true);
+  };
+
+  const content = {
+    title: "Galeri Lukisan",
+    title_en: "Art Gallery",
+    desc: "Temukan inspirasi baru di galeri seni kami.",
+    desc_en: "Find new inspiration in our art gallery.",
+    logo: "/logo_ori.svg",
+  };
+
+  const handlePrevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? dataSpace.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === dataSpace.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -74,15 +96,16 @@ const Gallery = ({ title, subTitle }) => {
       id="gallery"
     >
       <div className="mb-12">
-        <h1 className="header-title">T-GALLERY</h1>
+        <h1 className="header-title">
+          {lang === "en" ? content.title_en : content.title}
+        </h1>
         <p className="!text-white/80 sub-title">
-          Discover a space to create, connect, and collaborate in the heart of
-          Bintaro.
+          {lang === "en" ? content.desc_en : content.desc}
         </p>
       </div>
 
-      <div className="max-w-[1280px] mx-auto w-fulloverflow-hidden">
-        <div className="">
+      <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
+        <div>
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[...Array(3)].map((_, index) => (
@@ -97,12 +120,10 @@ const Gallery = ({ title, subTitle }) => {
             </div>
           ) : (
             <Swiper
-              // install Swiper modules
               className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
               slidesPerView={2.2}
               breakpoints={{
                 768: {
-                  // width: 768,
                   slidesPerView: 3.2,
                 },
                 500: {
@@ -111,43 +132,30 @@ const Gallery = ({ title, subTitle }) => {
               }}
               spaceBetween={10}
               modules={[Navigation]}
-              // navigation={true}
-              // onSwiper={(swiper) => console.log(swiper)}
-              // onSlideChange={() => console.log("slide change")}
             >
-              {dataSpace
-                ? dataSpace.map((item, index) => (
-                    <SwiperSlide className="mr-2" key={index}>
-                      <div
-                        className="recomended-card flex flex-col justify-center gap-2"
-                        key={index}
-                      >
-                        {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
-                        <Image
-                          src={item.image_mid}
-                          width={0}
-                          height={0}
-                          onClick={() => handleImageClick(index)}
-                          // className='aspect-square'
-                          alt={item?.name || "T-Space Gallery"}
-                          sizes="100vw"
-                          style={{ width: "100%", height: "auto" }} // optional
-                        />
-                        <div className="mt-2 flex flex-col items-center gap-4">
-                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
-                            {HTMLDecoderEncoder.decode(item?.name)}
-                          </h3>
-                          {/* <button
-                            className="align-middle select-none font-sans font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#fff] text-[#303638] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                            type="button"
-                          >
-                            View Detail
-                          </button> */}
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))
-                : ""}
+              {dataSpace.map((item, index) => (
+                <SwiperSlide key={index} className="mr-2">
+                  <div className="recomended-card flex flex-col justify-center gap-2">
+                    <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                      <Image
+                        src={item.image_mid}
+                        alt={item?.name || "T-Space Gallery"}
+                        sizes="100vw"
+                        fill
+                        onClick={() => handleImageClick(index)}
+                        className="object-cover"
+                        priority={index === 0} // Prioritize first image
+                      />
+                    </div>
+
+                    <div className="mt-2 flex flex-col items-center gap-4">
+                      <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
+                        {HTMLDecoderEncoder.decode(item.name)}
+                      </h3>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
           )}
 
@@ -157,8 +165,9 @@ const Gallery = ({ title, subTitle }) => {
               onClick={() => setIsPopupOpen(false)} // Klik area luar untuk menutup
             >
               <div
-                className="relative"
+                className="relative bg-white p-4 rounded-lg w-full max-w-4xl overflow-y-auto"
                 onClick={(e) => e.stopPropagation()} // Cegah penutupan saat gambar diklik
+                style={{ maxHeight: "80vh" }}
               >
                 <button
                   className="absolute top-4 right-4 text-white text-2xl z-[51] bg-black/20 rounded-full p-2"
@@ -166,26 +175,51 @@ const Gallery = ({ title, subTitle }) => {
                 >
                   ✖
                 </button>
-                <Swiper
-                  initialSlide={currentIndex}
-                  className="w-full max-w-[280px] xs:max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
-                  slidesPerView={1}
-                  modules={[Navigation]}
-                  navigation
+
+                {/* Panah Navigasi */}
+                <button
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-white bg-black/30 rounded-full p-2"
+                  onClick={handlePrevImage}
                 >
-                  {dataSpace.map((item, index) => (
-                    <SwiperSlide key={index}>
+                  ◀
+                </button>
+                <button
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-2xl text-white bg-black/30 rounded-full p-2"
+                  onClick={handleNextImage}
+                >
+                  ▶
+                </button>
+
+                <div className="flex flex-col items-center">
+                  <div className="w-full flex justify-center">
+                    <div className="max-h-[500px]">
                       <Image
-                        src={item.image_mid}
+                        src={dataSpace[currentIndex].image_mid}
+                        alt={dataSpace[currentIndex].name}
                         width={0}
                         height={0}
-                        alt={item?.name || "Image"}
                         sizes="100vw"
-                        style={{ width: "100%", height: "auto" }}
+                        style={{
+                          width: "auto", // Ukuran gambar disesuaikan
+                          height: "auto",
+                          maxHeight: "500px", // Gambar tidak melebihi 80% lebar viewport
+                        }}
                       />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 text-center text-textDark">
+                    <h2 className="text-xl font-semibold mb-2">
+                      {HTMLDecoderEncoder.decode(dataSpace[currentIndex].name)}
+                    </h2>
+                    <p className="text-sm">
+                      {dataSpace[currentIndex].dimensions}
+                    </p>
+                    <p className="text-lg text-secondary font-medium">
+                      {dataSpace[currentIndex].price}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           )}

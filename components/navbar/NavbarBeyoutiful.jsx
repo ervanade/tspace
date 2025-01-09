@@ -18,8 +18,7 @@ const NavbarBeyoutiful = () => {
   const [selectedLang, setSelectedLang] = useState("id");
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const router = useRouter()
-
+  const router = useRouter();
 
   // Load preferensi bahasa dari localStorage
   // useEffect(() => {
@@ -62,7 +61,7 @@ const NavbarBeyoutiful = () => {
   const handleChangeLang = (newLang) => {
     dispatch(setLang(newLang)); // Update language in Redux and localStorage
   };
-  console.log(lang)
+  console.log(lang);
   return (
     <div
       className={`${
@@ -82,7 +81,7 @@ const NavbarBeyoutiful = () => {
                 height={70}
                 className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
               /> */}
-                <Image
+              <Image
                 src="/logo_ori.svg"
                 alt="Logo TSpace"
                 width={60}
@@ -123,43 +122,53 @@ const NavbarBeyoutiful = () => {
             );
           })}
           <div className="relative ">
-      <button
-        className="flex items-center bg-white text-white rounded px-2 py-2"
-        onClick={() => setIsDropdownOpen((prev) => !prev)}
-      >
-        <Image
-          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
-          width={24}
-          height={18}
-          alt="Current Language"
-        />
-        {/* <span className="capitalize">{lang}</span> */}
-      </button>
+            <button
+              className="flex items-center bg-white text-white rounded px-2 py-2"
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+            >
+              <Image
+                src={`/assets/icon/flag_${lang == "en" ? "us" : "id"}.svg`}
+                width={24}
+                height={18}
+                alt="Current Language"
+              />
+              {/* <span className="capitalize">{lang}</span> */}
+            </button>
 
-      {/* Dropdown */}
-      {isDropdownOpen && (
-        <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("id");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_id.svg" width={24} height={18} alt="Bahasa Indonesia" />
-          </button>
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("en");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_us.svg" width={24} height={18} alt="English" />
-          </button>
-        </div>
-      )}
-    </div>
+            {/* Dropdown */}
+            {isDropdownOpen && (
+              <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("id");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_id.svg"
+                    width={24}
+                    height={18}
+                    alt="Bahasa Indonesia"
+                  />
+                </button>
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("en");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_us.svg"
+                    width={24}
+                    height={18}
+                    alt="English"
+                  />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
         <div className="right-navbar lg:flex hidden ml-auto">
           <Link href={`/beyoutiful`}>
@@ -212,43 +221,53 @@ const NavbarBeyoutiful = () => {
             );
           })}
           <div className="relative ">
-      <button
-        className="flex items-center bg-white text-white rounded px-2 py-2"
-        onClick={() => setIsDropdownOpen((prev) => !prev)}
-      >
-        <Image
-          src={`/assets/icon/flag_${lang == "en"? "us": "id"}.svg`}
-          width={24}
-          height={18}
-          alt="Current Language"
-        />
-        {/* <span className="capitalize">{selectedLang}</span> */}
-      </button>
+            <button
+              className="flex items-center bg-white text-white rounded px-2 py-2"
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+            >
+              <Image
+                src={`/assets/icon/flag_${lang == "en" ? "us" : "id"}.svg`}
+                width={24}
+                height={18}
+                alt="Current Language"
+              />
+              {/* <span className="capitalize">{selectedLang}</span> */}
+            </button>
 
-      {/* Dropdown */}
-      {isDropdownOpen && (
-        <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("id");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_id.svg" width={24} height={18} alt="Bahasa Indonesia" />
-          </button>
-          <button
-            className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
-            onClick={() => {
-              handleChangeLang("en");
-              setIsDropdownOpen(false);
-            }}
-          >
-            <Image src="/assets/icon/flag_us.svg" width={24} height={18} alt="English" />
-          </button>
-        </div>
-      )}
-    </div>
+            {/* Dropdown */}
+            {isDropdownOpen && (
+              <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("id");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_id.svg"
+                    width={24}
+                    height={18}
+                    alt="Bahasa Indonesia"
+                  />
+                </button>
+                <button
+                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  onClick={() => {
+                    handleChangeLang("en");
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Image
+                    src="/assets/icon/flag_us.svg"
+                    width={24}
+                    height={18}
+                    alt="English"
+                  />
+                </button>
+              </div>
+            )}
+          </div>
           <Link href={`/beyoutiful`}>
             <Image
               src="/beyoutiful_orange.png"
