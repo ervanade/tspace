@@ -154,7 +154,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="right-navbar lg:flex hidden ml-auto">
-          <Link href={`/beyoutiful`}>
+          <Link href={`/beyoutiful?lang=${lang}`}>
             <Image
               src="/beyoutiful_orange.png"
               alt="Logo Beyoutiful"
@@ -260,7 +260,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link href={`/beyoutiful`}>
+          <Link href={`/beyoutiful?lang=${lang}`}>
             <Image
               src="/beyoutiful_orange.png"
               alt="Logo Beyoutiful"

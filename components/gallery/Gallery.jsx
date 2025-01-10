@@ -202,7 +202,7 @@ const Gallery = ({ title, subTitle }) => {
                         style={{
                           width: "auto", // Ukuran gambar disesuaikan
                           height: "auto",
-                          maxHeight: "500px", // Gambar tidak melebihi 80% lebar viewport
+                          maxHeight: "400px", // Gambar tidak melebihi 80% lebar viewport
                         }}
                       />
                     </div>

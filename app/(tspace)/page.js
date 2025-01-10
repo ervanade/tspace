@@ -4,7 +4,6 @@ import Event from "@/components/event/Event";
 import Footer from "@/components/footer/Footer";
 import Gallery from "@/components/gallery/Gallery";
 import Hero from "@/components/hero/Hero";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PopupEvent from "@/components/Modal/PopupEvent";
 import Navbar from "@/components/navbar/Navbar";
 import RecomendedArticles from "@/components/recomended/RecomendedArticles";
