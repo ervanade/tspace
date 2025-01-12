@@ -1,14 +1,33 @@
+"use client";
+
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { usePathname, useSearchParams } from "next/navigation";
+import { setLang } from "../store/langSlice";
 
 export default function SyncLangToLocalStorage() {
-  const lang = useSelector((state) => state.lang.lang);
+  const pathname = usePathname(); // Mendapatkan path dari URL
+  const searchParams = useSearchParams(); // Mendapatkan search params
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (lang) {
-      localStorage.setItem("lang", lang); // Simpan bahasa ke localStorage
-    }
-  }, [lang]);
+    const queryLang = searchParams.get("lang"); // Ambil query parameter lang
+    const savedLang = localStorage.getItem("lang"); // Ambil dari localStorage
 
-  return null; // Tidak perlu merender apa pun
+    if (queryLang) {
+      // Jika ada parameter lang di URL, gunakan itu
+      if (queryLang !== savedLang) {
+        localStorage.setItem("lang", queryLang); // Simpan ke localStorage
+        dispatch(setLang(queryLang)); // Ubah di Redux
+      }
+    } else if (savedLang) {
+      // Jika tidak ada query lang, gunakan nilai dari localStorage
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set("lang", savedLang);
+      window.history.replaceState(null, "", currentUrl.toString()); // Update URL tanpa reload
+      dispatch(setLang(savedLang)); // Ubah Redux
+    }
+  }, [pathname, searchParams, dispatch]); // Jalan setiap kali pathname atau query berubah
+
+  return null;
 }

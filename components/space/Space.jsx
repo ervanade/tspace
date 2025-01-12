@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
+import { useSelector } from "react-redux";
 const Space = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dataSpace = [
@@ -66,6 +67,7 @@ const Space = ({ title, subTitle }) => {
       image_map: "/assets/map-hall.png",
     },
   ];
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -83,10 +85,13 @@ const Space = ({ title, subTitle }) => {
       id="rent-space"
     >
       <div className="mb-12">
-        <h1 className="header-title !text-textDark">Rent Space</h1>
+        <h1 className="header-title !text-textDark">
+          {lang === "en" ? "Rent Space" : "Rent Space"}
+        </h1>
         <p className="!text-textDark/80 sub-title">
-          Discover a space to create, connect, and collaborate in the heart of
-          Bintaro.
+          {lang === "en"
+            ? "Explore our flexible rental options at T-Space. Browse our available spaces and book a tour today"
+            : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space. "}
         </p>
       </div>
 

@@ -20,11 +20,13 @@ const Navbar = () => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const handleChangeLang = (newLang) => {
-    dispatch(setLang(newLang)); // Update language in Redux store
+    dispatch(setLang(newLang)); // Update Redux
+    localStorage.setItem("lang", newLang); // Update localStorage
+
     const params = new URLSearchParams(searchParams);
     params.set("lang", newLang); // Update query parameter
     const href = `${pathname}?${params.toString()}`;
-    router.push(href);
+    router.push(href); // Navigasi ke URL dengan parameter lang
   };
 
   // Perubahan warna navbar saat scroll

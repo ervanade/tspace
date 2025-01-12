@@ -29,6 +29,12 @@ const NavbarBeyoutiful = () => {
   //     }
   //   }
   // }, []);
+  function appendQueryWithHash(url, key, value) {
+    const [baseUrl, hash] = url.split("#"); // Pisahkan URL dan hash
+    const urlObj = new URL(baseUrl, window.location.origin); // Pastikan parsing URL secara benar
+    urlObj.searchParams.set(key, value); // Tambahkan query param
+    return hash ? `${urlObj.toString()}#${hash}` : urlObj.toString(); // Gabungkan kembali dengan hash
+  }
 
   const [isClient, setIsClient] = useState(false);
 
@@ -108,7 +114,7 @@ const NavbarBeyoutiful = () => {
             return (
               <a
                 key={item.id}
-                href={item.link + `?lang=${lang || "id"}`}
+                href={appendQueryWithHash(item.link, "lang", lang || "id")}
                 className={`text-center ${
                   color
                     ? "text-textDark hover:text-black"
@@ -121,6 +127,7 @@ const NavbarBeyoutiful = () => {
               </a>
             );
           })}
+
           <div className="relative ">
             <button
               className="flex items-center bg-white text-white rounded px-2 py-2"
