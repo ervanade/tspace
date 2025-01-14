@@ -7,10 +7,19 @@ const HTMLDecoderEncoder = require("html-encoder-decoder");
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
+import { useSelector } from "react-redux";
 const Services = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   const dataSpace = [
     {
       id: "41",
@@ -84,10 +93,12 @@ const Services = ({ title, subTitle }) => {
     >
       <div className="mb-12">
         <h1 className="title-beyoutiful !text-white !font-semibold">
-          Our Services
+          {lang === "en" ? "Our Services" : "Servis Kami"}
         </h1>
         <p className="!text-white/80 sub-title">
-          Explore Our Range of Beauty and Aesthetic Treatments
+          {lang === "en"
+            ? "Experience transformative results with our specialized services"
+            : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami"}
         </p>
       </div>
 
@@ -107,65 +118,62 @@ const Services = ({ title, subTitle }) => {
             </div>
           ) : (
             <Swiper
-            className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
-            slidesPerView={2.2}
-            breakpoints={{
-              768: {
-                slidesPerView: 3.2,
-              },
-              500: {
-                slidesPerView: 2.2,
-              },
-            }}
-            spaceBetween={8}
-            modules={[Navigation, Autoplay]} // Add Autoplay module
-            autoplay={{
-              delay: 3000, // 3 seconds
-              disableOnInteraction: false, // Keeps autoplay running after user interaction
-            }}
-          >
-            {dataSpace
-              ? dataSpace.map((item, index) => (
-                  <SwiperSlide className="" key={index}>
-                    <div
-                      className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-2 lg:p-4 h-full"
-                    >
-                      {/* Image Section */}
-                      <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
-                        <Image
-                          src={item.image_mid}
-                          alt={item?.name || "T-Space Gallery"}
-                          sizes="100vw"
-                          fill
-                          className="object-cover"
-                          priority={index === 0} // Prioritize first image
-                        />
-                      </div>
-          
-                      {/* Text Section */}
-                      <div className="flex flex-col items-center">
-                        <h3 className="font-montserrat text-[16px] lg:text-[24px] font-medium text-white text-center line-clamp-3 min-h-9 lg:min-h-[56px]">
-                          {HTMLDecoderEncoder.decode(item?.name)}
-                        </h3>
-                        <button
-                          className="mt-4 py-2.5 px-6 text-xs font-bold uppercase rounded-full bg-white text-secondary shadow-md hover:shadow-lg hover:opacity-90 transition-all"
-                          type="button"
-                        >
-                          <a
-                            href="https://wa.me/+621181110556"
-                            target="_blank"
-                            rel="noopener noreferrer"
+              className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
+              slidesPerView={2.2}
+              breakpoints={{
+                768: {
+                  slidesPerView: 3.2,
+                },
+                500: {
+                  slidesPerView: 2.2,
+                },
+              }}
+              spaceBetween={8}
+              modules={[Navigation, Autoplay]} // Add Autoplay module
+              autoplay={{
+                delay: 3000, // 3 seconds
+                disableOnInteraction: false, // Keeps autoplay running after user interaction
+              }}
+            >
+              {dataSpace
+                ? dataSpace.map((item, index) => (
+                    <SwiperSlide className="" key={index}>
+                      <div className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-2 lg:p-4 h-full">
+                        {/* Image Section */}
+                        <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_mid}
+                            alt={item?.name || "T-Space Gallery"}
+                            sizes="100vw"
+                            fill
+                            className="object-cover"
+                            priority={index === 0} // Prioritize first image
+                          />
+                        </div>
+
+                        {/* Text Section */}
+                        <div className="flex flex-col items-center">
+                          <h3 className="font-montserrat text-[16px] lg:text-[24px] font-medium text-white text-center line-clamp-3 min-h-9 lg:min-h-[56px]">
+                            {HTMLDecoderEncoder.decode(item?.name)}
+                          </h3>
+                          <button
+                            className="mt-4 py-2.5 px-6 text-xs font-bold uppercase rounded-full bg-white text-secondary shadow-md hover:shadow-lg hover:opacity-90 transition-all"
+                            type="button"
                           >
-                            Konsultasi Sekarang
-                          </a>
-                        </button>
+                            <a
+                              href="https://wa.me/+621181110556"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Konsultasi Sekarang
+                            </a>
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                ))
-              : ""}
-          </Swiper>
-          
+                    </SwiperSlide>
+                  ))
+                : ""}
+            </Swiper>
           )}
           {isPopupOpen && selectedItem && (
             <div

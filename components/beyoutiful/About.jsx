@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const About = () => {
@@ -65,6 +66,18 @@ const About = () => {
           </div>
         </div>
       </div>
+      <a
+        href="https://wa.me/+621181110556
+"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-white text-textDark p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
+      >
+        <FaWhatsapp className="h-6 w-6" />
+        <span className="hidden md:inline font-medium">
+          {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+        </span>
+      </a>
     </section>
   );
 };

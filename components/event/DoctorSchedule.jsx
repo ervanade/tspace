@@ -8,6 +8,7 @@ import {
   FaMap,
 } from "react-icons/fa";
 import { FaLocationPin } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 const doctorSchedules = [
   {
     id: 1,
@@ -94,6 +95,7 @@ const doctorSchedules = [
 
 const DoctorSchedule = () => {
   const [hoveredDate, setHoveredDate] = useState(null);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const daysInMonth = 31; // Sesuaikan dengan jumlah hari di bulan
   const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
@@ -154,9 +156,13 @@ const DoctorSchedule = () => {
   return (
     <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
       <div className="mb-12">
-        <h1 className="title-beyoutiful !text-[#fff] !font-semibold">Doctor Schedule</h1>
+        <h1 className="title-beyoutiful !text-[#fff] !font-semibold">
+          {lang === "en" ? "Doctor Schedule" : "Jadwal Dokter"}
+        </h1>
         <p className="!text-white/80 sub-title">
-          Find Out When Your Preferred Specialist Is Available
+          {lang === "en"
+            ? "View our doctor's schedules and book your consultation online today."
+            : "Ind: Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
         </p>
       </div>
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">

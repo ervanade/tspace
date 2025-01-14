@@ -1,7 +1,18 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const AboutBeyoutiful = () => {
+  const contentAbout = {
+    title: "Beyoutiful Aesthetic",
+    desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
+    desc_en:
+      "Experience the beauty of holistic wellness at Beyoutiful Aesthetic. Our services, ranging from aesthetic surgery to specialized therapies, are designed to enhance your appearance and improve your overall well-being.",
+    logo: "/logo_ori.svg",
+  };
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
   return (
     <section className="py-20 relative">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
@@ -19,12 +30,10 @@ const AboutBeyoutiful = () => {
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-secondary title-beyoutiful lg:!text-left">
-                Beyoutiful Aesthetic Center
+                {contentAbout.title}
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                Bedah Plastik, Perawatan Estetika, Bedah Vaskular, Urologi,
-                Ortopedi, Klinik Gigi, Sleep Therapy, Hyperbaric Oxygen Therapy,
-                Slimming & Obesity Centre{" "}
+                {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
               </p>
               {/* <Image
             src="/beyoutiful_logo.png"
@@ -55,6 +64,18 @@ const AboutBeyoutiful = () => {
           </div>
         </div>
       </div>
+      <a
+        href="https://wa.me/+621181110556
+      "
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-white text-textDark p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
+      >
+        <FaWhatsapp className="h-6 w-6" />
+        <span className="hidden md:inline font-medium">
+          {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+        </span>
+      </a>
     </section>
   );
 };

@@ -11,13 +11,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import Image from "next/image";
 import "./Hero.css";
+import { useSelector } from "react-redux";
 
 const HeroBeyoutiful = () => {
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   const data = [
     {
       link: "/beyoutiful",
       image_default: "/assets/beyoutiful/hero-3.png",
-      title: "",
+      title: "Experience the Beyoutiful difference.",
+      title_en: "",
     },
   ];
   return (
@@ -62,7 +66,7 @@ const HeroBeyoutiful = () => {
                         href="/beyoutiful"
                         className="inline-block bg-secondary text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
                       >
-                        Konsultasi Sekarang
+                        {lang === "en" ? "Consult Now" : "Konsultasi Sekarang"}
                       </Link>
                     </div>
                   </div>

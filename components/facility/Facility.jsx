@@ -9,8 +9,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
+import { useSelector } from "react-redux";
 const Facility = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   const dataSpace = [
     {
       id: "41",
@@ -84,10 +87,12 @@ const Facility = ({ title, subTitle }) => {
     >
       <div className="mb-12">
         <h1 className="title-beyoutiful !text-secondary !font-semibold">
-          Our Facility
+          {lang === "en" ? "Our Facility" : "Fasilitas Kami"}
         </h1>
         <p className="!text-textDark/80 sub-title">
-          Experience Premium Comfort and Advanced Technology
+          {lang === "en"
+            ? "Experience our modern facilities and comfortable environment to ensure your comfort and privacy"
+            : "Nikmati pengalaman treatment dengan fasilitas modern dan lingkungan yang nyaman untuk menjamin kenyamanan dan privasi Anda"}
         </p>
       </div>
 

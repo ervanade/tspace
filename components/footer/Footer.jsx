@@ -23,12 +23,12 @@ const Footer = () => {
                 <a href="#hero" className="">
                   {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
                   <Image
-                src="/logo_ori_white.svg"
-                alt="Logo TSpace"
-                width={60}
-                height={75}
-                className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
-              />
+                    src="/logo_ori_white.svg"
+                    alt="Logo TSpace"
+                    width={60}
+                    height={75}
+                    className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
+                  />
                 </a>
                 <li className="flex items-center gap-2">
                   <FaMapMarker size={24} className="!text-2xl" />
@@ -38,33 +38,36 @@ const Footer = () => {
                   </span>
                 </li>
                 <div className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">
-                <div>
-                <h2 className="text-white/80 font-bold text-sm my-2">
-                T-Space
-              </h2>
-                <li className="flex items-center gap-2">
-                  <FaPhoneAlt />
-                  <span className="text-sm">08111 3307 692</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaMessage />
-                  <span className="text-sm">tspace@email.com</span>
-                </li>
-                </div>
-                <div>
-                <h2 className="text-white/80 font-bold text-sm my-2">
-                Beyoutiful
-              </h2>
-                <li className="flex items-center gap-2">
-                  <FaPhoneAlt />
-                  <span className="text-sm">08111 3307 692</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaMessage />
-                  <span className="text-sm">tspace@email.com</span>
-                </li>
-                </div>
-
+                  <div>
+                    <h2 className="text-white/80 font-bold text-sm my-2">
+                      T-Space
+                    </h2>
+                    <li className="flex items-center gap-2">
+                      <FaPhoneAlt />
+                      <span className="text-sm">+62 811-8111-0556</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <FaMessage />
+                      <span className="text-sm">
+                        marketing@tspacebintaro.com
+                      </span>
+                    </li>
+                  </div>
+                  <div>
+                    <h2 className="text-white/80 font-bold text-sm my-2">
+                      Beyoutiful
+                    </h2>
+                    <li className="flex items-center gap-2">
+                      <FaPhoneAlt />
+                      <span className="text-sm">+62 811-8111-0559</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <FaMessage />
+                      <span className="text-sm">
+                        marketing@tspacebintaro.com
+                      </span>
+                    </li>
+                  </div>
                 </div>
               </ul>
             </div>
@@ -178,7 +181,7 @@ const Footer = () => {
               </div>
 
               <h2 className="text-white/80 font-bold text-sm mt-2">
-                SOCIAL MEDIA BEYOUTIFUL 
+                SOCIAL MEDIA BEYOUTIFUL
               </h2>
               <div className="flex items-center gap-4 pb-5 w-max">
                 <a
