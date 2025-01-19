@@ -16,7 +16,7 @@ import {
 } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
-const Services = ({ title, subTitle }) => {
+const Services = ({ title, subTitle, bg }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
@@ -88,21 +88,30 @@ const Services = ({ title, subTitle }) => {
 
   return (
     <div
-      className="w-full bg-secondary bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-white scroll-mt-12"
+      className={`w-full ${
+        bg === "light" ? "bg-white text-textDark" : "bg-secondary text-white"
+      } bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 scroll-mt-12`}
       id="rent-space"
     >
-      <div className="mb-12">
-        <h1 className="title-beyoutiful !text-white !font-semibold">
-          {lang === "en" ? "Our Services" : "Servis Kami"}
-        </h1>
-        <p className="!text-white/80 sub-title">
-          {lang === "en"
-            ? "Experience transformative results with our specialized services"
-            : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami"}
-        </p>
-      </div>
-
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
+        <div className="mb-12">
+          <h1
+            className={`title-beyoutiful ${
+              bg === "light" ? "!text-secondary" : "!text-white"
+            }  !font-semibold !text-start`}
+          >
+            {lang === "en" ? "Our Services" : "Servis Kami"}
+          </h1>
+          <p
+            className={`${
+              bg === "light" ? "!text-textDark/80" : "!text-white/80"
+            } sub-title  !text-start`}
+          >
+            {lang === "en"
+              ? "Experience transformative results with our specialized services"
+              : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami"}
+          </p>
+        </div>
         <div className="">
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -153,7 +162,13 @@ const Services = ({ title, subTitle }) => {
 
                         {/* Text Section */}
                         <div className="flex flex-col items-center">
-                          <h3 className="font-montserrat text-[16px] lg:text-[24px] font-medium text-white text-center line-clamp-3 min-h-9 lg:min-h-[56px]">
+                          <h3
+                            className={`font-montserrat text-[16px] lg:text-[24px] font-medium ${
+                              bg === "light"
+                                ? "!text-secondary/80"
+                                : "!text-white/80"
+                            } text-center line-clamp-3 min-h-9 lg:min-h-[56px]`}
+                          >
                             {HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
                           <button

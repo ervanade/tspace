@@ -93,7 +93,7 @@ const doctorSchedules = [
   // },
 ];
 
-const DoctorSchedule = () => {
+const DoctorSchedule = ({ bg }) => {
   const [hoveredDate, setHoveredDate] = useState(null);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
@@ -154,12 +154,24 @@ const DoctorSchedule = () => {
     startIndex + eventsPerPage
   );
   return (
-    <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
+    <section
+      className={`w-full ${
+        bg === "light" ? "bg-white text-textDark" : "bg-secondary text-white"
+      } bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 scroll-mt-12`}
+    >
       <div className="mb-12">
-        <h1 className="title-beyoutiful !text-[#fff] !font-semibold">
+        <h1
+          className={`title-beyoutiful ${
+            bg === "light" ? "!text-secondary" : "!text-white"
+          }  !font-semibold`}
+        >
           {lang === "en" ? "Doctor Schedule" : "Jadwal Dokter"}
         </h1>
-        <p className="!text-white/80 sub-title">
+        <p
+          className={`${
+            bg === "light" ? "!text-textDark/80" : "!text-white/80"
+          } sub-title`}
+        >
           {lang === "en"
             ? "View our doctor's schedules and book your consultation online today."
             : "Ind: Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}

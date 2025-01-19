@@ -38,6 +38,7 @@ const Navbar = () => {
 
   const navbarMenu = [
     { id: 1, name: "Home", link: "/#hero" },
+    { id: 1, name: "Beyoutiful", link: "/#hero" },
     { id: 4, name: "Gallery", link: "/#gallery" },
     { id: 2, name: "Rent Space", link: "/#rent-space" },
     { id: 6, name: "Our Tenant", link: "/#our-tenant" },
@@ -75,7 +76,7 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-6 hidden items-center">
+        <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
           {navbarMenu.map((item) => (
             <button
               key={item.id}
@@ -103,7 +104,7 @@ const Navbar = () => {
                 color
                   ? "text-textDark hover:text-black"
                   : "text-[#f1efefce] hover:text-white "
-              } text-base`}
+              } text-sm`}
             >
               {item.name}
             </button>
@@ -111,20 +112,20 @@ const Navbar = () => {
 
           <div className="relative">
             <button
-              className="flex items-center bg-white text-white rounded px-2 py-2"
+              className="flex items-center bg-white text-white rounded px-1 py-2"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
                 src={`/assets/icon/flag_${lang === "en" ? "us" : "id"}.svg`}
-                width={24}
-                height={18}
+                width={22}
+                height={16}
                 alt="Current Language"
               />
             </button>
             {isDropdownOpen && (
               <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
                 <button
-                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  className="flex items-center gap-2 px-1 py-2 hover:bg-gray-100 w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
                     setIsDropdownOpen(false);
@@ -132,13 +133,13 @@ const Navbar = () => {
                 >
                   <Image
                     src="/assets/icon/flag_id.svg"
-                    width={24}
-                    height={18}
+                    width={22}
+                    height={16}
                     alt="Bahasa Indonesia"
                   />
                 </button>
                 <button
-                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  className="flex items-center gap-2 px-1 py-2 hover:bg-gray-100 w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");
                     setIsDropdownOpen(false);
@@ -146,8 +147,8 @@ const Navbar = () => {
                 >
                   <Image
                     src="/assets/icon/flag_us.svg"
-                    width={24}
-                    height={18}
+                    width={22}
+                    height={16}
                     alt="English"
                   />
                 </button>
@@ -162,6 +163,7 @@ const Navbar = () => {
               alt="Logo Beyoutiful"
               width={183}
               height={48}
+              className="w-[162.5px] h-[27px] 2xl:w-[183px] 2xl:h-[30px]"
             />
           </Link>
         </div>
