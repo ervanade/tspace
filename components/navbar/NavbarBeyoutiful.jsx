@@ -141,7 +141,7 @@ const NavbarBeyoutiful = () => {
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/assets/icon/flag_${lang == "en" ? "us" : "id"}.svg`}
+                src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
                 width={24}
                 height={18}
                 alt="Current Language"
@@ -160,7 +160,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/assets/icon/flag_id.svg"
+                    src="/flag_id.svg"
                     width={24}
                     height={18}
                     alt="Bahasa Indonesia"
@@ -174,7 +174,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/assets/icon/flag_us.svg"
+                    src="/flag_us.svg"
                     width={24}
                     height={18}
                     alt="English"
@@ -241,7 +241,7 @@ const NavbarBeyoutiful = () => {
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/assets/icon/flag_${lang === "en" ? "us" : "id"}.svg`}
+                src={`/flag_${lang === "en" ? "us" : "id"}.svg`}
                 width={22}
                 height={16}
                 alt="Current Language"
@@ -257,7 +257,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/assets/icon/flag_id.svg"
+                    src="/flag_id.svg"
                     width={22}
                     height={16}
                     alt="Bahasa Indonesia"
@@ -271,7 +271,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/assets/icon/flag_us.svg"
+                    src="/flag_us.svg"
                     width={22}
                     height={16}
                     alt="English"
