@@ -18,7 +18,7 @@ const Gallery = ({ title, subTitle }) => {
       price: "IDR 35.000.000",
       description: "Lukisan pemandangan alam dengan warna yang menenangkan.",
       dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
-      image_mid: "/assets/gallery/art-1.JPG", // Ganti dengan URL gambar lukisan yang sesuai
+      image_mid: "/gallery/art-1.png", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
       id: "2",
@@ -26,7 +26,7 @@ const Gallery = ({ title, subTitle }) => {
       price: "IDR 35.000.000",
       description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
       dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
-      image_mid: "/assets/gallery/art-2.JPG", // Ganti dengan URL gambar lukisan yang sesuai
+      image_mid: "/gallery/art-2.png", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
       id: "3",
@@ -34,7 +34,7 @@ const Gallery = ({ title, subTitle }) => {
       price: "IDR 35.000.000",
       description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
       dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
-      image_mid: "/assets/gallery/art-3.JPG", // Ganti dengan URL gambar lukisan yang sesuai
+      image_mid: "/gallery/art-3.png", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
       id: "4",
@@ -42,7 +42,7 @@ const Gallery = ({ title, subTitle }) => {
       price: "IDR 25.000.000",
       description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
       dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
-      image_mid: "/assets/gallery/art-4.JPG", // Ganti dengan URL gambar lukisan yang sesuai
+      image_mid: "/gallery/art-4.png", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
       id: "5",
@@ -50,7 +50,7 @@ const Gallery = ({ title, subTitle }) => {
       price: "IDR 25.000.000",
       description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
       dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
-      image_mid: "/assets/gallery/art-5.JPG", // Ganti dengan URL gambar lukisan yang sesuai
+      image_mid: "/gallery/art-5.png", // Ganti dengan URL gambar lukisan yang sesuai
     },
     // Tambahkan data lainnya sesuai kebutuhan
   ];
