@@ -33,7 +33,7 @@ const Footer = () => {
                 <li className="flex items-center gap-2">
                   <FaBuilding size={24} className="!text-2xl" />
                   <span className="text-sm">
-                    PT AESTHETICA INDAH GEMILANG , Jl. Jombang Raya No.32, Parigi, Pondok Aren,
+                    PT AESTHETICA INDAH GEMILANG, Jl. Jombang Raya No.32, Parigi, Pondok Aren,
                     Kota Tangerang Selatan, Banten 15229
                   </span>
                 </li>
