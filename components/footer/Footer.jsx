@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaHome, FaMapMarker, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import { FaBuilding, FaHome, FaMapMarker, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { FaMessage, FaPhoneFlip } from "react-icons/fa6";
 
 const Footer = () => {
@@ -31,9 +31,16 @@ const Footer = () => {
                   />
                 </a>
                 <li className="flex items-center gap-2">
+                  <FaBuilding size={24} className="!text-2xl" />
+                  <span className="text-sm">
+                    PT AESTHETICA INDAH GEMILANG , Jl. Jombang Raya No.32, Parigi, Pondok Aren,
+                    Kota Tangerang Selatan, Banten 15229
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
                   <FaMapMarker size={24} className="!text-2xl" />
                   <span className="text-sm">
-                    T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Jombang,
+                    T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok Aren,
                     Kota Tangerang Selatan, Banten 15229
                   </span>
                 </li>
