@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaBuilding, FaHome, FaMapMarker, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaBuilding,
+  FaHome,
+  FaMapMarker,
+  FaPhone,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import { FaMessage, FaPhoneFlip } from "react-icons/fa6";
 
 const Footer = () => {
@@ -33,15 +39,15 @@ const Footer = () => {
                 <li className="flex items-center gap-2">
                   <FaBuilding size={24} className="!text-2xl" />
                   <span className="text-sm">
-                    PT AESTHETICA INDAH GEMILANG, Jl. Jombang Raya No.32, Parigi, Pondok Aren,
-                    Kota Tangerang Selatan, Banten 15229
+                    PT. AESTHETIC INDAH GEMILANG, Jl. Jombang Raya No.32,
+                    Parigi, Pondok Aren, Kota Tangerang Selatan, Banten 15229
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <FaMapMarker size={24} className="!text-2xl" />
                   <span className="text-sm">
-                    T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok Aren,
-                    Kota Tangerang Selatan, Banten 15229
+                    T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok
+                    Aren, Kota Tangerang Selatan, Banten 15229
                   </span>
                 </li>
                 <div className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">
@@ -66,12 +72,12 @@ const Footer = () => {
                     </h2>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
-                      <span className="text-sm">+62 811-8111-0559</span>
+                      <span className="text-sm">+62 815-1906-0060</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMessage />
                       <span className="text-sm">
-                        marketing@tspacebintaro.com
+                        beyoutiful.clinic@tspacebintaro.com
                       </span>
                     </li>
                   </div>
