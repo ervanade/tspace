@@ -19,9 +19,13 @@ const HeroBeyoutiful = () => {
   const data = [
     {
       link: "/beyoutiful",
-      image_default: "/assets/beyoutiful/hero-3.png",
-      title: "Experience the Beyoutiful difference.",
-      title_en: "",
+      image_default: "/assets/beyoutiful/hero-beyoutiful-4.png",
+      title: "Rasakan perbedaan transformasional di Beyoutiful Aesthetic",
+      title_en:
+        "Experience the transformational difference at Beyoutiful Aesthetic",
+      desc: "Dengan pendekatan holistik kami yang berfokus pada kesejahteraan Anda secara menyeluruh, menggabungkan teknik mutakhir dengan perawatan yang didesain khusus.. #wherehealthandhappinessmeet",
+      desc_en:
+        "Our holistic approach focuses on your overall well-being, combining cutting-edge techniques with personalized care. #wherehealthandhappinessmeet",
     },
   ];
   return (
@@ -55,12 +59,11 @@ const HeroBeyoutiful = () => {
                 <div className="absolute inset-0 flex items-center">
                   <div className="mx-auto w-full max-w-7xl px-6 lg:px-24 text-secondary z-10">
                     <div className="w-full lg:w-2/3 space-y-4 lg:space-y-8">
-                      <p className="text-4xl lg:text-[48px] text-left leading-tight font-medium">
-                        Transform Your Beauty, Embrace Your Best Self
+                      <p className="text-3xl lg:text-[40px] 2xl:text-[48px] text-left leading-tight font-semibold">
+                        {lang === "en" ? item.title_en : item.title}
                       </p>
-                      <p className="text-base sm:text-lg lg:text-xl text-textDark/85 text-left leading-relaxed">
-                        With the finest in cosmetic surgery br and skincare by
-                        top specialists.
+                      <p className="text-base sm:text-lg 2xl:text-xl text-white/85 text-left leading-relaxed">
+                        {lang === "en" ? item.desc_en : item.desc}
                       </p>
                       <Link
                         href="/beyoutiful"

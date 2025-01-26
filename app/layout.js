@@ -34,7 +34,6 @@ export default function RootLayout({ children }) {
       >
         <ClientProvider>
           {/* <Suspense fallback={<Loading />}> */}
-          <Navbar />
           {children}
           {/* </Suspense> */}
         </ClientProvider>

@@ -5,7 +5,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const RecomendedArticles = ({ data }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -76,6 +76,11 @@ const RecomendedArticles = ({ data }) => {
               },
             }}
             spaceBetween={10}
+            modules={[Navigation]}
+            navigation={{
+              nextEl: ".gallery-button-next",
+              prevEl: ".gallery-button-prev",
+            }}
           >
             {tvPromotions.map((category, index) => (
               <SwiperSlide className="mr-2" key={index}>
@@ -110,6 +115,12 @@ const RecomendedArticles = ({ data }) => {
                 </div>
               </SwiperSlide>
             ))}
+            <div className="gallery-button-prev absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+              <FaChevronLeft className="text-xl" />
+            </div>
+            <div className="gallery-button-next absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+              <FaChevronRight className="text-xl" />
+            </div>
           </Swiper>
         )}
         <div className="flex justify-end mt-8">

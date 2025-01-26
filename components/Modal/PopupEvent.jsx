@@ -73,57 +73,55 @@ const PopupEvent = () => {
           onClick={() => setIsDrawerOpen(false)}
         >
           <div
-            className="relative max-w-4xl w-[80%] bg-slate-50 p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
+            className="relative max-w-3xl 2xl:max-w-4xl w-[90%] bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[90vh] shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
+              className="absolute top-4 right-4 text-gray-600 text-2xl z-[51] bg-gray-200 hover:bg-gray-300 rounded-full p-2"
               onClick={() => setIsDrawerOpen(false)}
             >
               ✖
             </button>
-            <h2 className="text-center header-title !text-secondary">
-              This Week Event
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full">
+            <h2 className="header-title !text-secondary">This Week Event</h2>
+
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
               {events.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition"
+                  className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
                 >
-                  <div className="flex flex-col md:flex-row">
-                    {/* Gambar */}
-                    <div className="flex-shrink-0 w-full md:w-1/2">
-                      <Image
-                        src={event.image} // Ganti dengan URL gambar event
-                        alt={event.title}
-                        width={500} // Tentukan lebar gambar
-                        height={400} // Tentukan tinggi gambar untuk konsistensi
-                        className="w-full h-full object-cover rounded-lg"
-                      />
-                    </div>
+                  {/* Gambar */}
+                  <div className="w-full aspect-square overflow-hidden">
+                    <Image
+                      src={event.image} // URL gambar event
+                      alt={event.title}
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                    {/* Deskripsi */}
-                    <div className="md:ml-4 mt-4 md:mt-0 flex flex-col justify-between w-full">
-                      <h3 className="text-base font-semibold text-orange-600">
-                        {event.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">{event.subtitle}</p>
-
-                      <div className="mt-2 text-gray-800 text-sm space-y-2">
-                        <p className="flex items-center">
-                          <FaCalendar className="h-5 w-5 text-[#303638] mr-2" />
-                          {event.day}, {event.date}
-                        </p>
-                        <p className="flex items-center">
-                          <FaLocationPin className="h-5 w-5 text-[#303638] mr-2" />
-                          {event.location}
-                        </p>
-                        <p className="flex items-center">
-                          <FaClock className="h-5 w-5 text-[#303638] mr-2" />
-                          {event.time}
-                        </p>
-                      </div>
+                  {/* Deskripsi */}
+                  <div className="p-4">
+                    <h3 className="text-sm font-semibold text-orange-600 mb-2">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      {event.subtitle}
+                    </p>
+                    <div className="text-gray-800 text-sm space-y-2">
+                      <p className="flex items-center">
+                        <FaCalendar className="h-5 w-5 text-gray-500 mr-2" />
+                        {event.day}, {event.date}
+                      </p>
+                      <p className="flex items-center">
+                        <FaLocationPin className="h-5 w-5 text-gray-500 mr-2" />
+                        {event.location}
+                      </p>
+                      <p className="flex items-center">
+                        <FaClock className="h-5 w-5 text-gray-500 mr-2" />
+                        {event.time}
+                      </p>
                     </div>
                   </div>
                 </div>

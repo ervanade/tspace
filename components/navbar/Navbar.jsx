@@ -78,36 +78,52 @@ const Navbar = () => {
         </div>
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
           {navbarMenu.map((item) => (
-            <button
-              key={item.id}
-              onClick={(e) => {
-                e.preventDefault();
-                handleChangeLang(lang); // Update language in query params
-                const elementId = item.link.replace("/#", ""); // Extract ID from link
-                const element = document.getElementById(elementId);
-                if (element) {
-                  const headerHeight =
-                    document.querySelector("header")?.offsetHeight || 0;
-                  const elementPosition =
-                    element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
-                  const adjustedPosition = elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
-                  window.scrollTo({
-                    top: adjustedPosition,
-                    behavior: "smooth",
-                  });
-                  history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
-                } else {
-                  console.warn(`Element with ID ${elementId} not found`);
-                }
-              }}
-              className={`text-center ${
-                color
-                  ? "text-textDark hover:text-black"
-                  : "text-[#f1efefce] hover:text-white "
-              } text-sm`}
-            >
-              {item.name}
-            </button>
+            <>
+              {item.name === "Beyoutiful" ? (
+                <Link
+                  href={`/beyoutiful?lang=${lang}`}
+                  className={`text-center ${
+                    color
+                      ? "text-textDark hover:text-black"
+                      : "text-[#f1efefce] hover:text-white "
+                  } text-sm`}
+                >
+                  Beyoutiful{" "}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleChangeLang(lang); // Update language in query params
+                    const elementId = item.link.replace("/#", ""); // Extract ID from link
+                    const element = document.getElementById(elementId);
+                    if (element) {
+                      const headerHeight =
+                        document.querySelector("header")?.offsetHeight || 0;
+                      const elementPosition =
+                        element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
+                      const adjustedPosition =
+                        elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
+                      window.scrollTo({
+                        top: adjustedPosition,
+                        behavior: "smooth",
+                      });
+                      history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
+                    } else {
+                      console.warn(`Element with ID ${elementId} not found`);
+                    }
+                  }}
+                  className={`text-center ${
+                    color
+                      ? "text-textDark hover:text-black"
+                      : "text-[#f1efefce] hover:text-white "
+                  } text-sm ${item.name === "Home" ? "font-semibold" : ""}`}
+                >
+                  {item.name}
+                </button>
+              )}
+            </>
           ))}
 
           <div className="relative">
@@ -189,32 +205,44 @@ const Navbar = () => {
             />
           </button>
           {navbarMenu.map((item) => (
-            <button
-              key={item.id}
-              onClick={(e) => {
-                e.preventDefault();
-                handleChangeLang(lang); // Update language in query params
-                const elementId = item.link.replace("/#", ""); // Extract ID from link
-                const element = document.getElementById(elementId);
-                if (element) {
-                  const headerHeight =
-                    document.querySelector("header")?.offsetHeight || 0;
-                  const elementPosition =
-                    element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
-                  const adjustedPosition = elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
-                  window.scrollTo({
-                    top: adjustedPosition,
-                    behavior: "smooth",
-                  });
-                  history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
-                } else {
-                  console.warn(`Element with ID ${elementId} not found`);
-                }
-              }}
-              className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
-            >
-              {item.name}
-            </button>
+            <>
+              {item.name === "Beyoutiful" ? (
+                <Link
+                  href={`/beyoutiful?lang=${lang}`}
+                  className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+                >
+                  Beyoutiful{" "}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleChangeLang(lang); // Update language in query params
+                    const elementId = item.link.replace("/#", ""); // Extract ID from link
+                    const element = document.getElementById(elementId);
+                    if (element) {
+                      const headerHeight =
+                        document.querySelector("header")?.offsetHeight || 0;
+                      const elementPosition =
+                        element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
+                      const adjustedPosition =
+                        elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
+                      window.scrollTo({
+                        top: adjustedPosition,
+                        behavior: "smooth",
+                      });
+                      history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
+                    } else {
+                      console.warn(`Element with ID ${elementId} not found`);
+                    }
+                  }}
+                  className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+                >
+                  {item.name}
+                </button>
+              )}
+            </>
           ))}
           <div className="relative ">
             <button

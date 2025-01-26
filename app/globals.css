@@ -6,16 +6,20 @@
   .header-title {
     @apply text-white text-3xl lg:text-4xl xl:text-5xl text-center font-bebas mb-6 leading-tight;
   }
+
   .sub-title {
-    @apply text-textDark text-center text-base md:text-lg xl:text-2xl;
+    @apply text-textDark text-center text-base md:text-lg xl:text-xl;
   }
+
   .container-default {
     @apply w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto;
   }
+
   .title-beyoutiful {
     @apply text-white text-3xl lg:text-[40px] text-center font-montserrat mb-6 font-medium;
   }
 }
+
 html {
   scroll-behavior: smooth;
 }

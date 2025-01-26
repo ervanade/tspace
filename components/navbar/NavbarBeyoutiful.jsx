@@ -40,15 +40,15 @@ const NavbarBeyoutiful = () => {
 
   // Pastikan ini hanya berjalan di sisi klien
 
-  useEffect(() => {
-    setIsClient(true);
+  // useEffect(() => {
+  //   setIsClient(true);
 
-    if (pathname?.includes("/beyoutiful")) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  }, [pathname]);
+  //   if (pathname?.includes("/beyoutiful")) {
+  //     setColor(true);
+  //   } else {
+  //     setColor(false);
+  //   }
+  // }, [pathname]);
 
   const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
   const buttonOnChangeClose = () => setMenuButton(false);
@@ -56,10 +56,9 @@ const NavbarBeyoutiful = () => {
   const navbarMenu = [
     { id: 1, name: "Home", link: "/#hero" },
     { id: 4, name: "T-Space", link: "/#gallery" },
-    { id: 4, name: "Gallery", link: "/#gallery" },
-    { id: 2, name: "Rent Space", link: "/#rent-space" },
-    { id: 6, name: "Our Tenant", link: "/#our-tenant" },
-    { id: 3, name: "Articles", link: "/#articles" },
+    { id: 4, name: "Servis Kami", link: "/#gallery" },
+    { id: 2, name: "Jadwal Dokter", link: "/#rent-space" },
+    { id: 6, name: "Fasilitas", link: "/#our-tenant" },
     { id: 5, name: "Contact Us", link: "/#contact" },
   ];
   const dispatch = useDispatch();
@@ -77,44 +76,20 @@ const NavbarBeyoutiful = () => {
 
   return (
     <div
-      className={`${
-        color ? "!bg-white text-textDark !top-0 shadow-md" : ""
-      } navbar-fixed sticky top-0 left-0 w-full z-50 bg-transparent`}
+      className={`
+      !bg-white text-textDark !top-0 shadow-md navbar-fixed sticky !left-0 w-full z-50 bg-transparent`}
     >
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center font-poppins">
         <div className="left-navbar mr-auto">
-          {color ? (
-            // <a href="#hero">
-            // <p className="font-bebas text-[40px] text-textDark">T-SPACE</p>
-            <Link href="/#hero">
-              {/* <Image
-                src="/logo_tspace_black.png"
-                alt="Logo TSpace"
-                width={70}
-                height={70}
-                className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-              /> */}
-              <Image
-                src="/logo_ori.svg"
-                alt="Logo TSpace"
-                width={60}
-                height={75}
-                className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
-              />
-            </Link>
-          ) : (
-            // </a>
-            <Link href="/#hero">
-              {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
-              <Image
-                src="/logo_tspace_white.png"
-                alt="Logo TSpace"
-                width={70}
-                height={70}
-                className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px]"
-              />
-            </Link>
-          )}
+          <Link href="/#hero">
+            <Image
+              src="/logo_ori.svg"
+              alt="Logo TSpace"
+              width={60}
+              height={75}
+              className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
+            />
+          </Link>
         </div>
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
           {navbarMenu.map((item) => {

@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { Navigation } from "swiper/modules";
 import { useSelector } from "react-redux";
+import { dataGallery } from "@/public/data";
+import "swiper/css/navigation";
+import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Gallery = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -71,10 +74,11 @@ const Gallery = ({ title, subTitle }) => {
   };
 
   const content = {
-    title: "Galeri Lukisan",
-    title_en: "Art Gallery",
-    desc: "Temukan inspirasi baru di galeri seni kami.",
-    desc_en: "Find new inspiration in our art gallery.",
+    title: "JANMASHTAMI, pameran tunggal Prajna Dewantara",
+    title_en: "JANMASHTAMI, solo exhibition Prajna Dewantara",
+    desc: "Tentang seniman: Prajna Dewantara Wirata adalah seniman visual Indonesia asal Bali yang karyanya, ditandai dengan realisme mencolok melalui neo-chiaroscuro dan warna-warna cerah, mengeksplorasi tema keimanan, ketahanan, dan pemberdayaan dengan fokus pada kekuatan jiwa manusia.",
+    desc_en:
+      "Prajna Dewantara Wirata is an Indonesian visual artist from Bali whose work, characterized by striking realism achieved through neo-chiaroscuro and vibrant colors, explores themes of faith, resilience, and empowerment with a focus on the strength of the human spirit.",
     logo: "/logo_ori.svg",
   };
 
@@ -132,8 +136,12 @@ const Gallery = ({ title, subTitle }) => {
               }}
               spaceBetween={10}
               modules={[Navigation]}
+              navigation={{
+                nextEl: ".gallery-button-next",
+                prevEl: ".gallery-button-prev",
+              }}
             >
-              {dataSpace.map((item, index) => (
+              {dataGallery.map((item, index) => (
                 <SwiperSlide key={index} className="mr-2">
                   <div className="recomended-card flex flex-col justify-center gap-2">
                     <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
@@ -156,6 +164,13 @@ const Gallery = ({ title, subTitle }) => {
                   </div>
                 </SwiperSlide>
               ))}
+              {/* Panah Navigasi */}
+              <div className="gallery-button-prev absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                <FaChevronLeft className="text-xl" />
+              </div>
+              <div className="gallery-button-next absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                <FaChevronRight className="text-xl" />
+              </div>
             </Swiper>
           )}
 
@@ -194,8 +209,8 @@ const Gallery = ({ title, subTitle }) => {
                   <div className="w-full flex justify-center">
                     <div className="max-h-[500px]">
                       <Image
-                        src={dataSpace[currentIndex].image_mid}
-                        alt={dataSpace[currentIndex].name}
+                        src={dataGallery[currentIndex].image_mid}
+                        alt={dataGallery[currentIndex].name}
                         width={0}
                         height={0}
                         sizes="100vw"
@@ -210,13 +225,15 @@ const Gallery = ({ title, subTitle }) => {
 
                   <div className="mt-4 text-center text-textDark">
                     <h2 className="text-xl font-semibold mb-2">
-                      {HTMLDecoderEncoder.decode(dataSpace[currentIndex].name)}
+                      {HTMLDecoderEncoder.decode(
+                        dataGallery[currentIndex].name
+                      )}
                     </h2>
                     <p className="text-sm">
-                      {dataSpace[currentIndex].dimensions}
+                      {dataGallery[currentIndex].dimensions}
                     </p>
                     <p className="text-lg text-secondary font-medium">
-                      {dataSpace[currentIndex].price}
+                      {dataGallery[currentIndex].price}
                     </p>
                   </div>
                 </div>
