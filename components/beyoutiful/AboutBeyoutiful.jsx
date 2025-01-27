@@ -19,7 +19,7 @@ const AboutBeyoutiful = () => {
         <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
           <div className="relative mx-auto w-2/3 lg:w-full h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
-              src="/assets/about.png"
+              src="/assets/about-2.png"
               alt="about Us image"
               layout="responsive"
               width={569} // Set the actual width of the image

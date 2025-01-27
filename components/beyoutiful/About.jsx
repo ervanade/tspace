@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -21,7 +22,7 @@ const About = () => {
         <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
           <div className="relative mx-auto w-2/3 lg:w-full h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
-              src="/assets/about.png"
+              src="/assets/about-2.png"
               alt="about Us image"
               layout="responsive"
               width={569} // Set the actual width of the image
@@ -56,12 +57,13 @@ const About = () => {
                     </button> */}
 
             <div className="flex items-center gap-2">
-              <button
+              <Link
+                href={`/beyoutiful?lang=${lang}`}
                 className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 type="button"
               >
                 View More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
