@@ -1,6 +1,7 @@
 import React from "react";
 import { serviceDetails } from "@/public/data";
 import ServicesDetails from "@/components/services/ServicesDetails";
+import NavbarServices from "@/components/navbar/NavbarServices";
 
 export async function generateStaticParams() {
   // Menghasilkan parameter dinamis berdasarkan data
@@ -19,6 +20,7 @@ const ServicePage = async ({ params }) => {
 
   return (
     <div>
+      <NavbarServices />
       <ServicesDetails service={service} />
     </div>
   );
