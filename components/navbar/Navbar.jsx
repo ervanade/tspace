@@ -118,7 +118,11 @@ const Navbar = () => {
                     color
                       ? "text-textDark hover:text-black"
                       : "text-[#f1efefce] hover:text-white "
-                  } text-sm ${item.name === "Home" ? "font-semibold" : ""}`}
+                  } text-sm ${
+                    item.name === "Home"
+                      ? `font-semibold ${color ? "text-black" : "text-white"}`
+                      : ""
+                  }`}
                 >
                   {item.name}
                 </button>
