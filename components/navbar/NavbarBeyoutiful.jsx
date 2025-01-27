@@ -162,7 +162,7 @@ const NavbarBeyoutiful = () => {
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}
-                          href={`${menu.link}`}
+                          href={`${menu.link}?lang=${lang}`}
                           className="block hover:bg-gray-100 rounded px-3 py-2 text-sm"
                         >
                           {lang === "en" ? menu.name_en : menu.name}
@@ -200,7 +200,7 @@ const NavbarBeyoutiful = () => {
                       ? "text-textDark hover:text-black"
                       : "text-[#f1efefce] hover:text-white "
                   } text-sm ${
-                    item.name === "Home" ? "!font-semibold !text-black" : ""
+                    item.name === "Home" ? "font-semibold !text-black" : ""
                   }`}
                 >
                   {item.name}
@@ -320,7 +320,7 @@ const NavbarBeyoutiful = () => {
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}
-                          href={`${menu.link}`}
+                          href={`${menu.link}?lang=${lang}`}
                           className="block hover:bg-gray-100 rounded px-3 py-2 text-sm"
                         >
                           {lang === "en" ? menu.name_en : menu.name}

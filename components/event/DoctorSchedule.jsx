@@ -170,6 +170,7 @@ const DoctorSchedule = ({ bg }) => {
       className={`w-full ${
         bg === "light" ? "bg-white text-textDark" : "bg-secondary text-white"
       } bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 scroll-mt-12`}
+      id="doctor-schedules"
     >
       <div className="mb-12">
         <h1

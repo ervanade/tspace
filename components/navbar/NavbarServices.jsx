@@ -53,14 +53,19 @@ const NavbarServices = () => {
 
   const buttonOnChangeBars = () => setMenuButton((prev) => !prev);
   const buttonOnChangeClose = () => setMenuButton(false);
-
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
   const navbarMenu = [
-    { id: 1, name: "Home", link: "/beyoutiful#hero" },
+    { id: 1, name: "Home", link: `/beyoutiful?lang=${lang}#hero` },
     { id: 2, name: "T-Space", link: "/" },
-    { id: 3, name: "Servis Kami", link: "/beyoutiful#services" },
-    { id: 4, name: "Jadwal Dokter", link: "/beyoutiful#doctor-schedules" },
-    { id: 5, name: "Fasilitas", link: "/beyoutiful#facility" },
-    { id: 6, name: "Contact Us", link: "/beyoutiful#contact" },
+    { id: 3, name: "Servis Kami", link: `/beyoutiful?lang=${lang}#services` },
+    {
+      id: 4,
+      name: "Jadwal Dokter",
+      link: `/beyoutiful?lang=${lang}#doctor-schedules`,
+    },
+    { id: 5, name: "Fasilitas", link: `/beyoutiful?lang=${lang}#facility` },
+    { id: 6, name: "Contact Us", link: `/beyoutiful?lang=${lang}#contact` },
   ];
   const subMenu = [
     {
@@ -95,9 +100,6 @@ const NavbarServices = () => {
       link: "/beyoutiful/services/radiologi",
     },
   ];
-
-  const dispatch = useDispatch();
-  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const handleChangeLang = (newLang) => {
     dispatch(setLang(newLang)); // Update Redux
@@ -149,9 +151,9 @@ const NavbarServices = () => {
                   <button
                     className={`text-center ${
                       color
-                        ? "font-semibold text-black"
+                        ? "text-black font-semibold"
                         : "text-[#f1efefce] hover:text-white"
-                    } text-sm `}
+                    } text-sm`}
                   >
                     {item.name}
                   </button>
@@ -162,7 +164,7 @@ const NavbarServices = () => {
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}
-                          href={`${menu.link}`}
+                          href={`${menu.link}?lang=${lang}`}
                           className="block hover:bg-gray-100 rounded px-3 py-2 text-sm"
                         >
                           {lang === "en" ? menu.name_en : menu.name}
@@ -172,29 +174,9 @@ const NavbarServices = () => {
                   )}
                 </div>
               ) : (
-                <button
+                <Link
+                  href={`${item.link}`}
                   key={item.id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChangeLang(lang); // Update language in query params
-                    const elementId = item.link.replace("/beyoutiful#", ""); // Extract ID from link
-                    const element = document.getElementById(elementId);
-                    if (element) {
-                      const headerHeight =
-                        document.querySelector("header")?.offsetHeight || 0;
-                      const elementPosition =
-                        element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
-                      const adjustedPosition =
-                        elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
-                      window.scrollTo({
-                        top: adjustedPosition,
-                        behavior: "smooth",
-                      });
-                      history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
-                    } else {
-                      console.warn(`Element with ID ${elementId} not found`);
-                    }
-                  }}
                   className={`text-center ${
                     color
                       ? "text-textDark hover:text-black"
@@ -206,7 +188,7 @@ const NavbarServices = () => {
                   }`}
                 >
                   {item.name}
-                </button>
+                </Link>
               )}
             </>
           ))}
@@ -322,7 +304,7 @@ const NavbarServices = () => {
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}
-                          href={`${menu.link}`}
+                          href={`${menu.link}?lang=${lang}`}
                           className="block hover:bg-gray-100 rounded px-3 py-2 text-sm"
                         >
                           {lang === "en" ? menu.name_en : menu.name}

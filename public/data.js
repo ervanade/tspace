@@ -51,8 +51,8 @@ export const dataServices = [
         link: "/beyoutiful/services/hyperbaric-oxygen-therapy", image: "/assets/beyoutiful/faciliy-5.png",
     },
     { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
-    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/services-1.png" },
-    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/services-4.png" },
+    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vascular.png" },
+    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
     { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/services-3.png" },
 ];
 
@@ -231,7 +231,7 @@ export const serviceDetails = [
         description_en: "Services for vascular and circulatory system care.",
         slug: "vaskular",
         link: "/",
-        image: "/assets/beyoutiful/services-1.png",
+        image: "/assets/beyoutiful/vascular.png",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
@@ -249,7 +249,7 @@ export const serviceDetails = [
         description_en: "Consultations and services for better diet and nutrition health.",
         slug: "gizi",
         link: "/",
-        image: "/assets/beyoutiful/services-4.png",
+        image: "/assets/beyoutiful/gizi.png",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
