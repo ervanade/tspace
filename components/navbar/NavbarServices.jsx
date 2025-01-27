@@ -10,7 +10,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { setLang } from "@/store/langSlice";
-const NavbarBeyoutiful = () => {
+const NavbarServices = () => {
   const [color, setColor] = useState(true);
   const [menuButton, setMenuButton] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -200,7 +200,9 @@ const NavbarBeyoutiful = () => {
                       ? "text-textDark hover:text-black"
                       : "text-[#f1efefce] hover:text-white "
                   } text-sm ${
-                    item.name === "Home" ? "font-semibold text-black" : ""
+                    item.name === "Servis Kami"
+                      ? "font-semibold text-black"
+                      : ""
                   }`}
                 >
                   {item.name}
@@ -425,4 +427,4 @@ const NavbarBeyoutiful = () => {
   );
 };
 
-export default NavbarBeyoutiful;
+export default NavbarServices;

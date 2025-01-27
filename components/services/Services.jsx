@@ -174,18 +174,13 @@ const Services = ({ title, subTitle, bg }) => {
                               ? HTMLDecoderEncoder.decode(item?.name_en)
                               : HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
-                          <button
-                            className="mt-4 py-2.5 px-6 text-xs font-bold uppercase rounded-full bg-white text-secondary shadow-md hover:shadow-lg hover:opacity-90 transition-all"
-                            type="button"
+
+                          <Link
+                            href={`${item.link}?lang=${lang}`}
+                            className="mt-4 py-2.5 px-6 text-base font-bold  rounded-full bg-white text-secondary border shadow-md hover:shadow-lg hover:opacity-90 transition-all"
                           >
-                            <a
-                              href="https://wa.me/+621181110556"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Konsultasi Sekarang
-                            </a>
-                          </button>
+                            Rincian
+                          </Link>
                         </div>
                       </div>
                     </SwiperSlide>

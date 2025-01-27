@@ -1,4 +1,4 @@
-import NavbarBeyoutiful from "@/components/navbar/NavbarBeyoutiful";
+import NavbarServices from "@/components/navbar/NavbarServices";
 
 
 
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
       >
-        <NavbarBeyoutiful />
+        <NavbarServices />
         {children}
 
       </body>

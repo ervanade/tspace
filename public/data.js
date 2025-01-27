@@ -43,17 +43,17 @@ export const dataGallery = [
 ];
 
 export const dataServices = [
-    { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/", image: "/assets/beyoutiful/bedah-plastik.jpg" },
-    { name: "Treatment Estetika", name_en: "Aesthetic Treatment", link: "/", image: "/assets/beyoutiful/estetika.png" },
+    { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/beyoutiful/services/bedah-plastik", image: "/assets/beyoutiful/bedah-plastik.jpg" },
+    { name: "Treatment Estetika", name_en: "Aesthetic Treatment", link: "/beyoutiful/services/treatment-estetika", image: "/assets/beyoutiful/estetika.png" },
     {
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
-        link: "/", image: "/assets/beyoutiful/faciliy-5.png",
+        link: "/beyoutiful/services/hyperbaric-oxygen-therapy", image: "/assets/beyoutiful/faciliy-5.png",
     },
-    { name: "Urologi", name_en: "Urology", link: "/", image: "/assets/beyoutiful/urologi.png" },
-    { name: "Vaskular", name_en: "Vascular", link: "/", image: "/assets/beyoutiful/services-1.png" },
-    { name: "Gizi", name_en: "Nutrition", link: "/", image: "/assets/beyoutiful/services-4.png" },
-    { name: "Radiologi", name_en: "Radiology", link: "/", image: "/assets/beyoutiful/services-3.png" },
+    { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
+    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/services-1.png" },
+    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/services-4.png" },
+    { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/services-3.png" },
 ];
 
 export const serviceDetails = [
