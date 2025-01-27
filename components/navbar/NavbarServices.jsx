@@ -286,7 +286,7 @@ const NavbarServices = () => {
             <>
               {item.name === "T-Space" ? (
                 <Link
-                  href={`/beyoutiful?lang=${lang}`}
+                  href={`/?lang=${lang}`}
                   className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
                 >
                   {item.name}
@@ -314,33 +314,13 @@ const NavbarServices = () => {
                   )}
                 </div>
               ) : (
-                <button
+                <Link
+                  href={`${item.link}`}
                   key={item.id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChangeLang(lang); // Update language in query params
-                    const elementId = item.link.replace("/beyoutiful#", ""); // Extract ID from link
-                    const element = document.getElementById(elementId);
-                    if (element) {
-                      const headerHeight =
-                        document.querySelector("header")?.offsetHeight || 0;
-                      const elementPosition =
-                        element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
-                      const adjustedPosition =
-                        elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
-                      window.scrollTo({
-                        top: adjustedPosition,
-                        behavior: "smooth",
-                      });
-                      history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
-                    } else {
-                      console.warn(`Element with ID ${elementId} not found`);
-                    }
-                  }}
                   className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
                 >
                   {item.name}
-                </button>
+                </Link>
               )}
             </>
           ))}

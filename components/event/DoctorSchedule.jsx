@@ -194,7 +194,7 @@ const DoctorSchedule = ({ bg }) => {
         {/* Calendar */}
 
         <div className="mb-6">
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 overflow-x-auto whitespace-nowrap !no-scrollbar">
             {categories.map((category, index) => (
               <button
                 key={index}

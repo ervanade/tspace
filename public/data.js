@@ -599,3 +599,88 @@ export const doctors = [
 ];
 
 
+export const articles = [
+    {
+        title: "Artikel Pertama",
+        title_en: "First Article",
+        image: "/assets/article-1.png",
+        content: "<p>Ini adalah konten artikel pertama dalam bahasa Indonesia.</p><p><strong>Paragraf tambahan.</strong></p>",
+        content_en: "<p>This is the content of the first article in English.</p><p><strong>Additional paragraph.</strong></p>",
+        slug: "artikel-pertama",
+        link: "/articles/artikel-pertama"
+    },
+    {
+        title: "Artikel Kedua",
+        title_en: "Second Article",
+        image: "/assets/article-2.png",
+        content: "<p>Ini adalah konten artikel kedua dalam bahasa Indonesia.</p><ul><li>Poin pertama</li><li>Poin kedua</li></ul>",
+        content_en: "<p>This is the content of the second article in English.</p><ul><li>First point</li><li>Second point</li></ul>",
+        slug: "artikel-kedua",
+        link: "/articles/artikel-kedua"
+    },
+    {
+        title: "Artikel Ketiga",
+        title_en: "Third Article",
+        image: "/assets/article-3.png",
+        content: "<p>Konten untuk artikel ketiga dengan <a href='#'>link</a> tambahan.</p>",
+        content_en: "<p>Content for the third article with an <a href='#'>additional link</a>.</p>",
+        slug: "artikel-ketiga",
+        link: "/articles/artikel-ketiga"
+    },
+    {
+        title: "Artikel Keempat",
+        title_en: "Fourth Article",
+        image: "/assets/article-1.png",
+        content: "<p>Konten artikel keempat dengan gambar dan list:</p><ol><li>Item pertama</li><li>Item kedua</li></ol>",
+        content_en: "<p>Fourth article content with image and list:</p><ol><li>First item</li><li>Second item</li></ol>",
+        slug: "artikel-keempat",
+        link: "/articles/artikel-keempat"
+    },
+    {
+        title: "Artikel Kelima",
+        title_en: "Fifth Article",
+        image: "/assets/article-2.png",
+        content: "<p>Ini adalah konten artikel kelima dalam format HTML.</p>",
+        content_en: "<p>This is the fifth article content in HTML format.</p>",
+        slug: "artikel-kelima",
+        link: "/articles/artikel-kelima"
+    },
+    {
+        title: "Artikel Keenam",
+        title_en: "Sixth Article",
+        image: "/assets/article-3.png",
+        content: "<p>Artikel keenam dengan <strong>teks tebal</strong> dan <em>teks miring</em>.</p>",
+        content_en: "<p>Sixth article with <strong>bold text</strong> and <em>italic text</em>.</p>",
+        slug: "artikel-keenam",
+        link: "/articles/artikel-keenam"
+    },
+    {
+        title: "Artikel Ketujuh",
+        title_en: "Seventh Article",
+        image: "/assets/article-1.png",
+        content: "<p>Konten artikel ketujuh untuk penggunaan internal.</p>",
+        content_en: "<p>Seventh article content for internal use.</p>",
+        slug: "artikel-ketujuh",
+        link: "/articles/artikel-ketujuh"
+    },
+    {
+        title: "Artikel Kedelapan",
+        title_en: "Eighth Article",
+        image: "/assets/article-2.png",
+        content: "<p>Artikel kedelapan dengan fokus pada <span style='color:red;'>warna teks</span>.</p>",
+        content_en: "<p>Eighth article focusing on <span style='color:red;'>text color</span>.</p>",
+        slug: "artikel-kedelapan",
+        link: "/articles/artikel-kedelapan"
+    },
+    {
+        title: "Artikel Kesembilan",
+        title_en: "Ninth Article",
+        image: "/assets/article-3.png",
+        content: "<p>Artikel kesembilan dengan penambahan kode:</p><pre><code>console.log('Hello, World!');</code></pre>",
+        content_en: "<p>Ninth article with code snippet:</p><pre><code>console.log('Hello, World!');</code></pre>",
+        slug: "artikel-kesembilan",
+        link: "/articles/artikel-kesembilan"
+    }
+];
+
+

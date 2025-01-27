@@ -302,7 +302,7 @@ const NavbarBeyoutiful = () => {
             <>
               {item.name === "T-Space" ? (
                 <Link
-                  href={`/beyoutiful?lang=${lang}`}
+                  href={`/?lang=${lang}`}
                   className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
                 >
                   {item.name}

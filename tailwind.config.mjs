@@ -27,7 +27,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        secondary: "#E0582A"
+        secondary: "#E0582A",
+        dark: "#303638"
       },
       fontFamily: {
         bebas: ['var(--font-bebas-neue)'],

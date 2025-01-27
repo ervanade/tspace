@@ -6,9 +6,12 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { articles } from "@/public/data";
 
 const RecomendedArticles = ({ data }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const tvPromotions = [
     {
@@ -82,12 +85,12 @@ const RecomendedArticles = ({ data }) => {
               prevEl: ".gallery-button-prev",
             }}
           >
-            {tvPromotions.map((category, index) => (
+            {articles.slice(0, 6).map((article, index) => (
               <SwiperSlide className="mr-2" key={index}>
                 <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl ">
                   <div className="relative h-56 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-t-lg bg-blue-gray-500 shadow-blue-gray-500/40">
                     <Image
-                      src={category.image}
+                      src={article.image}
                       alt="card-image"
                       fill
                       className="object-cover"
@@ -105,12 +108,13 @@ const RecomendedArticles = ({ data }) => {
                     </p>
                   </div>
                   <div className="p-6 pt-0">
-                    <button
+                    <Link
+                      href={`/articles/${article.slug}?lang=${lang}`}
                       className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                       type="button"
                     >
                       Read More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </SwiperSlide>
@@ -124,9 +128,12 @@ const RecomendedArticles = ({ data }) => {
           </Swiper>
         )}
         <div className="flex justify-end mt-8">
-          <button className="bg-[#fff] text-[#303638] px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold">
+          <Link
+            href={`/articles?lang=${lang}`}
+            className="bg-[#fff] text-[#303638] px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
+          >
             View More
-          </button>
+          </Link>
         </div>
       </div>
     </div>
