@@ -149,9 +149,9 @@ const NavbarServices = () => {
                   <button
                     className={`text-center ${
                       color
-                        ? "text-textDark hover:text-black"
+                        ? "font-semibold text-black"
                         : "text-[#f1efefce] hover:text-white"
-                    } text-sm`}
+                    } text-sm `}
                   >
                     {item.name}
                   </button>

@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
 const Facility = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -125,6 +125,10 @@ const Facility = ({ title, subTitle }) => {
               }}
               spaceBetween={10}
               modules={[Navigation]}
+              navigation={{
+                nextEl: ".gallery-button-next",
+                prevEl: ".gallery-button-prev",
+              }}
               // navigation={true}
               // onSwiper={(swiper) => console.log(swiper)}
               // onSlideChange={() => console.log("slide change")}
@@ -156,6 +160,12 @@ const Facility = ({ title, subTitle }) => {
                     </SwiperSlide>
                   ))
                 : ""}
+              <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                <FaChevronLeft className="text-xl" />
+              </div>
+              <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                <FaChevronRight className="text-xl" />
+              </div>
             </Swiper>
           )}
           {isPopupOpen && selectedItem && (

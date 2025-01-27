@@ -14,7 +14,7 @@ import {
   A11y,
   Autoplay,
 } from "swiper/modules";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { dataServices } from "@/public/data";
 const Services = ({ title, subTitle, bg }) => {
@@ -140,6 +140,10 @@ const Services = ({ title, subTitle, bg }) => {
               }}
               spaceBetween={8}
               modules={[Navigation, Autoplay]} // Add Autoplay module
+              navigation={{
+                nextEl: ".gallery-button-next",
+                prevEl: ".gallery-button-prev",
+              }}
               autoplay={{
                 delay: 3000, // 3 seconds
                 disableOnInteraction: false, // Keeps autoplay running after user interaction
@@ -177,7 +181,7 @@ const Services = ({ title, subTitle, bg }) => {
 
                           <Link
                             href={`${item.link}?lang=${lang}`}
-                            className="mt-4 py-2.5 px-6 text-base font-bold  rounded-full bg-white text-secondary border shadow-md hover:shadow-lg hover:opacity-90 transition-all"
+                            className="mt-2 py-2.5 px-6 text-base font-bold  rounded-full bg-white text-secondary border shadow-md hover:shadow-lg hover:opacity-90 transition-all"
                           >
                             Rincian
                           </Link>
@@ -186,6 +190,12 @@ const Services = ({ title, subTitle, bg }) => {
                     </SwiperSlide>
                   ))
                 : ""}
+              <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                <FaChevronLeft className="text-xl" />
+              </div>
+              <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                <FaChevronRight className="text-xl" />
+              </div>
             </Swiper>
           )}
           {isPopupOpen && selectedItem && (
