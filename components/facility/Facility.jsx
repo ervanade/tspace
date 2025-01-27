@@ -83,7 +83,7 @@ const Facility = ({ title, subTitle }) => {
   return (
     <div
       className="w-full bg-white bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-textDark scroll-mt-12"
-      id="rent-space"
+      id="facility"
     >
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
         <div className="mb-12">

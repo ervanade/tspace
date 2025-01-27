@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaLocationPin } from "react-icons/fa6";
 import { useSelector } from "react-redux";
+import { doctors } from "@/public/data";
 const doctorSchedules = [
   {
     id: 1,
@@ -153,6 +154,17 @@ const DoctorSchedule = ({ bg }) => {
     startIndex,
     startIndex + eventsPerPage
   );
+  const [activeTab, setActiveTab] = useState("Surgery");
+
+  const categories = [...new Set(doctors.map((doctor) => doctor.kategori))];
+
+  const handleTabClick = (category) => {
+    setActiveTab(category);
+  };
+  const filteredDoctors = doctors.filter(
+    (doctor) => doctor.kategori === activeTab
+  );
+
   return (
     <section
       className={`w-full ${
@@ -174,57 +186,49 @@ const DoctorSchedule = ({ bg }) => {
         >
           {lang === "en"
             ? "View our doctor's schedules and book your consultation online today."
-            : "Ind: Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
+            : "Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
         </p>
       </div>
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         {/* Calendar */}
 
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {paginatedEvents.map((event) => (
-            <div
-              key={event.id}
-              className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition"
-            >
-              <h3 className="text-lg font-semibold text-orange-600">
-                {event.title}
-              </h3>
-              <p className="text-sm text-gray-600">{event.subtitle}</p>
-              <div className="mt-2 text-gray-800 text-sm space-y-2">
-                <p className="flex items-center">
-                  <FaCalendar className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.day}, {event.doctor}
-                </p>
-                <p className="flex items-center">
-                  <FaLocationPin className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.location}
-                </p>
-                <p className="flex items-center">
-                  <FaClock className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.time}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="mb-6">
+          <div className="flex space-x-4">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                className={`px-4 py-2 text-sm font-semibold rounded-lg ${
+                  activeTab === category
+                    ? "bg-orange-600 text-white"
+                    : "bg-gray-200 text-textDark"
+                }`}
+                onClick={() => handleTabClick(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-8 flex justify-center gap-4">
-          {currentPage > 0 && (
-            <button
-              className="px-4 py-2 bg-[#fff] text-[#303638] rounded-lg shadow font-bold"
-              onClick={handlePrevious}
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filteredDoctors.map((doctor) => (
+            <div
+              key={doctor.id}
+              className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer"
             >
-              Previous
-            </button>
-          )}
-          {startIndex + eventsPerPage < doctorSchedules.length && (
-            <button
-              className="px-4 py-2 bg-[#fff] text-[#303638] rounded-lg shadow font-bold"
-              onClick={handleNext}
-            >
-              Next
-            </button>
-          )}
+              <h3 className="text-lg font-semibold text-orange-600 mb-2">
+                {doctor.nama}
+              </h3>
+              <p className="text-sm text-gray-600 font-semibold">
+                {doctor.subKategori}
+              </p>
+              <p className="text-sm text-gray-600">{doctor.jadwal}</p>
+              {/* <div className="mt-2 text-gray-800 text-sm">
+                <p>Born: {doctor.tanggalLahir}</p>
+                <p>Religion: {doctor.agama}</p>
+              </div> */}
+            </div>
+          ))}
         </div>
       </div>
     </section>

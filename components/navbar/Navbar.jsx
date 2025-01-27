@@ -38,12 +38,12 @@ const Navbar = () => {
 
   const navbarMenu = [
     { id: 1, name: "Home", link: "/#hero" },
-    { id: 1, name: "Beyoutiful", link: "/#hero" },
-    { id: 4, name: "Gallery", link: "/#gallery" },
-    { id: 2, name: "Rent Space", link: "/#rent-space" },
-    { id: 6, name: "Our Tenant", link: "/#our-tenant" },
-    { id: 3, name: "Articles", link: "/#articles" },
-    { id: 5, name: "Contact Us", link: "/#contact" },
+    { id: 2, name: "Beyoutiful", link: "/#hero" },
+    { id: 3, name: "Gallery", link: "/#gallery" },
+    { id: 4, name: "Rent Space", link: "/#rent-space" },
+    { id: 5, name: "Our Tenant", link: "/#our-tenant" },
+    { id: 6, name: "Articles", link: "/#articles" },
+    { id: 7, name: "Contact Us", link: "/#contact" },
   ];
 
   return (
@@ -118,7 +118,9 @@ const Navbar = () => {
                     color
                       ? "text-textDark hover:text-black"
                       : "text-[#f1efefce] hover:text-white "
-                  } text-sm ${item.name === "Home" ? "font-semibold" : ""}`}
+                  } text-sm ${
+                    item.name === "Home" ? "font-semibold text-white" : ""
+                  }`}
                 >
                   {item.name}
                 </button>

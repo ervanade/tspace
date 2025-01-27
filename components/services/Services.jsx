@@ -16,6 +16,7 @@ import {
 } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { dataServices } from "@/public/data";
 const Services = ({ title, subTitle, bg }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
@@ -91,7 +92,7 @@ const Services = ({ title, subTitle, bg }) => {
       className={`w-full ${
         bg === "light" ? "bg-white text-textDark" : "bg-secondary text-white"
       } bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 scroll-mt-12`}
-      id="rent-space"
+      id="services"
     >
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
         <div className="mb-12">
@@ -144,15 +145,15 @@ const Services = ({ title, subTitle, bg }) => {
                 disableOnInteraction: false, // Keeps autoplay running after user interaction
               }}
             >
-              {dataSpace
-                ? dataSpace.map((item, index) => (
+              {dataServices
+                ? dataServices.map((item, index) => (
                     <SwiperSlide className="" key={index}>
                       <div className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-2 lg:p-4 h-full">
                         {/* Image Section */}
                         <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
                           <Image
-                            src={item.image_mid}
-                            alt={item?.name || "T-Space Gallery"}
+                            src={item.image}
+                            alt={item?.name || "Beyoutiful Service"}
                             sizes="100vw"
                             fill
                             className="object-cover"
@@ -169,7 +170,9 @@ const Services = ({ title, subTitle, bg }) => {
                                 : "!text-white/80"
                             } text-center line-clamp-3 min-h-9 lg:min-h-[56px]`}
                           >
-                            {HTMLDecoderEncoder.decode(item?.name)}
+                            {lang === "en"
+                              ? HTMLDecoderEncoder.decode(item?.name_en)
+                              : HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
                           <button
                             className="mt-4 py-2.5 px-6 text-xs font-bold uppercase rounded-full bg-white text-secondary shadow-md hover:shadow-lg hover:opacity-90 transition-all"

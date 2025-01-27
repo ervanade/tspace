@@ -65,7 +65,7 @@ const AboutBeyoutiful = () => {
         </div>
       </div>
       <a
-        href="https://wa.me/+621181110556
+        href="https://wa.me/+6281519060060
       "
         target="_blank"
         rel="noopener noreferrer"

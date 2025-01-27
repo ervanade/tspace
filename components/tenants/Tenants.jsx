@@ -75,7 +75,7 @@ const Tenants = () => {
     {
       id: "dental",
       title: "BEYOUTIFUL DENTAL CLINIC",
-      image: "/assets/dental.png",
+      image: "/assets/dental-1.png",
       desc: "Berlokasi strategis di dalam T-Space, Beyoutiful Dental Clinic menyediakan akses mudah ke perawatan gigi berkualitas tinggi bagi masyarakat sekitar.",
       desc_en:
         "Conveniently located within T-Space, Beyoutiful Dental Clinic provides easy access to high-quality dental care for our surrounding community.",

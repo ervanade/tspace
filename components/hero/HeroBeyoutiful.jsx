@@ -65,12 +65,15 @@ const HeroBeyoutiful = () => {
                       <p className="text-base sm:text-lg 2xl:text-xl text-white/85 text-left leading-relaxed">
                         {lang === "en" ? item.desc_en : item.desc}
                       </p>
-                      <Link
-                        href="/beyoutiful"
+                      <a
+                        href="https://wa.me/+6281519060060
+                          "
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-block bg-secondary text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
                       >
                         {lang === "en" ? "Consult Now" : "Konsultasi Sekarang"}
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

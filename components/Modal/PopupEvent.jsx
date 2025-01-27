@@ -32,7 +32,7 @@ const PopupEvent = () => {
       subtitle: "Countdown 2025",
       location: "T-Space Rooftop",
       time: "20:00 - 00:30",
-      image: "/hero-2.png",
+      image: "/hero-4.png",
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const PopupEvent = () => {
       subtitle: "Art & Music",
       location: "T-Garden",
       time: "14:00 - 22:00",
-      image: "/hero-2.png",
+      image: "/hero-4.png",
     },
     {
       id: 4,
