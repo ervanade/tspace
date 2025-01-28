@@ -25,25 +25,38 @@ const Facility = ({ title, subTitle }) => {
       image_mid: "/assets/beyoutiful/faciliy-1.png",
       image_map: "/assets/map-hall.png",
     },
-    {
-      id: "40",
-      name: "Poli Dental",
-      price: "Rp. 120.000",
-      opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
-      fasilitas: "Toilet, Sound System, Tables & Chairs",
-      spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
-      image_mid: "/assets/beyoutiful/faciliy-2.png",
-      image_map: "/assets/map-hall.png",
-    },
+
     {
       id: "42",
-      name: "Poli Ginekologi",
+      name: "Ruang VIP",
       price: "Rp. 60.000",
       opsi_acara:
         "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
       spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
-      image_mid: "/assets/beyoutiful/faciliy-3.png",
+      image_mid: "/assets/beyoutiful/vip.png",
+      image_map: "/assets/map-hall.png",
+    },
+    {
+      id: "43",
+      name: "Ruang Operasi",
+      price: "Rp. 120.000",
+      opsi_acara:
+        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs",
+      spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
+      image_mid: "/assets/beyoutiful/operasi.png",
+      image_map: "/assets/map-hall.png",
+    },
+    {
+      id: "44",
+      name: "Pusat Dermatologi",
+      price: "Rp. 120.000",
+      opsi_acara:
+        "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc…",
+      fasilitas: "All T-SPACE AREA",
+      spesifikasi: "Indoor & Outdoor, 3.500m2 ",
+      image_mid: "/assets/beyoutiful/dermatologi.png",
       image_map: "/assets/map-hall.png",
     },
     {
@@ -54,18 +67,18 @@ const Facility = ({ title, subTitle }) => {
         "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
-      image_mid: "/assets/beyoutiful/faciliy-5.png",
+      image_mid: "/assets/beyoutiful/hiperbarik.png",
       image_map: "/assets/map-hall.png",
     },
+
     {
-      id: "44",
-      name: "Poli",
+      id: "40",
+      name: "Dental",
       price: "Rp. 120.000",
-      opsi_acara:
-        "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc…",
-      fasilitas: "All T-SPACE AREA",
-      spesifikasi: "Indoor & Outdoor, 3.500m2 ",
-      image_mid: "/assets/beyoutiful/faciliy-4.png",
+      opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs",
+      spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
+      image_mid: "/assets/beyoutiful/dental.png",
       image_map: "/assets/map-hall.png",
     },
   ];
@@ -141,7 +154,17 @@ const Facility = ({ title, subTitle }) => {
                         key={index}
                       >
                         {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
-                        <Image
+                        <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_mid}
+                            alt={item?.name || "Beyoutiful Facility"}
+                            sizes="100vw"
+                            fill
+                            className="object-cover"
+                            priority={index === 0} // Prioritize first image
+                          />
+                        </div>
+                        {/* <Image
                           src={item.image_mid}
                           width={0}
                           height={0}
@@ -150,7 +173,7 @@ const Facility = ({ title, subTitle }) => {
                           sizes="100vw"
                           className="rounded-xl"
                           style={{ width: "100%", height: "auto" }} // optional
-                        />
+                        /> */}
                         <div className="mt-2 flex flex-col items-center gap-4">
                           <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-textDark text-center line-clamp-3 mt-4">
                             {HTMLDecoderEncoder.decode(item?.name)}
