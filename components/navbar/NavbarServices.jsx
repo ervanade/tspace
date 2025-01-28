@@ -153,7 +153,7 @@ const NavbarServices = () => {
                   <button
                     className={`text-center ${
                       color
-                        ? "text-black font-semibold"
+                        ? "!text-secondary font-semibold"
                         : "text-[#f1efefce] hover:text-white"
                     } text-sm`}
                   >
@@ -185,7 +185,7 @@ const NavbarServices = () => {
                       : "text-[#f1efefce] hover:text-white "
                   } text-sm ${
                     item.name === "Servis Kami"
-                      ? "font-semibold text-black"
+                      ? "font-semibold !text-secondary"
                       : ""
                   }`}
                 >
@@ -271,16 +271,16 @@ const NavbarServices = () => {
           </button>
         </div>
         <div
-          className={`right-navbar z-50 space-y-4 flex flex-col items-center fixed top-0 ${
+          className={`right-navbar z-50 space-y-6 flex flex-col items-center fixed top-0 ${
             menuButton ? "right-0" : "-right-[999px]"
-          } lg:hidden w-full max-w-[300px] py-10 xs:py-16 px-8 xs:px-14 bg-[#303638] text-white h-full duration-300 transition-all ease-in-out`}
+          } lg:hidden w-full max-w-[320px] py-12 px-8 bg-[#fff] text-dark h-full duration-300 transition-all ease-in-out shadow-lg`}
         >
           <button
             className="absolute top-5 right-6"
             onClick={buttonOnChangeClose}
           >
             <FaBars
-              className="text-3xl text-gray-200 hover:text-white "
+              className="text-3xl text-dark hover:text-secondary transition duration-200"
               aria-label="close menu bar button"
             />
           </button>
@@ -290,7 +290,7 @@ const NavbarServices = () => {
                 <Link
                   key={item.id}
                   href={`/?lang=${lang}`}
-                  className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+                  className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
                   {item.name}
                 </Link>
@@ -298,13 +298,13 @@ const NavbarServices = () => {
                 <div className="relative" key={item.id}>
                   <button
                     onClick={() => setMegaMenuOpen((prev) => !prev)}
-                    className="text-xl text-gray-200 hover:text-white font-medium flex items-center"
+                    className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                   >
                     {item.name}
                   </button>
                   {megaMenuOpen && (
                     <div
-                      className="mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2"
+                      className="absolute top-full mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2 z-50 min-w-[200px] max-w-screen-sm"
                       key={item.id}
                     >
                       {subMenu.map((menu, index) => (
@@ -323,7 +323,7 @@ const NavbarServices = () => {
                 <Link
                   href={`${item.link}`}
                   key={item.id}
-                  className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+                  className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
                   {item.name}
                 </Link>
@@ -332,20 +332,20 @@ const NavbarServices = () => {
           ))}
           <div className="relative">
             <button
-              className="flex items-center bg-white text-white rounded px-1 py-2"
+              className="flex items-center gap-2 bg-gray-200 rounded px-3 py-2 hover:bg-orange-500 hover:text-white"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/flag_${lang === "en" ? "us" : "id"}.svg`}
-                width={22}
-                height={16}
+                src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                width={24}
+                height={18}
                 alt="Current Language"
               />
             </button>
             {isDropdownOpen && (
-              <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+              <div className="absolute mt-2 bg-white border rounded shadow-md text-dark z-10">
                 <button
-                  className="flex items-center gap-2 px-1 py-2 hover:bg-gray-100 w-full text-left"
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
                     setIsDropdownOpen(false);
@@ -353,13 +353,13 @@ const NavbarServices = () => {
                 >
                   <Image
                     src="/flag_id.svg"
-                    width={22}
-                    height={16}
+                    width={24}
+                    height={18}
                     alt="Bahasa Indonesia"
                   />
                 </button>
                 <button
-                  className="flex items-center gap-2 px-1 py-2 hover:bg-gray-100 w-full text-left"
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");
                     setIsDropdownOpen(false);
@@ -367,8 +367,8 @@ const NavbarServices = () => {
                 >
                   <Image
                     src="/flag_us.svg"
-                    width={22}
-                    height={16}
+                    width={24}
+                    height={18}
                     alt="English"
                   />
                 </button>

@@ -196,63 +196,69 @@ const Navbar = () => {
           <FaBars className={color ? "text-textDark" : "text-white"} />
         </button>
         <div
-          className={`right-navbar z-50 space-y-4 flex flex-col items-center fixed top-0 ${
+          className={`right-navbar z-50 space-y-6 flex flex-col items-center fixed top-0 ${
             menuButton ? "right-0" : "-right-[999px]"
-          } lg:hidden w-full max-w-[300px] py-10 xs:py-16 px-8 xs:px-14 bg-[#303638] text-white h-full duration-300 transition-all ease-in-out`}
+          } lg:hidden w-full max-w-[320px] py-12 px-8 bg-[#fff] text-dark h-full duration-300 transition-all ease-in-out shadow-lg`}
         >
+          {/* Close Button */}
           <button
             className="absolute top-5 right-6"
             onClick={buttonOnChangeClose}
+            aria-label="Close Menu"
           >
             <FaBars
-              className="text-3xl text-gray-200 hover:text-white "
+              className="text-3xl text-dark hover:text-secondary transition duration-200"
               aria-label="close menu bar button"
             />
           </button>
+
+          {/* Navbar Menu */}
           {navbarMenu.map((item) => (
             <>
               {item.name === "Beyoutiful" ? (
                 <Link
                   key={item.id}
                   href={`/beyoutiful?lang=${lang}`}
-                  className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+                  className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
-                  Beyoutiful{" "}
+                  {item.name}
                 </Link>
               ) : (
                 <button
                   key={item.id}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleChangeLang(lang); // Update language in query params
-                    const elementId = item.link.replace("/#", ""); // Extract ID from link
+                    handleChangeLang(lang);
+                    const elementId = item.link.replace("/#", "");
                     const element = document.getElementById(elementId);
                     if (element) {
                       const headerHeight =
                         document.querySelector("header")?.offsetHeight || 0;
                       const elementPosition =
-                        element.getBoundingClientRect().top + window.scrollY; // Use window.scrollY instead of pageYOffset
+                        element.getBoundingClientRect().top + window.scrollY;
                       const adjustedPosition =
-                        elementPosition - headerHeight - 100; // Adjust offset by reducing 100px
+                        elementPosition - headerHeight - 100;
                       window.scrollTo({
                         top: adjustedPosition,
                         behavior: "smooth",
                       });
-                      history.replaceState(null, "", `#${elementId}`); // Prevent URL hash reload
+                      history.replaceState(null, "", `#${elementId}`);
                     } else {
                       console.warn(`Element with ID ${elementId} not found`);
                     }
                   }}
-                  className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
+                  className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
                   {item.name}
                 </button>
               )}
             </>
           ))}
-          <div className="relative ">
+
+          {/* Language Selector */}
+          <div className="relative">
             <button
-              className="flex items-center bg-white text-white rounded px-2 py-2"
+              className="flex items-center gap-2 bg-gray-200 rounded px-3 py-2 hover:bg-orange-500 hover:text-white"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
@@ -261,14 +267,11 @@ const Navbar = () => {
                 height={18}
                 alt="Current Language"
               />
-              {/* <span className="capitalize">{selectedLang}</span> */}
             </button>
-
-            {/* Dropdown */}
             {isDropdownOpen && (
-              <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
+              <div className="absolute mt-2 bg-white border rounded shadow-md text-dark z-10">
                 <button
-                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
                     setIsDropdownOpen(false);
@@ -282,7 +285,7 @@ const Navbar = () => {
                   />
                 </button>
                 <button
-                  className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");
                     setIsDropdownOpen(false);
@@ -298,12 +301,15 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link href={`/beyoutiful?lang=${lang}`}>
+
+          {/* Logo */}
+          <Link href={`/beyoutiful?lang=${lang}`} className="mt-4">
             <Image
               src="/beyoutiful_orange.png"
               alt="Logo Beyoutiful"
               width={183}
               height={48}
+              className="transition duration-200 transform hover:scale-105"
             />
           </Link>
         </div>

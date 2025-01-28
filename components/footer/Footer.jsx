@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,6 +10,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { FaMessage, FaPhoneFlip } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
   const data = {
@@ -19,6 +21,8 @@ const Footer = () => {
     tokopedia: "",
     shopee: "",
   };
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   return (
     <div className="footer">
       <section className="footer bg-[#1B1D1C] text-white/80 ">
@@ -26,7 +30,7 @@ const Footer = () => {
           <div className="flex justify-around gap-7 flex-col lg:flex-row">
             <div className="center flex-[2_2_0%] space-y-4">
               <ul className="space-y-4">
-                <a href="#hero" className="">
+                <Link href={`/?lang=${lang}`} className="">
                   {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
                   <Image
                     src="/logo_ori_white.svg"
@@ -35,7 +39,7 @@ const Footer = () => {
                     height={75}
                     className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
                   />
-                </a>
+                </Link>
                 <li className="flex items-center gap-2">
                   <FaBuilding size={24} className="!text-2xl" />
                   <span className="text-sm">
@@ -87,35 +91,35 @@ const Footer = () => {
             <div className="center flex-1 space-y-4">
               <ul className="space-y-4 lg:pt-8">
                 <li>
-                  <a
-                    href="#hero"
+                  <Link
+                    href={`/?lang=${lang}`}
                     className="text-sm font-semibold hover:text-white"
                   >
                     HOME
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#rent-space"
+                  <Link
+                    href={`/?lang=${lang}#rent-space`}
                     className="text-sm font-semibold hover:text-white"
                   >
                     RENT SPACE
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/beyoutiful"
+                  <Link
+                    href={`/beyoutiful?lang=${lang}`}
                     className="text-sm font-semibold hover:text-white"
                   >
                     BEYOUTIFUL
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
-                    href="#event"
+                    href={`/?lang=${lang}#our-tenant`}
                     className="text-sm font-semibold hover:text-white"
                   >
-                    EVENT
+                    OUR TENANT
                   </a>
                 </li>
               </ul>
@@ -123,28 +127,28 @@ const Footer = () => {
             <div className="center flex-1 space-y-4">
               <ul className="space-y-4 lg:pt-8">
                 <li>
-                  <a
-                    href="#gallery"
+                  <Link
+                    href={`/?lang=${lang}#gallery`}
                     className="text-sm font-semibold hover:text-white"
                   >
                     GALLERY
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/articles"
+                  <Link
+                    href={`/?lang=${lang}#articles`}
                     className="text-sm font-semibold hover:text-white"
                   >
                     ARTICLES
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#contact"
+                  <Link
+                    href={`/?lang=${lang}#contact`}
                     className="text-sm font-semibold hover:text-white"
                   >
                     CONTACT
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

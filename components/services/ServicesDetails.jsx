@@ -50,7 +50,7 @@ const ServicesDetails = ({ service }) => {
                   key={index}
                   className="text-center p-4 border-2 border-orange-400 bg-slate-50 rounded-lg text-textDark shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-32 h-32 mx-auto overflow-hidden rounded-full relative">
+                  <div className="w-36 h-36 mx-auto overflow-hidden rounded-full relative">
                     <Image
                       src={dokter.dokter_foto}
                       alt={dokter.nama_dokter}
