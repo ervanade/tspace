@@ -48,11 +48,31 @@ const PopupEvent = () => {
       id: 4,
       day: "Fri",
       date: "26 Jan 2025",
-      title: "Tech Meetup",
+      title: "Music Event",
       subtitle: "Future of Tech",
       location: "T-Studio",
       time: "09:00 - 16:00",
       image: "/hero-2.png",
+    },
+    {
+      id: 5,
+      day: "Fri",
+      date: "26 Jan 2025",
+      title: "Tech Meetup",
+      subtitle: "Future of Tech",
+      location: "T-Studio",
+      time: "09:00 - 16:00",
+      image: "/hero-1.png",
+    },
+    {
+      id: 6,
+      day: "Fri",
+      date: "26 Jan 2025",
+      title: "Music & Event",
+      subtitle: "Future of Tech",
+      location: "T-Studio",
+      time: "09:00 - 16:00",
+      image: "/hero-4.png",
     },
   ];
 
@@ -73,7 +93,7 @@ const PopupEvent = () => {
           onClick={() => setIsDrawerOpen(false)}
         >
           <div
-            className="relative max-w-3xl 2xl:max-w-4xl w-[90%] bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[90vh] shadow-lg"
+            className="relative max-w-3xl 2xl:max-w-4xl w-[80%] bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[85vh] shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -84,7 +104,7 @@ const PopupEvent = () => {
             </button>
             <h2 className="header-title !text-secondary">This Week Event</h2>
 
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {events.map((event) => (
                 <div
                   key={event.id}

@@ -25,15 +25,15 @@ export const dataGallery = [
     },
     {
         id: "4",
-        name: " FLOW OF REDEMPTION #1",
-        price: "IDR 25.000.000",
+        name: "Fuchsia Flow",
+        price: "IDR 4.000.000",
         description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
-        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
+        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 30 cm x 30 cm",
         image_mid: "/gallery/FOTO KARYA-07.jpg", // Ganti dengan URL gambar lukisan yang sesuai
     },
     {
         id: "5",
-        name: " FLOW OF REDEMPTION #2",
+        name: " FLOW OF REDEMPTION #1",
         price: "IDR 25.000.000",
         description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
         dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
@@ -173,8 +173,62 @@ export const serviceDetails = [
         id: 2,
         name: "Treatment Estetika",
         name_en: "Aesthetic Treatment",
-        description: "Perawatan estetika untuk kulit dan wajah yang lebih sehat.",
-        description_en: "Aesthetic treatments for healthier skin and face.",
+        description: `
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                         <li>Lip Filler</li>
+                         <li>Chin Filler</li>
+                         <li>Non Surgical Rhinoplasty T-Rejuvv</li>
+                         <li>T-Flex</li>
+                         <li>T-Plasma</li>
+                         <li>T-Hair Plasma</li>
+                         <li>T-Silk</li>
+                         <li>T-Peeling</li>
+                         <li>T-Laser Glow Rejuvenation Cell Booster</li>
+                         <li>Botox Rahang</li>
+                         
+                     </ul>
+                 </div>
+     
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>RF Treatment (Wajah) Botox Dahi & Sudut Mata</li>
+                         <li>RF Treatment Badan</li>
+                         <li>T-Immune/ Superhuman Infusion</li>
+                         <li>PRP G-Spot</li>
+                         <li>Vaginal laser Rejuvenation G Spot Enhancement</li>
+                     </ul>
+                 </div>
+             </div>`,
+        description_en: `
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                         <li>Lip Filler</li>
+                         <li>Chin Filler</li>
+                         <li>Non Surgical Rhinoplasty T-Rejuvv</li>
+                         <li>T-Flex</li>
+                         <li>T-Plasma</li>
+                         <li>T-Hair Plasma</li>
+                         <li>T-Silk</li>
+                         <li>T-Peeling</li>
+                         <li>T-Laser Glow Rejuvenation Cell Booster</li>
+                         <li>Botox Rahang</li>
+                         
+                     </ul>
+                 </div>
+     
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>RF Treatment (Wajah) Botox Dahi & Sudut Mata</li>
+                         <li>RF Treatment Badan</li>
+                         <li>T-Immune/ Superhuman Infusion</li>
+                         <li>PRP G-Spot</li>
+                         <li>Vaginal laser Rejuvenation G Spot Enhancement</li>
+                     </ul>
+                 </div>
+             </div>`,
         slug: "treatment-estetika",
         link: "/",
         image: "/assets/beyoutiful/estetika.png",

@@ -131,6 +131,7 @@ const NavbarBeyoutiful = () => {
             <>
               {item.name === "T-Space" ? (
                 <Link
+                  key={item.id}
                   href={`/?lang=${lang}`}
                   className={`text-center ${
                     color
@@ -143,6 +144,7 @@ const NavbarBeyoutiful = () => {
               ) : item.name === "Servis Kami" ? (
                 <div
                   className="relative"
+                  key={item.id}
                   onMouseEnter={() => setMegaMenuOpen(true)}
                   onMouseLeave={() => setMegaMenuOpen(false)}
                 >
@@ -158,7 +160,10 @@ const NavbarBeyoutiful = () => {
 
                   {/* Mega Menu */}
                   {megaMenuOpen && (
-                    <div className="absolute left-2/3 transform -translate-x-1/2 w-[500px] bg-white text-black shadow-lg p-6 grid grid-cols-2 gap-3 z-50">
+                    <div
+                      key={item.id}
+                      className="absolute left-2/3 transform -translate-x-1/2 w-[500px] bg-white text-black shadow-lg p-6 grid grid-cols-2 gap-3 z-50"
+                    >
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}
@@ -302,13 +307,14 @@ const NavbarBeyoutiful = () => {
             <>
               {item.name === "T-Space" ? (
                 <Link
+                  key={item.id}
                   href={`/?lang=${lang}`}
                   className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
                 >
                   {item.name}
                 </Link>
               ) : item.name === "Servis Kami" ? (
-                <div className="relative">
+                <div className="relative" key={item.id}>
                   <button
                     onClick={() => setMegaMenuOpen((prev) => !prev)}
                     className="text-xl text-gray-200 hover:text-white font-medium flex items-center"
@@ -316,7 +322,10 @@ const NavbarBeyoutiful = () => {
                     {item.name}
                   </button>
                   {megaMenuOpen && (
-                    <div className="mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2">
+                    <div
+                      key={item.id}
+                      className="mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2"
+                    >
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}

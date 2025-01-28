@@ -180,7 +180,7 @@ const Gallery = ({ title, subTitle }) => {
               onClick={() => setIsPopupOpen(false)} // Klik area luar untuk menutup
             >
               <div
-                className="relative bg-white p-4 rounded-lg w-full max-w-4xl overflow-y-auto"
+                className="relative bg-white p-4 rounded-lg w-[80%] max-w-4xl overflow-y-auto"
                 onClick={(e) => e.stopPropagation()} // Cegah penutupan saat gambar diklik
                 style={{ maxHeight: "80vh" }}
               >

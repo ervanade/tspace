@@ -129,10 +129,11 @@ const NavbarServices = () => {
           </Link>
         </div>
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
-          {navbarMenu.map((item) => (
+          {navbarMenu.map((item, index) => (
             <>
               {item.name === "T-Space" ? (
                 <Link
+                  key={item.id}
                   href={`/?lang=${lang}`}
                   className={`text-center ${
                     color
@@ -145,6 +146,7 @@ const NavbarServices = () => {
               ) : item.name === "Servis Kami" ? (
                 <div
                   className="relative"
+                  key={item.id}
                   onMouseEnter={() => setMegaMenuOpen(true)}
                   onMouseLeave={() => setMegaMenuOpen(false)}
                 >
@@ -286,13 +288,14 @@ const NavbarServices = () => {
             <>
               {item.name === "T-Space" ? (
                 <Link
+                  key={item.id}
                   href={`/?lang=${lang}`}
                   className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
                 >
                   {item.name}
                 </Link>
               ) : item.name === "Servis Kami" ? (
-                <div className="relative">
+                <div className="relative" key={item.id}>
                   <button
                     onClick={() => setMegaMenuOpen((prev) => !prev)}
                     className="text-xl text-gray-200 hover:text-white font-medium flex items-center"
@@ -300,7 +303,10 @@ const NavbarServices = () => {
                     {item.name}
                   </button>
                   {megaMenuOpen && (
-                    <div className="mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2">
+                    <div
+                      className="mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2"
+                      key={item.id}
+                    >
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}

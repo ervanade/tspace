@@ -81,6 +81,7 @@ const Navbar = () => {
             <>
               {item.name === "Beyoutiful" ? (
                 <Link
+                  key={item.id}
                   href={`/beyoutiful?lang=${lang}`}
                   className={`text-center ${
                     color
@@ -212,6 +213,7 @@ const Navbar = () => {
             <>
               {item.name === "Beyoutiful" ? (
                 <Link
+                  key={item.id}
                   href={`/beyoutiful?lang=${lang}`}
                   className={`text-xl text-gray-200 hover:text-white font-medium flex items-center`}
                 >
