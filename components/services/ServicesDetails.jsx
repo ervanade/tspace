@@ -13,10 +13,10 @@ const ServicesDetails = ({ service }) => {
           {service.name}
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-8 ">
+        <div className="grid lg:grid-cols-2 gap-6 ">
           {/* Area Deskripsi */}
           <div className="bg-orange-400 rounded-lg p-6 text-white">
-            <h2 className="text-2xl font-semibold mb-5 text-center">
+            <h2 className="text-2xl font-medium mb-5 text-center">
               Service Details
             </h2>
             <div className="aspect-[16/9] w-full overflow-hidden rounded-lg relative mb-4">
@@ -37,10 +37,12 @@ const ServicesDetails = ({ service }) => {
 
           {/* Area Dokter */}
           <div className="bg-orange-400 rounded-lg p-6 text-white">
-            <h2 className="text-2xl font-semibold mb-4 text-center">Dokter</h2>
+            <h2 className="text-2xl font-medium mb-4 text-center">Dokter</h2>
             <div
               className={`grid ${
-                service?.dokter?.length >= 4
+                service?.dokter?.length > 6
+                  ? "sm:grid-cols-3"
+                  : service?.dokter?.length >= 4
                   ? "sm:grid-cols-2"
                   : "sm:grid-cols-1"
               } gap-2`}
@@ -73,9 +75,9 @@ const ServicesDetails = ({ service }) => {
 
         {/* Area Foto Before-After */}
         {service.before_after_foto?.length > 0 && (
-          <div className="mt-10">
+          <div className="mt-6">
             <div className="bg-orange-400 rounded-lg p-6 text-white">
-              <h2 className="text-2xl font-semibold mb-5 text-center">
+              <h2 className="text-2xl font-medium mb-5 text-center">
                 Before After
               </h2>
               <div className="grid grid-cols-1 gap-4">

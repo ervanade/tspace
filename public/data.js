@@ -39,6 +39,46 @@ export const dataGallery = [
         dimensions: "Acrylic, Ink, Tirtha Water on Canvas 110 cm x 150 cm",
         image_mid: "/gallery/FOTO KARYA-09.jpg", // Ganti dengan URL gambar lukisan yang sesuai
     },
+    {
+        id: "6",
+        name: " FLOW OF REDEMPTION #2",
+        price: "IDR 25.000.000",
+        description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 100 cm x 80 cm",
+        image_mid: "/gallery/FOTO KARYA-10.jpg", // Ganti dengan URL gambar lukisan yang sesuai
+    },
+    {
+        id: "7",
+        name: " FLOW OF REDEMPTION #3",
+        price: "IDR 25.000.000",
+        description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 100 cm x 80 cm",
+        image_mid: "/gallery/FOTO KARYA-11.jpg", // Ganti dengan URL gambar lukisan yang sesuai
+    },
+    {
+        id: "8",
+        name: " FLOW OF REDEMPTION #4",
+        price: "IDR 25.000.000",
+        description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 100 cm x 80 cm",
+        image_mid: "/gallery/FOTO KARYA-12.jpg", // Ganti dengan URL gambar lukisan yang sesuai
+    },
+    {
+        id: "9",
+        name: " FLOW OF REDEMPTION #6",
+        price: "IDR 25.000.000",
+        description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 100 cm x 80 cm",
+        image_mid: "/gallery/FOTO KARYA-14.jpg", // Ganti dengan URL gambar lukisan yang sesuai
+    },
+    {
+        id: "10",
+        name: "LINN OF ABLUTION",
+        price: "IDR 25.000.000",
+        description: "Lukisan abstrak yang penuh dengan warna dan emosi.",
+        dimensions: "Acrylic, Ink, Tirtha Water on Canvas 30 cm x 30 cm",
+        image_mid: "/gallery/FOTO KARYA-15.jpg", // Ganti dengan URL gambar lukisan yang sesuai
+    },
     // Tambahkan data lainnya sesuai kebutuhan
 ];
 
@@ -158,15 +198,27 @@ export const serviceDetails = [
                 jadwal_dokter: ["Selasa - Kamis (09.00-15.00)"],
             },
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Senin, Rabu & Jumat (09.00-15.00)", "Selasa, Kamis & Sabtu (09.00-17.00)"],
+                nama_dokter: "dr. Hendra Tri Hartono, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/dr-hendra.jpg",
+                jadwal_dokter: ["Selasa, Rabu & Jumat (09.00-16.00)", "Sabtu (09.00-13.00)"],
             },
             {
-                nama_dokter: "dr. Eko Herihadi, Sp.B.P.R.E",
-                dokter_foto: "/assets/beyoutiful/services/dokter-2.jpg",
-                jadwal_dokter: ["Selasa - Kamis (09.00-15.00)"],
+                nama_dokter: "dr. Puti Adla Runisa,B.Med.Sc, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/dr-puti.jpg",
+                jadwal_dokter: ["Senin, Selasa & Kamis (13.00-16.00)"],
             },
+            {
+                nama_dokter: "dr. Ali Sundoro, Sp.B.P.R.E, SubSp.KM (K)",
+                dokter_foto: "/assets/beyoutiful/services/dr-ali.jpg",
+                jadwal_dokter: ["Jumat & Sabtu (08.00-12.00)"],
+            },
+            {
+                nama_dokter: "dr. Linawati Makmur, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/dr-linawati.jpg",
+                jadwal_dokter: ["Senin & Kamis (09.00-15.00)"],
+            },
+
+
         ],
     },
     {
