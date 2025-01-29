@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,8 +8,11 @@ import {
   FaRegBuilding,
   FaStar,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const ContactBeyoutiful = () => {
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   return (
     <section
       className="py-12 md:py-16 xl:py-20 relative scroll-mt-12 bg-[#fff]"
@@ -41,7 +45,7 @@ const ContactBeyoutiful = () => {
                 className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-secondary text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 type="button"
               >
-                Hubungi Kami
+                {lang === "en" ? "CONTACT US" : "HUBUNGI KAMI"}
               </button>
             </div>
           </div>

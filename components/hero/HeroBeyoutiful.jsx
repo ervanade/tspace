@@ -59,7 +59,7 @@ const HeroBeyoutiful = () => {
                 <div className="absolute inset-0 flex items-center">
                   <div className="mx-auto w-full max-w-7xl px-6 lg:px-24 text-secondary z-10">
                     <div className="w-full lg:w-2/3 space-y-4 lg:space-y-8">
-                      <p className="text-3xl lg:text-[40px] 2xl:text-[48px] text-left leading-tight font-semibold">
+                      <p className="text-3xl lg:text-[40px] 2xl:text-[48px] text-[#F5F5F5] text-left leading-tight font-semibold">
                         {lang === "en" ? item.title_en : item.title}
                       </p>
                       <p className="text-base sm:text-lg 2xl:text-xl text-white/85 text-left leading-relaxed">

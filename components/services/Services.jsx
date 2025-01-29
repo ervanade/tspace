@@ -183,7 +183,7 @@ const Services = ({ title, subTitle, bg }) => {
                             href={`${item.link}?lang=${lang}`}
                             className="mt-2 py-2.5 px-6 text-xs sm:text-base font-bold  rounded-full bg-white text-secondary border shadow-md hover:shadow-lg hover:opacity-90 transition-all"
                           >
-                            Rincian
+                            {lang === "en" ? "More" : "Rincian"}
                           </Link>
                         </div>
                       </div>
