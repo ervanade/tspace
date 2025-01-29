@@ -32,7 +32,7 @@ const Tenants = () => {
         "Conveniently located within T-Space, Beyoutiful Dental Clinic provides easy access to high-quality dental care for our surrounding community.",
       link_web: "https://www.instagram.com/dental.beyoutiful/?hl=en",
       link_wa: "https://wa.me/+6281222812023",
-      logo: "/assets/dental_logo.sxv",
+      logo: "/assets/dental_logo.svg",
     },
   };
 
