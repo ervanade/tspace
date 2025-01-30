@@ -172,26 +172,26 @@ const DoctorSchedule = ({ bg }) => {
       } bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 scroll-mt-12`}
       id="doctor-schedules"
     >
-      <div className="mb-12">
-        <h1
-          className={`title-beyoutiful ${
-            bg === "light" ? "!text-secondary" : "!text-white"
-          }  !font-semibold`}
-        >
-          {lang === "en" ? "Doctor Schedule" : "Jadwal Dokter"}
-        </h1>
-        <p
-          className={`${
-            bg === "light" ? "!text-textDark/80" : "!text-white/80"
-          } sub-title`}
-        >
-          {lang === "en"
-            ? "View our doctor's schedules and book your consultation online today."
-            : "Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
-        </p>
-      </div>
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         {/* Calendar */}
+        <div className="mb-12">
+          <h1
+            className={`title-beyoutiful !text-left ${
+              bg === "light" ? "!text-secondary" : "!text-white"
+            }  !font-semibold`}
+          >
+            {lang === "en" ? "Doctor Schedule" : "Jadwal Dokter"}
+          </h1>
+          <p
+            className={`${
+              bg === "light" ? "!text-textDark/80" : "!text-white/80"
+            } sub-title !text-left`}
+          >
+            {lang === "en"
+              ? "View our doctor's schedules and book your consultation online today."
+              : "Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
+          </p>
+        </div>
 
         <div className="mb-6">
           <div className="flex space-x-4 overflow-x-auto whitespace-nowrap !no-scrollbar">

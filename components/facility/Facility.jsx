@@ -100,10 +100,10 @@ const Facility = ({ title, subTitle }) => {
     >
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
         <div className="mb-12">
-          <h1 className="title-beyoutiful !text-secondary !font-semibold !text-end">
+          <h1 className="title-beyoutiful !text-secondary !font-semibold !text-left">
             {lang === "en" ? "Our Facility" : "Fasilitas Kami"}
           </h1>
-          <p className="!text-textDark/80 sub-title !text-end">
+          <p className="!text-textDark/80 sub-title !text-left">
             {lang === "en"
               ? "Experience our modern facilities and comfortable environment to ensure your comfort and privacy"
               : "Nikmati pengalaman treatment dengan fasilitas modern dan lingkungan yang nyaman untuk menjamin kenyamanan dan privasi Anda"}

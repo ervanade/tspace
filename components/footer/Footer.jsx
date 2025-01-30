@@ -15,9 +15,17 @@ import { useSelector } from "react-redux";
 const Footer = () => {
   const data = {
     facebook: "",
-    instagram: "",
+    instagram: "https://www.instagram.com/t_spacebintaro/",
     twitter: "",
-    tiktok: "",
+    tiktok: "https://www.tiktok.com/@t_spacebintaro",
+    tokopedia: "",
+    shopee: "",
+  };
+  const dataBeyoutiful = {
+    facebook: "",
+    instagram: "https://www.instagram.com/beyoutiful.aesthetic/",
+    twitter: "",
+    tiktok: "https://www.tiktok.com/@beyoutiful.aesthetic",
     tokopedia: "",
     shopee: "",
   };
@@ -204,7 +212,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={data.facebook || "https://facebook.com"}
+                  href={dataBeyoutiful.facebook || "https://facebook.com"}
                 >
                   <Image
                     src="/assets/icon/facebook-icon.png"
@@ -216,7 +224,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={data.instagram || "https://instagram.com"}
+                  href={dataBeyoutiful.instagram || "https://instagram.com"}
                 >
                   <Image
                     src="/assets/icon/ig-icon.png"
@@ -230,7 +238,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={data.tiktok || "https://tiktok.com"}
+                  href={dataBeyoutiful.tiktok || "https://tiktok.com"}
                 >
                   <Image
                     src="/assets/icon/tiktok-icon.png"

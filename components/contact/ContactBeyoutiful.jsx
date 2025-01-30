@@ -18,7 +18,7 @@ const ContactBeyoutiful = () => {
       className="py-12 md:py-16 xl:py-20 relative scroll-mt-12 bg-[#fff]"
       id="contact"
     >
-      <div className="w-full max-w-6xl px-4 md:px-5 lg:px-5 mx-auto">
+      <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
         <div className="w-full justify-start items-center mt-12 gap-8 grid lg:grid-cols-2 grid-cols-1">
           <div className="order-first lg:order-last relative mx-auto lg:mr-0 w-full h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
@@ -32,7 +32,9 @@ const ContactBeyoutiful = () => {
           </div>
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
-              <h2 className="!text-textDark title-beyoutiful">Contact Us</h2>
+              <h2 className="!text-secondary !font-semibold title-beyoutiful">
+                Contact Us
+              </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 We provide special care for your appearance and beauty. Brief
                 intro about Beyoutiful Aesthetic, focusing on the high standard
