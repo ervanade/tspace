@@ -88,12 +88,12 @@ export const dataServices = [
     {
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
-        link: "/beyoutiful/services/hyperbaric-oxygen-therapy", image: "/assets/beyoutiful/faciliy-5.png",
+        link: "/beyoutiful/services/hyperbaric-oxygen-therapy", image: "/assets/beyoutiful/hbot-1.jpg",
     },
     { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
-    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vascular.png" },
+    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
     { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
-    { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/services-3.png" },
+    { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/radiologi-1.jpg" },
 ];
 
 export const serviceDetails = [
