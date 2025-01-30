@@ -37,8 +37,8 @@ const ContactBeyoutiful = () => {
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 {lang === "en"
-                  ? "We provide special care for your appearance and beauty. Brief intro about Beyoutiful Aesthetic, focusing on the high standard of care, comfort, and the clinic’s aesthetic ambiance."
-                  : "Kami memberikan perawatan khusus untuk penampilan dan kecantikan Anda. Pengantar singkat tentang Beyoutiful Aesthetic, dengan fokus pada standar perawatan yang tinggi, kenyamanan, dan suasana estetika klinik."}
+                  ? "Beyoutiful Aesthetic is your destination for achieving your health and wellness goals, aesthetic or not. Contact us today to schedule a consultation and and experience the Beyoutiful Aesthetic difference."
+                  : "Hubungi kami hari ini untuk menjadwalkan konsultasi dan merasakan pengalaman yang berbeda di Beyoutiful Aesthetic."}
               </p>
             </div>
 

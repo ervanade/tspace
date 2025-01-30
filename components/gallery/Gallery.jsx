@@ -76,7 +76,7 @@ const Gallery = ({ title, subTitle }) => {
   const content = {
     title: "JANMASHTAMI, pameran tunggal Prajna Dewantara",
     title_en: "JANMASHTAMI, solo exhibition Prajna Dewantara",
-    desc: "Tentang seniman: Prajna Dewantara Wirata adalah seniman visual Indonesia asal Bali yang karyanya, ditandai dengan realisme mencolok melalui neo-chiaroscuro dan warna-warna cerah, mengeksplorasi tema keimanan, ketahanan, dan pemberdayaan dengan fokus pada kekuatan jiwa manusia.",
+    desc: "Prajna Dewantara Wirata adalah seniman visual Indonesia asal Bali yang karyanya, ditandai dengan realisme mencolok melalui neo-chiaroscuro dan warna-warna cerah, mengeksplorasi tema keimanan, ketahanan, dan pemberdayaan dengan fokus pada kekuatan jiwa manusia.",
     desc_en:
       "Prajna Dewantara Wirata is an Indonesian visual artist from Bali whose work, characterized by striking realism achieved through neo-chiaroscuro and vibrant colors, explores themes of faith, resilience, and empowerment with a focus on the strength of the human spirit.",
     logo: "/logo_ori.svg",

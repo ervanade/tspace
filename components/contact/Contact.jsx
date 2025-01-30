@@ -35,13 +35,13 @@ const Contact = () => {
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-textDark header-title">
                 {lang === "en"
-                  ? "Rent T-Space Today!"
-                  : "Sewa T-Space Sekarang!"}
+                  ? "COLLABORATION WITH T-SPACE"
+                  : "KOLABORASI DENGAN T-SPACE"}
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 {lang === "en"
-                  ? "Looking to be part of a vibrant community? Whether you’re interested in events, wellness, art, or renting space, we’d love to connect with you."
-                  : "Ingin menjadi bagian dari komunitas yang dinamis? Baik Anda tertarik pada acara, kebugaran, seni, atau menyewa tempat, kami ingin terhubung dengan Anda."}
+                  ? "Interested in holding an event, workshop, or other creative activity at T-Space? We provide spaces and facilities that support various types of collaboration. Contact us for more information."
+                  : "Tertarik untuk mengadakan acara, workshop, atau kegiatan kreatif lainnya di T-Space? Kami menyediakan ruang dan fasilitas yang mendukung berbagai jenis kolaborasi. Hubungi kami untuk informasi lebih lanjut."}
               </p>
             </div>
 

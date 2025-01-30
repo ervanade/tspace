@@ -90,7 +90,7 @@ const Space = ({ title, subTitle }) => {
         </h1>
         <p className="!text-textDark/80 sub-title">
           {lang === "en"
-            ? "Explore our flexible rental options at T-Space. Browse our available spaces and book a tour today"
+            ? "Suitable for your dream events and occasions. Browse through our available spaces and book a tour today!"
             : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space. "}
         </p>
       </div>

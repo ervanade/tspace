@@ -301,7 +301,7 @@ export const serviceDetails = [
         description_en: "Hyperbaric oxygen therapy for wound healing and optimal health.",
         slug: "hyperbaric-oxygen-therapy",
         link: "/",
-        image: "/assets/beyoutiful/faciliy-5.png",
+        image: "/assets/beyoutiful/hbot-1.jpg",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
@@ -315,8 +315,8 @@ export const serviceDetails = [
         id: 4,
         name: "Urologi",
         name_en: "Urology",
-        description: "Perawatan untuk sistem kemih dan kesehatan reproduksi pria.",
-        description_en: "Care for urinary system and men's reproductive health.",
+        description: "Extracorporeal Shockwave Therapy.",
+        description_en: "Extracorporeal Shockwave Therapy.",
         slug: "urologi",
         link: "/",
         image: "/assets/beyoutiful/urologi.png",
@@ -333,11 +333,11 @@ export const serviceDetails = [
         id: 5,
         name: "Vaskular",
         name_en: "Vascular",
-        description: "Layanan untuk perawatan pembuluh darah dan sistem peredaran darah.",
-        description_en: "Services for vascular and circulatory system care.",
+        description: "EVLA - Endovenous Laser Ablation LHP - Laser Hemorrhoidoplasty.",
+        description_en: "EVLA - Endovenous Laser Ablation LHP - Laser Hemorrhoidoplasty.",
         slug: "vaskular",
         link: "/",
-        image: "/assets/beyoutiful/vascular.png",
+        image: "/assets/beyoutiful/vaskular-1.jpg",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
@@ -351,8 +351,8 @@ export const serviceDetails = [
         id: 6,
         name: "Gizi",
         name_en: "Nutrition",
-        description: "Konsultasi dan layanan untuk perbaikan pola makan dan kesehatan gizi.",
-        description_en: "Consultations and services for better diet and nutrition health.",
+        description: "Konsultasi dan layanan untuk perbaikan pola makan dan kesehatan gizi. Konsultasi Gizi+Meal Plan Perkedatangan Nourish + Nutrigenomic.",
+        description_en: "Konsultasi Gizi+Meal Plan Perkedatangan Nourish + Nutrigenomic ",
         slug: "gizi",
         link: "/",
         image: "/assets/beyoutiful/gizi.png",
@@ -373,7 +373,7 @@ export const serviceDetails = [
         description_en: "Radiology services for more accurate diagnosis.",
         slug: "radiologi",
         link: "/",
-        image: "/assets/beyoutiful/services-3.png",
+        image: "/assets/beyoutiful/radiologi-1.jpg",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {

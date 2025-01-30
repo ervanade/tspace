@@ -152,7 +152,7 @@ const Services = ({ title, subTitle, bg }) => {
               {dataServices
                 ? dataServices.map((item, index) => (
                     <SwiperSlide className="" key={index}>
-                      <div className="flex flex-col justify-between gap-4 bg-transparent rounded-xl p-2 lg:p-4 h-full">
+                      <div className="flex flex-col justify-between gap-4 bg-transparent rounded-xl  h-full">
                         {/* Image Section */}
                         <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
                           <Image
@@ -166,7 +166,7 @@ const Services = ({ title, subTitle, bg }) => {
                         </div>
 
                         {/* Text Section */}
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col  items-center">
                           <h3
                             className={`font-montserrat text-[16px] lg:text-[24px] font-medium ${
                               bg === "light"

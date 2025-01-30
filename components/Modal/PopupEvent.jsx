@@ -102,7 +102,7 @@ const PopupEvent = () => {
             >
               ✖
             </button>
-            <h2 className="header-title !text-secondary">This Week Event</h2>
+            <h2 className="header-title !text-secondary">EVENTS THIS WEEK</h2>
 
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {events.map((event) => (

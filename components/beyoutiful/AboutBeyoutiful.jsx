@@ -9,7 +9,7 @@ const AboutBeyoutiful = () => {
     title: "Beyoutiful Aesthetic",
     desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
     desc_en:
-      "Experience the beauty of holistic wellness at Beyoutiful Aesthetic. Our services, ranging from aesthetic surgery to specialized therapies, are designed to enhance your appearance and improve your overall well-being.",
+      "Experience the meeting of your happiness and wellness at Beyoutiful Aesthetic. Our services, ranging from aesthetic surgeries to specialised treatments (non-aesthetic too!), are designed to enhance your look and your overall well-being.",
     logo: "/logo_ori.svg",
   };
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store

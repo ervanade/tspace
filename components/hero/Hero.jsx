@@ -21,28 +21,31 @@ const Hero = () => {
       link: "/",
       image_default: "/hero-4.png",
       title: "RUANG INSPIRATIF UNTUK BERKARYA DAN BERKOLABORASI DI BINTARO",
-      title_en: "INSPIRATIONAL SPACE TO CREATE AND COLLABORATE ",
+      title_en:
+        "THE PLACE TO INSPIRE AND BE INSPIRED IN BINTARO. WHERE CREATIVITY AND COLLABORATION THRIVE.",
       desc: "Temukan ruang untuk berkreasi, dan berkolaborasi di jantung Bintaro.",
       desc_en:
-        "Experience a space to create, connect, and collaborate in the heart of Bintaro.",
+        "Experience the unique space to create, connect, and collaborate in the heart of Bintaro.",
     },
     {
       link: "/",
       image_default: "/hero-5.png",
       title: "RUANG INSPIRATIF UNTUK BERKARYA DAN BERKOLABORASI DI BINTARO",
-      title_en: "INSPIRATIONAL SPACE TO CREATE AND COLLABORATE ",
+      title_en:
+        "THE PLACE TO INSPIRE AND BE INSPIRED IN BINTARO. WHERE CREATIVITY AND COLLABORATION THRIVE.",
       desc: "Temukan ruang untuk berkreasi, dan berkolaborasi di jantung Bintaro.",
       desc_en:
-        "Experience a space to create, connect, and collaborate in the heart of Bintaro.",
+        "Experience the unique space to create, connect, and collaborate in the heart of Bintaro.",
     },
     {
       link: "/",
       image_default: "/hero-6.png",
       title: "RUANG INSPIRATIF UNTUK BERKARYA DAN BERKOLABORASI DI BINTARO",
-      title_en: "INSPIRATIONAL SPACE TO CREATE AND COLLABORATE ",
+      title_en:
+        "THE PLACE TO INSPIRE AND BE INSPIRED IN BINTARO. WHERE CREATIVITY AND COLLABORATION THRIVE.",
       desc: "Temukan ruang untuk berkreasi, dan berkolaborasi di jantung Bintaro.",
       desc_en:
-        "Experience a space to create, connect, and collaborate in the heart of Bintaro.",
+        "Experience the unique space to create, connect, and collaborate in the heart of Bintaro.",
     },
   ];
   return (
