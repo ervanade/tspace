@@ -33,12 +33,12 @@ const ContactBeyoutiful = () => {
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-secondary !font-semibold title-beyoutiful">
-                Contact Us
+                {lang === "en" ? "Contact Us" : "Contact Us"}
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                We provide special care for your appearance and beauty. Brief
-                intro about Beyoutiful Aesthetic, focusing on the high standard
-                of care, comfort, and the clinic’s aesthetic ambiance.
+                {lang === "en"
+                  ? "We provide special care for your appearance and beauty. Brief intro about Beyoutiful Aesthetic, focusing on the high standard of care, comfort, and the clinic’s aesthetic ambiance."
+                  : "Kami memberikan perawatan khusus untuk penampilan dan kecantikan Anda. Pengantar singkat tentang Beyoutiful Aesthetic, dengan fokus pada standar perawatan yang tinggi, kenyamanan, dan suasana estetika klinik."}
               </p>
             </div>
 

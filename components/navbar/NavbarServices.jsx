@@ -117,18 +117,18 @@ const NavbarServices = () => {
       !bg-white text-textDark !top-0 shadow-md navbar-fixed sticky !left-0 w-full z-50 bg-transparent`}
     >
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center font-poppins">
-        <div className="left-navbar mr-auto">
-          <Link href="/#hero">
+        <div className="left-navbar mr-auto py-2 lg:py-0">
+          <Link href={`/beyoutiful?lang=${lang}`}>
             <Image
-              src="/logo_ori.svg"
-              alt="Logo TSpace"
-              width={60}
-              height={75}
-              className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
+              src="/beyoutiful_orange.png"
+              alt="Logo Beyoutiful"
+              width={183}
+              height={48}
+              className="w-[200px] h-[32px] 2xl:w-[200px] 2xl:h-[32px]"
             />
           </Link>
         </div>
-        <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
+        <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-3 xl:space-x-5 hidden items-center">
           {navbarMenu.map((item, index) => (
             <>
               {item.name === "T-Space" ? (
@@ -245,13 +245,13 @@ const NavbarServices = () => {
           </div>
         </div>
         <div className="right-navbar lg:flex hidden ml-auto">
-          <Link href={`/beyoutiful`}>
+          <Link href={`/?lang=${lang}`}>
             <Image
-              src="/beyoutiful_orange.png"
-              alt="Logo Beyoutiful"
-              width={183}
-              height={48}
-              className="w-[162.5px] h-[27px] 2xl:w-[183px] 2xl:h-[30px]"
+              src="/logo_ori.svg"
+              alt="Logo TSpace"
+              width={60}
+              height={75}
+              className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
             />
           </Link>
         </div>
@@ -375,12 +375,13 @@ const NavbarServices = () => {
               </div>
             )}
           </div>
-          <Link href={`/beyoutiful`}>
+          <Link href={`/?lang=${lang}`}>
             <Image
-              src="/beyoutiful_orange.png"
-              alt="Logo Beyoutiful"
-              width={183}
-              height={48}
+              src="/logo_ori.svg"
+              alt="Logo TSpace"
+              width={60}
+              height={75}
+              className="w-[60px] h-[75px]"
             />
           </Link>
         </div>

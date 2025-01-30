@@ -47,7 +47,7 @@ const NavbarArticles = () => {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center">
         <div className="left-navbar mr-auto">
           {color ? (
-            <Link href="/#hero">
+            <Link href={`/?lang=${lang}#hero`}>
               <Image
                 src="/logo_ori.svg"
                 alt="Logo TSpace"

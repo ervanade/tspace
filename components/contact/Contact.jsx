@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,8 +9,11 @@ import {
   FaRegBuilding,
   FaStar,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Contact = () => {
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
   return (
     <section
       className="py-12 md:py-16 xl:py-20 relative scroll-mt-12 bg-[#E9E9E9]"
@@ -29,12 +34,14 @@ const Contact = () => {
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-textDark header-title">
-                Rent T-Space Today!
+                {lang === "en"
+                  ? "Rent T-Space Today!"
+                  : "Sewa T-Space Sekarang!"}
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                Looking to be part of a vibrant community? Whether you’re
-                interested in events, wellness, art, or renting space, we’d love
-                to connect with you.{" "}
+                {lang === "en"
+                  ? "Looking to be part of a vibrant community? Whether you’re interested in events, wellness, art, or renting space, we’d love to connect with you."
+                  : "Ingin menjadi bagian dari komunitas yang dinamis? Baik Anda tertarik pada acara, kebugaran, seni, atau menyewa tempat, kami ingin terhubung dengan Anda."}
               </p>
             </div>
 
@@ -43,7 +50,7 @@ const Contact = () => {
                 className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 type="button"
               >
-                Hubungi Kami
+                {lang === "en" ? "CONTACT US" : "HUBUNGI KAMI"}
               </button>
             </div>
           </div>

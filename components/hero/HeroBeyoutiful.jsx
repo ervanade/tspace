@@ -12,7 +12,8 @@ import Link from "next/link";
 import Image from "next/image";
 import "./Hero.css";
 import { useSelector } from "react-redux";
-
+import parse from "html-react-parser";
+const HTMLDecoderEncoder = require("html-encoder-decoder");
 const HeroBeyoutiful = () => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
@@ -20,12 +21,12 @@ const HeroBeyoutiful = () => {
     {
       link: "/beyoutiful",
       image_default: "/assets/beyoutiful/hero-beyoutiful-4.png",
-      title: "Rasakan perbedaan transformasional di Beyoutiful Aesthetic",
+      title: `<span>Rasakan perbedaan transformasional di<br /> Beyoutiful Aesthetic</span>`,
       title_en:
         "Experience the transformational difference at Beyoutiful Aesthetic",
-      desc: "Dengan pendekatan holistik kami yang berfokus pada kesejahteraan Anda secara menyeluruh, menggabungkan teknik mutakhir dengan perawatan yang didesain khusus.. #wherehealthandhappinessmeet",
+      desc: "Dengan pendekatan holistik kami yang berfokus pada kesejahteraan Anda secara menyeluruh, menggabungkan teknik mutakhir dengan perawatan yang didesain khusus.",
       desc_en:
-        "Our holistic approach focuses on your overall well-being, combining cutting-edge techniques with personalized care. #wherehealthandhappinessmeet",
+        "Our holistic approach focuses on your overall well-being, combining cutting-edge techniques with personalized care.",
     },
   ];
   return (
@@ -58,12 +59,17 @@ const HeroBeyoutiful = () => {
 
                 <div className="absolute inset-0 flex items-center">
                   <div className="mx-auto w-full max-w-7xl px-6 lg:px-24 text-secondary z-10">
-                    <div className="w-full lg:w-2/3 space-y-4 lg:space-y-8">
+                    <div className="w-full lg:w-[70%] space-y-4 lg:space-y-8">
                       <p className="text-3xl lg:text-[40px] 2xl:text-[48px] text-[#F5F5F5] text-left leading-tight font-semibold">
-                        {lang === "en" ? item.title_en : item.title}
+                        {lang === "en"
+                          ? parse(HTMLDecoderEncoder.decode(item?.title_en))
+                          : parse(HTMLDecoderEncoder.decode(item?.title))}
                       </p>
                       <p className="text-base sm:text-lg 2xl:text-xl text-white/85 text-left leading-relaxed">
-                        {lang === "en" ? item.desc_en : item.desc}
+                        {lang === "en" ? item.desc_en : item.desc}{" "}
+                        <span className="text-lg sm:text-xl 2xl:text-2xl  font-medium">
+                          #wherehealthandhappinessmeet
+                        </span>
                       </p>
                       <a
                         href="https://wa.me/+6281519060060

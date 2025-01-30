@@ -104,7 +104,7 @@ const Tenants = () => {
       <div className="w-full max-w-6xl px-4 md:px-5 lg:px-5 mx-auto">
         <div className="mb-16">
           <h1 className="header-title !text-textDark">
-            {lang === "en" ? "Our Tenant" : "Tenant Kamu"}
+            {lang === "en" ? "Our Tenants" : "Tenant Kami"}
           </h1>
           <p className="sub-title">
             {lang === "en"
