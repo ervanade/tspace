@@ -84,7 +84,7 @@ const ServicesDetails = ({ service }) => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
-    <section className="py-12 bg-orange-50">
+    <section className="py-12 bg-white">
       <div className="w-full max-w-7xl px-4 md:px-6 lg:px-8 mx-auto">
         {/* Judul Layanan */}
         <h2 className="text-center text-2xl !font-bold !text-secondary  lg:!mb-12 title-beyoutiful">
@@ -93,7 +93,7 @@ const ServicesDetails = ({ service }) => {
 
         <div className="grid lg:grid-cols-2 gap-6 ">
           {/* Area Deskripsi */}
-          <div className="bg-orange-400 rounded-lg p-6 text-white">
+          <div className="bg-white rounded-lg p-6 text-dark">
             <h2 className="text-2xl font-medium mb-5 text-center">
               Service Details
             </h2>
@@ -114,7 +114,7 @@ const ServicesDetails = ({ service }) => {
           </div>
 
           {/* Area Dokter */}
-          <div className="bg-orange-400 rounded-lg p-6 text-white">
+          <div className="bg-white rounded-lg p-6 text-dark">
             <h2 className="text-2xl font-medium mb-4 text-center">Dokter</h2>
             <div
               className={`grid ${
@@ -128,7 +128,7 @@ const ServicesDetails = ({ service }) => {
               {service?.dokter?.map((dokter, index) => (
                 <div
                   key={index}
-                  className="text-center p-4 border-2 border-orange-400 bg-slate-50 rounded-lg text-dark shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="text-center p-4 border-2  bg-secondary rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="w-36 h-36 mx-auto overflow-hidden rounded-full relative">
                     <Image
@@ -154,7 +154,7 @@ const ServicesDetails = ({ service }) => {
         {/* Area Foto Before-After */}
         {service.before_after_foto?.length > 0 && (
           <div className="mt-6">
-            <div className="bg-orange-400 rounded-lg p-6 text-white">
+            <div className="bg-white rounded-lg p-6 text-dark">
               <h2 className="text-2xl font-medium mb-5 text-center">
                 Before After
               </h2>
@@ -225,7 +225,7 @@ const ServicesDetails = ({ service }) => {
                                         style={{ width: "100%", height: "auto" }} // optional
                                       /> */}
                                 <div className="mt-2 flex flex-col items-center gap-4">
-                                  <h3 className="recomended-title font-montserrat text-[20px] font-medium text-white text-center line-clamp-3 mt-4">
+                                  <h3 className="recomended-title font-montserrat text-[20px] font-medium text-dark text-center line-clamp-3 mt-4">
                                     {HTMLDecoderEncoder.decode(item?.name)}
                                   </h3>
                                 </div>

@@ -73,7 +73,7 @@ const About = () => {
 "
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-white text-textDark p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
+        className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
       >
         <FaWhatsapp className="h-6 w-6" />
         <span className="hidden md:inline font-medium">

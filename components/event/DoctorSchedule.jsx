@@ -200,7 +200,7 @@ const DoctorSchedule = ({ bg }) => {
                 key={index}
                 className={`px-4 py-2 text-sm font-semibold rounded-lg ${
                   activeTab === category
-                    ? "bg-orange-600 text-white"
+                    ? "bg-secondary text-white"
                     : "bg-gray-200 text-textDark"
                 }`}
                 onClick={() => handleTabClick(category)}
@@ -215,15 +215,15 @@ const DoctorSchedule = ({ bg }) => {
           {filteredDoctors.map((doctor) => (
             <div
               key={doctor.id}
-              className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer"
+              className="bg-secondary rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer"
             >
-              <h3 className="text-lg font-semibold text-orange-600 mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 {doctor.nama}
               </h3>
-              <p className="text-sm text-gray-600 font-semibold">
+              <p className="text-sm text-white font-semibold">
                 {doctor.subKategori}
               </p>
-              <p className="text-sm text-gray-600">{doctor.jadwal}</p>
+              <p className="text-sm text-white">{doctor.jadwal}</p>
               {/* <div className="mt-2 text-gray-800 text-sm">
                 <p>Born: {doctor.tanggalLahir}</p>
                 <p>Religion: {doctor.agama}</p>

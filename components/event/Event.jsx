@@ -6,8 +6,10 @@ import {
   FaCalendar,
   FaClock,
   FaMap,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { FaLocationPin } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 const events = [
   {
     id: 1,
@@ -85,6 +87,7 @@ const events = [
 
 const Event = () => {
   const [hoveredDate, setHoveredDate] = useState(null);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const daysInMonth = 31; // Sesuaikan dengan jumlah hari di bulan
   const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
@@ -202,6 +205,18 @@ const Event = () => {
                 <FaClock className="h-5 w-5 text-textDark mr-2" />
                 {getEventByDate(hoveredDate)?.time || "No Event"}
               </p>
+              <a
+        href="https://wa.me/+621181110556
+"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 text-sm bg-green-500 text-white py-3 px-4 rounded-full shadow-lg transition duration-300 inline-flex items-center gap-2"
+      >
+        <FaWhatsapp className="h-6 w-6" />
+        <span className="hidden md:inline font-medium">
+          {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+        </span>
+      </a>
             </div>
           ) : (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg h-20">
