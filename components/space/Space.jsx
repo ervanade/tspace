@@ -86,12 +86,12 @@ const Space = ({ title, subTitle }) => {
     >
       <div className="mb-12">
         <h1 className="header-title !text-textDark">
-          {lang === "en" ? "Rent Space" : "Rent Space"}
+          {lang === "en" ? "RenT-Space" : "RenT-Space"}
         </h1>
         <p className="!text-textDark/80 sub-title">
           {lang === "en"
             ? "Suitable for your dream events and occasions. Browse through our available spaces and book a tour today!"
-            : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space. "}
+            : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space"}
         </p>
       </div>
 
@@ -155,6 +155,7 @@ const Space = ({ title, subTitle }) => {
                             {HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
                           <button
+                            aria-label="button"
                             className="align-middle select-none font-poppins font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#303638] text-[#fff] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                             type="button"
                             onClick={() => {
@@ -187,6 +188,7 @@ const Space = ({ title, subTitle }) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
+                  aria-label="button"
                   className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
                   onClick={() => setIsPopupOpen(false)}
                 >

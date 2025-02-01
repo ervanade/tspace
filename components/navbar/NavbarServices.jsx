@@ -151,6 +151,7 @@ const NavbarServices = () => {
                   onMouseLeave={() => setMegaMenuOpen(false)}
                 >
                   <button
+                    aria-label="button"
                     className={`text-center ${
                       color
                         ? "!text-secondary font-semibold"
@@ -197,6 +198,7 @@ const NavbarServices = () => {
 
           <div className="relative ">
             <button
+              aria-label="button"
               className="flex items-center bg-white text-white rounded px-2 py-2"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
@@ -213,6 +215,7 @@ const NavbarServices = () => {
             {isDropdownOpen && (
               <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
@@ -227,6 +230,7 @@ const NavbarServices = () => {
                   />
                 </button>
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-2 py-2 hover:bg-gray-100 w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");
@@ -276,6 +280,7 @@ const NavbarServices = () => {
           } lg:hidden w-full max-w-[320px] py-12 px-8 bg-[#fff] text-dark h-full duration-300 transition-all ease-in-out shadow-lg`}
         >
           <button
+            aria-label="button"
             className="absolute top-5 right-6"
             onClick={buttonOnChangeClose}
           >
@@ -297,6 +302,7 @@ const NavbarServices = () => {
               ) : item.name === "Servis Kami" ? (
                 <div className="relative" key={item.id}>
                   <button
+                    aria-label="button"
                     onClick={() => setMegaMenuOpen((prev) => !prev)}
                     className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                   >
@@ -332,6 +338,7 @@ const NavbarServices = () => {
           ))}
           <div className="relative">
             <button
+              aria-label="button"
               className="flex items-center gap-2 bg-gray-200 rounded px-3 py-2 hover:bg-orange-500 hover:text-white"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
@@ -345,6 +352,7 @@ const NavbarServices = () => {
             {isDropdownOpen && (
               <div className="absolute mt-2 bg-white border rounded shadow-md text-dark z-10">
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
@@ -359,6 +367,7 @@ const NavbarServices = () => {
                   />
                 </button>
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");

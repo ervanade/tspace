@@ -201,6 +201,7 @@ const Facility = ({ title, subTitle }) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
+                  aria-label="button"
                   className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
                   onClick={() => setIsPopupOpen(false)}
                 >

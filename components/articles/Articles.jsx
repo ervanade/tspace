@@ -69,6 +69,7 @@ const Articles = () => {
         {visibleCount < articles.length && (
           <div className="mt-8 text-center">
             <button
+              aria-label="button"
               onClick={loadMore}
               className="px-6 py-3 bg-dark text-white rounded-full focus:outline-none font-medium"
             >

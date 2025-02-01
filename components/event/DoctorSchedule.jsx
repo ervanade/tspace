@@ -197,6 +197,7 @@ const DoctorSchedule = ({ bg }) => {
           <div className="flex space-x-4 overflow-x-auto whitespace-nowrap !no-scrollbar">
             {categories.map((category, index) => (
               <button
+                aria-label="button"
                 key={index}
                 className={`px-4 py-2 text-sm font-semibold rounded-lg ${
                   activeTab === category

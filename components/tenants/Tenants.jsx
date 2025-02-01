@@ -300,7 +300,7 @@ const Tenants = () => {
                     className="bg-green-500 text-white align-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-3 px-5 rounded-full flex items-center gap-2"
                   >
                     <FaWhatsapp className="h-5 w-5" />
-                    <span className="hidden md:inline font-bold">Contact</span>
+                    <span className="hidden md:inline font-bold">WA RSVP</span>
                   </a>
                 )}
               </div>

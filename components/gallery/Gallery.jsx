@@ -74,11 +74,13 @@ const Gallery = ({ title, subTitle }) => {
   };
 
   const content = {
-    title: "JANMASHTAMI, pameran tunggal Prajna Dewantara",
-    title_en: "JANMASHTAMI, solo exhibition Prajna Dewantara",
-    desc: "Prajna Dewantara Wirata adalah seniman visual Indonesia asal Bali yang karyanya, ditandai dengan realisme mencolok melalui neo-chiaroscuro dan warna-warna cerah, mengeksplorasi tema keimanan, ketahanan, dan pemberdayaan dengan fokus pada kekuatan jiwa manusia.",
-    desc_en:
-      "Prajna Dewantara Wirata is an Indonesian visual artist from Bali whose work, characterized by striking realism achieved through neo-chiaroscuro and vibrant colors, explores themes of faith, resilience, and empowerment with a focus on the strength of the human spirit.",
+    title: "ArT-Space",
+    title_en: "ArT-Space",
+    desc: `JANMASHTAMI, pameran tunggal Prajna Dewantara \n
+    Prajna Dewantara Wirata adalah seniman visual Indonesia asal Bali yang karyanya, ditandai dengan realisme mencolok melalui neo-chiaroscuro dan warna-warna cerah, mengeksplorasi tema keimanan, ketahanan, dan pemberdayaan dengan fokus pada kekuatan jiwa manusia.`,
+    desc_en: `JANMASHTAMI, solo exhibition Prajna Dewantara \n
+Prajna Dewantara Wirata is an Indonesian visual artist from Bali whose work, characterised by striking realism achieved through neo-chiaroscuro and vibrant colors, explores themes of faith, resilience, and empowerment with a focus on the strength of the human spirit.
+`,
     logo: "/logo_ori.svg",
   };
 
@@ -99,16 +101,15 @@ const Gallery = ({ title, subTitle }) => {
       className="w-full bg-bg-dark bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-white scroll-mt-12"
       id="gallery"
     >
-      <div className="mb-12">
-        <h1 className="header-title">
-          {lang === "en" ? content.title_en : content.title}
-        </h1>
-        <p className="!text-white/80 sub-title">
-          {lang === "en" ? content.desc_en : content.desc}
-        </p>
-      </div>
-
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
+        <div className="mb-12">
+          <h1 className="header-title">
+            {lang === "en" ? content.title_en : content.title}
+          </h1>
+          <p className="!text-white/80 sub-title whitespace-pre-line">
+            {lang === "en" ? content.desc_en : content.desc}
+          </p>
+        </div>
         <div>
           {isLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -185,6 +186,7 @@ const Gallery = ({ title, subTitle }) => {
                 style={{ maxHeight: "80vh" }}
               >
                 <button
+                  aria-label="button"
                   className="absolute top-4 right-4 text-white text-2xl z-[51] bg-black/20 rounded-full p-2"
                   onClick={() => setIsPopupOpen(false)}
                 >
@@ -193,12 +195,14 @@ const Gallery = ({ title, subTitle }) => {
 
                 {/* Panah Navigasi */}
                 <button
+                  aria-label="button"
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-white bg-black/30 rounded-full p-2"
                   onClick={handlePrevImage}
                 >
                   ◀
                 </button>
                 <button
+                  aria-label="button"
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-2xl text-white bg-black/30 rounded-full p-2"
                   onClick={handleNextImage}
                 >

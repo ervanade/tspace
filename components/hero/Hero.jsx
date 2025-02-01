@@ -83,7 +83,10 @@ const Hero = () => {
                     <p className="text-base sm:text-lg lg:text-xl text-white/85 text-center leading-relaxed">
                       {lang === "en" ? item.desc_en : item.desc}
                     </p>
-                    <button className="bg-white text-textDark px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold">
+                    <button
+                      aria-label="button"
+                      className="bg-white text-textDark px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
+                    >
                       {lang === "en" ? "Contact Us" : "Hubungi Kami"}
                     </button>
                   </div>

@@ -39,11 +39,11 @@ const Navbar = () => {
   const navbarMenu = [
     { id: 1, name: "Home", link: "/#hero" },
     { id: 2, name: "Beyoutiful", link: "/#hero" },
-    { id: 3, name: "Gallery", link: "/#gallery" },
-    { id: 4, name: "Rent Space", link: "/#rent-space" },
-    { id: 5, name: "Our Tenant", link: "/#our-tenant" },
-    { id: 6, name: "Articles", link: "/#articles" },
-    { id: 7, name: "Contact Us", link: "/#contact" },
+    { id: 3, name: "ArT-Space", link: "/#gallery" },
+    { id: 4, name: "RenT-Space", link: "/#rent-space" },
+    { id: 5, name: "Tenant Kami", link: "/#our-tenant" },
+    // { id: 6, name: "Artikel", link: "/#articles" },
+    { id: 7, name: "Hubungi Kami", link: "/#contact" },
   ];
 
   return (
@@ -93,6 +93,7 @@ const Navbar = () => {
                 </Link>
               ) : (
                 <button
+                  aria-label="button"
                   key={item.id}
                   onClick={(e) => {
                     e.preventDefault();
@@ -133,6 +134,7 @@ const Navbar = () => {
 
           <div className="relative">
             <button
+              aria-label="button"
               className="flex items-center bg-white text-white rounded px-1 py-2"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
@@ -146,6 +148,7 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div className="absolute mt-2 bg-white text-textDark border rounded shadow-md">
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-1 py-2 hover:bg-gray-100 w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
@@ -160,6 +163,7 @@ const Navbar = () => {
                   />
                 </button>
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-1 py-2 hover:bg-gray-100 w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");
@@ -190,6 +194,7 @@ const Navbar = () => {
         </div>
         {/* Menu Mobile */}
         <button
+          aria-label="button"
           className="lg:hidden text-2xl"
           onClick={() => setMenuButton((prev) => !prev)}
         >
@@ -225,6 +230,7 @@ const Navbar = () => {
                 </Link>
               ) : (
                 <button
+                  aria-label="button"
                   key={item.id}
                   onClick={(e) => {
                     e.preventDefault();
@@ -258,6 +264,7 @@ const Navbar = () => {
           {/* Language Selector */}
           <div className="relative">
             <button
+              aria-label="button"
               className="flex items-center gap-2 bg-gray-200 rounded px-3 py-2 hover:bg-orange-500 hover:text-white"
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
@@ -271,6 +278,7 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div className="absolute mt-2 bg-white border rounded shadow-md text-dark z-10">
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("id");
@@ -285,6 +293,7 @@ const Navbar = () => {
                   />
                 </button>
                 <button
+                  aria-label="button"
                   className="flex items-center gap-2 px-3 py-2 hover:bg-orange-500 hover:text-white w-full text-left"
                   onClick={() => {
                     handleChangeLang("en");

@@ -31,6 +31,7 @@ const SpaceDetail = ({ isDrawerOpen, setIsDrawerOpen }) => {
             <div className="flex items-start justify-between p-5 border-b border-solid border-black/20 rounded-t ">
               <h3 className="text-xl font-bold text-primary">Add User</h3>
               <button
+                aria-label="button"
                 className="bg-transparent border-0 text-black float-right"
                 onClick={() => setIsDrawerOpen(false)}
               >
@@ -85,6 +86,7 @@ const SpaceDetail = ({ isDrawerOpen, setIsDrawerOpen }) => {
                           placeholder="*******"
                         />
                         <button
+                          aria-label="button"
                           className="absolute right-4 top-2.5"
                           onClick={handleShowPassword}
                         >
@@ -96,6 +98,7 @@ const SpaceDetail = ({ isDrawerOpen, setIsDrawerOpen }) => {
                         </button>
                       </div>
                       <button
+                        aria-label="button"
                         className="absolute right-3 top-3"
                         onClick={() => setShowPassword(!showPassword)}
                       >
@@ -144,12 +147,14 @@ const SpaceDetail = ({ isDrawerOpen, setIsDrawerOpen }) => {
 
                   <div className="flex items-center justify-center gap-2 mt-8">
                     <button
+                      aria-label="button"
                       className="bg-sky-500 disabled:bg-slate-500  text-white font-bold py-2 px-6 rounded-md focus:outline-none focus:shadow-outline dark:bg-transparent mr-1 mb-1"
                       type="submit"
                     >
                       Submit
                     </button>
                     <button
+                      aria-label="button"
                       onClick={() => setIsDrawerOpen(false)}
                       className="bg-slate-300 disabled:bg-slate-500  text-textThin font-bold py-2 px-6 rounded-md focus:outline-none focus:shadow-outline dark:bg-transparent mr-1 mb-1"
                       type="submit"

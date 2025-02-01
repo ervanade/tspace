@@ -146,22 +146,32 @@ const Event = () => {
   return (
     <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
       <div className="mb-12">
-        <h1 className="header-title !text-[#fff]">Upcoming Events</h1>
+        <h1 className="header-title !text-[#fff]">
+          {lang === "en" ? "Event Schedule" : "Jadwal Acara"}
+        </h1>
         <p className="!text-white/80 sub-title">
-          Here are some upcoming events in T-Space, Bintaro:
+          {lang === "en"
+            ? "Here are some upcoming events in T-Space, Bintaro:"
+            : "Berikut beberapa acara mendatang di T-Space, Bintaro:"}
         </p>
       </div>
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         {/* Calendar */}
         <div className="bg-white rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
-            <button className="text-gray-500 hover:text-gray-700">
+            <button
+              aria-label="button"
+              className="text-gray-500 hover:text-gray-700"
+            >
               <FaArrowLeft />
             </button>
             <h2 className="text-xl font-semibold text-textDark">
               December 2024
             </h2>
-            <button className="text-gray-500 hover:text-gray-700">
+            <button
+              aria-label="button"
+              className="text-gray-500 hover:text-gray-700"
+            >
               <FaArrowRight />
             </button>
           </div>
@@ -206,17 +216,17 @@ const Event = () => {
                 {getEventByDate(hoveredDate)?.time || "No Event"}
               </p>
               <a
-        href="https://wa.me/+621181110556
+                href="https://wa.me/+621181110556
 "
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 text-sm bg-green-500 text-white py-3 px-4 rounded-full shadow-lg transition duration-300 inline-flex items-center gap-2"
-      >
-        <FaWhatsapp className="h-6 w-6" />
-        <span className="hidden md:inline font-medium">
-          {lang === "en" ? "Contact Us" : "Hubungi Kami"}
-        </span>
-      </a>
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 text-sm bg-green-500 text-white py-3 px-4 rounded-full shadow-lg transition duration-300 inline-flex items-center gap-2"
+              >
+                <FaWhatsapp className="h-6 w-6" />
+                <span className="hidden md:inline font-medium">
+                  {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+                </span>
+              </a>
             </div>
           ) : (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg h-20">
@@ -255,7 +265,7 @@ const Event = () => {
 
         <div className="mt-8 flex justify-center gap-4">
           {currentPage > 0 && (
-            <button
+            <button aria-label="button"
               className="px-4 py-2 bg-[#fff] text-[#303638] rounded-lg shadow font-bold"
               onClick={handlePrevious}
             >
@@ -263,7 +273,7 @@ const Event = () => {
             </button>
           )}
           {startIndex + eventsPerPage < events.length && (
-            <button
+            <button aria-label="button"
               className="px-4 py-2 bg-[#fff] text-[#303638] rounded-lg shadow font-bold"
               onClick={handleNext}
             >

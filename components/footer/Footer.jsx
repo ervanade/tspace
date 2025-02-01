@@ -38,16 +38,18 @@ const Footer = () => {
           <div className="flex justify-around gap-7 flex-col lg:flex-row">
             <div className="center flex-[2_2_0%] space-y-4">
               <ul className="space-y-4">
-                <Link href={`/?lang=${lang}`} className="">
-                  {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
-                  <Image
-                    src="/logo_ori_white.svg"
-                    alt="Logo TSpace"
-                    width={60}
-                    height={75}
-                    className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
-                  />
-                </Link>
+                <li>
+                  <Link href={`/?lang=${lang}`} className="">
+                    {/* <p className="font-bebas text-[40px] text-white">T-SPACE</p> */}
+                    <Image
+                      src="/logo_ori_white.svg"
+                      alt="Logo TSpace"
+                      width={60}
+                      height={75}
+                      className="w-[41px] h-[52px] sm:w-[60px] sm:h-[75px]"
+                    />
+                  </Link>
+                </li>
                 <li className="flex items-center gap-2">
                   <FaBuilding size={24} className="!text-2xl" />
                   <span className="text-sm">
@@ -63,10 +65,12 @@ const Footer = () => {
                   </span>
                 </li>
                 <div className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">
-                  <div>
-                    <h2 className="text-white/80 font-bold text-sm my-2">
-                      T-Space
-                    </h2>
+                  <ul>
+                    <li>
+                      <h2 className="text-white/80 font-bold text-sm my-2">
+                        T-Space
+                      </h2>
+                    </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
                       <span className="text-sm">+62 811-8111-0556</span>
@@ -77,11 +81,13 @@ const Footer = () => {
                         marketing@tspacebintaro.com
                       </span>
                     </li>
-                  </div>
-                  <div>
-                    <h2 className="text-white/80 font-bold text-sm my-2">
-                      Beyoutiful
-                    </h2>
+                  </ul>
+                  <ul>
+                    <li>
+                      <h2 className="text-white/80 font-bold text-sm my-2">
+                        Beyoutiful
+                      </h2>
+                    </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
                       <span className="text-sm">+62 815-1906-0060</span>
@@ -92,7 +98,7 @@ const Footer = () => {
                         beyoutiful.clinic@tspacebintaro.com
                       </span>
                     </li>
-                  </div>
+                  </ul>
                 </div>
               </ul>
             </div>

@@ -47,6 +47,7 @@ const Contact = () => {
 
             <div className="flex items-center gap-2">
               <button
+                aria-label="button"
                 className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 type="button"
               >
@@ -74,6 +75,7 @@ const Contact = () => {
           </div>
           <div className="relative w-full pb-[56.25%] overflow-hidden mb-6">
             <iframe
+              title="Map T-Space Bintaro"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

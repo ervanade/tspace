@@ -109,6 +109,7 @@ const RecomendedArticles = ({ data }) => {
                   </div>
                   <div className="p-6 pt-0">
                     <Link
+                      aria-label="Button Read More"
                       href={`/articles/${article.slug}?lang=${lang}`}
                       className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                       type="button"
@@ -129,6 +130,7 @@ const RecomendedArticles = ({ data }) => {
         )}
         <div className="flex justify-end mt-8">
           <Link
+            aria-label="Button View More"
             href={`/articles?lang=${lang}`}
             className="bg-[#fff] text-[#303638] px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
           >

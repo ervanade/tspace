@@ -169,9 +169,7 @@ const Services = ({ title, subTitle, bg }) => {
                         <div className="flex flex-col  items-center">
                           <h3
                             className={`font-montserrat text-[16px] lg:text-[24px] font-medium ${
-                              bg === "light"
-                                ? "!text-dark"
-                                : "!text-white/80"
+                              bg === "light" ? "!text-dark" : "!text-white/80"
                             } text-center line-clamp-3 min-h-9 lg:min-h-[56px]`}
                           >
                             {lang === "en"
@@ -208,6 +206,7 @@ const Services = ({ title, subTitle, bg }) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
+                  aria-label="button"
                   className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
                   onClick={() => setIsPopupOpen(false)}
                 >
