@@ -64,7 +64,7 @@ const Footer = () => {
                     Aren, Kota Tangerang Selatan, Banten 15229
                   </span>
                 </li>
-                <div className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">
+                <li className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">
                   <ul>
                     <li>
                       <h2 className="text-white/80 font-bold text-sm my-2">
@@ -99,7 +99,7 @@ const Footer = () => {
                       </span>
                     </li>
                   </ul>
-                </div>
+                </li>
               </ul>
             </div>
             <div className="center flex-1 space-y-4">

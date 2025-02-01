@@ -149,10 +149,7 @@ const Facility = ({ title, subTitle }) => {
               {dataSpace
                 ? dataSpace.map((item, index) => (
                     <SwiperSlide className="mr-2" key={index}>
-                      <div
-                        className="recomended-card flex flex-col justify-center gap-2"
-                        key={index}
-                      >
+                      <div className="recomended-card flex flex-col justify-center gap-2">
                         {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
                         <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
                           <Image

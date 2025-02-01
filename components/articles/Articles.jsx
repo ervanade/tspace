@@ -21,9 +21,9 @@ const Articles = () => {
       id="articles"
     >
       <div className="mb-12">
-        <h1 className="header-title !text-textDark">
+        <h2 className="header-title !text-textDark">
           {lang === "en" ? "Articles" : "Artikel"}
-        </h1>
+        </h2>
       </div>
 
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">

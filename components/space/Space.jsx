@@ -85,9 +85,9 @@ const Space = ({ title, subTitle }) => {
       id="rent-space"
     >
       <div className="mb-12">
-        <h1 className="header-title !text-textDark">
+        <h2 className="header-title !text-textDark">
           {lang === "en" ? "RenT-Space" : "RenT-Space"}
-        </h1>
+        </h2>
         <p className="!text-textDark/80 sub-title">
           {lang === "en"
             ? "Suitable for your dream events and occasions. Browse through our available spaces and book a tour today!"
@@ -136,10 +136,7 @@ const Space = ({ title, subTitle }) => {
               {dataSpace
                 ? dataSpace.map((item, index) => (
                     <SwiperSlide className="mr-2" key={index}>
-                      <div
-                        className="recomended-card flex flex-col justify-center gap-2"
-                        key={index}
-                      >
+                      <div className="recomended-card flex flex-col justify-center gap-2">
                         {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
                         <Image
                           src={item.image_mid}

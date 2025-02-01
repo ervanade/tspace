@@ -103,9 +103,9 @@ Prajna Dewantara Wirata is an Indonesian visual artist from Bali whose work, cha
     >
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         <div className="mb-12">
-          <h1 className="header-title">
+          <h2 className="header-title">
             {lang === "en" ? content.title_en : content.title}
-          </h1>
+          </h2>
           <p className="!text-white/80 sub-title whitespace-pre-line">
             {lang === "en" ? content.desc_en : content.desc}
           </p>
