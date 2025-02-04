@@ -78,7 +78,7 @@ const Facility = ({ title, subTitle }) => {
       opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
-      image_mid: "/assets/beyoutiful/dental.png",
+      image_mid: "/assets/beyoutiful/dental-facility.jpg",
       image_map: "/assets/map-hall.png",
     },
   ];

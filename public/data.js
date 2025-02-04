@@ -94,6 +94,7 @@ export const dataServices = [
     { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
     { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
     { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/radiologi-1.jpg" },
+    { name: "Gigi", name_en: "Dental", link: "/beyoutiful/services/gigi", image: "/assets/beyoutiful/dental.png" },
 ];
 
 export const serviceDetails = [
@@ -101,7 +102,7 @@ export const serviceDetails = [
         id: 1,
         name: "Bedah Plastik",
         name_en: "Plastic Surgery",
-        description: `
+        description: `<p>Beyoutiful Aesthetic menawarkan berbagai pilihan tindakan bedah plastik berstandar internasional yang disesuaikan dengan kebutuhan Anda. Dengan dukungan tim medis yang berpengalaman dan teknologi terkini, kami akan membantu Anda mencapai hasil yang alami dan menawan.<span class="font-semibold">Jangan ragu untuk berkonsultasi dengan kami dan mulai perjalanan menuju penampilan yang lebih baik.</span></p>
    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -117,12 +118,13 @@ export const serviceDetails = [
                     <li>Sedot Lemak Leher/Neck Liposuction</li>
                     <li>Sedot Lemak Paha/Thigh Liposuction</li>
                     <li>Tummy Tuck/Tummy Tuck</li>
+                    <li>Sedot Lemak Kontur Tubuh/Body Contouring Liposuction</li>
                 </ul>
             </div>
 
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                    <li>Sedot Lemak Kontur Tubuh/Body Contouring Liposuction</li>
+                    
                     <li>Pembesaran Payudara/Breast Augmentation</li>
                     <li>Pengencangan Payudara/Breast Lifting</li>
                     <li>Pengecilan Payudara/Breast Reduction</li>
@@ -141,7 +143,7 @@ export const serviceDetails = [
             </div>
         </div>`,
         description_en: `
-        <h3 class="text-lg font-semibold mb-2">Services:</h3>
+        <p>Beyoutiful Aesthetic offers a wide selection of international standard plastic surgery procedures tailored to your needs. With the support of an experienced medical team and the latest technology, we will help you achieve natural and beautiful results.<span class="font-semibold"> Don't hesitate to consult with us and start your journey towards a better appearance.</span></p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -226,6 +228,7 @@ export const serviceDetails = [
         name: "Treatment Estetika",
         name_en: "Aesthetic Treatment",
         description: `
+        <p>Temukan solusi untuk berbagai masalah kulit, dari jerawat hingga tanda-tanda penuaan dengan perawatan estetika di Beyoutiful Aesthetic.</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -254,6 +257,8 @@ export const serviceDetails = [
                  </div>
              </div>`,
         description_en: `
+              <p>
+Find solutions to various skin problems, from acne to signs of aging with aesthetic treatments at Beyoutiful Aesthetic.</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -297,8 +302,9 @@ export const serviceDetails = [
         id: 3,
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
-        description: "Terapi oksigen hiperbarik untuk penyembuhan luka dan kesehatan optimal.",
-        description_en: "Hyperbaric oxygen therapy for wound healing and optimal health.",
+        description: `
+        <p>Rasakan proses penyembuhan lebih cepat dan optimal dengan meningkatkan kadar oksigen dalam darah melalui terapi oksigen hiperbarik. Nikmati manfaatnya untuk berbagai kondisi kesehatan dan kualitas hidup yang lebih sehat.</p>`,
+        description_en: `<p>Experience a faster and more optimal healing process by increasing oxygen levels in the blood through hyperbaric oxygen therapy. Enjoy its benefits for various health conditions and a healthier quality of life.</p>`,
         slug: "hyperbaric-oxygen-therapy",
         link: "/",
         image: "/assets/beyoutiful/hbot-1.jpg",
@@ -315,8 +321,18 @@ export const serviceDetails = [
         id: 4,
         name: "Urologi",
         name_en: "Urology",
-        description: "Extracorporeal Shockwave Therapy.",
-        description_en: "Extracorporeal Shockwave Therapy.",
+        description: ` <p><span class="font-semibold"> Beyoutiful Aesthetic memberikan layanan urologi komprehensif untuk kesehatan.</span> Kami menawarkan berbagai macam tindakan medis, mulai dari pemeriksaan rutin hingga penanganan masalah urologi yang kompleks. Percayakan kesehatan Anda pada kami
+</p>
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>Extracorporeal Shockwave Therapy </li>
+                     </ul>
+`,
+        description_en: ` <p><span class="font-semibold"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
+</p>
+<ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>Extracorporeal Shockwave Therapy </li>
+                     </ul>
+`,
         slug: "urologi",
         link: "/",
         image: "/assets/beyoutiful/urologi.png",
@@ -333,8 +349,20 @@ export const serviceDetails = [
         id: 5,
         name: "Vaskular",
         name_en: "Vascular",
-        description: "EVLA - Endovenous Laser Ablation LHP - Laser Hemorrhoidoplasty.",
-        description_en: "EVLA - Endovenous Laser Ablation LHP - Laser Hemorrhoidoplasty.",
+        description: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold"> Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
+</p>
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>EVLA - Endovenous Laser Ablation</li>
+                        <li>LHP - Laser Hemorrhoidoplasty </li>
+                     </ul>
+`,
+        description_en: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold"> Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
+</p>
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>EVLA - Endovenous Laser Ablation</li>
+                        <li>LHP - Laser Hemorrhoidoplasty </li>
+                     </ul>
+`,
         slug: "vaskular",
         link: "/",
         image: "/assets/beyoutiful/vaskular-1.jpg",
@@ -351,8 +379,20 @@ export const serviceDetails = [
         id: 6,
         name: "Gizi",
         name_en: "Nutrition",
-        description: "Konsultasi dan layanan untuk perbaikan pola makan dan kesehatan gizi. Konsultasi Gizi+Meal Plan Perkedatangan Nourish + Nutrigenomic.",
-        description_en: "Konsultasi Gizi+Meal Plan Perkedatangan Nourish + Nutrigenomic ",
+        description: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
+</span>
+</p>
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>Konsultasi Gizi+Meal Plan</li>
+                        <li>Nourish + Nutrigenomic </li>
+                     </ul>`,
+        description_en: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
+</span>
+</p>
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>Konsultasi Gizi+Meal Plan</li>
+                        <li>Nourish + Nutrigenomic </li>
+                     </ul>`,
         slug: "gizi",
         link: "/",
         image: "/assets/beyoutiful/gizi.png",
@@ -365,15 +405,44 @@ export const serviceDetails = [
             },
         ],
     },
+
     {
         id: 7,
         name: "Radiologi",
         name_en: "Radiology",
-        description: "Layanan radiologi untuk diagnosis yang lebih akurat.",
-        description_en: "Radiology services for more accurate diagnosis.",
+        description: `<p><span class="font-semibold">Melihat lebih dalam untuk kesehatan yang lebih baik.
+</span> Dengan pemeriksaan radiologi, kami dapat mendeteksi masalah kesehatan sedini mungkin.
+</p>`,
+        description_en: `<p><span class="font-semibold">Melihat lebih dalam untuk kesehatan yang lebih baik.
+</span> Dengan pemeriksaan radiologi, kami dapat mendeteksi masalah kesehatan sedini mungkin.
+</p>`,
         slug: "radiologi",
         link: "/",
         image: "/assets/beyoutiful/radiologi-1.jpg",
+        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        dokter: [
+            {
+                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
+                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
+                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+            },
+        ],
+    },
+    {
+        id: 8,
+        name: "Gigi",
+        name_en: "Dental",
+        description: `<p><span class="font-semibold">Perawatan gigi komprehensif untuk seluruh keluarga. 
+</span> Mulai dari pemeriksaan rutin hingga perawatan gigi estetika. Dengan menggunakan teknologi terbaru dan tim dokter gigi yang berpengalaman, kami memastikan Anda mendapatkan perawatan yang nyaman dan berkualitas.
+
+</p>`,
+        description_en: `<p><span class="font-semibold">Perawatan gigi komprehensif untuk seluruh keluarga. 
+</span> Mulai dari pemeriksaan rutin hingga perawatan gigi estetika. Dengan menggunakan teknologi terbaru dan tim dokter gigi yang berpengalaman, kami memastikan Anda mendapatkan perawatan yang nyaman dan berkualitas.
+
+</p>`,
+        slug: "gigi",
+        link: "/",
+        image: "/assets/beyoutiful/dental.png",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {

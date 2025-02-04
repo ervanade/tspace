@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 
 const Footer = () => {
   const data = {
-    facebook: "",
+    facebook: "https://www.facebook.com/tspacebintaro9/",
     instagram: "https://www.instagram.com/t_spacebintaro/",
     twitter: "",
     tiktok: "https://www.tiktok.com/@t_spacebintaro",
@@ -22,7 +22,8 @@ const Footer = () => {
     shopee: "",
   };
   const dataBeyoutiful = {
-    facebook: "",
+    facebook:
+      "https://www.facebook.com/p/Beyoutiful-Aesthetic-Clinic-100054618511656/?locale=id_ID",
     instagram: "https://www.instagram.com/beyoutiful.aesthetic/",
     twitter: "",
     tiktok: "https://www.tiktok.com/@beyoutiful.aesthetic",

@@ -94,6 +94,11 @@ const NavbarBeyoutiful = () => {
       name_en: "Radiology",
       link: "/beyoutiful/services/radiologi",
     },
+    {
+      name: "Gigi",
+      name_en: "Dental",
+      link: "/beyoutiful/services/gigi",
+    },
   ];
 
   const dispatch = useDispatch();

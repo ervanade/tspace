@@ -108,8 +108,9 @@ const ServicesDetails = ({ service }) => {
             </div>
             <div className="text-sm leading-relaxed">
               {" "}
-              {service?.description &&
-                parse(HTMLDecoderEncoder.decode(service?.description))}
+              {service?.description && lang === "en"
+                ? parse(HTMLDecoderEncoder.decode(service?.description_en))
+                : parse(HTMLDecoderEncoder.decode(service?.description))}
             </div>
           </div>
 

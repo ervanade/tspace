@@ -22,7 +22,7 @@ const PopupEvent = () => {
       subtitle: "Music",
       location: "T-Studio",
       time: "16.00 - 18.00",
-      image: "/hero-2.png",
+      image: "/assets/event/vocal-clinic.jpg",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const PopupEvent = () => {
       subtitle: "Music",
       location: "T-Hall",
       time: "20.00 - 22.00",
-      image: "/hero-4.png",
+      image: "/assets/event/jazzed.jpg",
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const PopupEvent = () => {
       subtitle: "Music",
       location: "T-Hall",
       time: "19.00 - 22.00",
-      image: "/hero-2.png",
+      image: "/assets/event/jajal-panggung.jpg",
     },
     {
       id: 4,
@@ -52,7 +52,7 @@ const PopupEvent = () => {
       subtitle: "Music",
       location: "T-Hall",
       time: "19.00 - 22.00",
-      image: "/hero-4.png",
+      image: "/assets/event/kamasogi.jpg",
     },
     // {
     //   id: 5,
@@ -105,7 +105,7 @@ const PopupEvent = () => {
             </button>
             <h2 className="header-title !text-secondary">EVENTS THIS WEEK</h2>
 
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
               {events.map((event) => (
                 <div
                   key={event.id}
