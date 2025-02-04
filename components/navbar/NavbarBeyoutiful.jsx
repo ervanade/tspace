@@ -69,9 +69,9 @@ const NavbarBeyoutiful = () => {
       link: "/beyoutiful/services/bedah-plastik",
     },
     {
-      name: "Treatment Estetika",
-      name_en: "Aesthetic Treatment",
-      link: "/beyoutiful/services/treatment-estetika",
+      name: "Dermatologi",
+      name_en: "Dermatology",
+      link: "/beyoutiful/services/dermatologi",
     },
     {
       name: "Hyperbaric Oxygen Therapy",

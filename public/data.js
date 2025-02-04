@@ -84,7 +84,7 @@ export const dataGallery = [
 
 export const dataServices = [
     { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/beyoutiful/services/bedah-plastik", image: "/assets/beyoutiful/bedah-plastik.jpg" },
-    { name: "Treatment Estetika", name_en: "Aesthetic Treatment", link: "/beyoutiful/services/treatment-estetika", image: "/assets/beyoutiful/estetika.png" },
+    { name: "Dermatologi", name_en: "Dermatology", link: "/beyoutiful/services/dermatologi", image: "/assets/beyoutiful/estetika.png" },
     {
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
@@ -191,33 +191,63 @@ export const serviceDetails = [
         dokter: [
             {
                 nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dokter-1.jpg",
                 jadwal_dokter: ["Senin, Rabu & Jumat (09.00-15.00)", "Selasa, Kamis & Sabtu (09.00-17.00)"],
             },
             {
                 nama_dokter: "dr. Eko Herihadi, Sp.B.P.R.E",
-                dokter_foto: "/assets/beyoutiful/services/dokter-2.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dokter-2.jpg",
                 jadwal_dokter: ["Selasa - Kamis (09.00-15.00)"],
             },
             {
                 nama_dokter: "dr. Hendra Tri Hartono, Sp.B.P.R.E",
-                dokter_foto: "/assets/beyoutiful/services/dr-hendra.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-hendra.jpg",
                 jadwal_dokter: ["Selasa, Rabu & Jumat (09.00-16.00)", "Sabtu (09.00-13.00)"],
             },
             {
                 nama_dokter: "dr. Puti Adla Runisa,B.Med.Sc, Sp.B.P.R.E",
-                dokter_foto: "/assets/beyoutiful/services/dr-puti.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-puti.jpg",
                 jadwal_dokter: ["Senin, Selasa & Kamis (13.00-16.00)"],
             },
             {
                 nama_dokter: "dr. Ali Sundoro, Sp.B.P.R.E, SubSp.KM (K)",
-                dokter_foto: "/assets/beyoutiful/services/dr-ali.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-ali.jpg",
                 jadwal_dokter: ["Jumat & Sabtu (08.00-12.00)"],
             },
             {
                 nama_dokter: "dr. Linawati Makmur, Sp.B.P.R.E",
-                dokter_foto: "/assets/beyoutiful/services/dr-linawati.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-linawati.jpg",
                 jadwal_dokter: ["Senin & Kamis (09.00-15.00)"],
+            },
+            {
+                nama_dokter: "dr. Huntal Napoleon, Sp.BP-RE, Subsp-LBL (K), FIHFAA",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-huntal.jpg",
+                jadwal_dokter: ["Selasa (12.00-15.00)", "Sabtu (09.00-12.00)"],
+            },
+            {
+                nama_dokter: "dr. Patricia Marcellina Sadikin, SpBP-RE",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-patricia.jpg",
+                jadwal_dokter: [""],
+            },
+            {
+                nama_dokter: "dr. Jeihan Nabila, B.Med.Sc, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-jeihan.jpg",
+                jadwal_dokter: ["Senin, Selasa, Kamis (09.00-15.00)", "Rabu (09.00-15.00)", "Sabtu (By Appointment)"],
+            },
+            {
+                nama_dokter: "dr. Risa Crisanti, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-risa.jpg",
+                jadwal_dokter: ["Senin - Sabtu (09.00-15.00)"],
+            },
+            {
+                nama_dokter: "dr. Ruth F. M. Lumbuun, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-ruth.jpg",
+                jadwal_dokter: ["Selasa & Kamis (14.00-17.00)", "Jumat & Sabtu (9.00-15.00)"],
+            },
+            {
+                nama_dokter: "dr. Laurent L Supit, Sp.B.P.R.E",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dr-laurent.jpg",
+                jadwal_dokter: ["By Appointment"],
             },
 
 
@@ -225,8 +255,8 @@ export const serviceDetails = [
     },
     {
         id: 2,
-        name: "Treatment Estetika",
-        name_en: "Aesthetic Treatment",
+        name: "Dermatologi",
+        name_en: "Dermatology",
         description: `
         <p>Temukan solusi untuk berbagai masalah kulit, dari jerawat hingga tanda-tanda penuaan dengan perawatan estetika di Beyoutiful Aesthetic.</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
@@ -258,7 +288,7 @@ export const serviceDetails = [
              </div>`,
         description_en: `
               <p>
-Find solutions to various skin problems, from acne to signs of aging with aesthetic treatments at Beyoutiful Aesthetic.</p>
+Find solutions to various skin problems, from acne to signs of aging with Dermatologys at Beyoutiful Aesthetic.</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -286,15 +316,30 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
                      </ul>
                  </div>
              </div>`,
-        slug: "treatment-estetika",
+        slug: "dermatologi",
         link: "/",
         image: "/assets/beyoutiful/estetika.png",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Catharina Ari Wilandani Sp.D.V.E FINSDV",
+                dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-catharina.jpg",
+                jadwal_dokter: ["Selasa (09.00-17.00)", "Jumat (13.00-17.00)", "Sabtu (09.00-13.00, By Appointment)"],
+            },
+            {
+                nama_dokter: "dr. Marsha Bianti, Sp.D.V.E",
+                dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-marsha.jpg",
+                jadwal_dokter: ["Senin & Rabu (09.00-15.00)"],
+            },
+            {
+                nama_dokter: "dr. Danar Wicaksono, M.Sc Sp.D.V.E",
+                dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-danar.jpg",
+                jadwal_dokter: ["Senin (By Appointment)", "Kamis, Jumat & Sabtu (09.00-15.00)"],
+            },
+            {
+                nama_dokter: "dr. Dita Mutia F. Budhiarta, MD",
+                dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-dita.jpg",
+                jadwal_dokter: [""],
             },
         ],
     },
@@ -311,9 +356,9 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Vidiarti Rahayu",
+                dokter_foto: "/assets/beyoutiful/services/hbot/dr-vidiarti.jpg",
+                jadwal_dokter: ["Senin - Sabtu (09.00-17.00)"],
             },
         ],
     },
@@ -339,9 +384,9 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Anggie Novaldy R, Sp.U",
+                dokter_foto: "/assets/beyoutiful/services/urologi/dr-anggie.jpg",
+                jadwal_dokter: ["Selasa, Kamis & Sabtu (09.00-10.30)"],
             },
         ],
     },
@@ -369,9 +414,9 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Yuliardy Limengka, B.Med.Sc, Sp.B, Subsp.BVE(K)",
+                dokter_foto: "/assets/beyoutiful/services/vaskular/dr-yuliardy.jpg",
+                jadwal_dokter: ["Senin, Rabu, Jumat & Sabtu (09.00-12.00)"],
             },
         ],
     },
@@ -399,9 +444,9 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Arti Indira, M.Gizi, Sp.GK, FINEM",
+                dokter_foto: "/assets/beyoutiful/services/gizi/dr-arti.jpg",
+                jadwal_dokter: ["Senin - Sabtu (09.00-17.00)"],
             },
         ],
     },
@@ -422,9 +467,9 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Fini Amalia",
+                dokter_foto: "/assets/beyoutiful/services/radiologi/dr-fini.jpg",
+                jadwal_dokter: [""],
             },
         ],
     },
@@ -447,7 +492,75 @@ Find solutions to various skin problems, from acne to signs of aging with aesthe
         dokter: [
             {
                 nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/dokter-1.jpg",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dokter-1.jpg",
+                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+            },
+        ],
+    },
+    {
+        id: 9,
+        name: "Externa Genitalia",
+        name_en: "Externa Genitalia",
+        description: `<p><span class="font-semibold">Percayakan kesehatan intim Anda pada ahlinya.
+</span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
+</p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                         <li>Vulvoplasti</li>
+                        <li>Hymenoplasti</li>
+                        <li>Labiaplasti</li>
+                        <li>Vaginoplasti</li>
+                        <li>PRP G-Spot</li>
+                        <li>Vaginal laser Rejuvenation G Spot Enhancement</li>
+                         
+                     </ul>
+                 </div>
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>Pengecilan Tudung Klitoris</li>
+                         <li>Sunat</li>
+                         <li>Pembesaran Penis</li>
+                         <li>Skrotoplasti</li>
+                         <li>Ligamentolisis</li>
+                     </ul>
+                 </div>
+             </div>
+`,
+        description_en: `<p><span class="font-semibold">Percayakan kesehatan intim Anda pada ahlinya.
+</span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
+</p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                         <li>Vulvoplasty</li>
+                        <li>Hymenoplasty</li>
+                        <li>Labiaplasty</li>
+                        <li>Vaginoplasty</li>
+                        <li>PRP G-Spot</li>
+                        <li>Vaginal laser Rejuvenation G Spot Enhancement</li>
+                         
+                     </ul>
+                 </div>
+                 <div>
+                    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+                        <li>Clitoral Hood Reduction</li>
+                         <li>Genital Circumcision</li>
+                         <li>Penis Enlargement</li>
+                         <li>Scrotoplasty</li>
+                         <li>Ligamentolysis</li>
+                     </ul>
+                 </div>
+             </div>
+`,
+        slug: "externa-genitalia",
+        link: "/",
+        image: "/assets/beyoutiful/dental.png",
+        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        dokter: [
+            {
+                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
+                dokter_foto: "/assets/beyoutiful/services/bedah/dokter-1.jpg",
                 jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
             },
         ],
