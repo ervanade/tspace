@@ -87,7 +87,7 @@ const ServicesDetails = ({ service }) => {
     <section className="py-12 bg-white">
       <div className="w-full max-w-7xl px-4 md:px-6 lg:px-8 mx-auto">
         {/* Judul Layanan */}
-        <h2 className="text-center text-2xl !font-bold !text-secondary  lg:!mb-12 title-beyoutiful">
+        <h2 className="text-center text-2xl !font-bold !text-secondary lg:!mb-6 title-beyoutiful">
           {service.name}
         </h2>
 
