@@ -74,6 +74,11 @@ const NavbarServices = () => {
       link: "/beyoutiful/services/bedah-plastik",
     },
     {
+      name: "Externa Genitalia",
+      name_en: "Externa Genitalia",
+      link: "/beyoutiful/services/externa-genitalia",
+    },
+    {
       name: "Dermatologi",
       name_en: "Dermatology",
       link: "/beyoutiful/services/dermatologi",
@@ -168,7 +173,7 @@ const NavbarServices = () => {
 
                   {/* Mega Menu */}
                   {megaMenuOpen && (
-                    <div className="absolute left-2/3 transform -translate-x-1/2 w-[500px] bg-white text-black shadow-lg p-6 grid grid-cols-2 gap-3 z-50">
+                    <div className="absolute left-2/3 transform -translate-x-1/2 w-[500px] bg-white text-black shadow-lg p-6 grid grid-cols-2 gap-2 z-50">
                       {subMenu.map((menu, index) => (
                         <a
                           key={index}
@@ -315,7 +320,7 @@ const NavbarServices = () => {
                   </button>
                   {megaMenuOpen && (
                     <div
-                      className="absolute top-full mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-2 z-50 min-w-[200px] max-w-screen-sm"
+                      className="absolute top-full mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-1 z-50 min-w-[200px] max-w-screen-sm"
                       key={item.id}
                     >
                       {subMenu.map((menu, index) => (

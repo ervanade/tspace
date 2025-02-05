@@ -84,6 +84,7 @@ export const dataGallery = [
 
 export const dataServices = [
     { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/beyoutiful/services/bedah-plastik", image: "/assets/beyoutiful/bedah-plastik.jpg" },
+    { name: "Externa Genitalia", name_en: "Externa Genitalia", link: "/beyoutiful/services/externa-genitalia", image: "/assets/beyoutiful/estetika.png" },
     { name: "Dermatologi", name_en: "Dermatology", link: "/beyoutiful/services/dermatologi", image: "/assets/beyoutiful/estetika.png" },
     {
         name: "Hyperbaric Oxygen Therapy",
@@ -227,7 +228,7 @@ export const serviceDetails = [
             {
                 nama_dokter: "dr. Patricia Marcellina Sadikin, SpBP-RE",
                 dokter_foto: "/assets/beyoutiful/services/bedah/dr-patricia.jpg",
-                jadwal_dokter: [""],
+                jadwal_dokter: ["By Appointment"],
             },
             {
                 nama_dokter: "dr. Jeihan Nabila, B.Med.Sc, Sp.B.P.R.E",
@@ -339,7 +340,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
             {
                 nama_dokter: "dr. Dita Mutia F. Budhiarta, MD",
                 dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-dita.jpg",
-                jadwal_dokter: [""],
+                jadwal_dokter: ["By Appointment"],
             },
         ],
     },
@@ -469,7 +470,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
             {
                 nama_dokter: "dr. Fini Amalia",
                 dokter_foto: "/assets/beyoutiful/services/radiologi/dr-fini.jpg",
-                jadwal_dokter: [""],
+                jadwal_dokter: ["By Appointment"],
             },
         ],
     },
@@ -491,9 +492,44 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/bedah/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "drg. Anna Karerina Tanjung",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-anna.jpg",
+                jadwal_dokter: ["Senin (09.00-13.00)", "Kamis (13.00-17.00)"],
+            },
+            {
+                nama_dokter: "drg. Melissa Delania, Sp.Pros",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-melissa.jpg",
+                jadwal_dokter: ["Selasa & Kamis (13.00-17.00)"],
+            },
+            {
+                nama_dokter: "drg. Stefani Astari Dewi, Sp.KG",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-stefani.jpg",
+                jadwal_dokter: ["Selasa & Jumat (09.00-13.00)"],
+            },
+            {
+                nama_dokter: "drg. Hirania Soraya, Sp.KG",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-hirania.jpg",
+                jadwal_dokter: ["Selasa & Jumat (13.00-17.00)"],
+            },
+            {
+                nama_dokter: "drg. Eldyra Bela Bangsa",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-eldyra.jpg",
+                jadwal_dokter: ["Rabu & Jumat (09.00-13.00)"],
+            },
+            {
+                nama_dokter: "drg. Adhyana S Novanto, Sp.Ort",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-adhyana.jpg",
+                jadwal_dokter: ["Kamis (09.00-13.00)"],
+            },
+            {
+                nama_dokter: "drg. Adhinara, Sp.Pros",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-adhinara.jpg",
+                jadwal_dokter: ["By Appointment"],
+            },
+            {
+                nama_dokter: "drg. Syah Yossy",
+                dokter_foto: "/assets/beyoutiful/services/gigi/dr-syah.jpg",
+                jadwal_dokter: ["By Appointment"],
             },
         ],
     },
@@ -559,9 +595,9 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {
-                nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
-                dokter_foto: "/assets/beyoutiful/services/bedah/dokter-1.jpg",
-                jadwal_dokter: ["Rabu 10:00 - 12:00", "Sabtu 16:00 - 18:00"],
+                nama_dokter: "dr. Indri Aulia, Sp.B.P.R.E, Subsp.GE(K), MPd.Ked",
+                dokter_foto: "/assets/beyoutiful/services/externa/dr-indri.jpg",
+                jadwal_dokter: ["Senin, Rabu, Kamis & Sabtu (By Appointment)"],
             },
         ],
     },
