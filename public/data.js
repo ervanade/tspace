@@ -84,16 +84,16 @@ export const dataGallery = [
 
 export const dataServices = [
     { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/beyoutiful/services/bedah-plastik", image: "/assets/beyoutiful/bedah-plastik.jpg" },
-    { name: "Externa Genitalia", name_en: "Externa Genitalia", link: "/beyoutiful/services/externa-genitalia", image: "/assets/beyoutiful/estetika.png" },
     { name: "Dermatologi", name_en: "Dermatology", link: "/beyoutiful/services/dermatologi", image: "/assets/beyoutiful/estetika.png" },
+    { name: "Externa Genitalia", name_en: "Externa Genitalia", link: "/beyoutiful/services/externa-genitalia", image: "/assets/beyoutiful/externa-genitalia.jpg" },
+    { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
+    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
+    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
     {
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
         link: "/beyoutiful/services/hyperbaric-oxygen-therapy", image: "/assets/beyoutiful/hbot-1.jpg",
     },
-    { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
-    { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
-    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
     { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/radiologi-1.jpg" },
     { name: "Gigi", name_en: "Dental", link: "/beyoutiful/services/gigi", image: "/assets/beyoutiful/dental.png" },
 ];
@@ -591,7 +591,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 `,
         slug: "externa-genitalia",
         link: "/",
-        image: "/assets/beyoutiful/dental.png",
+        image: "/assets/beyoutiful/externa-genitalia.jpg",
         before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
         dokter: [
             {

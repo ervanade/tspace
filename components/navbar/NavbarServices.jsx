@@ -73,21 +73,18 @@ const NavbarServices = () => {
       name_en: "Plastic Surgery",
       link: "/beyoutiful/services/bedah-plastik",
     },
-    {
-      name: "Externa Genitalia",
-      name_en: "Externa Genitalia",
-      link: "/beyoutiful/services/externa-genitalia",
-    },
+
     {
       name: "Dermatologi",
       name_en: "Dermatology",
       link: "/beyoutiful/services/dermatologi",
     },
     {
-      name: "Hyperbaric Oxygen Therapy",
-      name_en: "Hyperbaric Oxygen Therapy (HBOT)",
-      link: "/beyoutiful/services/hyperbaric-oxygen-therapy",
+      name: "Externa Genitalia",
+      name_en: "Externa Genitalia",
+      link: "/beyoutiful/services/externa-genitalia",
     },
+
     {
       name: "Urologi",
       name_en: "Urology",
@@ -99,6 +96,11 @@ const NavbarServices = () => {
       link: "/beyoutiful/services/vaskular",
     },
     { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi" },
+    {
+      name: "Hyperbaric Oxygen Therapy",
+      name_en: "Hyperbaric Oxygen Therapy (HBOT)",
+      link: "/beyoutiful/services/hyperbaric-oxygen-therapy",
+    },
     {
       name: "Radiologi",
       name_en: "Radiology",
