@@ -30,9 +30,21 @@ const ServicesDetails = ({ service }) => {
     },
     {
       id: "43",
-      name: "LipoSuction",
+      name: "Sedot Lemak Leher",
 
-      image_mid: "/assets/beyoutiful/services/before/LipoSuction.png",
+      image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Leher.png",
+    },
+    {
+      id: "43",
+      name: "Sedot Lemak Badan",
+
+      image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Badan.png",
+    },
+    {
+      id: "43",
+      name: "Lip Filler",
+
+      image_mid: "/assets/beyoutiful/services/before/Lip Filler.jpg",
     },
     {
       id: "44",
