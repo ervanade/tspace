@@ -68,7 +68,7 @@ const HeroBeyoutiful = () => {
                       <p className="text-base sm:text-lg 2xl:text-xl text-white/85 text-left leading-relaxed">
                         {lang === "en" ? item.desc_en : item.desc}{" "}
                         <span className="text-lg sm:text-xl 2xl:text-2xl  font-semibold">
-                          #wherehealthandhappinessmeet
+                          #WhereHealthAndHappinessMeet
                         </span>
                       </p>
                       <a

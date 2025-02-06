@@ -77,8 +77,8 @@ const Navbar = () => {
           )}
         </div>
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
-          {navbarMenu.map((item) => (
-            <>
+          {navbarMenu.map((item, index) => (
+            <React.Fragment key={index}>
               {item.name === "Beyoutiful" ? (
                 <Link
                   key={item.id}
@@ -129,7 +129,7 @@ const Navbar = () => {
                   {item.name}
                 </button>
               )}
-            </>
+            </React.Fragment>
           ))}
 
           <div className="relative">
@@ -218,8 +218,8 @@ const Navbar = () => {
           </button>
 
           {/* Navbar Menu */}
-          {navbarMenu.map((item) => (
-            <>
+          {navbarMenu.map((item, index) => (
+            <React.Fragment key={index}>
               {item.name === "Beyoutiful" ? (
                 <Link
                   key={item.id}
@@ -258,7 +258,7 @@ const Navbar = () => {
                   {item.name}
                 </button>
               )}
-            </>
+            </React.Fragment>
           ))}
 
           {/* Language Selector */}

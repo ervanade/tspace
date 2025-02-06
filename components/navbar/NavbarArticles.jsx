@@ -69,8 +69,8 @@ const NavbarArticles = () => {
           )}
         </div>
         <div className="center-navbar absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-5 hidden items-center">
-          {navbarMenu.map((item) => (
-            <>
+          {navbarMenu.map((item, index) => (
+            <React.Fragment key={index}>
               {item.name === "Beyoutiful" ? (
                 <Link
                   key={item.id}
@@ -98,7 +98,7 @@ const NavbarArticles = () => {
                   {item.name}
                 </Link>
               )}
-            </>
+            </React.Fragment>
           ))}
 
           <div className="relative">
@@ -184,8 +184,8 @@ const NavbarArticles = () => {
               aria-label="close menu bar button"
             />
           </button>
-          {navbarMenu.map((item) => (
-            <>
+          {navbarMenu.map((item, index) => (
+            <React.Fragment key={index}>
               {item.name === "Beyoutiful" ? (
                 <Link
                   key={item.id}
@@ -203,7 +203,7 @@ const NavbarArticles = () => {
                   {item.name}
                 </Link>
               )}
-            </>
+            </React.Fragment>
           ))}
           <div className="relative">
             <button
