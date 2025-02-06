@@ -188,7 +188,78 @@ export const serviceDetails = [
         slug: "bedah-plastik",
         link: "/",
         image: "/assets/beyoutiful/bedah-plastik.jpg",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [
+            {
+                id: "41",
+                name: "Blepharoplasty Bagian Atas - 2",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Blepharoplasty Bagian Atas - 2.png",
+            },
+
+            {
+                id: "42",
+                name: "Blepharoplasty Bagian Bawah",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Blepharoplasty Bagian Bawah.png",
+            },
+            {
+                id: "43",
+                name: "Sedot Lemak Leher",
+
+                image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Leher.png",
+            },
+            {
+                id: "43",
+                name: "Sedot Lemak Badan",
+
+                image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Badan.png",
+            },
+            {
+                id: "43",
+                name: "Lip Filler",
+
+                image_mid: "/assets/beyoutiful/services/before/Lip Filler.jpg",
+            },
+            {
+                id: "44",
+                name: "Nevus",
+                image_mid: "/assets/beyoutiful/services/before/Nevus.png",
+            },
+            {
+                id: "43",
+                name: "Pembesaran Payudara",
+                image_mid: "/assets/beyoutiful/services/before/Pembesaran Payudara.png",
+            },
+            {
+                id: "40",
+                name: "Pengecilan Payudara",
+                image_mid: "/assets/beyoutiful/services/before/Pengecilan Payudara.png",
+            },
+            {
+                id: "40",
+                name: "Pengencangan Wajah Bagian Tengah",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah.png",
+            },
+            {
+                id: "40",
+                name: "Penghilangan Lemak Pipi",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Penghilangan Lemak Pipi.png",
+            },
+            {
+                id: "40",
+                name: "Rhinoplasty Tulang Rusuk",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Rhinoplasty Tulang Rusuk.png",
+            },
+            {
+                id: "40",
+                name: "Upper Blepharoplasty 3",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Upper Blepharoplasty 3.png",
+            },
+        ],
         dokter: [
             {
                 nama_dokter: "dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)",
@@ -320,7 +391,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "dermatologi",
         link: "/",
         image: "/assets/beyoutiful/estetika.png",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Catharina Ari Wilandani Sp.D.V.E FINSDV",
@@ -354,7 +425,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "hyperbaric-oxygen-therapy",
         link: "/",
         image: "/assets/beyoutiful/hbot-1.jpg",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Vidiarti Rahayu",
@@ -382,7 +453,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "urologi",
         link: "/",
         image: "/assets/beyoutiful/urologi.png",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Anggie Novaldy R, Sp.U",
@@ -412,7 +483,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "vaskular",
         link: "/",
         image: "/assets/beyoutiful/vaskular-1.jpg",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Yuliardy Limengka, B.Med.Sc, Sp.B, Subsp.BVE(K)",
@@ -442,7 +513,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "gizi",
         link: "/",
         image: "/assets/beyoutiful/gizi.png",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Arti Indira, M.Gizi, Sp.GK, FINEM",
@@ -465,7 +536,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "radiologi",
         link: "/",
         image: "/assets/beyoutiful/radiologi-1.jpg",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Fini Amalia",
@@ -489,7 +560,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "gigi",
         link: "/",
         image: "/assets/beyoutiful/dental.png",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "drg. Anna Karerina Tanjung",
@@ -592,7 +663,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "externa-genitalia",
         link: "/",
         image: "/assets/beyoutiful/externa-genitalia.jpg",
-        before_after_foto: ["/assets/beyoutiful/services/before-after.png"],
+        before_after_foto: [],
         dokter: [
             {
                 nama_dokter: "dr. Indri Aulia, Sp.B.P.R.E, Subsp.GE(K), MPd.Ked",

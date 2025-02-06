@@ -209,8 +209,8 @@ const ServicesDetails = ({ service }) => {
                       // onSwiper={(swiper) => console.log(swiper)}
                       // onSlideChange={() => console.log("slide change")}
                     >
-                      {dataSpace
-                        ? dataSpace.map((item, index) => (
+                      {service.before_after_foto
+                        ? service.before_after_foto?.map((item, index) => (
                             <SwiperSlide className="mr-2" key={index}>
                               <div className="recomended-card flex flex-col justify-center gap-2">
                                 {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
