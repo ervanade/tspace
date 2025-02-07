@@ -336,7 +336,8 @@ export const serviceDetails = [
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                          <li>Lip Filler</li>
                          <li>Chin Filler</li>
-                         <li>Non Surgical Rhinoplasty T-Rejuvv</li>
+                         <li>Non Surgical Rhinoplasty</li>
+                         <li>T-Rejuvv</li>
                          <li>T-Flex</li>
                          <li>T-Plasma</li>
                          <li>T-Hair Plasma</li>
@@ -366,7 +367,8 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                          <li>Lip Filler</li>
                          <li>Chin Filler</li>
-                         <li>Non Surgical Rhinoplasty T-Rejuvv</li>
+                         <li>Non Surgical Rhinoplasty</li>
+                         <li>T-Rejuvv</li>
                          <li>T-Flex</li>
                          <li>T-Plasma</li>
                          <li>T-Hair Plasma</li>
