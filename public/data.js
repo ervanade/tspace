@@ -407,7 +407,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
             },
             {
                 nama_dokter: "dr. Danar Wicaksono, M.Sc Sp.D.V.E",
-                dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-danar.jpg",
+                dokter_foto: "/assets/beyoutiful/services/dermatologi/dr-danar 1.png",
                 jadwal_dokter: ["Senin (By Appointment)", "Kamis, Jumat & Sabtu (09.00-15.00)"],
             },
             {

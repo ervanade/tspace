@@ -234,8 +234,8 @@ const ServicesDetails = ({ service }) => {
                                         className="rounded-xl"
                                         style={{ width: "100%", height: "auto" }} // optional
                                       /> */}
-                                <div className="mt-2 flex flex-col items-center gap-4">
-                                  <h3 className="recomended-title font-montserrat text-[20px] font-medium text-dark text-center line-clamp-3 mt-4">
+                                <div className="mt-2 flex flex-col items-center gap-4 px-1">
+                                  <h3 className="recomended-title font-montserrat text-[16px] lg:text-[24px] font-medium text-dark text-center line-clamp-3 mt-4">
                                     {HTMLDecoderEncoder.decode(item?.name)}
                                   </h3>
                                 </div>
