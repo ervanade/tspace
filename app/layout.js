@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/Navbar";
 import { Suspense } from "react";
 import Loading from "@/components/Loading";
 import ClientProvider from "@/components/ClientProvider";
+import parse from 'html-react-parser';
+const HTMLDecoderEncoder = require("html-encoder-decoder");
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -60,9 +62,21 @@ export const metadata = {
 };
 
 
+
 export default function RootLayout({ children }) {
+  const headScript = `  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CTBCY618GW');
+</script>`
   return (
     <html lang="en">
+      <head>
+      {parse(HTMLDecoderEncoder.decode(headScript))}
+      </head>
       <body
         className={`${bebasNeue.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
       >
