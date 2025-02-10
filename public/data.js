@@ -104,7 +104,7 @@ export const serviceDetails = [
         name: "Bedah Plastik",
         name_en: "Plastic Surgery",
         description: `<p>Beyoutiful Aesthetic menawarkan berbagai pilihan tindakan bedah plastik berstandar internasional yang disesuaikan dengan kebutuhan Anda. Dengan dukungan tim medis yang berpengalaman dan teknologi terkini, kami akan membantu Anda mencapai hasil yang alami dan menawan.<span class="font-semibold">Jangan ragu untuk berkonsultasi dengan kami dan mulai perjalanan menuju penampilan yang lebih baik.</span></p>
-   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+   <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                     <li>Transfer Lemak Wajah/Facial Fat Transfer</li>
@@ -145,7 +145,7 @@ export const serviceDetails = [
         </div>`,
         description_en: `
         <p>Beyoutiful Aesthetic offers a wide selection of international standard plastic surgery procedures tailored to your needs. With the support of an experienced medical team and the latest technology, we will help you achieve natural and beautiful results.<span class="font-semibold"> Don't hesitate to consult with us and start your journey towards a better appearance.</span></p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                     <li>Facial Fat Transfer</li>
@@ -331,7 +331,7 @@ export const serviceDetails = [
         name_en: "Dermatology",
         description: `
         <p>Temukan solusi untuk berbagai masalah kulit, dari jerawat hingga tanda-tanda penuaan dengan perawatan estetika di Beyoutiful Aesthetic.</p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                          <li>Lip Filler</li>
@@ -362,7 +362,7 @@ export const serviceDetails = [
         description_en: `
               <p>
 Find solutions to various skin problems, from acne to signs of aging with Dermatologys at Beyoutiful Aesthetic.</p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                          <li>Lip Filler</li>
@@ -613,7 +613,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         description: `<p><span class="font-semibold">Percayakan kesehatan intim Anda pada ahlinya.
 </span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
 </p>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                          <li>Vulvoplasti</li>
@@ -639,7 +639,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         description_en: `<p><span class="font-semibold">Percayakan kesehatan intim Anda pada ahlinya.
 </span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
 </p>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                          <li>Vulvoplasty</li>
@@ -716,7 +716,7 @@ export const doctors = [
     {
         id: 5,
         kategori: 'Surgery',
-        subKategori: 'General',
+        subKategori: 'Face',
         nama: 'dr. Ali Sundoro, Sp.B.P.R.E, SubSp.KM (K)',
         jadwal: 'Jumat & Sabtu (08.00-12.00)',
         tanggalLahir: 'Feb-2',
@@ -725,7 +725,7 @@ export const doctors = [
     {
         id: 6,
         kategori: 'Surgery',
-        subKategori: 'General',
+        subKategori: 'Breast & Body',
         nama: 'dr. Linawati Makmur, Sp.B.P.R.E',
         jadwal: 'Senin & Kamis (09.00-15.00)',
         tanggalLahir: '15-Aug-1966',
@@ -743,7 +743,7 @@ export const doctors = [
     {
         id: 8,
         kategori: 'Surgery',
-        subKategori: 'EXTERNAL GENITALIA',
+        subKategori: 'Externa Genitalia',
         nama: 'dr. Indri Aulia, Sp.B.P.R.E, Subsp.GE(K), MPd.Ked',
         jadwal: 'Senin, Rabu, Kamis & Sabtu (By Appointment)',
         tanggalLahir: '15-Oct-1986',
@@ -788,7 +788,7 @@ export const doctors = [
     {
         id: 13,
         kategori: 'Dermatology',
-        subKategori: 'Dermatology',
+        subKategori: 'Dermatologist',
         nama: 'dr. Catharina Ari Wilandani Sp.D.V.E FINSDV',
         jadwal: 'Selasa (09.00-17.00) / Jumat (13.00-17.00) / Sabtu (09.00-13.00, By Appointment)',
         tanggalLahir: '5-Nov-1981',
@@ -797,7 +797,7 @@ export const doctors = [
     {
         id: 14,
         kategori: 'Dermatology',
-        subKategori: 'Dermatology',
+        subKategori: 'Dermatologist',
         nama: 'dr. Marsha Bianti, Sp.D.V.E',
         jadwal: 'Senin & Rabu (09.00-15.00)',
         tanggalLahir: '15-Mar-1989',
@@ -806,7 +806,7 @@ export const doctors = [
     {
         id: 15,
         kategori: 'Dermatology',
-        subKategori: 'Dermatology',
+        subKategori: 'Dermatologist',
         nama: 'dr. Danar Wicaksono, M.Sc Sp.D.V.E',
         jadwal: 'Senin (By Appointment) / Kamis, Jumat & Sabtu (09.00-15.00)',
         tanggalLahir: '19-Jan-1990',
@@ -815,7 +815,7 @@ export const doctors = [
     {
         id: 16,
         kategori: 'Anesthesiology',
-        subKategori: 'Anesthesiology',
+        subKategori: 'Anesthesiologist',
         nama: 'dr. Betardi Aktara, Sp.An',
         jadwal: 'Senin, Selasa, Jumat (09.00-17.00)',
         tanggalLahir: '22-May-1981',
@@ -824,7 +824,7 @@ export const doctors = [
     {
         id: 17,
         kategori: 'Anesthesiology',
-        subKategori: 'Anesthesiology',
+        subKategori: 'Anesthesiologist',
         nama: 'dr. Michael Mandagi, Sp.An',
         jadwal: 'Rabu, Kamis, Sabtu (09.00-17.00)',
         tanggalLahir: 'Jul-19',
@@ -869,7 +869,7 @@ export const doctors = [
     {
         id: 22,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Anna Karerina Tanjung',
         jadwal: 'Senin (09.00-13.00) / Kamis (13.00-17.00)',
         tanggalLahir: 'Aug-26',
@@ -878,7 +878,7 @@ export const doctors = [
     {
         id: 23,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Melissa Delania, Sp.Pros',
         jadwal: 'Selasa & Kamis (13.00-17.00)',
         tanggalLahir: 'Dec-31',
@@ -887,7 +887,7 @@ export const doctors = [
     {
         id: 24,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Stefani Astari Dewi, Sp.KG',
         jadwal: 'Selasa & Jumat (09.00-13.00)',
         tanggalLahir: 'Dec-26',
@@ -896,7 +896,7 @@ export const doctors = [
     {
         id: 25,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Hirania Soraya, Sp.KG',
         jadwal: 'Selasa & Jumat (13.00-17.00)',
         tanggalLahir: 'Dec-23',
@@ -905,7 +905,7 @@ export const doctors = [
     {
         id: 26,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Eldyra Bela Bangsa',
         jadwal: 'Rabu & Jumat (09.00-13.00)',
         tanggalLahir: 'Oct-19',
@@ -914,7 +914,7 @@ export const doctors = [
     {
         id: 27,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Helsa Ramelya, Sp.KGA',
         jadwal: 'Rabu (13.00-17.00) / Sabtu (09.00-13.00)',
         tanggalLahir: 'Mar-31',
@@ -923,7 +923,7 @@ export const doctors = [
     {
         id: 30,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Adhyana S Novanto, Sp.Ort',
         jadwal: 'Kamis (09.00-13.00)',
         tanggalLahir: '15-Nov-1979',
@@ -932,7 +932,7 @@ export const doctors = [
     {
         id: 31,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Adhinara, Sp.Pros',
         jadwal: 'By Appointment',
         tanggalLahir: 'Mar-1',
@@ -941,7 +941,7 @@ export const doctors = [
     {
         id: 32,
         kategori: 'Dermatology',
-        subKategori: 'Dermatology',
+        subKategori: 'GP Aesthetic',
         nama: 'dr. Dita Mutia F. Budhiarta, MD',
         jadwal: '',
         tanggalLahir: 'Mar-2',
@@ -950,7 +950,7 @@ export const doctors = [
     {
         id: 33,
         kategori: 'Anesthesiology',
-        subKategori: 'Anesthesiology',
+        subKategori: 'Anesthesiologist',
         nama: 'dr. Muhammad Iqbal, Sp-An',
         jadwal: '',
         tanggalLahir: '',
@@ -959,7 +959,7 @@ export const doctors = [
     {
         id: 34,
         kategori: 'Anesthesiology',
-        subKategori: 'Anesthesiology',
+        subKategori: 'Anesthesiologist',
         nama: 'dr. Mega Halida, Sp-An',
         jadwal: '',
         tanggalLahir: '',
@@ -968,7 +968,7 @@ export const doctors = [
     {
         id: 35,
         kategori: 'Anesthesiology',
-        subKategori: 'Anesthesiology',
+        subKategori: 'Anesthesiologist',
         nama: 'dr. Mega Ayu Marina S.A, Sp-An',
         jadwal: '',
         tanggalLahir: '',
@@ -986,7 +986,7 @@ export const doctors = [
     {
         id: 37,
         kategori: 'Dental',
-        subKategori: 'Dental',
+        subKategori: 'Dentist',
         nama: 'drg. Syah Yossy',
         jadwal: '',
         tanggalLahir: '',

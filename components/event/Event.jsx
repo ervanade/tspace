@@ -87,34 +87,59 @@ const events = [
 
 const Event = () => {
   const [hoveredDate, setHoveredDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
-  const daysInMonth = 31; // Sesuaikan dengan jumlah hari di bulan
+  const daysInMonth = 28; // Jumlah hari dalam bulan
   const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
+
   const events = [
-    { date: "2024-12-01", title: "Rock Fest 2024", time: "10:00 - 18:00" },
-    { date: "2024-12-05", title: "Jazz Night Live", time: "10:00 - 18:00" },
     {
-      date: "2024-12-10",
-      title: "Indie Music Showcase",
-      time: "10:00 - 18:00",
+      date: "2025-02-12",
+      title: "Vocal Clinic with Bertha",
+      time: "16:00 - 18:00",
+    },
+    { date: "2025-02-12", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
+    {
+      date: "2025-02-19",
+      title: "Vocal Clinic with Bertha",
+      time: "16:00 - 18:00",
+    },
+    { date: "2025-02-19", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
+    {
+      date: "2025-02-26",
+      title: "Vocal Clinic with Bertha",
+      time: "16:00 - 18:00",
+    },
+    { date: "2025-02-26", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
+    {
+      date: "2025-02-13",
+      title: "Jajal Panggung - Aquarius Nite",
+      time: "19:00 - 21:00",
     },
     {
-      date: "2024-12-15",
-      title: "Electronic Dance Party",
-      time: "10:00 - 18:00",
+      date: "2025-02-20",
+      title: "Jajal Panggung - Highschool Nite",
+      time: "19:00 - 21:00",
     },
     {
-      date: "2024-12-20",
-      title: "Classical Symphony Gala",
-      time: "10:00 - 18:00",
+      date: "2025-02-27",
+      title: "Jajal Panggung Special - Voxxes",
+      time: "19:00 - 21:00",
     },
     {
-      date: "2024-12-25",
-      title: "Christmas Acoustic Night",
-      time: "10:00 - 18:00",
+      date: "2025-02-14",
+      title: "KAMASOGI - Love Songs",
+      time: "19:00 - 21:00",
+    },
+    { date: "2025-02-21", title: "KAMASOGI", time: "19:00 - 21:00" },
+    {
+      date: "2025-02-28",
+      title: "Home Concert Talenta Svara Bertha",
+      time: "19:00 - 21:00",
     },
   ];
+
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -126,22 +151,26 @@ const Event = () => {
   ];
 
   const getEventByDate = (day) => {
-    const date = `2024-12-${String(day).padStart(2, "0")}`;
+    const date = `2025-02-${String(day).padStart(2, "0")}`;
     return events.find((event) => event.date === date);
   };
 
   const getDayName = (day) => {
-    const date = new Date(`2024-12-${String(day).padStart(2, "0")}`);
-    return daysOfWeek[date.getDay()]; // Menggunakan `getDay()` untuk mendapatkan indeks hari dalam minggu
+    const date = new Date(`2025-02-${String(day).padStart(2, "0")}`);
+    return daysOfWeek[date.getDay()];
   };
-  const [currentPage, setCurrentPage] = useState(0);
-  const eventsPerPage = 6;
 
-  const handleNext = () => setCurrentPage((prev) => prev + 1);
-  const handlePrevious = () => setCurrentPage((prev) => prev - 1);
+  const handleMouseEnter = (day) => {
+    setHoveredDate(day);
+  };
 
-  const startIndex = currentPage * eventsPerPage;
-  const paginatedEvents = events.slice(startIndex, startIndex + eventsPerPage);
+  const handleMouseLeave = () => {
+    setHoveredDate(null);
+  };
+
+  const handleClick = (day) => {
+    setSelectedDate(day);
+  };
 
   return (
     <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
@@ -166,7 +195,7 @@ const Event = () => {
               <FaArrowLeft />
             </button>
             <h2 className="text-xl font-semibold text-textDark">
-              December 2024
+              Februari 2025
             </h2>
             <button
               aria-label="button"
@@ -182,42 +211,51 @@ const Event = () => {
             {Array.from({ length: daysInMonth }).map((_, i) => {
               const day = i + 1;
               const event = getEventByDate(day);
+              const isActive = selectedDate === day || hoveredDate === day;
+              const hasEvent = !!event;
 
               return (
                 <div
                   key={`day-${day}`}
-                  className={`h-16 flex justify-center items-center rounded-lg cursor-pointer transition-all ${
-                    event
-                      ? "bg-orange-500 text-white"
-                      : "bg-gray-200 text-gray-700"
-                  } hover:shadow-md`}
-                  onMouseEnter={() => setHoveredDate(day)}
-                  onMouseLeave={() => setHoveredDate(null)}
+                  className={`h-16 flex justify-center items-center rounded-lg cursor-pointer transition-all 
+                    ${
+                      hasEvent
+                        ? "bg-orange-500 text-white"
+                        : "bg-gray-200 text-gray-700"
+                    } 
+                    ${
+                      isActive ? "bg-orange-600 text-white" : ""
+                    } hover:shadow-md`}
+                  onMouseEnter={() => handleMouseEnter(day)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={() => handleClick(day)}
                 >
                   {day}
                 </div>
               );
             })}
           </div>
-          {hoveredDate ? (
+
+          {/* Event Detail Section */}
+          {selectedDate || hoveredDate ? (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg">
               <h3 className="text-lg font-semibold text-orange-500">
-                {getEventByDate(hoveredDate)?.title || "No Event"}
+                {getEventByDate(hoveredDate || selectedDate)?.title ||
+                  "No Event"}
               </h3>
               <p className="flex items-center">
                 <FaCalendar className="h-5 w-5 text-textDark mr-2" />
-                {`${getDayName(hoveredDate)}, 2024-12-${String(
-                  hoveredDate
-                ).padStart(2, "0")}`}{" "}
-                {/* Menampilkan Hari, Tanggal */}
+                {`${getDayName(hoveredDate || selectedDate)}, 2025-02-${String(
+                  hoveredDate || selectedDate
+                ).padStart(2, "0")}`}
               </p>
               <p className="flex items-center">
                 <FaClock className="h-5 w-5 text-textDark mr-2" />
-                {getEventByDate(hoveredDate)?.time || "No Event"}
+                {getEventByDate(hoveredDate || selectedDate)?.time ||
+                  "No Event"}
               </p>
               <a
-                href="https://wa.me/+621181110556
-"
+                href="https://wa.me/+621181110556"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 text-sm bg-green-500 text-white py-3 px-4 rounded-full shadow-lg transition duration-300 inline-flex items-center gap-2"
@@ -230,57 +268,10 @@ const Event = () => {
             </div>
           ) : (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg h-20">
-              {" "}
               <p className="text-center">Hover Date to see upcoming events</p>
             </div>
           )}
         </div>
-        {/* <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {paginatedEvents.map((event) => (
-            <div
-              key={event.id}
-              className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition"
-            >
-              <h3 className="text-lg font-semibold text-orange-600">
-                {event.title}
-              </h3>
-              <p className="text-sm text-gray-600">{event.subtitle}</p>
-              <div className="mt-2 text-gray-800 text-sm space-y-2">
-                <p className="flex items-center">
-                  <FaCalendar className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.day}, {event.date}
-                </p>
-                <p className="flex items-center">
-                  <FaLocationPin className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.location}
-                </p>
-                <p className="flex items-center">
-                  <FaClock className="h-5 w-5 text-[#303638] mr-2" />
-                  {event.time}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex justify-center gap-4">
-          {currentPage > 0 && (
-            <button aria-label="button"
-              className="px-4 py-2 bg-[#fff] text-[#303638] rounded-lg shadow font-bold"
-              onClick={handlePrevious}
-            >
-              Previous
-            </button>
-          )}
-          {startIndex + eventsPerPage < events.length && (
-            <button aria-label="button"
-              className="px-4 py-2 bg-[#fff] text-[#303638] rounded-lg shadow font-bold"
-              onClick={handleNext}
-            >
-              Next
-            </button>
-          )}
-        </div> */}
       </div>
     </section>
   );

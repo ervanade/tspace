@@ -76,11 +76,10 @@ const Gallery = ({ title, subTitle }) => {
   const content = {
     title: "ArT-Space",
     title_en: "ArT-Space",
-    desc: `JANMASHTAMI, pameran tunggal Prajna Dewantara \n
-    Prajna Dewantara Wirata adalah seniman visual Indonesia asal Bali yang karyanya, ditandai dengan realisme mencolok melalui neo-chiaroscuro dan warna-warna cerah, mengeksplorasi tema keimanan, ketahanan, dan pemberdayaan dengan fokus pada kekuatan jiwa manusia.`,
-    desc_en: `JANMASHTAMI, solo exhibition Prajna Dewantara \n
-Prajna Dewantara Wirata is an Indonesian visual artist from Bali whose work, characterised by striking realism achieved through neo-chiaroscuro and vibrant colors, explores themes of faith, resilience, and empowerment with a focus on the strength of the human spirit.
-`,
+    desc: `Ind: PAAX!, dari Kelompok Lima. \n
+    Sebuah pameran seni yang menampilkan karya-karya pop art dan abstrak yang unik dan penuh warna dari D.Koestrita, Stacy, RenDam, Masagung Kirasave, dan Ratih.`,
+    desc_en: `Ind: PAAX!, dari Kelompok Lima. \n
+    Sebuah pameran seni yang menampilkan karya-karya pop art dan abstrak yang unik dan penuh warna dari D.Koestrita, Stacy, RenDam, Masagung Kirasave, dan Ratih.`,
     logo: "/logo_ori.svg",
   };
 
