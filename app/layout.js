@@ -75,7 +75,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      {parse(HTMLDecoderEncoder.decode(headScript))}
+      <script
+    dangerouslySetInnerHTML={{
+      __html: HTMLDecoderEncoder.decode(headScript),
+    }}
+  />
       </head>
       <body
         className={`${bebasNeue.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
