@@ -64,22 +64,14 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
-  const headScript = `  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CTBCY618GW');
-</script>`
+  const headScript = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
+
   return (
     <html lang="en">
       <head>
-      <script
-    dangerouslySetInnerHTML={{
-      __html: HTMLDecoderEncoder.decode(headScript),
-    }}
-  />
+        <>
+      {parse(HTMLDecoderEncoder.decode(headScript))}
+        </>
       </head>
       <body
         className={`${bebasNeue.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
