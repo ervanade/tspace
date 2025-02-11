@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { Navigation } from "swiper/modules";
 import { useSelector } from "react-redux";
-import { dataGallery } from "@/public/data";
+import { dataGallery, galleryFeb } from "@/public/data";
 import "swiper/css/navigation";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -141,10 +141,10 @@ const Gallery = ({ title, subTitle }) => {
                 prevEl: ".gallery-button-prev",
               }}
             >
-              {dataGallery.map((item, index) => (
+              {galleryFeb.map((item, index) => (
                 <SwiperSlide key={index} className="mr-2">
                   <div className="recomended-card flex flex-col justify-center gap-2">
-                    <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                    <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
                       <Image
                         src={item.image_mid}
                         alt={item?.name || "T-Space Gallery"}
@@ -212,8 +212,8 @@ const Gallery = ({ title, subTitle }) => {
                   <div className="w-full flex justify-center">
                     <div className="max-h-[500px]">
                       <Image
-                        src={dataGallery[currentIndex].image_mid}
-                        alt={dataGallery[currentIndex].name}
+                        src={galleryFeb[currentIndex].image_mid}
+                        alt={galleryFeb[currentIndex].name}
                         width={0}
                         height={0}
                         sizes="100vw"
@@ -228,15 +228,13 @@ const Gallery = ({ title, subTitle }) => {
 
                   <div className="mt-4 text-center text-textDark">
                     <h2 className="text-xl font-semibold mb-2">
-                      {HTMLDecoderEncoder.decode(
-                        dataGallery[currentIndex].name
-                      )}
+                      {HTMLDecoderEncoder.decode(galleryFeb[currentIndex].name)}
                     </h2>
                     <p className="text-sm">
-                      {dataGallery[currentIndex].dimensions}
+                      {galleryFeb[currentIndex].dimensions}
                     </p>
                     <p className="text-lg text-secondary font-medium">
-                      {dataGallery[currentIndex].price}
+                      {galleryFeb[currentIndex].price}
                     </p>
                   </div>
                 </div>

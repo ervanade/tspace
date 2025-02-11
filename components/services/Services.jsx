@@ -109,8 +109,8 @@ const Services = ({ title, subTitle, bg }) => {
             } sub-title  !text-start`}
           >
             {lang === "en"
-              ? "Experience transformative results with our specialized services"
-              : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami"}
+              ? "Experience transformative results with our specialized services."
+              : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami."}
           </p>
         </div>
         <div className="">

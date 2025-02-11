@@ -53,9 +53,9 @@ const Tenants = () => {
       id: "bakmi",
       title: "WARUNG BAKMI MPEK TJOEN",
       image: "/assets/bakmi.png",
-      desc: "Nikmati bakmi halal yang unik dan lezat, kreasi dari Chef Andrea Peresthu",
+      desc: "Nikmati bakmi halal yang unik dan lezat, kreasi dari Chef Andrea Peresthu.",
       desc_en:
-        "Enjoy unique and delicious halal noodles, a creation of Chef Andrea Peresthu",
+        "Enjoy unique and delicious halal noodles, a creation of Chef Andrea Peresthu.",
       link_web:
         "https://www.javanegragourmet.com/outlets/warung-bakmi-mpek-tjoen",
       link_wa: "https://wa.me/+6281222812023",

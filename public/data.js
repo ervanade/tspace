@@ -81,6 +81,113 @@ export const dataGallery = [
     },
     // Tambahkan data lainnya sesuai kebutuhan
 ];
+export const galleryFeb = [
+    {
+        id: "1",
+        name: "Masagung Kirasave 1",
+        price: "IDR 50.000.000",
+        dimensions: "Penggali Pancasila, Acrylic on Canvas, 100 x 130 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-08.jpg",
+    },
+    {
+        id: "2",
+        name: "RenDam 1",
+        price: "IDR 12.500.000",
+        dimensions: "Choice #1, Acrylic on Canvas, 100 x 100 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-19.jpg",
+    },
+    {
+        id: "3",
+        name: "RenDam 3",
+        price: "IDR 12.500.000",
+        dimensions: "New Joy, Acrylic on Canvas, 100 x 100 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-21.jpg",
+    },
+    {
+        id: "4",
+        name: "RenDam 5",
+        price: "Set of 3 IDR 1.875.000",
+        dimensions: "Blooms [Series], Acrylic on Canvas, 30 x 30 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-18.jpg",
+    },
+    {
+        id: "5",
+        name: "Stacy 6",
+        price: "IDR 5.000.000",
+        dimensions: "Golden Dawn, Acrylic on Canvas, 100 x 60 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-24.jpg",
+    },
+    {
+        id: "6",
+        name: "D. Koestrita 2",
+        price: "IDR 4.000.000",
+        dimensions: "Block with the Mirror (Explorasi-061), Acrylic on Canvas, 60 x 90 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-03.jpg",
+    },
+    {
+        id: "15",
+        name: "Ratih 1",
+        price: "IDR 10.000.000",
+        dimensions: "God’s Love on Cellular Level Acrilyc on Canvas 90 X 60 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-15.jpg",
+    },
+    {
+        id: "7",
+        name: "Ratih 2",
+        price: "IDR 8.700.000",
+        dimensions: "Breathing Fine, Acrylic on Canvas, 90 x 60 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-13.jpg",
+    },
+    {
+        id: "8",
+        name: "Ratih 6",
+        price: "IDR 20.000.000",
+        dimensions: "Alzheimer, Acrylic on Canvas, 150 x 50 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-11.jpg",
+    },
+    {
+        id: "9",
+        name: "Masagung Kirasave 3",
+        price: "IDR 10.000.000",
+        dimensions: "Warisi Apinya, Bukan Abunya, Acrylic on Canvas, 80 x 100 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-10.jpg",
+    },
+    {
+        id: "10",
+        name: "Stacy 3",
+        price: "IDR 9.000.000",
+        dimensions: "Cloud Crown, Acrylic on Canvas, 100 x 140 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-23.jpg",
+    },
+    {
+        id: "11",
+        name: "Stacy 4",
+        price: "IDR 3.000.000",
+        dimensions: "Desert Wind, Acrylic on Canvas, 60 x 70 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-22.jpg",
+    },
+    {
+        id: "12",
+        name: "Masagung Kirasave 4",
+        price: "IDR 30.000.000",
+        dimensions: "Putera Gegelek, Acrylic on Canvas, 80 x 100 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-09.jpg",
+    },
+    {
+        id: "13",
+        name: "D. Koestrita 3",
+        price: "IDR 7.000.000",
+        dimensions: "Between The Line (Explorasi-057), Acrylic on Canvas, 90 x 120 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-02.jpg",
+    },
+    {
+        id: "14",
+        name: "D. Koestrita 4",
+        price: "IDR 4.000.000",
+        dimensions: "3 on 3 (Explorasi-066), Acrylic on Canvas, 70 x 90 cm",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-01.jpg",
+    },
+];
 
 export const dataServices = [
     { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/beyoutiful/services/bedah-plastik", image: "/assets/beyoutiful/bedah-plastik.jpg" },
@@ -145,7 +252,7 @@ export const serviceDetails = [
         </div>`,
         description_en: `
         <p>Beyoutiful Aesthetic offers a wide selection of international standard plastic surgery procedures tailored to your needs. With the support of an experienced medical team and the latest technology, we will help you achieve natural and beautiful results.<span class="font-semibold"> Don't hesitate to consult with us and start your journey towards a better appearance.</span></p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                     <li>Facial Fat Transfer</li>
@@ -442,13 +549,13 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         name_en: "Urology",
         description: ` <p><span class="font-semibold"> Beyoutiful Aesthetic memberikan layanan urologi komprehensif untuk kesehatan.</span> Kami menawarkan berbagai macam tindakan medis, mulai dari pemeriksaan rutin hingga penanganan masalah urologi yang kompleks. Percayakan kesehatan Anda pada kami
 </p>
-   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Extracorporeal Shockwave Therapy </li>
                      </ul>
 `,
         description_en: ` <p><span class="font-semibold"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
 </p>
-<ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+<ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Extracorporeal Shockwave Therapy </li>
                      </ul>
 `,
@@ -470,14 +577,14 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         name_en: "Vascular",
         description: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold"> Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
 </p>
-   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
                         <li>LHP - Laser Hemorrhoidoplasty </li>
                      </ul>
 `,
         description_en: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold"> Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
 </p>
-   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
                         <li>LHP - Laser Hemorrhoidoplasty </li>
                      </ul>
@@ -501,14 +608,14 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         description: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
 </span>
 </p>
-   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Konsultasi Gizi+Meal Plan</li>
                         <li>Nourish + Nutrigenomic </li>
                      </ul>`,
         description_en: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
 </span>
 </p>
-   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
+   <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Konsultasi Gizi+Meal Plan</li>
                         <li>Nourish + Nutrigenomic </li>
                      </ul>`,
@@ -679,7 +786,8 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 export const doctors = [
     {
         id: 1,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)',
         jadwal: 'Senin, Rabu & Jumat (09.00-15.00) / Selasa, Kamis & Sabtu (09.00-17.00)',
@@ -688,7 +796,8 @@ export const doctors = [
     },
     {
         id: 2,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Eko Herihadi, Sp.B.P.R.E',
         jadwal: 'Selasa - Kamis (09.00-15.00)',
@@ -697,7 +806,8 @@ export const doctors = [
     },
     {
         id: 3,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Hendra Tri Hartono, Sp.B.P.R.E',
         jadwal: 'Selasa, Rabu & Jumat (09.00-16.00) / Sabtu (09.00-13.00)',
@@ -706,7 +816,8 @@ export const doctors = [
     },
     {
         id: 4,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Puti Adla Runisa, B.Med.Sc, Sp.B.P.R.E',
         jadwal: 'Senin, Selasa & Kamis (13.00-16.00)',
@@ -715,7 +826,8 @@ export const doctors = [
     },
     {
         id: 5,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Ali Sundoro, Sp.B.P.R.E, SubSp.KM (K)',
         jadwal: 'Jumat & Sabtu (08.00-12.00)',
@@ -724,7 +836,8 @@ export const doctors = [
     },
     {
         id: 6,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Linawati Makmur, Sp.B.P.R.E',
         jadwal: 'Senin & Kamis (09.00-15.00)',
@@ -733,7 +846,8 @@ export const doctors = [
     },
     {
         id: 7,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'General',
         nama: 'dr. Huntal Napoleon, Sp.BP-RE, Subsp-LBL (K), FIHFAA',
         jadwal: 'Selasa (12.00-15.00) / Sabtu (09.00-12.00)',
@@ -742,7 +856,8 @@ export const doctors = [
     },
     {
         id: 8,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Externa Genitalia',
         nama: 'dr. Indri Aulia, Sp.B.P.R.E, Subsp.GE(K), MPd.Ked',
         jadwal: 'Senin, Rabu, Kamis & Sabtu (By Appointment)',
@@ -751,7 +866,8 @@ export const doctors = [
     },
     {
         id: 9,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Jeihan Nabila, B.Med.Sc, Sp.B.P.R.E',
         jadwal: 'Senin, Selasa, Kamis (09.00-15.00) / Rabu (09.00-15.00) / Sabtu (By Appointment)',
@@ -760,7 +876,8 @@ export const doctors = [
     },
     {
         id: 10,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Risa Crisanti, Sp.B.P.R.E',
         jadwal: 'Senin - Sabtu (09.00-15.00)',
@@ -769,7 +886,8 @@ export const doctors = [
     },
     {
         id: 11,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Ruth F. M. Lumbuun, Sp.B.P.R.E',
         jadwal: 'Selasa & Kamis (14.00-17.00) / Jumat & Sabtu (9.00-15.00)',
@@ -778,7 +896,8 @@ export const doctors = [
     },
     {
         id: 12,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Laurent L Supit, Sp.B.P.R.E',
         jadwal: 'By Appointment',
@@ -787,7 +906,8 @@ export const doctors = [
     },
     {
         id: 13,
-        kategori: 'Dermatology',
+        kategori: 'Dermatolog',
+        kategori_en: "Dermatologist",
         subKategori: 'Dermatologist',
         nama: 'dr. Catharina Ari Wilandani Sp.D.V.E FINSDV',
         jadwal: 'Selasa (09.00-17.00) / Jumat (13.00-17.00) / Sabtu (09.00-13.00, By Appointment)',
@@ -796,7 +916,8 @@ export const doctors = [
     },
     {
         id: 14,
-        kategori: 'Dermatology',
+        kategori: 'Dermatolog',
+        kategori_en: "Dermatologist",
         subKategori: 'Dermatologist',
         nama: 'dr. Marsha Bianti, Sp.D.V.E',
         jadwal: 'Senin & Rabu (09.00-15.00)',
@@ -805,7 +926,8 @@ export const doctors = [
     },
     {
         id: 15,
-        kategori: 'Dermatology',
+        kategori: 'Dermatolog',
+        kategori_en: "Dermatologist",
         subKategori: 'Dermatologist',
         nama: 'dr. Danar Wicaksono, M.Sc Sp.D.V.E',
         jadwal: 'Senin (By Appointment) / Kamis, Jumat & Sabtu (09.00-15.00)',
@@ -814,7 +936,8 @@ export const doctors = [
     },
     {
         id: 16,
-        kategori: 'Anesthesiology',
+        kategori: 'Dokter Anestesi',
+        kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Betardi Aktara, Sp.An',
         jadwal: 'Senin, Selasa, Jumat (09.00-17.00)',
@@ -823,7 +946,8 @@ export const doctors = [
     },
     {
         id: 17,
-        kategori: 'Anesthesiology',
+        kategori: 'Dokter Anestesi',
+        kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Michael Mandagi, Sp.An',
         jadwal: 'Rabu, Kamis, Sabtu (09.00-17.00)',
@@ -832,7 +956,8 @@ export const doctors = [
     },
     {
         id: 18,
-        kategori: 'Gizi',
+        kategori: 'Dokter Gizi',
+        kategori_en: 'Nutritionist',
         subKategori: 'Gizi',
         nama: 'dr. Arti Indira, M.Gizi, Sp.GK, FINEM',
         jadwal: 'Senin - Sabtu (09.00-17.00)',
@@ -841,7 +966,8 @@ export const doctors = [
     },
     {
         id: 19,
-        kategori: 'Vascular',
+        kategori: 'Bedah Vaskular',
+        kategori_en: 'Vascular Surgeon',
         subKategori: 'Vascular',
         nama: 'dr. Yuliardy Limengka, B.Med.Sc, Sp.B, Subsp.BVE(K)',
         jadwal: 'Senin, Rabu, Jumat & Sabtu (09.00-12.00)',
@@ -850,8 +976,9 @@ export const doctors = [
     },
     {
         id: 20,
-        kategori: 'Urology',
-        subKategori: 'Urogology',
+        kategori: 'Dokter Urologi',
+        kategori_en: 'Urologist',
+        subKategori: 'Urologist',
         nama: 'dr. Anggie Novaldy R, Sp.U',
         jadwal: 'Selasa, Kamis & Sabtu (09.00-10.30)',
         tanggalLahir: 'Jun-10',
@@ -859,7 +986,8 @@ export const doctors = [
     },
     {
         id: 21,
-        kategori: 'Hyperbaric',
+        kategori: 'Dokter Hiperbarik',
+        kategori_en: 'Hyperbaric Surgeon',
         subKategori: 'Hyperbaric',
         nama: 'dr. Vidiarti Rahayu',
         jadwal: 'Senin - Sabtu (09.00-17.00)',
@@ -868,7 +996,8 @@ export const doctors = [
     },
     {
         id: 22,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Anna Karerina Tanjung',
         jadwal: 'Senin (09.00-13.00) / Kamis (13.00-17.00)',
@@ -877,7 +1006,8 @@ export const doctors = [
     },
     {
         id: 23,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Melissa Delania, Sp.Pros',
         jadwal: 'Selasa & Kamis (13.00-17.00)',
@@ -886,7 +1016,8 @@ export const doctors = [
     },
     {
         id: 24,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Stefani Astari Dewi, Sp.KG',
         jadwal: 'Selasa & Jumat (09.00-13.00)',
@@ -895,7 +1026,8 @@ export const doctors = [
     },
     {
         id: 25,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Hirania Soraya, Sp.KG',
         jadwal: 'Selasa & Jumat (13.00-17.00)',
@@ -904,7 +1036,8 @@ export const doctors = [
     },
     {
         id: 26,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Eldyra Bela Bangsa',
         jadwal: 'Rabu & Jumat (09.00-13.00)',
@@ -913,7 +1046,8 @@ export const doctors = [
     },
     {
         id: 27,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Helsa Ramelya, Sp.KGA',
         jadwal: 'Rabu (13.00-17.00) / Sabtu (09.00-13.00)',
@@ -922,7 +1056,8 @@ export const doctors = [
     },
     {
         id: 30,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Adhyana S Novanto, Sp.Ort',
         jadwal: 'Kamis (09.00-13.00)',
@@ -931,7 +1066,8 @@ export const doctors = [
     },
     {
         id: 31,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Adhinara, Sp.Pros',
         jadwal: 'By Appointment',
@@ -940,7 +1076,8 @@ export const doctors = [
     },
     {
         id: 32,
-        kategori: 'Dermatology',
+        kategori: 'Dermatolog',
+        kategori_en: "Dermatologist",
         subKategori: 'GP Aesthetic',
         nama: 'dr. Dita Mutia F. Budhiarta, MD',
         jadwal: '',
@@ -949,7 +1086,8 @@ export const doctors = [
     },
     {
         id: 33,
-        kategori: 'Anesthesiology',
+        kategori: 'Dokter Anestesi',
+        kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Muhammad Iqbal, Sp-An',
         jadwal: '',
@@ -958,7 +1096,8 @@ export const doctors = [
     },
     {
         id: 34,
-        kategori: 'Anesthesiology',
+        kategori: 'Dokter Anestesi',
+        kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Mega Halida, Sp-An',
         jadwal: '',
@@ -967,7 +1106,8 @@ export const doctors = [
     },
     {
         id: 35,
-        kategori: 'Anesthesiology',
+        kategori: 'Dokter Anestesi',
+        kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Mega Ayu Marina S.A, Sp-An',
         jadwal: '',
@@ -976,7 +1116,8 @@ export const doctors = [
     },
     {
         id: 36,
-        kategori: 'Surgery',
+        kategori: 'Dokter Bedah Plastik',
+        kategori_en: 'Plastic Surgeon',
         subKategori: 'General',
         nama: 'dr. Patricia Marcellina Sadikin, SpBP-RE',
         jadwal: '',
@@ -985,7 +1126,8 @@ export const doctors = [
     },
     {
         id: 37,
-        kategori: 'Dental',
+        kategori: 'Dokter Gigi',
+        kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Syah Yossy',
         jadwal: '',

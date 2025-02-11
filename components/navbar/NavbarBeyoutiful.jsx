@@ -55,12 +55,32 @@ const NavbarBeyoutiful = () => {
   const buttonOnChangeClose = () => setMenuButton(false);
 
   const navbarMenu = [
-    { id: 1, name: "Home", link: "/beyoutiful#hero" },
-    { id: 2, name: "T-Space", link: "/" },
-    { id: 3, name: "Servis Kami", link: "/beyoutiful#services" },
-    { id: 4, name: "Jadwal Dokter", link: "/beyoutiful#doctor-schedules" },
-    { id: 5, name: "Fasilitas", link: "/beyoutiful#facility" },
-    { id: 6, name: "Contact Us", link: "/beyoutiful#contact" },
+    { id: 1, name: "Home", name_en: "Home", link: "/beyoutiful#hero" },
+    { id: 2, name: "T-Space", name_en: "T-Space", link: "/" },
+    {
+      id: 3,
+      name: "Servis Kami",
+      name_en: "Our Services",
+      link: "/beyoutiful#services",
+    },
+    {
+      id: 4,
+      name: "Jadwal Dokter",
+      name_en: "Doctor Schedule",
+      link: "/beyoutiful#doctor-schedules",
+    },
+    {
+      id: 5,
+      name: "Fasilitas",
+      name_en: "Facility",
+      link: "/beyoutiful#facility",
+    },
+    {
+      id: 6,
+      name: "Hubungi Kami",
+      name_en: "Contact Us",
+      link: "/beyoutiful#contact",
+    },
   ];
   const subMenu = [
     {
@@ -151,7 +171,7 @@ const NavbarBeyoutiful = () => {
                       : "text-[#f1efefce] hover:text-white "
                   } text-sm`}
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </Link>
               ) : item.name === "Servis Kami" ? (
                 <div
@@ -168,7 +188,7 @@ const NavbarBeyoutiful = () => {
                         : "text-[#f1efefce] hover:text-white"
                     } text-sm`}
                   >
-                    {item.name}
+                    {lang === "en" ? item.name_en : item.name}
                   </button>
 
                   {/* Mega Menu */}
@@ -222,7 +242,7 @@ const NavbarBeyoutiful = () => {
                     item.name === "Home" ? "font-semibold !text-secondary" : ""
                   }`}
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </button>
               )}
             </React.Fragment>
@@ -329,7 +349,7 @@ const NavbarBeyoutiful = () => {
                   href={`/?lang=${lang}`}
                   className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </Link>
               ) : item.name === "Servis Kami" ? (
                 <div className="relative" key={item.id}>
@@ -338,7 +358,7 @@ const NavbarBeyoutiful = () => {
                     onClick={() => setMegaMenuOpen((prev) => !prev)}
                     className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                   >
-                    {item.name}
+                    {lang === "en" ? item.name_en : item.name}
                   </button>
                   {megaMenuOpen && (
                     <div
@@ -384,7 +404,7 @@ const NavbarBeyoutiful = () => {
                   }}
                   className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </button>
               )}
             </React.Fragment>

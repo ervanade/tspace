@@ -30,13 +30,38 @@ const NavbarArticles = () => {
   };
 
   const navbarMenu = [
-    { id: 1, name: "Home", link: `/?lang=${lang}#hero` },
-    { id: 2, name: "Beyoutiful", link: `/beyoutiful?lang=${lang}` },
-    { id: 3, name: "ArT-Space", link: `/?lang=${lang}#gallery` },
-    { id: 4, name: "RenT-Space", link: `/?lang=${lang}#rent-space` },
-    { id: 5, name: "Tenant Kami", link: `/?lang=${lang}#our-tenant` },
-    // { id: 6, name: "Articles", link: `/?lang=${lang}#articles` },
-    { id: 7, name: "Hubungi Kami", link: `/?lang=${lang}#contact` },
+    { id: 1, name: "Home", name_en: "Home", link: `/?lang=${lang}#hero` },
+    {
+      id: 2,
+      name: "Beyoutiful",
+      name_en: "Beyoutiful",
+      link: `/beyoutiful?lang=${lang}`,
+    },
+    {
+      id: 3,
+      name: "ArT-Space",
+      name_en: "ArT-Space",
+      link: `/?lang=${lang}#gallery`,
+    },
+    {
+      id: 4,
+      name: "RenT-Space",
+      name_en: "RenT-Space",
+      link: `/?lang=${lang}#rent-space`,
+    },
+    {
+      id: 5,
+      name: "Tenant Kami",
+      name_en: "Our Tenants",
+      link: `/?lang=${lang}#our-tenant`,
+    },
+    // { id: 6, name: "Articles",  name_en: "Home", link: `/?lang=${lang}#articles` },
+    {
+      id: 7,
+      name: "Hubungi Kami",
+      name_en: "Contact Us",
+      link: `/?lang=${lang}#contact`,
+    },
   ];
 
   return (
@@ -95,7 +120,7 @@ const NavbarArticles = () => {
                     item.name === "Articles" ? "font-semibold text-black" : ""
                   }`}
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </Link>
               )}
             </React.Fragment>
@@ -200,7 +225,7 @@ const NavbarArticles = () => {
                   key={item.id}
                   className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </Link>
               )}
             </React.Fragment>

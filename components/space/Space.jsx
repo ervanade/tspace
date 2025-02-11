@@ -52,7 +52,18 @@ const Space = ({ title, subTitle }) => {
         "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
-      image_mid: "/assets/rooftop.png",
+      image_mid: "/assets/rooftop-1.png",
+      image_map: "/assets/map-hall.png",
+    },
+    {
+      id: "43",
+      name: "OPERATING ROOM",
+      price: "Rp. 120.000",
+      opsi_acara:
+        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs",
+      spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
+      image_mid: "/assets/operating-room.png",
       image_map: "/assets/map-hall.png",
     },
     {
@@ -138,15 +149,17 @@ const Space = ({ title, subTitle }) => {
                     <SwiperSlide className="mr-2" key={index}>
                       <div className="recomended-card flex flex-col justify-center gap-2">
                         {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
-                        <Image
-                          src={item.image_mid}
-                          width={0}
-                          height={0}
-                          // className='aspect-square'
-                          alt={item?.name || "T-Space Gallery"}
-                          sizes="100vw"
-                          style={{ width: "100%", height: "auto" }} // optional
-                        />
+                        <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_mid}
+                            alt={item?.name || "Rent Space"}
+                            sizes="100vw"
+                            fill
+                            className="object-cover"
+                            priority={index === 0} // Prioritize first image
+                          />
+                        </div>
+
                         <div className="mt-2 flex flex-col items-center gap-4">
                           <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-textDark text-center line-clamp-3 mt-4">
                             {HTMLDecoderEncoder.decode(item?.name)}

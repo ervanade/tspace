@@ -37,13 +37,18 @@ const Navbar = () => {
   }, []);
 
   const navbarMenu = [
-    { id: 1, name: "Home", link: "/#hero" },
-    { id: 2, name: "Beyoutiful", link: "/#hero" },
-    { id: 3, name: "ArT-Space", link: "/#gallery" },
-    { id: 4, name: "RenT-Space", link: "/#rent-space" },
-    { id: 5, name: "Tenant Kami", link: "/#our-tenant" },
-    // { id: 6, name: "Artikel", link: "/#articles" },
-    { id: 7, name: "Hubungi Kami", link: "/#contact" },
+    { id: 1, name: "Home", name_en: "Home", link: "/#hero" },
+    { id: 2, name: "Beyoutiful", name_en: "Beyoutiful", link: "/#hero" },
+    { id: 3, name: "ArT-Space", name_en: "ArT-Space", link: "/#gallery" },
+    { id: 4, name: "RenT-Space", name_en: "RenT-Space", link: "/#rent-space" },
+    {
+      id: 5,
+      name: "Tenant Kami",
+      name_en: "Our Tenants",
+      link: "/#our-tenant",
+    },
+    // { id: 6, name: "Artikel", name_en: "Home" , link: "/#articles" },
+    { id: 7, name: "Hubungi Kami", name_en: "Contact Us", link: "/#contact" },
   ];
 
   return (
@@ -126,7 +131,7 @@ const Navbar = () => {
                       : ""
                   }`}
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </button>
               )}
             </React.Fragment>
@@ -255,7 +260,7 @@ const Navbar = () => {
                   }}
                   className="text-lg text-dark hover:text-orange-500 font-medium flex items-center transition duration-200"
                 >
-                  {item.name}
+                  {lang === "en" ? item.name_en : item.name}
                 </button>
               )}
             </React.Fragment>

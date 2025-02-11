@@ -180,8 +180,8 @@ const Event = () => {
         </h1>
         <p className="!text-white/80 sub-title">
           {lang === "en"
-            ? "Here are some upcoming events in T-Space, Bintaro:"
-            : "Berikut beberapa acara mendatang di T-Space, Bintaro:"}
+            ? "Event at T-Space Bintaro this month:"
+            : "Acara di T-Space Bintaro selama bulan ini:"}
         </p>
       </div>
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">

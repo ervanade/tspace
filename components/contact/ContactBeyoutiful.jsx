@@ -33,7 +33,7 @@ const ContactBeyoutiful = () => {
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-secondary !font-semibold title-beyoutiful">
-                {lang === "en" ? "Contact Us" : "Contact Us"}
+                {lang === "en" ? "Contact Us" : "Hubungi Kami"}
               </h2>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 {lang === "en"

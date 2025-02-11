@@ -17,7 +17,8 @@ const Facility = ({ title, subTitle }) => {
   const dataSpace = [
     {
       id: "41",
-      name: "Lobby",
+      name: "Lobi",
+      name_en: "Lobby",
       price: "Rp. 140.000",
       opsi_acara: "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
@@ -28,7 +29,32 @@ const Facility = ({ title, subTitle }) => {
 
     {
       id: "42",
+      name: "Ruang Konsultasi",
+      name_en: "Consultation Room",
+      price: "Rp. 60.000",
+      opsi_acara:
+        "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+      spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
+      image_mid: "/assets/beyoutiful/konsultasi.jpg",
+      image_map: "/assets/map-hall.png",
+    },
+    {
+      id: "42",
+      name: "Obstetri & Ginekologi",
+      name_en: "Obstetrics & Gynecology",
+      price: "Rp. 60.000",
+      opsi_acara:
+        "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+      spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
+      image_mid: "/assets/beyoutiful/obstetri.jpg",
+      image_map: "/assets/map-hall.png",
+    },
+    {
+      id: "42",
       name: "Ruang VIP",
+      name_en: "VIP Room",
       price: "Rp. 60.000",
       opsi_acara:
         "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
@@ -40,6 +66,7 @@ const Facility = ({ title, subTitle }) => {
     {
       id: "43",
       name: "Ruang Operasi",
+      name_en: "Operating Room",
       price: "Rp. 120.000",
       opsi_acara:
         "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
@@ -51,6 +78,7 @@ const Facility = ({ title, subTitle }) => {
     {
       id: "44",
       name: "Pusat Dermatologi",
+      name_en: "Dermatology Center",
       price: "Rp. 120.000",
       opsi_acara:
         "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc…",
@@ -61,7 +89,8 @@ const Facility = ({ title, subTitle }) => {
     },
     {
       id: "43",
-      name: "Hyperbaric Chamber",
+      name: "Ruang Hiperbarik",
+      name_en: "Hyperbaric Chamber",
       price: "Rp. 120.000",
       opsi_acara:
         "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
@@ -73,7 +102,8 @@ const Facility = ({ title, subTitle }) => {
 
     {
       id: "40",
-      name: "Dental",
+      name: "Klinik Gigi",
+      name_en: "Dental Clinic",
       price: "Rp. 120.000",
       opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
@@ -105,8 +135,8 @@ const Facility = ({ title, subTitle }) => {
           </h1>
           <p className="!text-textDark/80 sub-title !text-left">
             {lang === "en"
-              ? "Experience our modern facilities and comfortable environment to ensure your comfort and privacy"
-              : "Nikmati pengalaman treatment dengan fasilitas modern dan lingkungan yang nyaman untuk menjamin kenyamanan dan privasi Anda"}
+              ? "Experience our modern facilities and comfortable environment to ensure your comfort and privacy."
+              : "Nikmati pengalaman treatment dengan fasilitas modern dan lingkungan yang nyaman untuk menjamin kenyamanan dan privasi Anda."}
           </p>
         </div>
         <div className="">
@@ -173,7 +203,9 @@ const Facility = ({ title, subTitle }) => {
                         /> */}
                         <div className="mt-2 flex flex-col items-center gap-4">
                           <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-textDark text-center line-clamp-3 mt-4">
-                            {HTMLDecoderEncoder.decode(item?.name)}
+                            {lang === "en"
+                              ? HTMLDecoderEncoder.decode(item?.name_en)
+                              : HTMLDecoderEncoder.decode(item?.name)}
                           </h3>
                         </div>
                       </div>

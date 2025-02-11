@@ -154,7 +154,7 @@ const DoctorSchedule = ({ bg }) => {
     startIndex,
     startIndex + eventsPerPage
   );
-  const [activeTab, setActiveTab] = useState("Surgery");
+  const [activeTab, setActiveTab] = useState("Dokter Bedah Plastik");
 
   const categories = [...new Set(doctors.map((doctor) => doctor.kategori))];
 
