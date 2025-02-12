@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -95,74 +95,50 @@ const doctorSchedules = [
 ];
 
 const DoctorSchedule = ({ bg }) => {
-  const [hoveredDate, setHoveredDate] = useState(null);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
-
-  const daysInMonth = 31; // Sesuaikan dengan jumlah hari di bulan
-  const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
-  //   const events = [
-  //     { date: "2024-12-01", title: "Rock Fest 2024", time: "10:00 - 18:00" },
-  //     { date: "2024-12-05", title: "Jazz Night Live", time: "10:00 - 18:00" },
-  //     {
-  //       date: "2024-12-10",
-  //       title: "Indie Music Showcase",
-  //       time: "10:00 - 18:00",
-  //     },
-  //     {
-  //       date: "2024-12-15",
-  //       title: "Electronic Dance Party",
-  //       time: "10:00 - 18:00",
-  //     },
-  //     {
-  //       date: "2024-12-20",
-  //       title: "Classical Symphony Gala",
-  //       time: "10:00 - 18:00",
-  //     },
-  //     {
-  //       date: "2024-12-25",
-  //       title: "Christmas Acoustic Night",
-  //       time: "10:00 - 18:00",
-  //     },
-  //   ];
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  const getEventByDate = (day) => {
-    const date = `2024-12-${String(day).padStart(2, "0")}`;
-    return events.find((event) => event.date === date);
-  };
-
-  const getDayName = (day) => {
-    const date = new Date(`2024-12-${String(day).padStart(2, "0")}`);
-    return daysOfWeek[date.getDay()]; // Menggunakan `getDay()` untuk mendapatkan indeks hari dalam minggu
-  };
-  const [currentPage, setCurrentPage] = useState(0);
-  const eventsPerPage = 6;
-
-  const handleNext = () => setCurrentPage((prev) => prev + 1);
-  const handlePrevious = () => setCurrentPage((prev) => prev - 1);
-
-  const startIndex = currentPage * eventsPerPage;
-  const paginatedEvents = doctorSchedules.slice(
-    startIndex,
-    startIndex + eventsPerPage
+  const [activeTab, setActiveTab] = useState(
+    lang === "en" ? "Plastic Surgeon" : "Dokter Bedah Plastik"
   );
-  const [activeTab, setActiveTab] = useState("Dokter Bedah Plastik");
+  const translateDay = (schedule) => {
+    if (lang !== "en") return schedule; // Jika lang bukan 'en', langsung return jadwal asli
 
-  const categories = [...new Set(doctors.map((doctor) => doctor.kategori))];
+    const dayMap = {
+      Senin: "Monday",
+      Selasa: "Tuesday",
+      Rabu: "Wednesday",
+      Kamis: "Thursday",
+      Jumat: "Friday",
+      Sabtu: "Saturday",
+      Minggu: "Sunday",
+    };
+
+    // Ganti setiap nama hari yang ditemukan
+    return schedule.replace(
+      /\b(Senin|Selasa|Rabu|Kamis|Jumat|Sabtu|Minggu)\b/g,
+      (match) => dayMap[match]
+    );
+  };
+  // Ambil kategori berdasarkan bahasa
+  const categories = [
+    ...new Set(
+      doctors.map((doctor) =>
+        lang === "en" ? doctor.kategori_en : doctor.kategori
+      )
+    ),
+  ];
+  useEffect(() => {
+    setActiveTab(lang === "en" ? "Plastic Surgeon" : "Dokter Bedah Plastik");
+  }, [lang]); // Dependency array: jika `lang` berubah, jalankan efek ini
 
   const handleTabClick = (category) => {
     setActiveTab(category);
   };
-  const filteredDoctors = doctors.filter(
-    (doctor) => doctor.kategori === activeTab
+
+  // Filter dokter berdasarkan kategori yang dipilih (sesuai bahasa)
+  const filteredDoctors = doctors.filter((doctor) =>
+    lang === "en"
+      ? doctor.kategori_en === activeTab
+      : doctor.kategori === activeTab
   );
 
   return (
@@ -224,7 +200,10 @@ const DoctorSchedule = ({ bg }) => {
               <p className="text-sm text-white font-semibold">
                 {doctor.subKategori}
               </p>
-              <p className="text-sm text-white">{doctor.jadwal}</p>
+              <p className="text-sm text-white">
+                {" "}
+                {translateDay(doctor.jadwal)}
+              </p>
               {/* <div className="mt-2 text-gray-800 text-sm">
                 <p>Born: {doctor.tanggalLahir}</p>
                 <p>Religion: {doctor.agama}</p>
