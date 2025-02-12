@@ -23,10 +23,10 @@ const HeroBeyoutiful = () => {
       image_default: "/assets/beyoutiful/hero-beyoutiful-4.png",
       title: `<span>Rasakan perbedaan transformasional di<br /> Beyoutiful Aesthetic</span>`,
       title_en:
-        "Experience the transformational difference at Beyoutiful Aesthetic",
+        "Experience holistic wellness treatments at Beyoutiful Aesthetic",
       desc: "Dengan pendekatan holistik kami yang berfokus pada kesejahteraan Anda secara menyeluruh, menggabungkan teknik mutakhir dengan perawatan yang didesain khusus.",
       desc_en:
-        "Our holistic approach focuses on your overall well-being, combining cutting-edge techniques with personalized care.",
+        "From aesthetic surgery to specialized therapies, designed to enhance your overall appearance and well-being.",
     },
   ];
   return (

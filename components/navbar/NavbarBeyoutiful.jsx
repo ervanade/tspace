@@ -66,13 +66,13 @@ const NavbarBeyoutiful = () => {
     {
       id: 4,
       name: "Jadwal Dokter",
-      name_en: "Doctor Schedule",
+      name_en: "Doctors Schedule",
       link: "/beyoutiful#doctor-schedules",
     },
     {
       id: 5,
       name: "Fasilitas",
-      name_en: "Facility",
+      name_en: "Facilities",
       link: "/beyoutiful#facility",
     },
     {

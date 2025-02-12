@@ -223,30 +223,22 @@ export const serviceDetails = [
                     <li>Rhinoplasty Tulang Rawan Rusuk/Rhinoplasty Rib Cartilage</li>
                     <li>Penghilangan Lemak Pipi/Buccal Fat Removal</li>
                     <li>Blepharoplasty Bagian Atas/Upper Blepharoplasty</li>
-                    <li>Sedot Lemak Leher/Neck Liposuction</li>
-                    <li>Sedot Lemak Paha/Thigh Liposuction</li>
-                    <li>Tummy Tuck/Tummy Tuck</li>
-                    <li>Sedot Lemak Kontur Tubuh/Body Contouring Liposuction</li>
+                    
                 </ul>
             </div>
 
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                    
+                    <li>Sedot Lemak Leher/Neck Liposuction</li>
+                    <li>Sedot Lemak Paha/Thigh Liposuction</li>
+                    <li>Tummy Tuck/Tummy Tuck</li>
+                    <li>Sedot Lemak Kontur Tubuh/Body Contouring Liposuction</li>
                     <li>Pembesaran Payudara/Breast Augmentation</li>
                     <li>Pengencangan Payudara/Breast Lifting</li>
                     <li>Pengecilan Payudara/Breast Reduction</li>
                     <li>Ginekomastia/Gynecomastia</li>
                     <li>Brakioplasti/Brachioplasty</li>
-                    <li>Sunat/Genital Circumcision</li>
-                    <li>Vulvoplasti/Vulvoplasty</li>
-                    <li>Hymenoplasti/Hymenoplasty</li>
-                    <li>Labiaplasti/Labiaplasty</li>
-                    <li>Vaginoplasti/Vaginoplasty</li>
-                    <li>Pengecilan Tudung Klitoris/Clitoral Hood Reduction</li>
-                    <li>Pembesaran Penis/Penis Enlargement</li>
-                    <li>Skrotoplasti/Scrotoplasty</li>
-                    <li>Ligamentolisis/Ligamentolisis</li>
+                 
                 </ul>
             </div>
         </div>`,
@@ -273,21 +265,15 @@ export const serviceDetails = [
             <div>
                           <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
 
+                     <li>Neck Liposuction</li>
+                    <li>Thigh Liposuction</li>
+                    <li>Tummy Tuck</li>
                     <li>Body Contouring Liposuction</li>
                     <li>Breast Augmentation</li>
                     <li>Breast Lifting</li>
                     <li>Breast Reduction</li>
                     <li>Gynecomastia</li>
                     <li>Brachioplasty</li>
-                    <li>Genital Circumcision</li>
-                    <li>Vulvoplasty</li>
-                    <li>Hymenoplasty</li>
-                    <li>Labiaplasty</li>
-                    <li>Vaginoplasty</li>
-                    <li>Clitoral Hood Reduction</li>
-                    <li>Penis Enlargement</li>
-                    <li>Scrotoplasty</li>
-                    <li>Ligamentolysis</li>
                 </ul>
             </div>
         </div>
@@ -449,20 +435,20 @@ export const serviceDetails = [
                          <li>T-Plasma</li>
                          <li>T-Hair Plasma</li>
                          <li>T-Silk</li>
-                         <li>T-Peeling</li>
-                         <li>T-Laser Glow Rejuvenation Cell Booster</li>
-                         <li>Botox Rahang</li>
+                        
                          
                      </ul>
                  </div>
      
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                        <li>RF Treatment (Wajah) Botox Dahi & Sudut Mata</li>
+                     <li>T-Peeling</li>
+                         <li>T-Laser Glow Rejuvenation Cell Booster</li>
+                         <li>Botox Rahang</li>
+                        <li>RF Treatment (Wajah)</li>
+                        <li>Botox Dahi & Sudut Mata</li>
                          <li>RF Treatment Badan</li>
-                         <li>T-Immune/ Superhuman Infusion</li>
-                         <li>PRP G-Spot</li>
-                         <li>Vaginal laser Rejuvenation G Spot Enhancement</li>
+                         <li>Infus Multivitamin/Multivitamin Infused</li>
                      </ul>
                  </div>
              </div>`,
@@ -472,7 +458,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                         <li>Lip Filler</li>
+                           <li>Lip Filler</li>
                          <li>Chin Filler</li>
                          <li>Non Surgical Rhinoplasty</li>
                          <li>T-Rejuvv</li>
@@ -480,20 +466,19 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                          <li>T-Plasma</li>
                          <li>T-Hair Plasma</li>
                          <li>T-Silk</li>
-                         <li>T-Peeling</li>
-                         <li>T-Laser Glow Rejuvenation Cell Booster</li>
-                         <li>Botox Rahang</li>
                          
                      </ul>
                  </div>
      
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                        <li>RF Treatment (Wajah) Botox Dahi & Sudut Mata</li>
+                          <li>T-Peeling</li>
+                         <li>T-Laser Glow Rejuvenation Cell Booster</li>
+                         <li>Botox Rahang</li>
+                        <li>RF Treatment (Wajah)</li>
+                        <li>Botox Dahi & Sudut Mata</li>
                          <li>RF Treatment Badan</li>
-                         <li>T-Immune/ Superhuman Infusion</li>
-                         <li>PRP G-Spot</li>
-                         <li>Vaginal laser Rejuvenation G Spot Enhancement</li>
+                         <li>Infus Multivitamin/Multivitamin Infused</li>
                      </ul>
                  </div>
              </div>`,
@@ -529,7 +514,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
         description: `
-        <p>Rasakan proses penyembuhan lebih cepat dan optimal dengan meningkatkan kadar oksigen dalam darah melalui terapi oksigen hiperbarik. Nikmati manfaatnya untuk berbagai kondisi kesehatan dan kualitas hidup yang lebih sehat.</p>`,
+        <p>Rasakan proses penyembuhan lebih cepat dan optimal dengan meningkatkan kadar oksigen dalam darah melalui terapi oksigen hiperbarik. Nikmati berbagai manfaatnya untuk berbagai kondisi kesehatan dan kualitas hidup yang lebih sehat.</p>`,
         description_en: `<p>Experience a faster and more optimal healing process by increasing oxygen levels in the blood through hyperbaric oxygen therapy. Enjoy its benefits for various health conditions and a healthier quality of life.</p>`,
         slug: "hyperbaric-oxygen-therapy",
         link: "/",
@@ -547,16 +532,20 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 4,
         name: "Urologi",
         name_en: "Urology",
-        description: ` <p><span class="font-semibold"> Beyoutiful Aesthetic memberikan layanan urologi komprehensif untuk kesehatan.</span> Kami menawarkan berbagai macam tindakan medis, mulai dari pemeriksaan rutin hingga penanganan masalah urologi yang kompleks. Percayakan kesehatan Anda pada kami
+        description: ` <p><span class="font-semibold">Beyoutiful Aesthetic memberikan layanan urologi komprehensif untuk kesehatan. Percayakan kesehatan Anda pada kami.
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Extracorporeal Shockwave Therapy </li>
+                        <li>Varikokel Mikroskopik/Microscopic Varicocele </li>
+                        <li>Vasektomi/Vasectomy </li>
                      </ul>
 `,
         description_en: ` <p><span class="font-semibold"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
 </p>
 <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
-                        <li>Extracorporeal Shockwave Therapy </li>
+                         <li>Extracorporeal Shockwave Therapy </li>
+                        <li>Varikokel Mikroskopik/Microscopic Varicocele </li>
+                        <li>Vasektomi/Vasectomy </li>
                      </ul>
 `,
         slug: "urologi",
@@ -575,7 +564,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 5,
         name: "Vaskular",
         name_en: "Vascular",
-        description: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold"> Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
+        description: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold">Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
@@ -611,13 +600,15 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Konsultasi Gizi+Meal Plan</li>
                         <li>Nourish + Nutrigenomic </li>
+                        <li>Balon Gaster</li>
                      </ul>`,
         description_en: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
 </span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
-                        <li>Konsultasi Gizi+Meal Plan</li>
+                        <li>Nutrition Consultation + Meal Plan</li>
                         <li>Nourish + Nutrigenomic </li>
+                        <li>Gastric Balloon</li>
                      </ul>`,
         slug: "gizi",
         link: "/",
@@ -717,7 +708,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 9,
         name: "Externa Genitalia",
         name_en: "Externa Genitalia",
-        description: `<p><span class="font-semibold">Percayakan kesehatan intim Anda pada ahlinya.
+        description: `<p><span class="font-semibold">Percayakan kesehatan organ intim Anda pada ahlinya.
 </span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
@@ -743,7 +734,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                  </div>
              </div>
 `,
-        description_en: `<p><span class="font-semibold">Percayakan kesehatan intim Anda pada ahlinya.
+        description_en: `<p><span class="font-semibold">Percayakan kesehatan organ intim Anda pada ahlinya.
 </span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
