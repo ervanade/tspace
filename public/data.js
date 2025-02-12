@@ -536,16 +536,16 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Extracorporeal Shockwave Therapy </li>
-                        <li>Varikokel Mikroskopik/Microscopic Varicocele </li>
-                        <li>Vasektomi/Vasectomy </li>
+                        <li>Varikokel Mikroskopik</li>
+                        <li>Vasektomi</li>
                      </ul>
 `,
         description_en: ` <p><span class="font-semibold"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
 </p>
 <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                          <li>Extracorporeal Shockwave Therapy </li>
-                        <li>Varikokel Mikroskopik/Microscopic Varicocele </li>
-                        <li>Vasektomi/Vasectomy </li>
+                        <li>Microscopic Varicocele </li>
+                        <li>Vasectomy </li>
                      </ul>
 `,
         slug: "urologi",
@@ -571,7 +571,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                         <li>LHP - Laser Hemorrhoidoplasty </li>
                      </ul>
 `,
-        description_en: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold"> Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
+        description_en: ` <p>Our vascular treatments help improve the appearance of the skin and increase blood circulation without pain.<span class="font-semibold">Have healthy blood vessels and beautiful skin at Beyoutiful Aesthetic.</span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
@@ -602,7 +602,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                         <li>Nourish + Nutrigenomic </li>
                         <li>Balon Gaster</li>
                      </ul>`,
-        description_en: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
+        description_en: `<p>Get an ideal body and radiant skin with the right nutrition program. <span class="font-semibold">Consult our nutrition experts and start your journey to a healthier body.
 </span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
@@ -630,8 +630,8 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         description: `<p><span class="font-semibold">Melihat lebih dalam untuk kesehatan yang lebih baik.
 </span> Dengan pemeriksaan radiologi, kami dapat mendeteksi masalah kesehatan sedini mungkin.
 </p>`,
-        description_en: `<p><span class="font-semibold">Melihat lebih dalam untuk kesehatan yang lebih baik.
-</span> Dengan pemeriksaan radiologi, kami dapat mendeteksi masalah kesehatan sedini mungkin.
+        description_en: `<p><span class="font-semibold">Look deeper for better health.
+</span> With radiological examinations, we can detect health problems as early as possible.
 </p>`,
         slug: "radiologi",
         link: "/",
@@ -653,8 +653,8 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 </span> Mulai dari pemeriksaan rutin hingga perawatan gigi estetika. Dengan menggunakan teknologi terbaru dan tim dokter gigi yang berpengalaman, kami memastikan Anda mendapatkan perawatan yang nyaman dan berkualitas.
 
 </p>`,
-        description_en: `<p><span class="font-semibold">Perawatan gigi komprehensif untuk seluruh keluarga. 
-</span> Mulai dari pemeriksaan rutin hingga perawatan gigi estetika. Dengan menggunakan teknologi terbaru dan tim dokter gigi yang berpengalaman, kami memastikan Anda mendapatkan perawatan yang nyaman dan berkualitas.
+        description_en: `<p><span class="font-semibold">Comprehensive dental care for the whole family. 
+</span> Starting from routine checkups to aesthetic dental care. By using the latest technology and an experienced team of dentists, we ensure you get comfortable and quality treatment.
 
 </p>`,
         slug: "gigi",
@@ -734,8 +734,8 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                  </div>
              </div>
 `,
-        description_en: `<p><span class="font-semibold">Percayakan kesehatan organ intim Anda pada ahlinya.
-</span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
+        description_en: `<p><span class="font-semibold">Trust the health of your intimate organs to the experts.
+</span> Get safe and effective genital aesthetic treatments at Beyoutiful Aesthetic. Experience an increase in your self-confidence and quality of life.
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
