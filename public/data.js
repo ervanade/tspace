@@ -191,7 +191,7 @@ export const galleryFeb = [
 
 export const dataServices = [
     { name: "Bedah Plastik", name_en: "Plastic Surgery", link: "/beyoutiful/services/bedah-plastik", image: "/assets/beyoutiful/bedah-plastik.jpg" },
-    { name: "Dermatologi", name_en: "Dermatology", link: "/beyoutiful/services/dermatologi", image: "/assets/beyoutiful/estetika.png" },
+    { name: "Dermatologi", name_en: "Dermatology", link: "/beyoutiful/services/dermatologi", image: "/assets/beyoutiful/dermatology.png" },
     { name: "Externa Genitalia", name_en: "Externa Genitalia", link: "/beyoutiful/services/externa-genitalia", image: "/assets/beyoutiful/externa-genitalia.jpg" },
     { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
     { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
@@ -484,7 +484,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
              </div>`,
         slug: "dermatologi",
         link: "/",
-        image: "/assets/beyoutiful/estetika.png",
+        image: "/assets/beyoutiful/dermatology.png",
         before_after_foto: [],
         dokter: [
             {

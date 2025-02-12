@@ -61,8 +61,8 @@ const Space = ({ title, subTitle }) => {
       price: "Rp. 120.000",
       opsi_acara:
         "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
-      fasilitas: "Toilet, Sound System, Tables & Chairs",
-      spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
+      fasilitas: "Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP",
+      spesifikasi: "Parking Area, Toilet, WiFi",
       image_mid: "/assets/operating-room.png",
       image_map: "/assets/map-hall.png",
     },
