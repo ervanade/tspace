@@ -28,8 +28,32 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     /* IE and Edge */
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
     /* Firefox */
+  }
+
+  .scrollbar {
+    padding-bottom: 10px;
+    overflow-x: scroll;
+    scrollbar-width: 100%;
+    /* Pastikan ini ada */
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    height: 8px;
+    background-clip: content-box;
+    display: block;
+    /* Biar ada jarak 10px */
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    background-clip: content-box;
   }
 }
 
@@ -39,4 +63,24 @@ html {
 
 body {
   font-family: var(--font-poppins);
+}
+
+/* Tampilkan scrollbar di desktop */
+@media (min-width: 768px) {
+  .scrollbar {
+    padding-bottom: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
 }

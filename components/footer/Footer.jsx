@@ -91,7 +91,7 @@ const Footer = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
-                      <span className="text-sm">+62 811-979-0559</span>
+                      <span className="text-sm">+62 811-979-0556</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMessage />

@@ -134,6 +134,11 @@ const Event = () => {
     },
     { date: "2025-02-21", title: "KAMASOGI", time: "19:00 - 21:00" },
     {
+      date: "2025-02-23",
+      title: "BSJ Bands & Soloist Live Music Performance",
+      time: "14.00",
+    },
+    {
       date: "2025-02-28",
       title: "Home Concert Talenta Svara Bertha",
       time: "19:00 - 21:00",
@@ -149,15 +154,26 @@ const Event = () => {
     "Friday",
     "Saturday",
   ];
+  const hariOfWeek = [
+    "Minggu",
+    "Senin",
+    "Selasa",
+    "Rabu",
+    "Kamis",
+    "Jumat",
+    "Sabtu",
+  ];
 
   const getEventByDate = (day) => {
     const date = `2025-02-${String(day).padStart(2, "0")}`;
-    return events.find((event) => event.date === date);
+    return events.filter((event) => event.date === date);
   };
 
   const getDayName = (day) => {
     const date = new Date(`2025-02-${String(day).padStart(2, "0")}`);
-    return daysOfWeek[date.getDay()];
+    return lang === "en"
+      ? daysOfWeek[date.getDay()]
+      : hariOfWeek[date.getDay()];
   };
 
   const handleMouseEnter = (day) => {
@@ -210,7 +226,7 @@ const Event = () => {
             ))}
             {Array.from({ length: daysInMonth }).map((_, i) => {
               const day = i + 1;
-              const event = getEventByDate(day);
+              const event = getEventByDate(day).length > 0;
               const isActive = selectedDate === day || hoveredDate === day;
               const hasEvent = !!event;
 
@@ -239,32 +255,46 @@ const Event = () => {
           {/* Event Detail Section */}
           {selectedDate || hoveredDate ? (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg">
-              <h3 className="text-lg font-semibold text-orange-500">
-                {getEventByDate(hoveredDate || selectedDate)?.title ||
-                  "No Event"}
-              </h3>
-              <p className="flex items-center">
-                <FaCalendar className="h-5 w-5 text-textDark mr-2" />
-                {`${getDayName(hoveredDate || selectedDate)}, 2025-02-${String(
-                  hoveredDate || selectedDate
-                ).padStart(2, "0")}`}
-              </p>
-              <p className="flex items-center">
-                <FaClock className="h-5 w-5 text-textDark mr-2" />
-                {getEventByDate(hoveredDate || selectedDate)?.time ||
-                  "No Event"}
-              </p>
-              <a
-                href="https://wa.me/+621181110556"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 text-sm bg-green-500 text-white py-3 px-4 rounded-full shadow-lg transition duration-300 inline-flex items-center gap-2"
-              >
-                <FaWhatsapp className="h-6 w-6" />
-                <span className="hidden md:inline font-medium">
-                  {lang === "en" ? "Contact Us" : "Hubungi Kami"}
-                </span>
-              </a>
+              {getEventByDate(hoveredDate || selectedDate).length > 0 ? (
+                getEventByDate(hoveredDate || selectedDate).map(
+                  (event, index) => (
+                    <div key={index} className="mb-2">
+                      <h3 className="text-lg font-semibold text-orange-500">
+                        {event.title}
+                      </h3>
+                      <p className="flex items-center">
+                        <FaCalendar className="h-5 w-5 text-textDark mr-2" />
+                        {`${getDayName(
+                          hoveredDate || selectedDate
+                        )}, 2025-02-${String(
+                          hoveredDate || selectedDate
+                        ).padStart(2, "0")}`}
+                      </p>
+                      <p className="flex items-center">
+                        <FaClock className="h-5 w-5 text-textDark mr-2" />
+                        {event.time}
+                      </p>
+                      {index ==
+                        getEventByDate(hoveredDate || selectedDate).length -
+                          1 && (
+                        <a
+                          href="https://wa.me/+621181110556"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-2 text-sm bg-green-500 text-white py-3 px-4 rounded-full shadow-lg transition duration-300 inline-flex items-center gap-2"
+                        >
+                          <FaWhatsapp className="h-6 w-6" />
+                          <span className="hidden md:inline font-medium">
+                            {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+                          </span>
+                        </a>
+                      )}
+                    </div>
+                  )
+                )
+              ) : (
+                <p className="text-center">No Event</p>
+              )}
             </div>
           ) : (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg h-20">

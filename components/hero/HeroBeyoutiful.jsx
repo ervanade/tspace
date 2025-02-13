@@ -72,7 +72,7 @@ const HeroBeyoutiful = () => {
                         </span>
                       </p>
                       <a
-                        href="https://wa.me/+6281519060060
+                        href="https://wa.me/+628119790556
                           "
                         target="_blank"
                         rel="noopener noreferrer"

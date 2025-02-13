@@ -97,7 +97,7 @@ const doctorSchedules = [
 const DoctorSchedule = ({ bg }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
   const [activeTab, setActiveTab] = useState(
-    lang === "en" ? "Plastic Surgeon" : "Dokter Bedah Plastik"
+    lang === "en" ? "Plastic Surgeon" : "Bedah Plastik"
   );
   const translateDay = (schedule) => {
     if (lang !== "en") return schedule; // Jika lang bukan 'en', langsung return jadwal asli
@@ -127,7 +127,7 @@ const DoctorSchedule = ({ bg }) => {
     ),
   ];
   useEffect(() => {
-    setActiveTab(lang === "en" ? "Plastic Surgeon" : "Dokter Bedah Plastik");
+    setActiveTab(lang === "en" ? "Plastic Surgeon" : "Bedah Plastik");
   }, [lang]); // Dependency array: jika `lang` berubah, jalankan efek ini
 
   const handleTabClick = (category) => {
@@ -170,7 +170,7 @@ const DoctorSchedule = ({ bg }) => {
         </div>
 
         <div className="mb-6">
-          <div className="flex space-x-4 overflow-x-auto whitespace-nowrap !no-scrollbar">
+          <div className="flex space-x-4 overflow-x-auto whitespace-nowrap no-scrollbar sm:scrollbar sm:overflow-x-scroll">
             {categories.map((category, index) => (
               <button
                 aria-label="button"

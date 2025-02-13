@@ -39,18 +39,18 @@ const Facility = ({ title, subTitle }) => {
       image_mid: "/assets/beyoutiful/konsultasi.jpg",
       image_map: "/assets/map-hall.png",
     },
-    {
-      id: "42",
-      name: "Obstetri & Ginekologi",
-      name_en: "Obstetrics & Gynecology",
-      price: "Rp. 60.000",
-      opsi_acara:
-        "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
-      fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
-      spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
-      image_mid: "/assets/beyoutiful/obstetri.jpg",
-      image_map: "/assets/map-hall.png",
-    },
+    // {
+    //   id: "42",
+    //   name: "Obstetri & Ginekologi",
+    //   name_en: "Obstetrics & Gynecology",
+    //   price: "Rp. 60.000",
+    //   opsi_acara:
+    //     "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
+    //   fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+    //   spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
+    //   image_mid: "/assets/beyoutiful/obstetri.jpg",
+    //   image_map: "/assets/map-hall.png",
+    // },
     {
       id: "42",
       name: "Ruang VIP",
@@ -98,6 +98,18 @@ const Facility = ({ title, subTitle }) => {
       spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
       image_mid: "/assets/beyoutiful/hiperbarik.png",
       image_map: "/assets/map-hall.png",
+    },
+    {
+      id: "43",
+      name: "Radiologi",
+      name_en: "Radiology",
+      price: "Rp. 120.000",
+      opsi_acara:
+        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
+      fasilitas: "Toilet, Sound System, Tables & Chairs",
+      spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
+      image_mid: "/assets/beyoutiful/radiologi-1.jpg",
+      image_map: "/assets/beyoutiful/radiologi-1.jpg",
     },
 
     {

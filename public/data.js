@@ -194,6 +194,7 @@ export const dataServices = [
     { name: "Dermatologi", name_en: "Dermatology", link: "/beyoutiful/services/dermatologi", image: "/assets/beyoutiful/dermatology.png" },
     { name: "Externa Genitalia", name_en: "Externa Genitalia", link: "/beyoutiful/services/externa-genitalia", image: "/assets/beyoutiful/externa-genitalia.jpg" },
     { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
+    { name: "Obstetri & Ginekologi", name_en: "Obstetric & Gynecology", link: "/beyoutiful/services/obstetri-ginekologi", image: "/assets/beyoutiful/obstetri.jpg" },
     { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
     { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
     {
@@ -201,8 +202,8 @@ export const dataServices = [
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
         link: "/beyoutiful/services/hyperbaric-oxygen-therapy", image: "/assets/beyoutiful/hbot-1.jpg",
     },
-    { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/radiologi-1.jpg" },
-    { name: "Gigi", name_en: "Dental", link: "/beyoutiful/services/gigi", image: "/assets/beyoutiful/dental.png" },
+    // { name: "Radiologi", name_en: "Radiology", link: "/beyoutiful/services/radiologi", image: "/assets/beyoutiful/radiologi-1.jpg" },
+    { name: "Gigi", name_en: "Dental", link: "/beyoutiful/services/gigi", image: "/assets/beyoutiful/dental-service.jpg" },
 ];
 
 export const serviceDetails = [
@@ -210,7 +211,7 @@ export const serviceDetails = [
         id: 1,
         name: "Bedah Plastik",
         name_en: "Plastic Surgery",
-        description: `<p>Beyoutiful Aesthetic menawarkan berbagai pilihan tindakan bedah plastik berstandar internasional yang disesuaikan dengan kebutuhan Anda. Dengan dukungan tim medis yang berpengalaman dan teknologi terkini, kami akan membantu Anda mencapai hasil yang alami dan menawan.<span class="font-semibold">Jangan ragu untuk berkonsultasi dengan kami dan mulai perjalanan menuju penampilan yang lebih baik.</span></p>
+        description: `<p>Beyoutiful Aesthetic menawarkan berbagai pilihan tindakan bedah plastik berstandar internasional yang disesuaikan dengan kebutuhan Anda. Dengan dukungan tim medis yang berpengalaman dan teknologi terkini, kami akan membantu Anda mencapai hasil yang alami dan menawan.<span class="font-normal">Jangan ragu untuk berkonsultasi dengan kami dan mulai perjalanan menuju penampilan yang lebih baik.</span></p>
    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -243,7 +244,7 @@ export const serviceDetails = [
             </div>
         </div>`,
         description_en: `
-        <p>Beyoutiful Aesthetic offers a wide selection of international standard plastic surgery procedures tailored to your needs. With the support of an experienced medical team and the latest technology, we will help you achieve natural and beautiful results.<span class="font-semibold"> Don't hesitate to consult with us and start your journey towards a better appearance.</span></p>
+        <p>Beyoutiful Aesthetic offers a wide selection of international standard plastic surgery procedures tailored to your needs. With the support of an experienced medical team and the latest technology, we will help you achieve natural and beautiful results.<span class="font-normal"> Don't hesitate to consult with us and start your journey towards a better appearance.</span></p>
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -307,12 +308,7 @@ export const serviceDetails = [
 
                 image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Badan.png",
             },
-            {
-                id: "43",
-                name: "Lip Filler",
 
-                image_mid: "/assets/beyoutiful/services/before/Lip Filler.jpg",
-            },
             {
                 id: "44",
                 name: "Nevus",
@@ -336,6 +332,12 @@ export const serviceDetails = [
             },
             {
                 id: "40",
+                name: "Pengencangan Wajah Bagian Tengah 2",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah(1).png",
+            },
+            {
+                id: "40",
                 name: "Penghilangan Lemak Pipi",
                 image_mid:
                     "/assets/beyoutiful/services/before/Penghilangan Lemak Pipi.png",
@@ -348,9 +350,33 @@ export const serviceDetails = [
             },
             {
                 id: "40",
-                name: "Upper Blepharoplasty 3",
+                name: "Upper Blepharoplasty",
                 image_mid:
-                    "/assets/beyoutiful/services/before/Upper Blepharoplasty 3.png",
+                    "/assets/beyoutiful/services/before/Upper Blepharoplasty_.png",
+            },
+            {
+                id: "40",
+                name: "Brakioplasti",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Brakioplasti.png",
+            },
+            {
+                id: "40",
+                name: "Implan Dagu",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Implan Dagu.png",
+            },
+            {
+                id: "40",
+                name: "Kontur Tubuh",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Kontur Tubuh.png",
+            },
+            {
+                id: "40",
+                name: "Tummy Tuck",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Tummy Tuck.png",
             },
         ],
         dokter: [
@@ -485,7 +511,45 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         slug: "dermatologi",
         link: "/",
         image: "/assets/beyoutiful/dermatology.png",
-        before_after_foto: [],
+        before_after_foto: [
+            {
+                id: "41",
+                name: "Lip Filler",
+                image_mid:
+                    "/assets/beyoutiful/services/before/Lip Filler 1.jpg",
+            },
+
+            {
+                id: "42",
+                name: "T-FLex",
+                image_mid:
+                    "/assets/beyoutiful/services/before/T-FLex.png",
+            },
+            {
+                id: "43",
+                name: "T-Hair Plasma",
+
+                image_mid: "/assets/beyoutiful/services/before/T-Hair Plasma.png",
+            },
+            {
+                id: "43",
+                name: "T-Laser",
+
+                image_mid: "/assets/beyoutiful/services/before/T-Laser.png",
+            },
+            {
+                id: "43",
+                name: "T-Rejuvv",
+
+                image_mid: "/assets/beyoutiful/services/before/T-Rejuvv.png",
+            },
+            {
+                id: "43",
+                name: "T-Silk",
+
+                image_mid: "/assets/beyoutiful/services/before/T-Silk.png",
+            },
+        ],
         dokter: [
             {
                 nama_dokter: "dr. Catharina Ari Wilandani Sp.D.V.E FINSDV",
@@ -532,7 +596,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 4,
         name: "Urologi",
         name_en: "Urology",
-        description: ` <p><span class="font-semibold">Beyoutiful Aesthetic memberikan layanan urologi komprehensif untuk kesehatan. Percayakan kesehatan Anda pada kami.
+        description: ` <p><span class="font-normal">Beyoutiful Aesthetic memberikan layanan urologi komprehensif untuk kesehatan. Percayakan kesehatan Anda pada kami.
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Extracorporeal Shockwave Therapy </li>
@@ -540,7 +604,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                         <li>Vasektomi</li>
                      </ul>
 `,
-        description_en: ` <p><span class="font-semibold"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
+        description_en: ` <p><span class="font-normal"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
 </p>
 <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                          <li>Extracorporeal Shockwave Therapy </li>
@@ -564,14 +628,14 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 5,
         name: "Vaskular",
         name_en: "Vascular",
-        description: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit.<span class="font-semibold">Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
+        description: ` <p>Perawatan vaskular kami membantu memperbaiki penampilan kulit dan meningkatkan sirkulasi darah tanpa rasa sakit. <span class="font-normal">Miliki pembuluh darah yang sehat dan kulit yang cantik di Beyoutiful Aesthetic.</span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
                         <li>LHP - Laser Hemorrhoidoplasty </li>
                      </ul>
 `,
-        description_en: ` <p>Our vascular treatments help improve the appearance of the skin and increase blood circulation without pain.<span class="font-semibold">Have healthy blood vessels and beautiful skin at Beyoutiful Aesthetic.</span>
+        description_en: ` <p>Our vascular treatments help improve the appearance of the skin and increase blood circulation without pain. <span class="font-normal">Have healthy blood vessels and beautiful skin at Beyoutiful Aesthetic.</span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
@@ -594,7 +658,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 6,
         name: "Gizi",
         name_en: "Nutrition",
-        description: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-semibold">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
+        description: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-normal">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
 </span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
@@ -602,7 +666,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                         <li>Nourish + Nutrigenomic </li>
                         <li>Balon Gaster</li>
                      </ul>`,
-        description_en: `<p>Get an ideal body and radiant skin with the right nutrition program. <span class="font-semibold">Consult our nutrition experts and start your journey to a healthier body.
+        description_en: `<p>Get an ideal body and radiant skin with the right nutrition program. <span class="font-normal">Consult our nutrition experts and start your journey to a healthier body.
 </span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
@@ -623,43 +687,43 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         ],
     },
 
-    {
-        id: 7,
-        name: "Radiologi",
-        name_en: "Radiology",
-        description: `<p><span class="font-semibold">Melihat lebih dalam untuk kesehatan yang lebih baik.
-</span> Dengan pemeriksaan radiologi, kami dapat mendeteksi masalah kesehatan sedini mungkin.
-</p>`,
-        description_en: `<p><span class="font-semibold">Look deeper for better health.
-</span> With radiological examinations, we can detect health problems as early as possible.
-</p>`,
-        slug: "radiologi",
-        link: "/",
-        image: "/assets/beyoutiful/radiologi-1.jpg",
-        before_after_foto: [],
-        dokter: [
-            {
-                nama_dokter: "dr. Fini Amalia",
-                dokter_foto: "/assets/beyoutiful/services/radiologi/dr-fini.jpg",
-                jadwal_dokter: ["By Appointment"],
-            },
-        ],
-    },
+    //     {
+    //         id: 7,
+    //         name: "Radiologi",
+    //         name_en: "Radiology",
+    //         description: `<p><span class="font-normal">Melihat lebih dalam untuk kesehatan yang lebih baik.
+    // </span> Dengan pemeriksaan radiologi, kami dapat mendeteksi masalah kesehatan sedini mungkin.
+    // </p>`,
+    //         description_en: `<p><span class="font-normal">Look deeper for better health.
+    // </span> With radiological examinations, we can detect health problems as early as possible.
+    // </p>`,
+    //         slug: "radiologi",
+    //         link: "/",
+    //         image: "/assets/beyoutiful/radiologi-1.jpg",
+    //         before_after_foto: [],
+    //         dokter: [
+    //             {
+    //                 nama_dokter: "dr. Fini Amalia",
+    //                 dokter_foto: "/assets/beyoutiful/services/radiologi/dr-fini.jpg",
+    //                 jadwal_dokter: ["By Appointment"],
+    //             },
+    //         ],
+    //     },
     {
         id: 8,
         name: "Gigi",
         name_en: "Dental",
-        description: `<p><span class="font-semibold">Perawatan gigi komprehensif untuk seluruh keluarga. 
+        description: `<p><span class="font-normal">Perawatan gigi komprehensif untuk seluruh keluarga. 
 </span> Mulai dari pemeriksaan rutin hingga perawatan gigi estetika. Dengan menggunakan teknologi terbaru dan tim dokter gigi yang berpengalaman, kami memastikan Anda mendapatkan perawatan yang nyaman dan berkualitas.
 
 </p>`,
-        description_en: `<p><span class="font-semibold">Comprehensive dental care for the whole family. 
+        description_en: `<p><span class="font-normal">Comprehensive dental care for the whole family. 
 </span> Starting from routine checkups to aesthetic dental care. By using the latest technology and an experienced team of dentists, we ensure you get comfortable and quality treatment.
 
 </p>`,
         slug: "gigi",
         link: "/",
-        image: "/assets/beyoutiful/dental.png",
+        image: "/assets/beyoutiful/dental-service.jpg",
         before_after_foto: [],
         dokter: [
             {
@@ -708,7 +772,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         id: 9,
         name: "Externa Genitalia",
         name_en: "Externa Genitalia",
-        description: `<p><span class="font-semibold">Percayakan kesehatan organ intim Anda pada ahlinya.
+        description: `<p><span class="font-normal">Percayakan kesehatan organ intim Anda pada ahlinya.
 </span> Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
@@ -734,7 +798,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                  </div>
              </div>
 `,
-        description_en: `<p><span class="font-semibold">Trust the health of your intimate organs to the experts.
+        description_en: `<p><span class="font-normal">Trust the health of your intimate organs to the experts.
 </span> Get safe and effective genital aesthetic treatments at Beyoutiful Aesthetic. Experience an increase in your self-confidence and quality of life.
 </p>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
@@ -772,12 +836,35 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
             },
         ],
     },
+    {
+        id: 9,
+        name: "Obstetri & Ginekologi",
+        name_en: "Obstetric & Gynecology",
+        description: `<p>Kesehatan reproduksi Anda adalah prioritas kami. Dapatkan perawatan komprehensif untuk semua masalah kesehatan wanita, mulai dari kehamilan hingga menopause. Kami juga menawarkan berbagai layanan, termasuk: pemeriksaan Pap smear, USG kehamilan, penanganan gangguan menstruasi, dan banyak lagi.
+</p>
+
+`,
+        description_en: `<p>Kesehatan reproduksi Anda adalah prioritas kami. Dapatkan perawatan komprehensif untuk semua masalah kesehatan wanita, mulai dari kehamilan hingga menopause. Kami juga menawarkan berbagai layanan, termasuk: pemeriksaan Pap smear, USG kehamilan, penanganan gangguan menstruasi, dan masih banyak lagi.
+</p>
+`,
+        slug: "obstetri-ginekologi",
+        link: "/",
+        image: "/assets/beyoutiful/obstetri.jpg",
+        before_after_foto: [],
+        dokter: [
+            {
+                nama_dokter: "dr. Grace Valentine, Sp.Og",
+                dokter_foto: "/assets/beyoutiful/services/radiologi/dr-grace-1.jpg",
+                jadwal_dokter: ["Selasa (14.00 - 16.30 by appointment)", "Rabu & Jumat (11.00-14.00 by appointment)"],
+            },
+        ],
+    },
 ];
 
 export const doctors = [
     {
         id: 1,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Teuku Adifitrian, Sp.B.P.R.E, Subsp. E.L.(K)',
@@ -787,7 +874,7 @@ export const doctors = [
     },
     {
         id: 2,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Eko Herihadi, Sp.B.P.R.E',
@@ -797,7 +884,7 @@ export const doctors = [
     },
     {
         id: 3,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Hendra Tri Hartono, Sp.B.P.R.E',
@@ -807,7 +894,7 @@ export const doctors = [
     },
     {
         id: 4,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Puti Adla Runisa, B.Med.Sc, Sp.B.P.R.E',
@@ -817,7 +904,7 @@ export const doctors = [
     },
     {
         id: 5,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Face',
         nama: 'dr. Ali Sundoro, Sp.B.P.R.E, SubSp.KM (K)',
@@ -827,7 +914,7 @@ export const doctors = [
     },
     {
         id: 6,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Linawati Makmur, Sp.B.P.R.E',
@@ -837,7 +924,7 @@ export const doctors = [
     },
     {
         id: 7,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'General',
         nama: 'dr. Huntal Napoleon, Sp.BP-RE, Subsp-LBL (K), FIHFAA',
@@ -847,7 +934,7 @@ export const doctors = [
     },
     {
         id: 8,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Externa Genitalia',
         nama: 'dr. Indri Aulia, Sp.B.P.R.E, Subsp.GE(K), MPd.Ked',
@@ -857,7 +944,7 @@ export const doctors = [
     },
     {
         id: 9,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Jeihan Nabila, B.Med.Sc, Sp.B.P.R.E',
@@ -867,7 +954,7 @@ export const doctors = [
     },
     {
         id: 10,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Risa Crisanti, Sp.B.P.R.E',
@@ -877,7 +964,7 @@ export const doctors = [
     },
     {
         id: 11,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Ruth F. M. Lumbuun, Sp.B.P.R.E',
@@ -887,7 +974,7 @@ export const doctors = [
     },
     {
         id: 12,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: "Plastic Surgeon",
         subKategori: 'Breast & Body',
         nama: 'dr. Laurent L Supit, Sp.B.P.R.E',
@@ -927,7 +1014,7 @@ export const doctors = [
     },
     {
         id: 16,
-        kategori: 'Dokter Anestesi',
+        kategori: 'Anestesi',
         kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Betardi Aktara, Sp.An',
@@ -937,7 +1024,7 @@ export const doctors = [
     },
     {
         id: 17,
-        kategori: 'Dokter Anestesi',
+        kategori: 'Anestesi',
         kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Michael Mandagi, Sp.An',
@@ -947,7 +1034,7 @@ export const doctors = [
     },
     {
         id: 18,
-        kategori: 'Dokter Gizi',
+        kategori: 'Gizi',
         kategori_en: 'Nutritionist',
         subKategori: 'Gizi',
         nama: 'dr. Arti Indira, M.Gizi, Sp.GK, FINEM',
@@ -967,7 +1054,7 @@ export const doctors = [
     },
     {
         id: 20,
-        kategori: 'Dokter Urologi',
+        kategori: 'Urologi',
         kategori_en: 'Urologist',
         subKategori: 'Urologist',
         nama: 'dr. Anggie Novaldy R, Sp.U',
@@ -977,7 +1064,7 @@ export const doctors = [
     },
     {
         id: 21,
-        kategori: 'Dokter Hiperbarik',
+        kategori: 'Hiperbarik',
         kategori_en: 'Hyperbaric Surgeon',
         subKategori: 'Hyperbaric',
         nama: 'dr. Vidiarti Rahayu',
@@ -987,7 +1074,7 @@ export const doctors = [
     },
     {
         id: 22,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Anna Karerina Tanjung',
@@ -997,7 +1084,7 @@ export const doctors = [
     },
     {
         id: 23,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Melissa Delania, Sp.Pros',
@@ -1007,7 +1094,7 @@ export const doctors = [
     },
     {
         id: 24,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Stefani Astari Dewi, Sp.KG',
@@ -1017,7 +1104,7 @@ export const doctors = [
     },
     {
         id: 25,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Hirania Soraya, Sp.KG',
@@ -1027,7 +1114,7 @@ export const doctors = [
     },
     {
         id: 26,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Eldyra Bela Bangsa',
@@ -1037,7 +1124,7 @@ export const doctors = [
     },
     {
         id: 27,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Helsa Ramelya, Sp.KGA',
@@ -1047,7 +1134,7 @@ export const doctors = [
     },
     {
         id: 30,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Adhyana S Novanto, Sp.Ort',
@@ -1057,7 +1144,7 @@ export const doctors = [
     },
     {
         id: 31,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Adhinara, Sp.Pros',
@@ -1077,7 +1164,7 @@ export const doctors = [
     },
     {
         id: 33,
-        kategori: 'Dokter Anestesi',
+        kategori: 'Anestesi',
         kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Muhammad Iqbal, Sp-An',
@@ -1087,7 +1174,7 @@ export const doctors = [
     },
     {
         id: 34,
-        kategori: 'Dokter Anestesi',
+        kategori: 'Anestesi',
         kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Mega Halida, Sp-An',
@@ -1097,7 +1184,7 @@ export const doctors = [
     },
     {
         id: 35,
-        kategori: 'Dokter Anestesi',
+        kategori: 'Anestesi',
         kategori_en: 'Anesthesiologist',
         subKategori: 'Anesthesiologist',
         nama: 'dr. Mega Ayu Marina S.A, Sp-An',
@@ -1107,7 +1194,7 @@ export const doctors = [
     },
     {
         id: 36,
-        kategori: 'Dokter Bedah Plastik',
+        kategori: 'Bedah Plastik',
         kategori_en: 'Plastic Surgeon',
         subKategori: 'General',
         nama: 'dr. Patricia Marcellina Sadikin, SpBP-RE',
@@ -1117,11 +1204,21 @@ export const doctors = [
     },
     {
         id: 37,
-        kategori: 'Dokter Gigi',
+        kategori: 'Gigi',
         kategori_en: 'Dentist',
         subKategori: 'Dentist',
         nama: 'drg. Syah Yossy',
         jadwal: '',
+        tanggalLahir: '',
+        agama: ''
+    },
+    {
+        id: 38,
+        kategori: 'Obstetri & Ginekologi',
+        kategori_en: 'Obstetrics & Gynecology',
+        subKategori: 'Obstetrics & Gynecology',
+        nama: 'dr. Grace Valentine, Sp.Og',
+        jadwal: 'Selasa (14.00 - 16.30 by appointment)/Rabu & Jumat (11.00-14.00 by appointment)',
         tanggalLahir: '',
         agama: ''
     }

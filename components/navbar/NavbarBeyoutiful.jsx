@@ -116,10 +116,15 @@ const NavbarBeyoutiful = () => {
       name_en: "Hyperbaric Oxygen Therapy (HBOT)",
       link: "/beyoutiful/services/hyperbaric-oxygen-therapy",
     },
+    // {
+    //   name: "Radiologi",
+    //   name_en: "Radiology",
+    //   link: "/beyoutiful/services/radiologi",
+    // },
     {
-      name: "Radiologi",
-      name_en: "Radiology",
-      link: "/beyoutiful/services/radiologi",
+      name: "Obstetri & Ginekologi",
+      name_en: "Obstetrics & Gynecology",
+      link: "/beyoutiful/services/obstetri-ginekologi",
     },
     {
       name: "Gigi",

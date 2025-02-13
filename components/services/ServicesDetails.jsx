@@ -4,7 +4,12 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaChevronLeft,
+  FaChevronRight,
+  FaWhatsapp,
+} from "react-icons/fa";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 const HTMLDecoderEncoder = require("html-encoder-decoder");
@@ -273,6 +278,18 @@ const ServicesDetails = ({ service }) => {
           </div>
         )}
       </div>
+      <a
+        href="https://wa.me/+628119790556
+            "
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
+      >
+        <FaWhatsapp className="h-6 w-6" />
+        <span className="hidden md:inline font-medium">
+          {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+        </span>
+      </a>
     </section>
   );
 };
