@@ -84,105 +84,105 @@ export const dataGallery = [
 export const galleryFeb = [
     {
         id: "1",
-        name: "Masagung Kirasave 1",
+        name: "Masagung Kirasave",
         price: "IDR 50.000.000",
         dimensions: "Penggali Pancasila, Acrylic on Canvas, 100 x 130 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-08.jpg",
     },
     {
         id: "2",
-        name: "RenDam 1",
+        name: "RenDam",
         price: "IDR 12.500.000",
         dimensions: "Choice #1, Acrylic on Canvas, 100 x 100 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-19.jpg",
     },
     {
         id: "3",
-        name: "RenDam 3",
+        name: "RenDam",
         price: "IDR 12.500.000",
         dimensions: "New Joy, Acrylic on Canvas, 100 x 100 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-21.jpg",
     },
     {
         id: "4",
-        name: "RenDam 5",
+        name: "RenDam",
         price: "Set of 3 IDR 1.875.000",
         dimensions: "Blooms [Series], Acrylic on Canvas, 30 x 30 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-18.jpg",
     },
     {
         id: "5",
-        name: "Stacy 6",
+        name: "Stacy",
         price: "IDR 5.000.000",
         dimensions: "Golden Dawn, Acrylic on Canvas, 100 x 60 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-24.jpg",
     },
     {
         id: "6",
-        name: "D. Koestrita 2",
+        name: "D. Koestrita",
         price: "IDR 4.000.000",
         dimensions: "Block with the Mirror (Explorasi-061), Acrylic on Canvas, 60 x 90 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-03.jpg",
     },
     {
         id: "15",
-        name: "Ratih 1",
+        name: "Ratih",
         price: "IDR 10.000.000",
         dimensions: "God’s Love on Cellular Level Acrilyc on Canvas 90 X 60 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-15.jpg",
     },
     {
         id: "7",
-        name: "Ratih 2",
+        name: "Ratih",
         price: "IDR 8.700.000",
         dimensions: "Breathing Fine, Acrylic on Canvas, 90 x 60 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-13.jpg",
     },
     {
         id: "8",
-        name: "Ratih 6",
+        name: "Ratih",
         price: "IDR 20.000.000",
         dimensions: "Alzheimer, Acrylic on Canvas, 150 x 50 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-11.jpg",
     },
     {
         id: "9",
-        name: "Masagung Kirasave 3",
+        name: "Masagung Kirasave",
         price: "IDR 10.000.000",
         dimensions: "Warisi Apinya, Bukan Abunya, Acrylic on Canvas, 80 x 100 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-10.jpg",
     },
     {
         id: "10",
-        name: "Stacy 3",
+        name: "Stacy",
         price: "IDR 9.000.000",
         dimensions: "Cloud Crown, Acrylic on Canvas, 100 x 140 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-23.jpg",
     },
     {
         id: "11",
-        name: "Stacy 4",
+        name: "Stacy",
         price: "IDR 3.000.000",
         dimensions: "Desert Wind, Acrylic on Canvas, 60 x 70 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-22.jpg",
     },
     {
         id: "12",
-        name: "Masagung Kirasave 4",
+        name: "Masagung Kirasave",
         price: "IDR 30.000.000",
         dimensions: "Putera Gegelek, Acrylic on Canvas, 80 x 100 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-09.jpg",
     },
     {
         id: "13",
-        name: "D. Koestrita 3",
+        name: "D. Koestrita",
         price: "IDR 7.000.000",
         dimensions: "Between The Line (Explorasi-057), Acrylic on Canvas, 90 x 120 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-02.jpg",
     },
     {
         id: "14",
-        name: "D. Koestrita 4",
+        name: "D. Koestrita",
         price: "IDR 4.000.000",
         dimensions: "3 on 3 (Explorasi-066), Acrylic on Canvas, 70 x 90 cm",
         image_mid: "/galleryfeb/Copy of Karya Paax! - resize-01.jpg",
@@ -211,7 +211,7 @@ export const serviceDetails = [
         id: 1,
         name: "Bedah Plastik",
         name_en: "Plastic Surgery",
-        description: `<p>Beyoutiful Aesthetic menawarkan berbagai pilihan tindakan bedah plastik berstandar internasional yang disesuaikan dengan kebutuhan Anda. Dengan dukungan tim medis yang berpengalaman dan teknologi terkini, kami akan membantu Anda mencapai hasil yang alami dan menawan.<span class="font-normal">Jangan ragu untuk berkonsultasi dengan kami dan mulai perjalanan menuju penampilan yang lebih baik.</span></p>
+        description: `<p>Beyoutiful Aesthetic menawarkan berbagai pilihan tindakan bedah plastik berstandar internasional yang disesuaikan dengan kebutuhan Anda. Dengan dukungan tim medis yang berpengalaman dan teknologi terkini, kami akan membantu Anda mencapai hasil yang alami dan menawan. <span class="font-normal">Jangan ragu untuk berkonsultasi dengan kami dan mulai perjalanan menuju penampilan yang lebih baik.</span></p>
    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
@@ -576,7 +576,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
     {
         id: 3,
         name: "Hyperbaric Oxygen Therapy",
-        name_en: "Hyperbaric Oxygen Therapy (HBOT)",
+        name_en: "Hyperbaric Oxygen Therapy",
         description: `
         <p>Rasakan proses penyembuhan lebih cepat dan optimal dengan meningkatkan kadar oksigen dalam darah melalui terapi oksigen hiperbarik. Nikmati berbagai manfaatnya untuk berbagai kondisi kesehatan dan kualitas hidup yang lebih sehat.</p>`,
         description_en: `<p>Experience a faster and more optimal healing process by increasing oxygen levels in the blood through hyperbaric oxygen therapy. Enjoy its benefits for various health conditions and a healthier quality of life.</p>`,
@@ -604,7 +604,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                         <li>Vasektomi</li>
                      </ul>
 `,
-        description_en: ` <p><span class="font-normal"> Beyoutiful Aesthetic provides comprehensive urology services for health.</span> We offer a wide range of medical procedures, from routine check-ups to treating complex urological problems. Trust us with your health
+        description_en: ` <p>Beyoutiful Aesthetic provides comprehensive urological care for men's health. We offer a wide range of medical procedures, from routine check-ups to complex urological treatments. Trust your health with us.
 </p>
 <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                          <li>Extracorporeal Shockwave Therapy </li>
@@ -635,7 +635,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                         <li>LHP - Laser Hemorrhoidoplasty </li>
                      </ul>
 `,
-        description_en: ` <p>Our vascular treatments help improve the appearance of the skin and increase blood circulation without pain. <span class="font-normal">Have healthy blood vessels and beautiful skin at Beyoutiful Aesthetic.</span>
+        description_en: ` <p>Our vascular treatments enhance skin appearance and improve blood circulation with minimal discomfort. Achieve healthy blood vessels and beautiful skin at Beyoutiful Aesthetic.
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>EVLA - Endovenous Laser Ablation</li>
@@ -662,12 +662,11 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 </span>
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
-                        <li>Konsultasi Gizi+Meal Plan</li>
+                        <li>Konsultasi Gizi + Meal Plan</li>
                         <li>Nourish + Nutrigenomic </li>
                         <li>Balon Gaster</li>
                      </ul>`,
-        description_en: `<p>Get an ideal body and radiant skin with the right nutrition program. <span class="font-normal">Consult our nutrition experts and start your journey to a healthier body.
-</span>
+        description_en: `<p>Achieve your ideal body and radiant skin with our customized nutrition program. Consult with our nutritionist and start your journey to a healthier you.
 </p>
    <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;" class="mt-4">
                         <li>Nutrition Consultation + Meal Plan</li>
@@ -844,7 +843,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 </p>
 
 `,
-        description_en: `<p>Kesehatan reproduksi Anda adalah prioritas kami. Dapatkan perawatan komprehensif untuk semua masalah kesehatan wanita, mulai dari kehamilan hingga menopause. Kami juga menawarkan berbagai layanan, termasuk: pemeriksaan Pap smear, USG kehamilan, penanganan gangguan menstruasi, dan masih banyak lagi.
+        description_en: `<p>our reproductive health is our priority. Experience comprehensive women's health services, from pregnancy care to menopause management. We offer a wide range of services including Pap smears, pregnancy ultrasounds, and menstrual disorder treatments.
 </p>
 `,
         slug: "obstetri-ginekologi",
@@ -855,7 +854,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
             {
                 nama_dokter: "dr. Grace Valentine, Sp.Og",
                 dokter_foto: "/assets/beyoutiful/services/radiologi/dr-grace-1.jpg",
-                jadwal_dokter: ["Selasa (14.00 - 16.30 by appointment)", "Rabu & Jumat (11.00-14.00 by appointment)"],
+                jadwal_dokter: ["Selasa (14.00 - 16.30 By Appointment)", "Rabu & Jumat (11.00-14.00 By Appointment)"],
             },
         ],
     },
@@ -1063,6 +1062,16 @@ export const doctors = [
         agama: 'Islam'
     },
     {
+        id: 38,
+        kategori: 'Obstetri & Ginekologi',
+        kategori_en: 'Obstetrics & Gynecology',
+        subKategori: 'Obstetrics & Gynecology',
+        nama: 'dr. Grace Valentine, Sp.Og',
+        jadwal: 'Selasa (14.00 - 16.30 By Appointment)/Rabu & Jumat (11.00-14.00 By Appointment)',
+        tanggalLahir: '',
+        agama: ''
+    },
+    {
         id: 21,
         kategori: 'Hiperbarik',
         kategori_en: 'Hyperbaric Surgeon',
@@ -1212,16 +1221,7 @@ export const doctors = [
         tanggalLahir: '',
         agama: ''
     },
-    {
-        id: 38,
-        kategori: 'Obstetri & Ginekologi',
-        kategori_en: 'Obstetrics & Gynecology',
-        subKategori: 'Obstetrics & Gynecology',
-        nama: 'dr. Grace Valentine, Sp.Og',
-        jadwal: 'Selasa (14.00 - 16.30 by appointment)/Rabu & Jumat (11.00-14.00 by appointment)',
-        tanggalLahir: '',
-        agama: ''
-    }
+
 
 ];
 

@@ -17,9 +17,9 @@ const Space = ({ title, subTitle }) => {
       id: "41",
       name: "T-HALL",
       price: "Rp. 140.000",
-      opsi_acara: "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc…",
+      opsi_acara: "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc",
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
-      spesifikasi: "Indoor, 200m2 Non smoking No pet allowed",
+      spesifikasi: "Indoor, 200m2, Non smoking, No pet allowed",
       image_mid: "/assets/hall.png",
       image_map: "/assets/map-hall.png",
     },
@@ -27,9 +27,9 @@ const Space = ({ title, subTitle }) => {
       id: "40",
       name: "T-GARDEN",
       price: "Rp. 120.000",
-      opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc…",
+      opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
-      spesifikasi: "Outdoor, 1.000m2 Smoking area Pet Friendly",
+      spesifikasi: "Outdoor, 1.000m2, Smoking area, Pet Friendly",
       image_mid: "/assets/garden.png",
       image_map: "/assets/map-hall.png",
     },
@@ -38,9 +38,9 @@ const Space = ({ title, subTitle }) => {
       name: "T-STUDIO",
       price: "Rp. 60.000",
       opsi_acara:
-        "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc…",
+        "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc",
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
-      spesifikasi: "Indoor, 200m2 + 2 RoomsNon smoking ",
+      spesifikasi: "Indoor, 200m2 + 2 Rooms, Non smoking ",
       image_mid: "/assets/studio.png",
       image_map: "/assets/map-hall.png",
     },
@@ -49,9 +49,9 @@ const Space = ({ title, subTitle }) => {
       name: "T-ROOFTOP",
       price: "Rp. 120.000",
       opsi_acara:
-        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
+        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc",
       fasilitas: "Toilet, Sound System, Tables & Chairs",
-      spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
+      spesifikasi: "Outdoor, 725m2, Smoking area, No pet allowed",
       image_mid: "/assets/rooftop-1.png",
       image_map: "/assets/map-hall.png",
     },
@@ -60,8 +60,9 @@ const Space = ({ title, subTitle }) => {
       name: "OPERATING ROOM",
       price: "Rp. 120.000",
       opsi_acara:
-        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
-      fasilitas: "Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP",
+        "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc",
+      fasilitas:
+        "Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP",
       spesifikasi: "Parking Area, Toilet, WiFi",
       image_mid: "/assets/operating-room.png",
       image_map: "/assets/map-hall.png",
@@ -71,7 +72,7 @@ const Space = ({ title, subTitle }) => {
       name: "ALL T-SPACE AREA",
       price: "Rp. 120.000",
       opsi_acara:
-        "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc…",
+        "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc",
       fasilitas: "All T-SPACE AREA",
       spesifikasi: "Indoor & Outdoor, 3.500m2 ",
       image_mid: "/assets/tspace-area.png",
@@ -102,7 +103,7 @@ const Space = ({ title, subTitle }) => {
         <p className="!text-textDark/80 sub-title">
           {lang === "en"
             ? "Suitable for your dream events and occasions. Browse through our available spaces and book a tour today!"
-            : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space"}
+            : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space."}
         </p>
       </div>
 
@@ -228,7 +229,7 @@ const Space = ({ title, subTitle }) => {
 
                 <div>
                   <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Opsi Acara
+                    {lang === "en" ? "Event Options" : "Opsi Acara"}
                   </h3>
                   <p className="text-textDark mt-2">
                     {selectedItem?.opsi_acara}
@@ -237,7 +238,7 @@ const Space = ({ title, subTitle }) => {
 
                 <div>
                   <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Fasilitas
+                    {lang === "en" ? "Facilities" : "Fasilitas"}
                   </h3>
                   <p className="text-textDark mt-2">
                     {selectedItem?.fasilitas}
@@ -246,7 +247,7 @@ const Space = ({ title, subTitle }) => {
 
                 <div>
                   <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Spesifikasi Area
+                    {lang === "en" ? "Area Specifications" : "Spesifikasi Area"}
                   </h3>
                   <p className="text-textDark mt-2">
                     {selectedItem?.spesifikasi}

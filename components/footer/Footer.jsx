@@ -22,8 +22,7 @@ const Footer = () => {
     shopee: "",
   };
   const dataBeyoutiful = {
-    facebook:
-      "https://www.facebook.com/p/Beyoutiful-Aesthetic-Clinic-100054618511656/?locale=id_ID",
+    facebook: "https://www.facebook.com/profile.php?id=61563467105020#",
     instagram: "https://www.instagram.com/beyoutiful.aesthetic/",
     twitter: "",
     tiktok: "https://www.tiktok.com/@beyoutiful.aesthetic",

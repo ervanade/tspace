@@ -105,7 +105,7 @@ const ServicesDetails = ({ service }) => {
       <div className="w-full max-w-7xl px-4 md:px-6 lg:px-8 mx-auto">
         {/* Judul Layanan */}
         <h2 className="text-center text-2xl !font-bold !text-secondary lg:!mb-6 title-beyoutiful">
-          {service.name}
+          {lang === "en" ? service.name_en : service.name}
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-6 ">
@@ -133,7 +133,9 @@ const ServicesDetails = ({ service }) => {
 
           {/* Area Dokter */}
           <div className="bg-white rounded-lg p-6 text-dark">
-            <h2 className="text-2xl font-medium mb-4 text-center">Dokter</h2>
+            <h2 className="text-2xl font-medium mb-4 text-center">
+              {lang === "en" ? "Doctors" : "Dokter"}
+            </h2>
             <div
               className={`grid ${
                 service?.dokter?.length > 6

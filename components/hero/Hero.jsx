@@ -64,34 +64,38 @@ const Hero = () => {
         >
           {data?.map((item, index) => (
             <SwiperSlide key={index}>
-              <Link href={item?.link}>
-                <div className="w-full relative h-screen">
-                  <Image
-                    src={item.image_default}
-                    alt={item.title || "T-Space Hero"}
-                    layout="fill" // Membuat gambar memenuhi kontainer
-                    objectFit="cover" // Menjaga rasio aspek dan memotong bagian luar
-                    objectPosition="center" // Memusatkan gambar
-                    priority={index === 0} // Memuat gambar pertama lebih awal
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/50" />
+              {/* <Link href={item?.link}> */}
+              <div className="w-full relative h-screen cursor-pointer">
+                <Image
+                  src={item.image_default}
+                  alt={item.title || "T-Space Hero"}
+                  layout="fill" // Membuat gambar memenuhi kontainer
+                  objectFit="cover" // Menjaga rasio aspek dan memotong bagian luar
+                  objectPosition="center" // Memusatkan gambar
+                  priority={index === 0} // Memuat gambar pertama lebih awal
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/50" />
 
-                  <div className="absolute flex flex-col gap-2 items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white space-y-4 lg:space-y-8">
-                    <p className="font-bebas text-4xl md:text-5xl lg:text-[54px] 2xl:text-[60px] text-center leading-tight">
-                      {lang === "en" ? item.title_en : item.title}
-                    </p>
-                    <p className="text-base sm:text-lg lg:text-xl text-white/85 text-center leading-relaxed">
-                      {lang === "en" ? item.desc_en : item.desc}
-                    </p>
-                    <button
-                      aria-label="button"
-                      className="bg-white text-textDark px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
-                    >
-                      {lang === "en" ? "Contact Us" : "Hubungi Kami"}
-                    </button>
-                  </div>
+                <div className="absolute flex flex-col gap-2 items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white space-y-4 lg:space-y-8">
+                  <p className="font-bebas text-4xl md:text-5xl lg:text-[54px] 2xl:text-[60px] text-center leading-tight">
+                    {lang === "en" ? item.title_en : item.title}
+                  </p>
+                  <p className="text-base sm:text-lg lg:text-xl text-white/85 text-center leading-relaxed">
+                    {lang === "en" ? item.desc_en : item.desc}
+                  </p>
+                  <a
+                    href="https://wa.me/+621181110556
+                     "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="button"
+                    className="bg-white text-textDark px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold"
+                  >
+                    {lang === "en" ? "Contact Us" : "Hubungi Kami"}
+                  </a>
                 </div>
-              </Link>
+              </div>
+              {/* </Link> */}
             </SwiperSlide>
           ))}
           <div className="swiper-pagination"></div>

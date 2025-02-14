@@ -76,10 +76,10 @@ const Gallery = ({ title, subTitle }) => {
   const content = {
     title: "ArT-Space",
     title_en: "ArT-Space",
-    desc: `Ind: PAAX!, dari Kelompok Lima. \n
+    desc: `PAAX!, dari Kelompok Lima. \n
     Sebuah pameran seni yang menampilkan karya-karya pop art dan abstrak yang unik dan penuh warna dari D.Koestrita, Stacy, RenDam, Masagung Kirasave, dan Ratih.`,
-    desc_en: `Ind: PAAX!, dari Kelompok Lima. \n
-    Sebuah pameran seni yang menampilkan karya-karya pop art dan abstrak yang unik dan penuh warna dari D.Koestrita, Stacy, RenDam, Masagung Kirasave, dan Ratih.`,
+    desc_en: `PAAX!, from Grup Lima. \n
+    An art exhibition featuring unique and colorful pop art and abstract works from D.Koestrita, Stacy, RenDam, Masagung Kirasave, and Ratih.`,
     logo: "/logo_ori.svg",
   };
 

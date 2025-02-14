@@ -3,6 +3,7 @@ import { serviceDetails } from "@/public/data";
 import ServicesDetails from "@/components/services/ServicesDetails";
 import NavbarServices from "@/components/navbar/NavbarServices";
 import Footer from "@/components/footer/Footer";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   // Menghasilkan parameter dinamis berdasarkan data
@@ -10,13 +11,12 @@ export async function generateStaticParams() {
 }
 
 const ServicePage = async ({ params }) => {
+  const { id } = await params;
   // Cari data yang cocok berdasarkan slug
-  const service = serviceDetails.find((item) => item.slug === params.id);
+  const service = serviceDetails.find((item) => item.slug === id);
 
   if (!service) {
-    return {
-      notFound: true, // Menampilkan halaman 404 jika tidak ditemukan
-    };
+    notFound();
   }
 
   return (

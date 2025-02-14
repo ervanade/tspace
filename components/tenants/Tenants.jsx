@@ -59,7 +59,7 @@ const Tenants = () => {
       link_web:
         "https://www.javanegragourmet.com/outlets/warung-bakmi-mpek-tjoen",
       link_wa: "https://wa.me/+6281222812023",
-      logo: "/assets/mpok_logo.png",
+      logo: "/assets/logo_bakmi.svg",
     },
     {
       id: "rejuve",
@@ -108,8 +108,8 @@ const Tenants = () => {
           </h1>
           <p className="sub-title">
             {lang === "en"
-              ? "Learn more about variety of services available at T-Space"
-              : "Berbagai layanan yang tersedia di T-Space"}
+              ? "Learn more about variety of services available at T-Space."
+              : "Berbagai layanan yang tersedia di T-Space."}
           </p>
         </div>
         {/* <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">

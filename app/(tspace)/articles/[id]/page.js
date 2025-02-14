@@ -5,6 +5,7 @@ import NavbarServices from "@/components/navbar/NavbarServices";
 import Footer from "@/components/footer/Footer";
 import NavbarArticles from "@/components/navbar/NavbarArticles";
 import ArticlesDetails from "@/components/articles/ArticlesDetails";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
     // Menghasilkan parameter dinamis berdasarkan data
@@ -13,12 +14,12 @@ export async function generateStaticParams() {
 
 const ArticlePage = async ({ params }) => {
     // Cari data yang cocok berdasarkan slug
-    const article = articles.find((item) => item.slug === params.id);
+    const { id } = await params;
+
+    const article = articles.find((item) => item.slug === id);
 
     if (!article) {
-        return {
-            notFound: true, // Menampilkan halaman 404 jika tidak ditemukan
-        };
+        notFound()
     }
 
     return (
