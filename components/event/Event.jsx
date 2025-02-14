@@ -196,7 +196,7 @@ const Event = () => {
         </h1>
         <p className="!text-white/80 sub-title">
           {lang === "en"
-            ? "Event at T-Space Bintaro this month:"
+            ? "This month's events:"
             : "Acara di T-Space Bintaro selama bulan ini:"}
         </p>
       </div>

@@ -21,7 +21,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
       spesifikasi: "Indoor, 200m2, Non smoking, No pet allowed",
       image_mid: "/assets/hall.png",
-      image_map: "/assets/map-hall.png",
+      image_map: "/assets/denah-hall.png",
     },
     {
       id: "40",
@@ -31,7 +31,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 1.000m2, Smoking area, Pet Friendly",
       image_mid: "/assets/garden.png",
-      image_map: "/assets/map-hall.png",
+      image_map: "/assets/denah-garden.png",
     },
     {
       id: "42",
@@ -42,7 +42,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
       spesifikasi: "Indoor, 200m2 + 2 Rooms, Non smoking ",
       image_mid: "/assets/studio.png",
-      image_map: "/assets/map-hall.png",
+      image_map: "/assets/denah-studio.png",
     },
     {
       id: "43",
@@ -53,7 +53,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "Toilet, Sound System, Tables & Chairs",
       spesifikasi: "Outdoor, 725m2, Smoking area, No pet allowed",
       image_mid: "/assets/rooftop-1.png",
-      image_map: "/assets/map-hall.png",
+      image_map: "/assets/denah-rooftop.png",
     },
     {
       id: "43",
@@ -65,7 +65,7 @@ const Space = ({ title, subTitle }) => {
         "Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP",
       spesifikasi: "Parking Area, Toilet, WiFi",
       image_mid: "/assets/operating-room.png",
-      image_map: "/assets/map-hall.png",
+      image_map: "/assets/denah-operating.jpg",
     },
     {
       id: "44",
@@ -76,7 +76,7 @@ const Space = ({ title, subTitle }) => {
       fasilitas: "All T-SPACE AREA",
       spesifikasi: "Indoor & Outdoor, 3.500m2 ",
       image_mid: "/assets/tspace-area.png",
-      image_map: "/assets/map-hall.png",
+      image_map: "/assets/denah-all.png",
     },
   ];
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
