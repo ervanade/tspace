@@ -843,7 +843,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 </p>
 
 `,
-        description_en: `<p>our reproductive health is our priority. Experience comprehensive women's health services, from pregnancy care to menopause management. We offer a wide range of services including Pap smears, pregnancy ultrasounds, and menstrual disorder treatments.
+        description_en: `<p>Our reproductive health is our priority. Experience comprehensive women's health services, from pregnancy care to menopause management. We offer a wide range of services including Pap smears, pregnancy ultrasounds, and menstrual disorder treatments.
 </p>
 `,
         slug: "obstetri-ginekologi",
