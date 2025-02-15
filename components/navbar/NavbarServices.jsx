@@ -116,7 +116,11 @@ const NavbarServices = () => {
       name_en: "Vascular",
       link: "/beyoutiful/services/vaskular",
     },
-    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi" },
+    {
+      name: "Gizi",
+      name_en: "Clinical Nutrition",
+      link: "/beyoutiful/services/gizi",
+    },
     {
       name: "Hyperbaric Oxygen Therapy",
       name_en: "Hyperbaric Oxygen Therapy (HBOT)",

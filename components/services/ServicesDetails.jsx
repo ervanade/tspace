@@ -112,7 +112,7 @@ const ServicesDetails = ({ service }) => {
           {/* Area Deskripsi */}
           <div className="bg-white rounded-lg p-6 text-dark">
             <h2 className="text-2xl font-medium mb-5 text-center">
-              Service Details
+              {lang === "en" ? "Service Details" : "Rincian Layanan"}
             </h2>
             <div className="aspect-[16/9] w-full overflow-hidden rounded-lg relative mb-4">
               <Image

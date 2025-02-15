@@ -196,7 +196,7 @@ export const dataServices = [
     { name: "Urologi", name_en: "Urology", link: "/beyoutiful/services/urologi", image: "/assets/beyoutiful/urologi.png" },
     { name: "Obstetri & Ginekologi", name_en: "Obstetric & Gynecology", link: "/beyoutiful/services/obstetri-ginekologi", image: "/assets/beyoutiful/obstetri.jpg" },
     { name: "Vaskular", name_en: "Vascular", link: "/beyoutiful/services/vaskular", image: "/assets/beyoutiful/vaskular-1.jpg" },
-    { name: "Gizi", name_en: "Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
+    { name: "Gizi", name_en: "Clinical Nutrition", link: "/beyoutiful/services/gizi", image: "/assets/beyoutiful/gizi.png" },
     {
         name: "Hyperbaric Oxygen Therapy",
         name_en: "Hyperbaric Oxygen Therapy (HBOT)",
@@ -283,12 +283,12 @@ export const serviceDetails = [
         link: "/",
         image: "/assets/beyoutiful/bedah-plastik.jpg",
         before_after_foto: [
-            {
-                id: "41",
-                name: "Blepharoplasty Bagian Atas - 2",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Blepharoplasty Bagian Atas - 2.png",
-            },
+            // {
+            //     id: "41",
+            //     name: "Blepharoplasty Bagian Atas - 2",
+            //     image_mid:
+            //         "/assets/beyoutiful/services/before/Blepharoplasty Bagian Atas - 2.png",
+            // },
 
             {
                 id: "42",
@@ -657,7 +657,7 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
     {
         id: 6,
         name: "Gizi",
-        name_en: "Nutrition",
+        name_en: "Clinical Nutrition",
         description: `<p>Dapatkan tubuh ideal dan kulit yang bercahaya dengan program gizi yang tepat. <span class="font-normal">Konsultasikan dengan ahli gizi kami dan mulai perjalanan menuju tubuh yang lebih sehat.
 </span>
 </p>
@@ -1035,7 +1035,7 @@ export const doctors = [
         id: 18,
         kategori: 'Gizi',
         kategori_en: 'Nutritionist',
-        subKategori: 'Gizi',
+        subKategori: 'Clinical Nutrition Specialist',
         nama: 'dr. Arti Indira, M.Gizi, Sp.GK, FINEM',
         jadwal: 'Senin - Sabtu (09.00-17.00)',
         tanggalLahir: '9-Jul-1979',
