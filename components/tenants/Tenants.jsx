@@ -59,7 +59,7 @@ const Tenants = () => {
       link_web:
         "https://www.javanegragourmet.com/outlets/warung-bakmi-mpek-tjoen",
       link_wa: "https://wa.me/+6281222812023",
-      logo: "/assets/logo_bakmi.svg",
+      logo: "/logo_bakmi.svg",
     },
     {
       id: "rejuve",
