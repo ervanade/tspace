@@ -105,6 +105,48 @@ const Space = ({ title, subTitle }) => {
                   </p>
                 </div>
                 `,
+      content_en: `   <div>
+                <h3 className="text-lg font-bold mt-3 text-textDark">
+                Event Options
+                </h3>
+                <p className="text-textDark mt-2">
+                  Live Surgery, Workshop, Product Demo, other medical purposes
+                </p>
+                <h3 className="text-lg font-bold mt-6 text-textDark ">
+                Location, Beyoutiful Aesthetic Clinic
+                </h3>
+                <p className="text-textDark mt-2">
+                  Jl. Pakubuwono VI No.5A 3, RT.3/RW.3, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold mt-3 text-textDark">
+                  Facilities
+
+                </h3>
+                <p className="text-textDark mt-2">
+               Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, WiFi
+                </p>
+              </div>
+              
+              <div class="mt-6">
+               <h3 className="text-lg font-bold mt-3 text-textDark">
+                Location, Beyoutiful Aesthetic Center
+                </h3>
+                   <p className="text-textDark mt-2">
+              at T-Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Jombang, Kota Tangerang Selatan
+                </p>
+              </div>
+               <div>
+                <h3 className="text-lg font-bold mt-3 text-textDark">
+                  Facilities
+                </h3>
+                <p className="text-textDark mt-2">
+               Up to 20-25 pax, 4 - 6 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, Mushola, WiFi
+                </p>
+              </div>
+              `,
       image_mid: "/assets/operating-room.png",
       image_map: "/assets/denah-operating.jpg",
     },
@@ -270,7 +312,9 @@ const Space = ({ title, subTitle }) => {
                 {selectedItem?.name === "OPERATING ROOM" ? (
                   <div>
                     {lang === "en"
-                      ? parse(HTMLDecoderEncoder.decode(selectedItem?.content))
+                      ? parse(
+                          HTMLDecoderEncoder.decode(selectedItem?.content_en)
+                        )
                       : parse(HTMLDecoderEncoder.decode(selectedItem?.content))}
                   </div>
                 ) : (
