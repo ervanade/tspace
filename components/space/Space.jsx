@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 
-const HTMLDecoderEncoder = require("html-encoder-decoder");
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import parse from "html-react-parser";
+const HTMLDecoderEncoder = require("html-encoder-decoder");
 const Space = ({ title, subTitle }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dataSpace = [
@@ -64,6 +64,47 @@ const Space = ({ title, subTitle }) => {
       fasilitas:
         "Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP",
       spesifikasi: "Parking Area, Toilet, WiFi",
+      content: `   <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                   Opsi Acara
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    Live Surgery, Workshop, Product Demo, other medical purposes
+                  </p>
+                  <h3 className="text-lg font-bold mt-6 text-textDark ">
+                  Lokasi, Beyoutiful Aesthetic Clinic
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    Jl. Pakubuwono VI No.5A 3, RT.3/RW.3, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Fasilitas
+                  </h3>
+                  <p className="text-textDark mt-2">
+                 Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, WiFi
+                  </p>
+                </div>
+                
+                <div class="mt-6">
+                 <h3 className="text-lg font-bold mt-3 text-textDark">
+                  Lokasi, Beyoutiful Aesthetic Center
+                  </h3>
+                     <p className="text-textDark mt-2">
+                at T-Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Jombang, Kota Tangerang Selatan
+                  </p>
+                </div>
+                 <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Fasilitas
+                  </h3>
+                  <p className="text-textDark mt-2">
+                 Up to 20-25 pax, 4 - 6 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, Mushola, WiFi
+                  </p>
+                </div>
+                `,
       image_mid: "/assets/operating-room.png",
       image_map: "/assets/denah-operating.jpg",
     },
@@ -226,33 +267,44 @@ const Space = ({ title, subTitle }) => {
                 <h2 className="text-2xl font-bold mt-4 text-textDark">
                   {selectedItem?.name}
                 </h2>
+                {selectedItem?.name === "OPERATING ROOM" ? (
+                  <div>
+                    {lang === "en"
+                      ? parse(HTMLDecoderEncoder.decode(selectedItem?.content))
+                      : parse(HTMLDecoderEncoder.decode(selectedItem?.content))}
+                  </div>
+                ) : (
+                  <div>
+                    <div>
+                      <h3 className="text-lg font-bold mt-3 text-textDark">
+                        {lang === "en" ? "Event Options" : "Opsi Acara"}
+                      </h3>
+                      <p className="text-textDark mt-2">
+                        {selectedItem?.opsi_acara}
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    {lang === "en" ? "Event Options" : "Opsi Acara"}
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.opsi_acara}
-                  </p>
-                </div>
+                    <div>
+                      <h3 className="text-lg font-bold mt-3 text-textDark">
+                        {lang === "en" ? "Facilities" : "Fasilitas"}
+                      </h3>
+                      <p className="text-textDark mt-2">
+                        {selectedItem?.fasilitas}
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    {lang === "en" ? "Facilities" : "Fasilitas"}
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.fasilitas}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    {lang === "en" ? "Area Specifications" : "Spesifikasi Area"}
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.spesifikasi}
-                  </p>
-                </div>
+                    <div>
+                      <h3 className="text-lg font-bold mt-3 text-textDark">
+                        {lang === "en"
+                          ? "Area Specifications"
+                          : "Spesifikasi Area"}
+                      </h3>
+                      <p className="text-textDark mt-2">
+                        {selectedItem?.spesifikasi}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}

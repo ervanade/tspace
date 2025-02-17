@@ -185,7 +185,7 @@ export const galleryFeb = [
         name: "D. Koestrita",
         price: "IDR 4.000.000",
         dimensions: "3 on 3 (Explorasi-066), Acrylic on Canvas, 70 x 90 cm",
-        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-01.jpg",
+        image_mid: "/galleryfeb/Copy of Karya Paax! - resize-04.jpg",
     },
 ];
 
@@ -317,7 +317,7 @@ export const serviceDetails = [
             {
                 id: "43",
                 name: "Pembesaran Payudara",
-                image_mid: "/assets/beyoutiful/services/before/Pembesaran Payudara.png",
+                image_mid: "/assets/beyoutiful/services/before/Pembesaran Payudara 1.png",
             },
             {
                 id: "40",
@@ -328,7 +328,7 @@ export const serviceDetails = [
                 id: "40",
                 name: "Pengencangan Wajah Bagian Tengah",
                 image_mid:
-                    "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah.png",
+                    "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah 1.png",
             },
             {
                 id: "40",
