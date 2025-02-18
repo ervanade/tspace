@@ -1589,3 +1589,16 @@ export const facility = [
         image_mid: "/assets/beyoutiful/dental-facility.jpg",
     },
 ];
+
+export const heroBeyoutiful = [
+    {
+        link: "/beyoutiful",
+        image_default: "/assets/beyoutiful/hero-beyoutiful-4.png",
+        title: `<span>Rasakan perbedaan transformasional di<br /> Beyoutiful Aesthetic</span>`,
+        title_en:
+            "Experience holistic wellness treatments at Beyoutiful Aesthetic",
+        desc: "Dengan pendekatan holistik kami yang berfokus pada kesejahteraan Anda secara menyeluruh, menggabungkan teknik mutakhir dengan perawatan yang didesain khusus.",
+        desc_en:
+            "From aesthetic surgery to specialized therapies, designed to enhance your overall appearance and well-being.",
+    },
+]
