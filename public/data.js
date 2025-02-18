@@ -1521,3 +1521,71 @@ export const dataSpace = [
         image_map: "/assets/denah-all.png",
     },
 ];
+
+export const contentAboutBeyoutiful = {
+    title: "Beyoutiful Aesthetic",
+    desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
+    desc_en:
+        "Experience the meeting of your happiness and wellness at Beyoutiful Aesthetic. Our services, ranging from aesthetic surgeries to specialised treatments (non-aesthetic too!), are designed to enhance your look and your overall well-being.",
+    logo: "/logo_ori.svg",
+};
+
+export const facility = [
+    {
+        id: "41",
+        name: "Lobi",
+        name_en: "Lobby",
+        spesifikasi: "Indoor, 200m2 Non smoking No pet allowed",
+        image_mid: "/assets/beyoutiful/faciliy-1.png",
+    },
+
+    {
+        id: "42",
+        name: "Ruang Konsultasi",
+        name_en: "Consultation Room",
+        image_mid: "/assets/beyoutiful/konsultasi.jpg",
+    },
+    {
+        id: "42",
+        name: "Ruang VIP",
+        name_en: "VIP Room",
+        image_mid: "/assets/beyoutiful/vip.png",
+    },
+    {
+        id: "43",
+        name: "Ruang Operasi",
+        name_en: "Operating Room",
+        image_mid: "/assets/beyoutiful/operasi.png",
+    },
+    {
+        id: "44",
+        name: "Pusat Dermatologi",
+        name_en: "Dermatology Center",
+        image_mid: "/assets/beyoutiful/dermatologi.png",
+    },
+    {
+        id: "43",
+        name: "Ruang Hiperbarik",
+        name_en: "Hyperbaric Chamber",
+        price: "Rp. 120.000",
+        opsi_acara:
+            "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc…",
+        fasilitas: "Toilet, Sound System, Tables & Chairs",
+        spesifikasi: "Outdoor, 725m2 Smoking area No pet allowed",
+        image_mid: "/assets/beyoutiful/hiperbarik.png",
+        image_map: "/assets/map-hall.png",
+    },
+    {
+        id: "43",
+        name: "Radiologi",
+        name_en: "Radiology",
+        image_mid: "/assets/beyoutiful/radiologi-1.jpg",
+    },
+
+    {
+        id: "40",
+        name: "Klinik Gigi",
+        name_en: "Dental Clinic",
+        image_mid: "/assets/beyoutiful/dental-facility.jpg",
+    },
+];
