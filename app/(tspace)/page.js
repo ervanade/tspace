@@ -16,13 +16,31 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-export default function Home() {
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/homepage/0`, {
+    // cache: 'no-store',
+    method: 'GET',
+    headers: {
+      'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
+    },
+  })
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
+
+export default async function Home() {
+  const { data } = await getData()
+  if (!data) return <p>Error Data Not Found</p>
   return (
     <>
       <Navbar className="" />
       <Hero />
       <About />
-      <Gallery />
+      <Gallery data={data["3"].gallery || null} />
       <Space />
       <Event />
       <Tenants />

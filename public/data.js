@@ -1310,4 +1310,214 @@ export const articles = [
     }
 ];
 
+export const contentTenants = [
+    {
+        id: "elprofessor",
+        title: "El Professor",
+        image: "/assets/elprofesor.png",
+        desc: "Menu El Profesor berfokus pada steak daging sapi, daging panggang, dan slider. Bagi yang tidak makan daging, El Profesor menawarkan pilihan Salad Mediterania, Pasta Seafood, Mac & Cheese Parmigiano, dan pilihan Nasi Goreng Indonesia. Minuman disiapkan oleh para barista, yang menawarkan berbagai minuman, mulai dari koktail khas hingga kopi spesial dari Javanegra.",
+        desc_en:
+            "El Profesor’s menu focuses on beef steaks, grilled meats, and sliders. As for non-meat-eaters, El Profesor offers a selection of Mediterranean Salads, Seafood Pasta, Mac & Cheese Parmigiano, and choices of Indonesian Fried Rice. Drinks are prepared by the baristas, offering a variety of beverages, from signature cocktails to specialty coffee by Javanegra.",
+        link_web:
+            "https://www.javanegragourmet.com/outlets/el-profesor-steakhouse/",
+        link_wa: "https://wa.me/+6281222812023",
+        logo: "/elprofessor_logo.svg",
+    },
+    {
+        id: "bakmi",
+        title: "WARUNG BAKMI MPEK TJOEN",
+        image: "/assets/bakmi.png",
+        desc: "Nikmati bakmi halal yang unik dan lezat, kreasi dari Chef Andrea Peresthu.",
+        desc_en:
+            "Enjoy unique and delicious halal noodles, a creation of Chef Andrea Peresthu.",
+        link_web:
+            "https://www.javanegragourmet.com/outlets/warung-bakmi-mpek-tjoen",
+        link_wa: "https://wa.me/+6281222812023",
+        logo: "/logo_bakmi.svg",
+    },
+    {
+        id: "rejuve",
+        title: "RE.JUVE",
+        image: "/assets/rejuve.png",
+        desc: "Re.Juve Cold Pressed Juice menyajikan jus dan smoothie hasil perasan dingin yang segar, sehat, dan lezat untuk T-Space. Siap membuat pengunjung kami tetap bersemangat dan terinspirasi.",
+        desc_en:
+            "Re.Juve Cold Pressed Juice provides fresh, healthy, and delicious cold-pressed juices and smoothies to T-Space, keeping our community fueled and inspired.",
+        link_web: "https://rejuve.co.id/",
+        link_wa: "https://wa.me/+6281222812023",
+        logo: "/rejuve_logo.svg",
+    },
+    {
+        id: "dental",
+        title: "BEYOUTIFUL DENTAL CLINIC",
+        image: "/assets/dental-1.png",
+        desc: "Berlokasi strategis di dalam T-Space, Beyoutiful Dental Clinic menyediakan akses mudah ke perawatan gigi berkualitas tinggi bagi masyarakat sekitar.",
+        desc_en:
+            "Conveniently located within T-Space, Beyoutiful Dental Clinic provides easy access to high-quality dental care for our surrounding community.",
+        link_web: "https://www.instagram.com/dental.beyoutiful/?hl=en",
+        link_wa: "https://wa.me/+6281222812023",
+        logo: "/dental_logo.svg",
+    },
+    {
+        id: "dental",
+        title: "SPKLU",
+        image: "/assets/spklu.png",
+        desc: "Nikmati kenyamanan mengisi daya mobil listrik Anda di T-Space. Kami menyediakan SPKLU untuk memudahkan mobilitas Anda.",
+        desc_en:
+            "Enjoy the convenience of charging your electric car at T-Space. We provide SPKLU to facilitate your mobility.",
+        link_web: "https://layanan.pln.co.id/partnership-sharing-model-spklu",
+        link_wa: "https://wa.me/+6281222812023",
+        logo: "/assets/spklu-logo.png",
+    },
+];
 
+
+export const dataSpace = [
+    {
+        id: "41",
+        name: "T-HALL",
+        price: "Rp. 140.000",
+        opsi_acara: "Live Music, Art Exhibition Talkshow, Wedding Ceremony, etc",
+        fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+        spesifikasi: "Indoor, 200m2, Non smoking, No pet allowed",
+        image_mid: "/assets/hall.png",
+        image_map: "/assets/denah-hall.png",
+    },
+    {
+        id: "40",
+        name: "T-GARDEN",
+        price: "Rp. 120.000",
+        opsi_acara: "Live Music, Garden Party, Celebration, Gathering etc",
+        fasilitas: "Toilet, Sound System, Tables & Chairs",
+        spesifikasi: "Outdoor, 1.000m2, Smoking area, Pet Friendly",
+        image_mid: "/assets/garden.png",
+        image_map: "/assets/denah-garden.png",
+    },
+    {
+        id: "42",
+        name: "T-STUDIO",
+        price: "Rp. 60.000",
+        opsi_acara:
+            "Tenant Yearly Rent, Yoga, Pilates, Intimate Event, Talkshow, Photo Studio, etc",
+        fasilitas: "Toilet, Sound System, Tables & Chairs, AC",
+        spesifikasi: "Indoor, 200m2 + 2 Rooms, Non smoking ",
+        image_mid: "/assets/studio.png",
+        image_map: "/assets/denah-studio.png",
+    },
+    {
+        id: "43",
+        name: "T-ROOFTOP",
+        price: "Rp. 120.000",
+        opsi_acara:
+            "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc",
+        fasilitas: "Toilet, Sound System, Tables & Chairs",
+        spesifikasi: "Outdoor, 725m2, Smoking area, No pet allowed",
+        image_mid: "/assets/rooftop-1.png",
+        image_map: "/assets/denah-rooftop.png",
+    },
+    {
+        id: "43",
+        name: "OPERATING ROOM",
+        price: "Rp. 120.000",
+        opsi_acara:
+            "Tenant Yearly Rent, Live Music, Gathering, Intimate Event, etc",
+        fasilitas:
+            "Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP",
+        spesifikasi: "Parking Area, Toilet, WiFi",
+        content: `   <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                   Opsi Acara
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    Live Surgery, Workshop, Product Demo, other medical purposes
+                  </p>
+                  <h3 className="text-lg font-bold mt-6 text-textDark ">
+                  Lokasi, Beyoutiful Aesthetic Clinic
+                  </h3>
+                  <p className="text-textDark mt-2">
+                    Jl. Pakubuwono VI No.5A 3, RT.3/RW.3, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Fasilitas
+                  </h3>
+                  <p className="text-textDark mt-2">
+                 Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, WiFi
+                  </p>
+                </div>
+                
+                <div class="mt-6">
+                 <h3 className="text-lg font-bold mt-3 text-textDark">
+                  Lokasi, Beyoutiful Aesthetic Center
+                  </h3>
+                     <p className="text-textDark mt-2">
+                at T-Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Jombang, Kota Tangerang Selatan
+                  </p>
+                </div>
+                 <div>
+                  <h3 className="text-lg font-bold mt-3 text-textDark">
+                    Fasilitas
+                  </h3>
+                  <p className="text-textDark mt-2">
+                 Up to 20-25 pax, 4 - 6 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, Mushola, WiFi
+                  </p>
+                </div>
+                `,
+        content_en: `   <div>
+                <h3 className="text-lg font-bold mt-3 text-textDark">
+                Event Options
+                </h3>
+                <p className="text-textDark mt-2">
+                  Live Surgery, Workshop, Product Demo, other medical purposes
+                </p>
+                <h3 className="text-lg font-bold mt-6 text-textDark ">
+                Location, Beyoutiful Aesthetic Clinic
+                </h3>
+                <p className="text-textDark mt-2">
+                  Jl. Pakubuwono VI No.5A 3, RT.3/RW.3, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold mt-3 text-textDark">
+                  Facilities
+
+                </h3>
+                <p className="text-textDark mt-2">
+               Up to 15 pax, 4 - 5 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, WiFi
+                </p>
+              </div>
+              
+              <div class="mt-6">
+               <h3 className="text-lg font-bold mt-3 text-textDark">
+                Location, Beyoutiful Aesthetic Center
+                </h3>
+                   <p className="text-textDark mt-2">
+              at T-Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Jombang, Kota Tangerang Selatan
+                </p>
+              </div>
+               <div>
+                <h3 className="text-lg font-bold mt-3 text-textDark">
+                  Facilities
+                </h3>
+                <p className="text-textDark mt-2">
+               Up to 20-25 pax, 4 - 6 hours, 1 OK room, 1 bed Post OP-area, 1 Nurse OK, 1 Nurse Post OP, Parking Area, Toilet, Mushola, WiFi
+                </p>
+              </div>
+              `,
+        image_mid: "/assets/operating-room.png",
+        image_map: "/assets/denah-operating.jpg",
+    },
+    {
+        id: "44",
+        name: "ALL T-SPACE AREA",
+        price: "Rp. 120.000",
+        opsi_acara:
+            "Music Festival, Wedding Ceremony & Receptions, Exhibition Event, etc",
+        fasilitas: "All T-SPACE AREA",
+        spesifikasi: "Indoor & Outdoor, 3.500m2 ",
+        image_mid: "/assets/tspace-area.png",
+        image_map: "/assets/denah-all.png",
+    },
+];
