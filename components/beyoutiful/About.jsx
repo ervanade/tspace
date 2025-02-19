@@ -39,7 +39,7 @@ const About = ({data}) => {
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-textDark header-title">
-                {lang === "en" ? content?.title_en : content?.title_id || contentAbout.title}
+                {contentAbout.title}
               </h2>
               {
               content ? lang === "en" ? parse(HTMLDecoderEncoder.decode(content?.content_en)) : parse(HTMLDecoderEncoder.decode(content?.content_id)) : <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
