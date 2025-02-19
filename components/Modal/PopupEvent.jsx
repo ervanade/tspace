@@ -9,9 +9,45 @@ import {
 } from "react-icons/fa";
 import { FaLocationPin } from "react-icons/fa6";
 import Image from "next/image"; // Import Image dari Next.js
+import { useSelector } from "react-redux";
 
 const PopupEvent = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+
+  const dayTranslations = {
+    id: {
+      monday: "Senin",
+      tuesday: "Selasa",
+      wednesday: "Rabu",
+      thursday: "Kamis",
+      friday: "Jumat",
+      saturday: "Sabtu",
+      sunday: "Minggu",
+    },
+    en: {
+      monday: "Monday",
+      tuesday: "Tuesday",
+      wednesday: "Wednesday",
+      thursday: "Thursday",
+      friday: "Friday",
+      saturday: "Saturday",
+      sunday: "Sunday",
+    },
+  };
+  const reverseDayTranslations = Object.fromEntries(
+    Object.entries(dayTranslations.id).map(([en, id]) => [id.toLowerCase(), en])
+  );  
+
+  const translateDay = (day, lang) => {
+    const lowerDay = day.toLowerCase();
+    
+    // Jika input dalam bahasa Indonesia, konversi dulu ke Inggris
+    const normalizedDay = reverseDayTranslations[lowerDay] || lowerDay;
+    
+    return dayTranslations[lang]?.[normalizedDay] || day;
+  };
+  console.log(translateDay("Rabu", "id"))
 
   const events = [
     {
@@ -133,7 +169,7 @@ const PopupEvent = () => {
                     <div className="text-gray-800 text-sm space-y-2">
                       <p className="flex items-center">
                         <FaCalendar className="h-5 w-5 text-gray-500 mr-2" />
-                        {event.day}, {event.date}
+                        {translateDay(event.day, lang)}, {event.date}
                       </p>
                       <p className="flex items-center">
                         <FaLocationPin className="h-5 w-5 text-gray-500 mr-2" />

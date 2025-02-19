@@ -81,7 +81,8 @@ async function getData() {
 
 
 export default async function RootLayout({ children }) {
-  const { data } = await getData()
+  // const { data } = await getData()
+  const data = {data: ""}
   if (!data) return <p>Error Data Not Found</p>
   const headScript = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
 

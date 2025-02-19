@@ -215,30 +215,30 @@ export const serviceDetails = [
    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                    <li>Transfer Lemak Wajah/Facial Fat Transfer</li>
+                    <li>Transfer Lemak Wajah</li>
                     <li>Facelift</li>
-                    <li>Implan Dagu/Chin Implant</li>
-                    <li>Pengencangan Wajah Bagian Tengah/Mid Face Lifting</li>
-                    <li>Pengecilan Bibir/Lip Reduction</li>
-                    <li>Rhinoplasty Tulang Rawan Wajah/Rhinoplasty Cartilage</li>
-                    <li>Rhinoplasty Tulang Rawan Rusuk/Rhinoplasty Rib Cartilage</li>
-                    <li>Penghilangan Lemak Pipi/Buccal Fat Removal</li>
-                    <li>Blepharoplasty Bagian Atas/Upper Blepharoplasty</li>
+                    <li>Implan Dagu</li>
+                    <li>Pengencangan Wajah Bagian Tengah</li>
+                    <li>Pengecilan Bibir</li>
+                    <li>Rhinoplasty Tulang Rawan Wajah</li>
+                    <li>Rhinoplasty Tulang Rawan Rusuk</li>
+                    <li>Penghilangan Lemak Pipi</li>
+                    <li>Blepharoplasty Bagian Atas</li>
                     
                 </ul>
             </div>
 
             <div>
                <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                    <li>Sedot Lemak Leher/Neck Liposuction</li>
-                    <li>Sedot Lemak Paha/Thigh Liposuction</li>
-                    <li>Tummy Tuck/Tummy Tuck</li>
-                    <li>Sedot Lemak Kontur Tubuh/Body Contouring Liposuction</li>
-                    <li>Pembesaran Payudara/Breast Augmentation</li>
-                    <li>Pengencangan Payudara/Breast Lifting</li>
-                    <li>Pengecilan Payudara/Breast Reduction</li>
-                    <li>Ginekomastia/Gynecomastia</li>
-                    <li>Brakioplasti/Brachioplasty</li>
+                    <li>Sedot Lemak Leher</li>
+                    <li>Sedot Lemak Paha</li>
+                    <li>Tummy Tuck</li>
+                    <li>Sedot Lemak Kontur Tubuh</li>
+                    <li>Pembesaran Payudara</li>
+                    <li>Pengencangan Payudara</li>
+                    <li>Pengecilan Payudara</li>
+                    <li>Ginekomastia</li>
+                    <li>Brakioplasti</li>
                  
                 </ul>
             </div>
@@ -293,94 +293,95 @@ export const serviceDetails = [
             //     image_mid:
             //         "/assets/beyoutiful/services/before/Blepharoplasty Bagian Atas - 2.png",
             // },
-
             {
                 id: "42",
                 name: "Blepharoplasty Bagian Bawah",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Blepharoplasty Bagian Bawah.png",
+                name_en: "Lower Blepharoplasty",
+                image_mid: "/assets/beyoutiful/services/before/Blepharoplasty Bagian Bawah.png",
             },
             {
                 id: "43",
                 name: "Sedot Lemak Leher",
-
+                name_en: "Neck Liposuction",
                 image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Leher.png",
             },
             {
                 id: "43",
                 name: "Sedot Lemak Badan",
-
+                name_en: "Body Liposuction",
                 image_mid: "/assets/beyoutiful/services/before/Sedot Lemak Badan.png",
             },
-
             {
                 id: "44",
                 name: "Nevus",
+                name_en: "Nevus",
                 image_mid: "/assets/beyoutiful/services/before/Nevus.png",
             },
             {
                 id: "43",
                 name: "Pembesaran Payudara",
+                name_en: "Breast Augmentation",
                 image_mid: "/assets/beyoutiful/services/before/Pembesaran Payudara 1.png",
             },
             {
                 id: "40",
                 name: "Pengecilan Payudara",
+                name_en: "Breast Reduction",
                 image_mid: "/assets/beyoutiful/services/before/Pengecilan Payudara.png",
             },
             {
                 id: "40",
                 name: "Pengencangan Wajah Bagian Tengah",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah 1.png",
+                name_en: "Mid-Face Lift",
+                image_mid: "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah 1.png",
             },
             {
                 id: "40",
-                name: "Pengencangan Wajah Bagian Tengah 2",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah(1).png",
+                name: "Pengencangan Wajah Bagian Tengah",
+                name_en: "Mid-Face Lift",
+                image_mid: "/assets/beyoutiful/services/before/Pengencangan Wajah Bagian Tengah(1).png",
             },
             {
                 id: "40",
                 name: "Penghilangan Lemak Pipi",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Penghilangan Lemak Pipi.png",
+                name_en: "Buccal Fat Removal",
+                image_mid: "/assets/beyoutiful/services/before/Penghilangan Lemak Pipi.png",
             },
             {
                 id: "40",
                 name: "Rhinoplasty Tulang Rusuk",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Rhinoplasty Tulang Rusuk.png",
+                name_en: "Rib Cartilage Rhinoplasty",
+                image_mid: "/assets/beyoutiful/services/before/Rhinoplasty Tulang Rusuk.png",
             },
             {
                 id: "40",
                 name: "Upper Blepharoplasty",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Upper Blepharoplasty_.png",
+                name_en: "Upper Blepharoplasty",
+                image_mid: "/assets/beyoutiful/services/before/Upper Blepharoplasty_.png",
             },
             {
                 id: "40",
                 name: "Brakioplasti",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Brakioplasti.png",
+                name_en: "Brachioplasty",
+                image_mid: "/assets/beyoutiful/services/before/Brakioplasti.png",
             },
             {
                 id: "40",
                 name: "Implan Dagu",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Implan Dagu.png",
+                name_en: "Chin Implant",
+                image_mid: "/assets/beyoutiful/services/before/Implan Dagu.png",
             },
             {
                 id: "40",
                 name: "Kontur Tubuh",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Kontur Tubuh.png",
+                name_en: "Body Contouring",
+                image_mid: "/assets/beyoutiful/services/before/Kontur Tubuh.png",
             },
             {
                 id: "40",
                 name: "Tummy Tuck",
-                image_mid:
-                    "/assets/beyoutiful/services/before/Tummy Tuck.png",
+                name_en: "Tummy Tuck",
+                image_mid: "/assets/beyoutiful/services/before/Tummy Tuck.png",
             },
         ],
         dokter: [
@@ -457,8 +458,8 @@ export const serviceDetails = [
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 mt-4">
                  <div>
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
-                         <li>Lip Filler</li>
-                         <li>Chin Filler</li>
+                         <li>Filler Bibir</li>
+                         <li>Filler Dagu</li>
                          <li>Non Surgical Rhinoplasty</li>
                          <li>T-Rejuvv</li>
                          <li>T-Flex</li>
@@ -478,7 +479,7 @@ export const serviceDetails = [
                         <li>RF Treatment (Wajah)</li>
                         <li>Botox Dahi & Sudut Mata</li>
                          <li>RF Treatment Badan</li>
-                         <li>Infus Multivitamin/Multivitamin Infused</li>
+                         <li>Infus Multivitamin</li>
                      </ul>
                  </div>
              </div>`,
@@ -504,11 +505,11 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                     <ul style="list-style-type: disc; padding-left: 24px; font-size: 13px;">
                           <li>T-Peeling</li>
                          <li>T-Laser Glow Rejuvenation Cell Booster</li>
-                         <li>Botox Rahang</li>
-                        <li>RF Treatment (Wajah)</li>
-                        <li>Botox Dahi & Sudut Mata</li>
-                         <li>RF Treatment Badan</li>
-                         <li>Infus Multivitamin/Multivitamin Infused</li>
+                         <li>Jaw Botox</li>
+                        <li>RF Treatment (Face)</li>
+                        <li>Forehead and Eye Corners Botox</li>
+                         <li>RF Body Treatment</li>
+                         <li>Multivitamin Infused</li>
                      </ul>
                  </div>
              </div>`,
@@ -523,37 +524,42 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
             {
                 id: "41",
                 name: "Lip Filler",
+                name_en: "Filler Bibir",
                 image_mid:
                     "/assets/beyoutiful/services/before/Lip Filler 1.jpg",
             },
 
             {
                 id: "42",
-                name: "T-FLex",
+                name: "T-Flex",
+                name_en: "T-Flex",
                 image_mid:
                     "/assets/beyoutiful/services/before/T-FLex.png",
             },
             {
                 id: "43",
                 name: "T-Hair Plasma",
-
+                name_en: "T-Hair Plasma",
                 image_mid: "/assets/beyoutiful/services/before/T-Hair Plasma.png",
             },
             {
                 id: "43",
                 name: "T-Laser",
+                name_en: "T-Laser",
 
                 image_mid: "/assets/beyoutiful/services/before/T-Laser.png",
             },
             {
                 id: "43",
                 name: "T-Rejuvv",
+                name_en: "T-Rejuvv",
 
                 image_mid: "/assets/beyoutiful/services/before/T-Rejuvv.png",
             },
             {
                 id: "43",
                 name: "T-Silk",
+                name_en: "T-Silk",
 
                 image_mid: "/assets/beyoutiful/services/before/T-Silk.png",
             },

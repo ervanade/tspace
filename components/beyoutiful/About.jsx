@@ -19,7 +19,7 @@ const About = ({data}) => {
     logo: "/logo_ori.svg",
   };
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
-  const content = data?.pages[0] || {}
+  const content = data?.pages[0] || null
 
   return (
     <section className="py-20 relative">
@@ -41,9 +41,11 @@ const About = ({data}) => {
               <h2 className="!text-textDark header-title">
                 {lang === "en" ? content?.title_en : content?.title_id || contentAbout.title}
               </h2>
-              {lang === "en" ? parse(HTMLDecoderEncoder.decode(content?.content_en)) : parse(HTMLDecoderEncoder.decode(content?.content_id)) ||  <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
-              </p>}
+              {
+              content ? lang === "en" ? parse(HTMLDecoderEncoder.decode(content?.content_en)) : parse(HTMLDecoderEncoder.decode(content?.content_id)) : <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
+            </p>
+               }
 
               {/* <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 {lang === "en" ? contentAbout.desc_en : contentAbout.desc}

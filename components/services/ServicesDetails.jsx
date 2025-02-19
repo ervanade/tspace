@@ -19,6 +19,47 @@ const ServicesDetails = ({ service }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
+  const translations = {
+    id: {
+      monday: "Senin",
+      tuesday: "Selasa",
+      wednesday: "Rabu",
+      thursday: "Kamis",
+      friday: "Jumat",
+      saturday: "Sabtu",
+      sunday: "Minggu",
+      by_appointment: "Berdasarkan Janji",
+    },
+    en: {
+      monday: "Monday",
+      tuesday: "Tuesday",
+      wednesday: "Wednesday",
+      thursday: "Thursday",
+      friday: "Friday",
+      saturday: "Saturday",
+      sunday: "Sunday",
+      by_appointment: "By Appointment",
+    },
+  };
+
+  const translateSchedule = (schedule, lang) => {
+    return schedule.map((item) => {
+      if (item.toLowerCase() === "by appointment") {
+        return translations[lang]?.by_appointment || item;
+      }
+  
+      return item
+        .replace(/Senin/g, translations[lang]?.monday)
+        .replace(/Selasa/g, translations[lang]?.tuesday)
+        .replace(/Rabu/g, translations[lang]?.wednesday)
+        .replace(/Kamis/g, translations[lang]?.thursday)
+        .replace(/Jumat/g, translations[lang]?.friday)
+        .replace(/Sabtu/g, translations[lang]?.saturday)
+        .replace(/Minggu/g, translations[lang]?.sunday);
+    });
+  };
+  
+
   const dataSpace = [
     {
       id: "41",
@@ -161,10 +202,10 @@ const ServicesDetails = ({ service }) => {
                   </div>
                   <p className="font-bold text-sm mt-2">{dokter.nama_dokter}</p>
                   <ul className="mt-1 text-xs">
-                    {dokter.jadwal_dokter?.map((jadwal, i) => (
-                      <li key={i}>{jadwal}</li>
-                    ))}
-                  </ul>
+  {translateSchedule(dokter.jadwal_dokter, lang).map((jadwal, i) => (
+    <li key={i}>{jadwal}</li>
+  ))}
+</ul>
                 </div>
               ))}
             </div>
@@ -224,7 +265,7 @@ const ServicesDetails = ({ service }) => {
                                 <div className="aspect-[16/16] w-full overflow-hidden rounded-lg relative">
                                   <Image
                                     src={item.image_mid}
-                                    alt={item?.name || "Beyoutiful Facility"}
+                                    alt={item?.name || "Before After"}
                                     sizes="100vw"
                                     fill
                                     className="object-cover"
@@ -243,7 +284,7 @@ const ServicesDetails = ({ service }) => {
                                       /> */}
                                 <div className="mt-2 flex flex-col items-center gap-4 px-1">
                                   <h3 className="recomended-title font-montserrat text-[16px] lg:text-[24px] font-medium text-dark text-center line-clamp-3 mt-4">
-                                    {HTMLDecoderEncoder.decode(item?.name)}
+                                    {lang === "en" ? HTMLDecoderEncoder.decode(item?.name_en) : HTMLDecoderEncoder.decode(item?.name)}
                                   </h3>
                                 </div>
                               </div>
