@@ -92,10 +92,10 @@ export default async function Home() {
   return (
     <>
       <Navbar className="" />
-      <Hero />
-      <About />
-      <Gallery data={data["3"].gallery || null} />
-      <Space />
+      <Hero dataHero={data["1"]?.banner || null}/>
+      <About data={data["2"] || null}/>
+      <Gallery data={data["3"] || null} />
+      <Space data={data["4"] || null}/>
       <Event />
       <Tenants />
       <RecomendedArticles />

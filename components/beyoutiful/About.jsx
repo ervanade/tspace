@@ -5,8 +5,12 @@ import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import parse from 'html-react-parser';
 
-const About = () => {
+const HTMLDecoderEncoder = require("html-encoder-decoder");
+
+
+const About = ({data}) => {
   const contentAbout = {
     title: "Beyoutiful Aesthetic",
     desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
@@ -15,6 +19,7 @@ const About = () => {
     logo: "/logo_ori.svg",
   };
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+  const content = data?.pages[0] || {}
 
   return (
     <section className="py-20 relative">
@@ -22,7 +27,8 @@ const About = () => {
         <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
           <div className="relative mx-auto w-2/3 lg:w-full h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
-              src="/assets/about-2.png"
+              src={content?.image_default || "/assets/about-2.png"}
+              // src="/assets/about-2.png"
               alt="about Us image"
               layout="responsive"
               width={569} // Set the actual width of the image
@@ -33,11 +39,15 @@ const About = () => {
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
               <h2 className="!text-textDark header-title">
-                {contentAbout.title}
+                {lang === "en" ? content?.title_en : content?.title_id || contentAbout.title}
               </h2>
-              <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              {lang === "en" ? parse(HTMLDecoderEncoder.decode(content?.content_en)) : parse(HTMLDecoderEncoder.decode(content?.content_id)) ||  <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
-              </p>
+              </p>}
+
+              {/* <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
+              </p> */}
               {/* <Image
             src="/beyoutiful_logo.png"
             alt="Logo Beyoutiful"
@@ -45,7 +55,7 @@ const About = () => {
             height={96}
           /> */}
               <Image
-                src="/beyoutiful_orange.png"
+                src={content?.image_m_default ||"/beyoutiful_orange.png"}
                 alt="Logo Beyoutiful"
                 width={183}
                 height={48}
@@ -58,7 +68,7 @@ const About = () => {
 
             <div className="flex items-center gap-2">
               <Link
-                href={`/beyoutiful?lang=${lang}`}
+                href={`${content?.link || "/beyoutiful"}?lang=${lang}`}
                 className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 type="button"
               >

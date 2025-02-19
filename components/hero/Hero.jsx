@@ -13,7 +13,7 @@ import Image from "next/image";
 import "./Hero.css";
 import { useSelector } from "react-redux";
 
-const Hero = () => {
+const Hero = ({dataHero}) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const data = [

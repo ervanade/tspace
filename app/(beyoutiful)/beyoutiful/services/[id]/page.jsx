@@ -21,10 +21,10 @@ export async function generateMetadata({searchParams, params}) {
   };
 }
 
-export async function generateStaticParams() {
-  // Menghasilkan parameter dinamis berdasarkan data
-  return serviceDetails.map((service) => ({ id: service.slug }));
-}
+// export async function generateStaticParams() {
+//   // Menghasilkan parameter dinamis berdasarkan data
+//   return serviceDetails.map((service) => ({ id: service.slug }));
+// }
 
 const ServicePage = async ({ params }) => {
   const { id } = await params;

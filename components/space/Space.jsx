@@ -10,7 +10,7 @@ import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import parse from "html-react-parser";
 const HTMLDecoderEncoder = require("html-encoder-decoder");
-const Space = ({ title, subTitle }) => {
+const Space = ({ title, subTitle, data }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dataSpace = [
     {

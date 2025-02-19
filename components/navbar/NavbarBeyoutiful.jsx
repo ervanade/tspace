@@ -207,13 +207,13 @@ const NavbarBeyoutiful = () => {
                       className="absolute left-2/3 transform -translate-x-1/2 w-[500px] bg-white text-black shadow-lg p-6 grid grid-cols-2 gap-2 z-50"
                     >
                       {subMenu.map((menu, index) => (
-                        <a
+                        <Link
                           key={index}
                           href={`${menu.link}?lang=${lang}`}
                           className="block hover:bg-gray-100 rounded px-3 py-2 text-sm"
                         >
                           {lang === "en" ? menu.name_en : menu.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -375,13 +375,13 @@ const NavbarBeyoutiful = () => {
                       className="absolute top-full mt-2 bg-white text-textDark border rounded shadow-md p-4 space-y-1 z-50 min-w-[200px] max-w-screen-sm"
                     >
                       {subMenu.map((menu, index) => (
-                        <a
+                        <Link
                           key={index}
                           href={`${menu.link}?lang=${lang}`}
                           className="block hover:bg-gray-100 rounded px-3 py-2 text-sm"
                         >
                           {lang === "en" ? menu.name_en : menu.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}

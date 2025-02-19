@@ -13,7 +13,6 @@ import { FaMessage, FaPhoneFlip } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
 const Footer = ({dataSettings}) => {
-  console.log(dataSettings)
   const data = {
     facebook: "https://www.facebook.com/tspacebintaro9/",
     instagram: "https://www.instagram.com/t_spacebintaro/",
@@ -74,12 +73,12 @@ const Footer = ({dataSettings}) => {
                     </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
-                      <span className="text-sm">+62 811-8111-0556</span>
+                      <span className="text-sm">{dataSettings?.contact_phone ? dataSettings?.contact_phone : `+62 811-8111-0556`}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMessage />
                       <span className="text-sm">
-                        marketing@tspacebintaro.com
+                      {dataSettings?.contact_email ? dataSettings?.contact_email : `marketing@tspacebintaro.com`}
                       </span>
                     </li>
                   </ul>
@@ -91,12 +90,12 @@ const Footer = ({dataSettings}) => {
                     </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
-                      <span className="text-sm">+62 811-979-0556</span>
+                      <span className="text-sm">{dataSettings?.contact2_phone ? dataSettings?.contact2_phone :`+62 811-979-0556`}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMessage />
                       <span className="text-sm">
-                        beyoutiful.clinic@tspacebintaro.com
+                      {dataSettings?.contact2_email ? dataSettings?.contact2_email : `beyoutiful.clinic@tspacebintaro.com`}
                       </span>
                     </li>
                   </ul>

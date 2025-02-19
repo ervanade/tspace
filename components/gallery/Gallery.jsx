@@ -9,11 +9,14 @@ import { useSelector } from "react-redux";
 import { dataGallery, galleryFeb } from "@/public/data";
 import "swiper/css/navigation";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import parse from 'html-react-parser';
 
-const Gallery = ({ title, subTitle }) => {
+
+const Gallery = ({ title, subTitle, data }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
+  const dataGallery = data?.gallery
   const dataSpace = [
     {
       id: "1",
@@ -103,11 +106,14 @@ const Gallery = ({ title, subTitle }) => {
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         <div className="mb-12">
           <h2 className="header-title">
-            {lang === "en" ? content.title_en : content.title}
+          {lang === "en" ? content?.title_en : content?.title_id || content.title}
           </h2>
-          <p className="!text-white/80 sub-title whitespace-pre-line">
+          {lang === "en" ? parse(HTMLDecoderEncoder.decode(data?.subtitle_en)) : parse(HTMLDecoderEncoder.decode(data?.subtitle_id)) ||  <p className="!text-white/80 sub-title whitespace-pre-line">
             {lang === "en" ? content.desc_en : content.desc}
-          </p>
+          </p>}
+          {/* <p className="!text-white/80 sub-title whitespace-pre-line">
+            {lang === "en" ? content.desc_en : content.desc}
+          </p> */}
         </div>
         <div>
           {isLoading ? (
