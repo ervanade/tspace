@@ -106,7 +106,7 @@ const Gallery = ({ title, subTitle, data }) => {
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         <div className="mb-12">
           <h2 className="header-title">
-          {lang === "en" ? ccontent?.title_en : content?.title || content.title}
+          {lang === "en" ? content?.title_en : content?.title || content.title}
           </h2>{
           data ? (lang === "en" ? parse(HTMLDecoderEncoder.decode(data?.subtitle_en)) : parse(HTMLDecoderEncoder.decode(data?.subtitle_id))) :  <p className="!text-white/80 sub-title whitespace-pre-line">
             {lang === "en" ? content.desc_en : content.desc}
