@@ -12,7 +12,8 @@ import {
 import { FaMessage, FaPhoneFlip } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
-const Footer = () => {
+const Footer = ({dataSettings}) => {
+  console.log(dataSettings)
   const data = {
     facebook: "https://www.facebook.com/tspacebintaro9/",
     instagram: "https://www.instagram.com/t_spacebintaro/",
@@ -53,15 +54,15 @@ const Footer = () => {
                 <li className="flex items-center gap-2">
                   <FaBuilding size={24} className="!text-2xl" />
                   <span className="text-sm">
-                    PT. AESTHETIC INDAH GEMILANG, Jl. Jombang Raya No.32,
-                    Parigi, Pondok Aren, Kota Tangerang Selatan, Banten 15229
+                   {dataSettings?.contact2_address ? dataSettings?.contact2_address : ` PT. AESTHETIC INDAH GEMILANG, Jl. Jombang Raya No.32,
+                    Parigi, Pondok Aren, Kota Tangerang Selatan, Banten 15229`}
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <FaMapMarker size={24} className="!text-2xl" />
                   <span className="text-sm">
-                    T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok
-                    Aren, Kota Tangerang Selatan, Banten 15229
+                  {dataSettings?.contact_address ? dataSettings?.contact_address : `T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok
+                    Aren, Kota Tangerang Selatan, Banten 15229`}
                   </span>
                 </li>
                 <li className="flex lg:items-center lg:flex-row flex-col gap-4 mt-2">

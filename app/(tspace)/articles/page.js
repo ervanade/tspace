@@ -20,7 +20,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export async function generateMetadata({searchParams}) {
-  const {lang} = await searchParams?.lang || "id"; 
+  const {lang} = await searchParams || "id"; 
   const isEnglish = lang?.includes('en'); 
   
     return {
@@ -77,7 +77,7 @@ export default function Home() {
         <>
             <NavbarArticles className="" />
             <Articles />
-            <Footer />
+            {/* <Footer /> */}
 
         </>
     );

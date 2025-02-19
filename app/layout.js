@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Loading from "@/components/Loading";
 import ClientProvider from "@/components/ClientProvider";
 import parse from 'html-react-parser';
+import Footer from "@/components/footer/Footer";
 const HTMLDecoderEncoder = require("html-encoder-decoder");
 
 const poppins = Poppins({
@@ -61,9 +62,27 @@ export const metadata = {
   },
 };
 
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/settings`, {
+    // cache: 'no-store',
+    method: 'GET',
+    headers: {
+      'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
+    },
+  })
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
 
 
-export default function RootLayout({ children }) {
+
+export default async function RootLayout({ children }) {
+  const { data } = await getData()
+  if (!data) return <p>Error Data Not Found</p>
   const headScript = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
 
   return (
@@ -80,6 +99,7 @@ export default function RootLayout({ children }) {
           {/* <Suspense fallback={<Loading />}> */}
           {children}
           {/* </Suspense> */}
+      <Footer dataSettings={data || null}/>
         </ClientProvider>
       </body>
     </html>

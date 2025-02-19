@@ -26,7 +26,7 @@ const ArticlePage = async ({ params }) => {
         <div>
             <NavbarArticles />
             <ArticlesDetails article={article} />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
