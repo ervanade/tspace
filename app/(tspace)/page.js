@@ -19,7 +19,7 @@ import 'swiper/css/scrollbar';
 
 
 export async function generateMetadata({searchParams}) {
-  const lang = searchParams?.lang || "id"; 
+  const {lang} = await searchParams?.lang || "id"; 
   const isEnglish = lang?.includes('en'); 
 
   return {

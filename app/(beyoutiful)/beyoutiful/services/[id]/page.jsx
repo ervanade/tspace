@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({searchParams, params}) {
   const { id } = await params;
   const service = serviceDetails.find((item) => item.slug === id);
-  const lang = searchParams?.lang || "id"; 
+  const {lang} = await searchParams?.lang || "id"; 
   const isEnglish = lang?.includes('en'); 
 
   return {
