@@ -298,7 +298,7 @@ const Event = () => {
             </div>
           ) : (
             <div className="mt-4 p-4 bg-white text-textDark border rounded-lg shadow-lg h-20">
-              <p className="text-center">Hover Date to see upcoming events</p>
+              <p className="text-center">{lang === "en" ? "Hover Date to see upcoming events" : "Hover Tanggal untuk melihat event"}</p>
             </div>
           )}
         </div>
