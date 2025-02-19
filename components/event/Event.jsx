@@ -208,16 +208,16 @@ const Event = () => {
               aria-label="button"
               className="text-gray-500 hover:text-gray-700"
             >
-              <FaArrowLeft />
+              {/* <FaArrowLeft /> */}
             </button>
-            <h2 className="text-xl font-semibold text-textDark">
+            <h2 className="text-xl font-semibold text-textDark text-center">
               Februari 2025
             </h2>
             <button
               aria-label="button"
               className="text-gray-500 hover:text-gray-700"
             >
-              <FaArrowRight />
+              {/* <FaArrowRight /> */}
             </button>
           </div>
           <div className="grid grid-cols-7 gap-2">

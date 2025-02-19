@@ -24,14 +24,14 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'T-Space Bintaro: Ruang Kreatif & Kolaborasi di Jantung Bintaro', // More descriptive title
-  description: 'Cari ruang inspiratif untuk berkarya dan berkolaborasi di Bintaro? T-Space menyediakan tempat yang nyaman dan modern untuk berbagai kegiatan. Sewa ruang meeting, co-working space, atau event space di lokasi strategis.', // Expanded and keyword-rich description
+  title: 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik', // More descriptive title
+  description: 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.', // Expanded and keyword-rich description
   keywords: ['Ruang Kreatif Bintaro', 'Coworking Space Bintaro', 'Sewa Ruang Meeting Bintaro', 'Event Space Bintaro', 'Ruang Kolaborasi Bintaro', 'Kantor Bintaro', 'Sewa Tempat Bintaro', 'T-Space Bintaro'], // More relevant and specific keywords
   applicationName: 'T-Space Bintaro',
-  authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.web.id' }], // Combined author info
+  authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.com' }], // Combined author info
   creator: 'T-Space Bintaro',
   publisher: 'T-Space Bintaro',
-  metadataBase: new URL('https://tspacebintaro.web.id'),
+  metadataBase: new URL('https://tspacebintaro.com'),
   alternates: {
     canonical: '/', // Correct canonical URL
     languages: {
@@ -40,13 +40,13 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'T-Space Bintaro: Ruang Kreatif & Kolaborasi di Jantung Bintaro', // Consistent title
-    description: 'Cari ruang inspiratif untuk berkarya dan berkolaborasi di Bintaro? T-Space menyediakan tempat yang nyaman dan modern untuk berbagai kegiatan. Sewa ruang meeting, co-working space, atau event space di lokasi strategis.', // Consistent description
-    url: 'https://tspacebintaro.web.id', // Correct URL
+    title: 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik', // Consistent title
+    description: 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.', // Consistent description
+    url: 'https://tspacebintaro.com', // Correct URL
     siteName: 'T-Space Bintaro',
     images: [
       {
-        url: 'https://tspacebintaro.web.id/logo_ori.svg', // Use a high-quality image
+        url: 'https://tspacebintaro.com/logo_ori.svg', // Use a high-quality image
         width: 1200, // Recommended minimum width for OG images
         height: 630, // Recommended aspect ratio for OG images (1.91:1)
         alt: 'Logo T-Space Bintaro', // Descriptive alt text

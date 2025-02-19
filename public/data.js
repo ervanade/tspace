@@ -282,6 +282,10 @@ export const serviceDetails = [
         slug: "bedah-plastik",
         link: "/",
         image: "/assets/beyoutiful/bedah-plastik.jpg",
+        meta_title: "Bedah Plastik Profesional | Beyoutiful",
+        meta_description: "Dapatkan layanan bedah plastik terbaik di Beyoutiful Aesthetic, dengan dokter ahli dan teknologi canggih untuk hasil maksimal.",
+        meta_title_en: "Plastic Surgery | Expert Care at Beyoutiful Aesthetic",
+        meta_description_en: "Get top plastic surgery services at Beyoutiful Aesthetic with expert doctors and advanced technology for the best results.",
         before_after_foto: [
             // {
             //     id: "41",
@@ -510,6 +514,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
              </div>`,
         slug: "dermatologi",
         link: "/",
+        meta_title: "Dermatologi | Kulit Sehat & Glowing",
+        meta_description: "Dapatkan layanan dermatologi terbaik di Beyoutiful Aesthetic untuk kulit sehat, cerah, dan tampak awet muda.",
+        meta_title_en: "Dermatology | Radiant & Healthy Skin",
+        meta_description_en: "Experience the best dermatology services at Beyoutiful Aesthetic for glowing, youthful, and healthy skin.",
         image: "/assets/beyoutiful/dermatology.png",
         before_after_foto: [
             {
@@ -582,6 +590,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
         description_en: `<p>Experience a faster and more optimal healing process by increasing oxygen levels in the blood through hyperbaric oxygen therapy. Enjoy its benefits for various health conditions and a healthier quality of life.</p>`,
         slug: "hyperbaric-oxygen-therapy",
         link: "/",
+        meta_title: "Oxygen Therapy | Rejuvenasi Kulit & Kesehatan",
+        meta_description: "Segarkan tubuh dan kulit dengan Oxygen Therapy di Beyoutiful Aesthetic. Perawatan modern untuk energi dan kesehatan optimal.",
+        meta_title_en: "Oxygen Therapy | Skin & Wellness Rejuvenation",
+        meta_description_en: "Revitalize your body and skin with Oxygen Therapy at Beyoutiful Aesthetic. Modern treatment for energy and optimal health.",
         image: "/assets/beyoutiful/hbot-1.jpg",
         before_after_foto: [],
         dokter: [
@@ -614,6 +626,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 `,
         slug: "urologi",
         link: "/",
+        meta_title: "Konsultasi Urologi | Solusi Kesehatan Ginjal & Saluran Kemih",
+        meta_description: "Layanan urologi profesional di Beyoutiful Aesthetic untuk kesehatan ginjal dan saluran kemih yang optimal.",
+        meta_title_en: "Urology Care | Kidney & Urinary Health Solutions",
+        meta_description_en: "Expert urology services at Beyoutiful Aesthetic for optimal kidney and urinary health.",
         image: "/assets/beyoutiful/urologi.png",
         before_after_foto: [],
         dokter: [
@@ -644,6 +660,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 `,
         slug: "vaskular",
         link: "/",
+        meta_title: "Perawatan Vaskular | Solusi Kesehatan Pembuluh Darah",
+        meta_description: "Atasi masalah pembuluh darah dengan perawatan vaskular di Beyoutiful Aesthetic. Teknologi medis canggih untuk kesehatan optimal.",
+        meta_title_en: "Vascular Treatment | Healthy Blood Circulation",
+        meta_description_en: "Treat vascular issues at Beyoutiful Aesthetic with advanced medical technology for optimal circulatory health.",
         image: "/assets/beyoutiful/vaskular-1.jpg",
         before_after_foto: [],
         dokter: [
@@ -675,6 +695,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
                      </ul>`,
         slug: "gizi",
         link: "/",
+        meta_title: "Konsultasi Gizi | Pola Makan Sehat & Seimbang",
+        meta_description: "Jaga kesehatan dengan layanan konsultasi gizi di Beyoutiful Aesthetic. Pola makan sehat untuk tubuh lebih bugar dan ideal.",
+        meta_title_en: "Nutrition Consulting | Healthy & Balanced Diet",
+        meta_description_en: "Improve your health with expert nutrition consulting at Beyoutiful Aesthetic. Personalized meal plans for a fit and balanced life.",
         image: "/assets/beyoutiful/gizi.png",
         before_after_foto: [],
         dokter: [
@@ -698,6 +722,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
     // </p>`,
     //         slug: "radiologi",
     //         link: "/",
+    // meta_title: "Bedah Plastik Profesional | Beyoutiful",
+    //     meta_description: "Dapatkan layanan bedah plastik terbaik di Beyoutiful Aesthetic, dengan dokter ahli dan teknologi canggih untuk hasil maksimal.",
+    //     meta_title_en: "Plastic Surgery | Expert Care at Beyoutiful Aesthetic",
+    //     meta_description_en: "Get top plastic surgery services at Beyoutiful Aesthetic with expert doctors and advanced technology for the best results.",
     //         image: "/assets/beyoutiful/radiologi-1.jpg",
     //         before_after_foto: [],
     //         dokter: [
@@ -722,6 +750,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 </p>`,
         slug: "gigi",
         link: "/",
+        meta_title: "Klinik Gigi | Beyoutiful",
+        meta_description: "Mulai dari pemeriksaan rutin hingga perawatan gigi estetika. Dengan menggunakan teknologi terbaru dan tim dokter gigi yang berpengalaman",
+        meta_title_en: "Dental | Beyoutiful",
+        meta_description_en: "Starting from routine checkups to aesthetic dental care. By using the latest technology and an experienced team of dentists",
         image: "/assets/beyoutiful/dental-service.jpg",
         before_after_foto: [],
         dokter: [
@@ -825,6 +857,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 `,
         slug: "externa-genitalia",
         link: "/",
+        meta_title: "Externa Genitalia | Beyoutiful",
+        meta_description: "Dapatkan perawatan estetika genital yang aman dan efektif di Beyoutiful Aesthetic. Rasakan peningkatan kepercayaan diri dan kualitas hidup Anda.",
+        meta_title_en: "Externa Genitalia | Expert Care at Beyoutiful Aesthetic",
+        meta_description_en: "Get safe and effective genital aesthetic treatments at Beyoutiful Aesthetic. Experience an increase in your self-confidence and quality of life.",
         image: "/assets/beyoutiful/externa-genitalia.jpg",
         before_after_foto: [],
         dokter: [
@@ -848,6 +884,10 @@ Find solutions to various skin problems, from acne to signs of aging with Dermat
 `,
         slug: "obstetri-ginekologi",
         link: "/",
+        meta_title: "Obstetri & Ginekologi | Beyoutiful",
+        meta_description: " Dapatkan perawatan komprehensif untuk semua masalah kesehatan wanita, mulai dari kehamilan hingga menopause.",
+        meta_title_en: "Obstetric & Gynecology | Expert Care at Beyoutiful Aesthetic",
+        meta_description_en: "Experience comprehensive women's health services, from pregnancy care to menopause management.",
         image: "/assets/beyoutiful/obstetri.jpg",
         before_after_foto: [],
         dokter: [
