@@ -18,10 +18,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 
-export async function generateMetadata({searchParams}) {
-  const {lang} = await searchParams || "id"; 
-  const isEnglish = lang?.includes('en'); 
-
+export async function generateMetadata({ searchParams, pathname, params }) {
+  const { lang } = await searchParams || "id";
+  const isEnglish = lang?.includes('en');
+  const currentUrl = `https://tspacebintaro.com?lang=${lang}`;
+  const alternateEn = `https://tspacebintaro.com?lang=en`;
+  const alternateId = `https://tspacebintaro.com?lang=id`;
   return {
     title: isEnglish
       ? 'T-Space Bintaro | Rent Space, Event, Dermatology, & Plastic Surgery'
@@ -37,20 +39,20 @@ export async function generateMetadata({searchParams}) {
     creator: 'T-Space Bintaro',
     publisher: 'T-Space Bintaro',
     metadataBase: new URL('https://tspacebintaro.com'),
-    alternates: {
-      canonical: '/',
-      languages: {
-        'en-US': '/en-US',
-        'id-ID': '/id-ID',
-      },
-    },
+    // alternates: {
+    //   canonical: currentUrl, // ✅ Sekarang canonical sesuai dengan halaman
+    //   languages: {
+    //     'en': alternateEn, // ✅ Alternate link untuk English
+    //     'id': alternateId, // ✅ Alternate link untuk Indonesia
+    //   },
+    // },
     openGraph: {
       title: isEnglish
-      ? 'T-Space Bintaro | Rent Space, Event, Dermatology, & Plastic Surgery'
-      : 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik',
+        ? 'T-Space Bintaro | Rent Space, Event, Dermatology, & Plastic Surgery'
+        : 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik',
       description: isEnglish
-      ? 'T-Space Bintaro, a multifunctional space for events, art galleries, rental space, and the best dermatology and plastic surgery services in Jakarta.'
-      : 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.',
+        ? 'T-Space Bintaro, a multifunctional space for events, art galleries, rental space, and the best dermatology and plastic surgery services in Jakarta.'
+        : 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.',
       url: 'https://tspacebintaro.com',
       siteName: 'T-Space Bintaro',
       images: [
@@ -88,21 +90,21 @@ async function getData() {
 
 export default async function Home() {
   // const { data } = await getData()
-  const data = {data: ""}
+  const data = { data: "" }
   if (!data) return <p>Error Data Not Found</p>
   return (
     <>
       <Navbar className="" />
-      <Hero dataHero={data["1"]?.banner || null}/>
-      <About data={data["2"] || null}/>
+      <Hero dataHero={data["1"]?.banner || null} />
+      <About data={data["2"] || null} />
       <Gallery data={data["3"] || null} />
-      <Space data={data["4"] || null}/>
+      <Space data={data["4"] || null} />
       <Event />
       <Tenants />
       <RecomendedArticles />
       <Contact />
       <PopupEvent />
-      
+
 
     </>
   );

@@ -6,6 +6,7 @@ import Loading from "@/components/Loading";
 import ClientProvider from "@/components/ClientProvider";
 import parse from 'html-react-parser';
 import Footer from "@/components/footer/Footer";
+import CanonicalLinks from "@/components/CanonicalLinks";
 const HTMLDecoderEncoder = require("html-encoder-decoder");
 
 const poppins = Poppins({
@@ -24,43 +25,96 @@ const montserrat = Montserrat({
   weight: ["400", "500", "700", "900"],
 });
 
-export const metadata = {
-  title: 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik', // More descriptive title
-  description: 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.', // Expanded and keyword-rich description
-  keywords: ['Ruang Kreatif Bintaro', 'Coworking Space Bintaro', 'Sewa Ruang Meeting Bintaro', 'Event Space Bintaro', 'Ruang Kolaborasi Bintaro', 'Kantor Bintaro', 'Sewa Tempat Bintaro', 'T-Space Bintaro'], // More relevant and specific keywords
-  applicationName: 'T-Space Bintaro',
-  authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.com' }], // Combined author info
-  creator: 'T-Space Bintaro',
-  publisher: 'T-Space Bintaro',
-  metadataBase: new URL('https://tspacebintaro.com'),
-  alternates: {
-    canonical: '/', // Correct canonical URL
-    languages: {
-      'en-US': '/en-US', // If you have English content
-      'id-ID': '/id-ID', // If you have Indonesian content
+export async function generateMetadata({ searchParams }) {
+  const { lang } = await searchParams || "id";
+  const isEnglish = lang?.includes('en');
+
+  return {
+    title: isEnglish
+      ? 'T-Space Bintaro | Rent Space, Event, Dermatology, & Plastic Surgery'
+      : 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik',
+    description: isEnglish
+      ? 'T-Space Bintaro, a multifunctional space for events, art galleries, rental space, and the best dermatology and plastic surgery services in Jakarta.'
+      : 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.',
+    keywords: isEnglish
+      ? ['Creative Space Bintaro', 'Coworking Space Bintaro', 'Meeting Room Rental Bintaro', 'Event Space Bintaro', 'Collaboration Space Bintaro', 'Office Bintaro', 'Space Rental Bintaro', 'T-Space Bintaro']
+      : ['Ruang Kreatif Bintaro', 'Coworking Space Bintaro', 'Sewa Ruang Meeting Bintaro', 'Event Space Bintaro', 'Ruang Kolaborasi Bintaro', 'Kantor Bintaro', 'Sewa Tempat Bintaro', 'T-Space Bintaro'],
+    applicationName: 'T-Space Bintaro',
+    authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.com' }],
+    creator: 'T-Space Bintaro',
+    publisher: 'T-Space Bintaro',
+    metadataBase: new URL('https://tspacebintaro.com'),
+    // alternates: {
+    //   canonical: `/?lang=${lang}`,
+    //   languages: {
+    //     'en': '/?lang=en',
+    //     'id': '/?lang-id',
+    //   },
+    // },
+    openGraph: {
+      title: isEnglish
+        ? 'T-Space Bintaro | Rent Space, Event, Dermatology, & Plastic Surgery'
+        : 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik',
+      description: isEnglish
+        ? 'T-Space Bintaro, a multifunctional space for events, art galleries, rental space, and the best dermatology and plastic surgery services in Jakarta.'
+        : 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.',
+      url: 'https://tspacebintaro.com',
+      siteName: 'T-Space Bintaro',
+      images: [
+        {
+          url: 'https://tspacebintaro.com/logo_ori.svg',
+          width: 1200,
+          height: 630,
+          alt: 'Logo T-Space Bintaro',
+        },
+      ],
+      locale: isEnglish ? 'en-US' : 'id-ID',
+      type: 'website',
     },
-  },
-  openGraph: {
-    title: 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik', // Consistent title
-    description: 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.', // Consistent description
-    url: 'https://tspacebintaro.com', // Correct URL
-    siteName: 'T-Space Bintaro',
-    images: [
-      {
-        url: 'https://tspacebintaro.com/logo_ori.svg', // Use a high-quality image
-        width: 1200, // Recommended minimum width for OG images
-        height: 630, // Recommended aspect ratio for OG images (1.91:1)
-        alt: 'Logo T-Space Bintaro', // Descriptive alt text
-      },
-    ],
-    locale: 'id-ID', // Correct locale
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+// export const metadata = {
+//   title: 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik', // More descriptive title
+//   description: 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.', // Expanded and keyword-rich description
+//   keywords: ['Ruang Kreatif Bintaro', 'Coworking Space Bintaro', 'Sewa Ruang Meeting Bintaro', 'Event Space Bintaro', 'Ruang Kolaborasi Bintaro', 'Kantor Bintaro', 'Sewa Tempat Bintaro', 'T-Space Bintaro'], // More relevant and specific keywords
+//   applicationName: 'T-Space Bintaro',
+//   authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.com' }], // Combined author info
+//   creator: 'T-Space Bintaro',
+//   publisher: 'T-Space Bintaro',
+//   metadataBase: new URL('https://tspacebintaro.com'),
+//   alternates: {
+//     canonical: '/', // Correct canonical URL
+//     languages: {
+//       'en-US': '/en-US', // If you have English content
+//       'id-ID': '/id-ID', // If you have Indonesian content
+//     },
+//   },
+//   openGraph: {
+//     title: 'T-Space Bintaro | Rent Space, Event, Dermatologi, & Bedah Plastik', // Consistent title
+//     description: 'T-Space Bintaro, ruang multifungsi untuk event, galeri seni, rent space, serta layanan dermatologi dan bedah plastik terbaik di Jakarta.', // Consistent description
+//     url: 'https://tspacebintaro.com', // Correct URL
+//     siteName: 'T-Space Bintaro',
+//     images: [
+//       {
+//         url: 'https://tspacebintaro.com/logo_ori.svg', // Use a high-quality image
+//         width: 1200, // Recommended minimum width for OG images
+//         height: 630, // Recommended aspect ratio for OG images (1.91:1)
+//         alt: 'Logo T-Space Bintaro', // Descriptive alt text
+//       },
+//     ],
+//     locale: 'id-ID', // Correct locale
+//     type: 'website',
+//   },
+//   robots: {
+//     index: true,
+//     follow: true,
+//   },
+// };
 
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/settings`, {
@@ -82,15 +136,16 @@ async function getData() {
 
 export default async function RootLayout({ children }) {
   // const { data } = await getData()
-  const data = {data: ""}
+  const data = { data: "" }
   if (!data) return <p>Error Data Not Found</p>
   const headScript = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
 
   return (
     <html lang="en">
       <head>
+        <CanonicalLinks />
         <>
-      {parse(HTMLDecoderEncoder.decode(headScript))}
+          {parse(HTMLDecoderEncoder.decode(headScript))}
         </>
       </head>
       <body
@@ -100,7 +155,7 @@ export default async function RootLayout({ children }) {
           {/* <Suspense fallback={<Loading />}> */}
           {children}
           {/* </Suspense> */}
-      <Footer dataSettings={data || null}/>
+          <Footer dataSettings={data || null} />
         </ClientProvider>
       </body>
     </html>

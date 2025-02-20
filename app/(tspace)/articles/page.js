@@ -19,66 +19,59 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-export async function generateMetadata({searchParams}) {
-  const {lang} = await searchParams || "id"; 
-  const isEnglish = lang?.includes('en'); 
-  
-    return {
+export async function generateMetadata({ searchParams }) {
+  const { lang } = await searchParams || "id";
+  const isEnglish = lang?.includes('en');
+
+  return {
+    title: isEnglish
+      ? 'Articles & Insights | T-Space Bintaro'
+      : 'Artikel & Insight | T-Space Bintaro',
+    description: isEnglish
+      ? 'Explore articles about events, arts, rental space, and dermatology at T-Space Bintaro. Get the latest insights here!'
+      : 'Temukan artikel menarik tentang event, seni, rent space, dan dermatologi di T-Space Bintaro. Dapatkan wawasan terbaru di sini!',
+    keywords: isEnglish
+      ? ['Creative Space Bintaro', 'Coworking Space Bintaro', 'Meeting Room Rental Bintaro', 'Event Space Bintaro', 'Collaboration Space Bintaro', 'Office Bintaro', 'Space Rental Bintaro', 'T-Space Bintaro']
+      : ['Ruang Kreatif Bintaro', 'Coworking Space Bintaro', 'Sewa Ruang Meeting Bintaro', 'Event Space Bintaro', 'Ruang Kolaborasi Bintaro', 'Kantor Bintaro', 'Sewa Tempat Bintaro', 'T-Space Bintaro'],
+    applicationName: 'T-Space Bintaro',
+    authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.com' }],
+    creator: 'T-Space Bintaro',
+    publisher: 'T-Space Bintaro',
+    metadataBase: new URL('https://tspacebintaro.com'),
+    openGraph: {
       title: isEnglish
         ? 'Articles & Insights | T-Space Bintaro'
         : 'Artikel & Insight | T-Space Bintaro',
       description: isEnglish
         ? 'Explore articles about events, arts, rental space, and dermatology at T-Space Bintaro. Get the latest insights here!'
         : 'Temukan artikel menarik tentang event, seni, rent space, dan dermatologi di T-Space Bintaro. Dapatkan wawasan terbaru di sini!',
-      keywords: isEnglish
-        ? ['Creative Space Bintaro', 'Coworking Space Bintaro', 'Meeting Room Rental Bintaro', 'Event Space Bintaro', 'Collaboration Space Bintaro', 'Office Bintaro', 'Space Rental Bintaro', 'T-Space Bintaro']
-        : ['Ruang Kreatif Bintaro', 'Coworking Space Bintaro', 'Sewa Ruang Meeting Bintaro', 'Event Space Bintaro', 'Ruang Kolaborasi Bintaro', 'Kantor Bintaro', 'Sewa Tempat Bintaro', 'T-Space Bintaro'],
-      applicationName: 'T-Space Bintaro',
-      authors: [{ name: 'T-Space Bintaro', url: 'https://tspacebintaro.com' }],
-      creator: 'T-Space Bintaro',
-      publisher: 'T-Space Bintaro',
-      metadataBase: new URL('https://tspacebintaro.com'),
-      alternates: {
-        canonical: '/',
-        languages: {
-          'en-US': '/en-US',
-          'id-ID': '/id-ID',
+      url: 'https://tspacebintaro.com',
+      siteName: 'T-Space Bintaro',
+      images: [
+        {
+          url: 'https://tspacebintaro.com/logo_ori.svg',
+          width: 1200,
+          height: 630,
+          alt: 'Logo T-Space Bintaro',
         },
-      },
-      openGraph: {
-        title: isEnglish
-        ? 'Articles & Insights | T-Space Bintaro'
-        : 'Artikel & Insight | T-Space Bintaro',
-        description: isEnglish
-        ? 'Explore articles about events, arts, rental space, and dermatology at T-Space Bintaro. Get the latest insights here!'
-        : 'Temukan artikel menarik tentang event, seni, rent space, dan dermatologi di T-Space Bintaro. Dapatkan wawasan terbaru di sini!',
-        url: 'https://tspacebintaro.com',
-        siteName: 'T-Space Bintaro',
-        images: [
-          {
-            url: 'https://tspacebintaro.com/logo_ori.svg',
-            width: 1200,
-            height: 630,
-            alt: 'Logo T-Space Bintaro',
-          },
-        ],
-        locale: isEnglish ? 'en-US' : 'id-ID',
-        type: 'website',
-      },
-      robots: {
-        index: true,
-        follow: true,
-      },
-    };
-  }
+      ],
+      locale: isEnglish ? 'en-US' : 'id-ID',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default function Home() {
-    return (
-        <>
-            <NavbarArticles className="" />
-            <Articles />
-            {/* <Footer /> */}
+  return (
+    <>
+      <NavbarArticles className="" />
+      <Articles />
+      {/* <Footer /> */}
 
-        </>
-    );
+    </>
+  );
 }
