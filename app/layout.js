@@ -13,19 +13,16 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
-  display: 'swap', adjustFontFallback: false
 });
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas-neue",
   subsets: ["latin"],
   weight: ["400"],
-  display: 'swap', adjustFontFallback: false
 });
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
-  display: 'swap', adjustFontFallback: false
 });
 
 export async function generateMetadata({ searchParams }) {
