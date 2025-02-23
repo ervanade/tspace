@@ -92,15 +92,16 @@ export default async function Home() {
   // const { data } = await getData()
   const data = { data: "" }
   if (!data) return <p>Error Data Not Found</p>
+  console.log(data?.serviceDetails)
   return (
     <>
       <Navbar className="" />
-      <Hero dataHero={data["1"]?.banner || null} />
-      <About data={data["2"] || null} />
-      <Gallery data={data["3"] || null} />
-      <Space data={data["4"] || null} />
+      <Hero dataHero={data?.dataBanner?.tspace || null} />
+      <About data={data?.serviceDetails || null} />
+      <Gallery data={data?.dataGallery || null} />
+      <Space data={data?.dataSpace || null} />
       <Event />
-      <Tenants />
+      <Tenants data={data?.dataTenants || null} />
       <RecomendedArticles />
       <Contact />
       <PopupEvent />

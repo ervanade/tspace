@@ -37,17 +37,16 @@ const PopupEvent = () => {
   };
   const reverseDayTranslations = Object.fromEntries(
     Object.entries(dayTranslations.id).map(([en, id]) => [id.toLowerCase(), en])
-  );  
+  );
 
   const translateDay = (day, lang) => {
     const lowerDay = day.toLowerCase();
-    
+
     // Jika input dalam bahasa Indonesia, konversi dulu ke Inggris
     const normalizedDay = reverseDayTranslations[lowerDay] || lowerDay;
-    
+
     return dayTranslations[lang]?.[normalizedDay] || day;
   };
-  console.log(translateDay("Rabu", "id"))
 
   const events = [
     {

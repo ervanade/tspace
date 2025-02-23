@@ -5,12 +5,11 @@ import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 const HTMLDecoderEncoder = require("html-encoder-decoder");
 
-
-const About = ({data}) => {
+const About = ({ data }) => {
   const contentAbout = {
     title: "Beyoutiful Aesthetic",
     desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
@@ -19,7 +18,7 @@ const About = ({data}) => {
     logo: "/logo_ori.svg",
   };
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
-  const content = data?.pages[0] || null
+  const content = data?.data[0] || null;
 
   return (
     <section className="py-20 relative">
@@ -41,11 +40,17 @@ const About = ({data}) => {
               <h2 className="!text-textDark header-title">
                 {contentAbout.title}
               </h2>
-              {
-              content ? lang === "en" ? parse(HTMLDecoderEncoder.decode(content?.content_en)) : parse(HTMLDecoderEncoder.decode(content?.content_id)) : <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-              {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
-            </p>
-               }
+              {content ? (
+                lang === "en" ? (
+                  parse(HTMLDecoderEncoder.decode(content?.content_en))
+                ) : (
+                  parse(HTMLDecoderEncoder.decode(content?.content_id))
+                )
+              ) : (
+                <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                  {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
+                </p>
+              )}
 
               {/* <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                 {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
@@ -57,7 +62,7 @@ const About = ({data}) => {
             height={96}
           /> */}
               <Image
-                src={content?.image_m_default ||"/beyoutiful_orange.png"}
+                src={content?.image_m_default || "/beyoutiful_orange.png"}
                 alt="Logo Beyoutiful"
                 width={183}
                 height={48}

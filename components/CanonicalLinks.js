@@ -15,8 +15,8 @@ function CanonicalContent() {
     return (
         <>
             <link rel="canonical" href={currentUrl} />
-            <link rel="alternate" hreflang="id" href={alternateId} />
-            <link rel="alternate" hreflang="en" href={alternateEn} />
+            <link rel="alternate" hrefLang="id" href={alternateId} />
+            <link rel="alternate" hrefLang="en" href={alternateEn} />
         </>
     );
 }

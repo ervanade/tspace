@@ -9,14 +9,14 @@ import { useSelector } from "react-redux";
 import { dataGallery, galleryFeb } from "@/public/data";
 import "swiper/css/navigation";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import parse from 'html-react-parser';
-
+import parse from "html-react-parser";
 
 const Gallery = ({ title, subTitle, data }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
-  const dataGallery = data?.gallery
+  const dataGallery = data?.data || null;
+  const metaData = data?.metadata || null;
   const dataSpace = [
     {
       id: "1",
@@ -88,16 +88,27 @@ const Gallery = ({ title, subTitle, data }) => {
 
   const handlePrevImage = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? dataSpace.length - 1 : prevIndex - 1
+      dataGallery
+        ? prevIndex === 0
+          ? dataGallery?.length - 1
+          : prevIndex - 1
+        : prevIndex === 0
+        ? galleryFeb?.length - 1
+        : prevIndex - 1
     );
   };
 
   const handleNextImage = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === dataSpace.length - 1 ? 0 : prevIndex + 1
+      dataGallery
+        ? prevIndex === dataGallery?.length - 1
+          ? 0
+          : prevIndex + 1
+        : prevIndex === galleryFeb?.length - 1
+        ? 0
+        : prevIndex + 1
     );
   };
-
   return (
     <div
       className="w-full bg-bg-dark bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-white scroll-mt-12"
@@ -106,11 +117,21 @@ const Gallery = ({ title, subTitle, data }) => {
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         <div className="mb-12">
           <h2 className="header-title">
-          {lang === "en" ? content?.title_en : content?.title || content.title}
-          </h2>{
-          data ? (lang === "en" ? parse(HTMLDecoderEncoder.decode(data?.subtitle_en)) : parse(HTMLDecoderEncoder.decode(data?.subtitle_id))) :  <p className="!text-white/80 sub-title whitespace-pre-line">
-            {lang === "en" ? content.desc_en : content.desc}
-          </p>}
+            {lang === "en"
+              ? content?.title_en
+              : content?.title || content.title}
+          </h2>
+          {metaData ? (
+            lang === "en" ? (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_en))
+            ) : (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_id))
+            )
+          ) : (
+            <p className="!text-white/80 sub-title whitespace-pre-line">
+              {lang === "en" ? content.desc_en : content.desc}
+            </p>
+          )}
           {/* <p className="!text-white/80 sub-title whitespace-pre-line">
             {lang === "en" ? content.desc_en : content.desc}
           </p> */}
@@ -147,29 +168,53 @@ const Gallery = ({ title, subTitle, data }) => {
                 prevEl: ".gallery-button-prev",
               }}
             >
-              {galleryFeb.map((item, index) => (
-                <SwiperSlide key={index} className="mr-2">
-                  <div className="recomended-card flex flex-col justify-center gap-2">
-                    <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
-                      <Image
-                        src={item.image_mid}
-                        alt={item?.name || "T-Space Gallery"}
-                        sizes="100vw"
-                        fill
-                        onClick={() => handleImageClick(index)}
-                        className="object-cover"
-                        priority={index === 0} // Prioritize first image
-                      />
-                    </div>
+              {dataGallery
+                ? dataGallery.map((item, index) => (
+                    <SwiperSlide key={index} className="mr-2">
+                      <div className="recomended-card flex flex-col justify-center gap-2">
+                        <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_default}
+                            alt={item?.name || "T-Space Gallery"}
+                            sizes="100vw"
+                            fill
+                            onClick={() => handleImageClick(index)}
+                            className="object-cover"
+                            priority={index === 0} // Prioritize first image
+                          />
+                        </div>
 
-                    <div className="mt-2 flex flex-col items-center gap-4">
-                      <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
-                        {HTMLDecoderEncoder.decode(item.name)}
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+                        <div className="mt-2 flex flex-col items-center gap-4">
+                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
+                            {HTMLDecoderEncoder.decode(item.name)}
+                          </h3>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))
+                : galleryFeb.map((item, index) => (
+                    <SwiperSlide key={index} className="mr-2">
+                      <div className="recomended-card flex flex-col justify-center gap-2">
+                        <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_mid}
+                            alt={item?.name || "T-Space Gallery"}
+                            sizes="100vw"
+                            fill
+                            onClick={() => handleImageClick(index)}
+                            className="object-cover"
+                            priority={index === 0} // Prioritize first image
+                          />
+                        </div>
+
+                        <div className="mt-2 flex flex-col items-center gap-4">
+                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-white text-center line-clamp-3 mt-4">
+                            {HTMLDecoderEncoder.decode(item?.name)}
+                          </h3>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
               {/* Panah Navigasi */}
               <div className="gallery-button-prev absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
                 <FaChevronLeft className="text-xl" />
@@ -214,12 +259,111 @@ const Gallery = ({ title, subTitle, data }) => {
                   ▶
                 </button>
 
-                <div className="flex flex-col items-center">
+                {dataGallery ? (
+                  <div className="flex flex-col items-center">
+                    <div className="w-full flex justify-center">
+                      <div className="max-h-[500px]">
+                        <Image
+                          src={
+                            dataGallery[currentIndex].image_default ||
+                            galleryFeb[currentIndex].image_mid
+                          }
+                          alt={
+                            dataGallery[currentIndex].name ||
+                            galleryFeb[currentIndex].name
+                          }
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          style={{
+                            width: "auto", // Ukuran gambar disesuaikan
+                            height: "auto",
+                            maxHeight: "400px", // Gambar tidak melebihi 80% lebar viewport
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="mt-4 text-center text-textDark">
+                      {dataGallery[currentIndex]?.content_id ? (
+                        lang === "en" ? (
+                          parse(
+                            HTMLDecoderEncoder.decode(
+                              dataGallery[currentIndex]?.content_en ||
+                                dataGallery[currentIndex]?.content_id
+                            )
+                          )
+                        ) : (
+                          parse(
+                            HTMLDecoderEncoder.decode(
+                              dataGallery[currentIndex]?.content_id
+                            )
+                          )
+                        )
+                      ) : (
+                        <>
+                          <h2 className="text-xl font-semibold mb-2">
+                            {HTMLDecoderEncoder.decode(
+                              galleryFeb[currentIndex].name
+                            )}
+                          </h2>
+                          <p className="text-sm">
+                            {galleryFeb[currentIndex].dimensions}
+                          </p>
+                          <p className="text-lg text-secondary font-medium">
+                            {galleryFeb[currentIndex].price}
+                          </p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center">
+                    <div className="w-full flex justify-center">
+                      <div className="max-h-[500px]">
+                        <Image
+                          src={galleryFeb[currentIndex].image_mid}
+                          alt={galleryFeb[currentIndex].name}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          style={{
+                            width: "auto", // Ukuran gambar disesuaikan
+                            height: "auto",
+                            maxHeight: "400px", // Gambar tidak melebihi 80% lebar viewport
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="mt-4 text-center text-textDark">
+                      <h2 className="text-xl font-semibold mb-2">
+                        {HTMLDecoderEncoder.decode(
+                          galleryFeb[currentIndex].name
+                        )}
+                      </h2>
+                      <p className="text-sm">
+                        {galleryFeb[currentIndex].dimensions}
+                      </p>
+                      <p className="text-lg text-secondary font-medium">
+                        {galleryFeb[currentIndex].price}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* <div className="flex flex-col items-center">
                   <div className="w-full flex justify-center">
                     <div className="max-h-[500px]">
                       <Image
-                        src={galleryFeb[currentIndex].image_mid}
-                        alt={galleryFeb[currentIndex].name}
+                        src={
+                          dataGallery[currentIndex].image_default ||
+                          galleryFeb[currentIndex].image_mid
+                        }
+                        alt={
+                          dataGallery[currentIndex].name ||
+                          galleryFeb[currentIndex].name
+                        }
                         width={0}
                         height={0}
                         sizes="100vw"
@@ -233,17 +377,38 @@ const Gallery = ({ title, subTitle, data }) => {
                   </div>
 
                   <div className="mt-4 text-center text-textDark">
-                    <h2 className="text-xl font-semibold mb-2">
-                      {HTMLDecoderEncoder.decode(galleryFeb[currentIndex].name)}
-                    </h2>
-                    <p className="text-sm">
-                      {galleryFeb[currentIndex].dimensions}
-                    </p>
-                    <p className="text-lg text-secondary font-medium">
-                      {galleryFeb[currentIndex].price}
-                    </p>
+                    {dataGallery[currentIndex]?.content_id ? (
+                      lang === "en" ? (
+                        parse(
+                          HTMLDecoderEncoder.decode(
+                            dataGallery[currentIndex]?.content_en ||
+                              dataGallery[currentIndex]?.content_id
+                          )
+                        )
+                      ) : (
+                        parse(
+                          HTMLDecoderEncoder.decode(
+                            dataGallery[currentIndex]?.content_id
+                          )
+                        )
+                      )
+                    ) : (
+                      <>
+                        <h2 className="text-xl font-semibold mb-2">
+                          {HTMLDecoderEncoder.decode(
+                            galleryFeb[currentIndex].name
+                          )}
+                        </h2>
+                        <p className="text-sm">
+                          {galleryFeb[currentIndex].dimensions}
+                        </p>
+                        <p className="text-lg text-secondary font-medium">
+                          {galleryFeb[currentIndex].price}
+                        </p>
+                      </>
+                    )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           )}

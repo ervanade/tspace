@@ -12,6 +12,8 @@ import parse from "html-react-parser";
 const HTMLDecoderEncoder = require("html-encoder-decoder");
 const Space = ({ title, subTitle, data }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const dataRentSpace = data?.data || null;
+  const metaData = data?.metadata || null;
   const dataSpace = [
     {
       id: "41",
@@ -183,11 +185,24 @@ const Space = ({ title, subTitle, data }) => {
         <h2 className="header-title !text-textDark">
           {lang === "en" ? "RenT-Space" : "RenT-Space"}
         </h2>
-        <p className="!text-textDark/80 sub-title">
+        {metaData ? (
+          lang === "en" ? (
+            parse(HTMLDecoderEncoder.decode(metaData?.subtitle_en))
+          ) : (
+            parse(HTMLDecoderEncoder.decode(metaData?.subtitle_id))
+          )
+        ) : (
+          <p className="!text-textDark/80 sub-title">
+            {lang === "en"
+              ? "Suitable for your dream events and occasions. Browse through our available spaces and book a tour today!"
+              : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space."}
+          </p>
+        )}
+        {/* <p className="!text-textDark/80 sub-title">
           {lang === "en"
             ? "Suitable for your dream events and occasions. Browse through our available spaces and book a tour today!"
             : "Telusuri ruang yang tersedia dan jelajahi opsi penyewaan fleksibel kami di T-Space."}
-        </p>
+        </p> */}
       </div>
 
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
