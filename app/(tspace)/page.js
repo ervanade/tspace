@@ -92,7 +92,6 @@ export default async function Home() {
   // const { data } = await getData()
   const data = { data: "" }
   if (!data) return <p>Error Data Not Found</p>
-  console.log(data?.serviceDetails)
   return (
     <>
       <Navbar className="" />
