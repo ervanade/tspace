@@ -66,10 +66,6 @@ export async function generateMetadata({ searchParams, pathname, params }) {
       locale: isEnglish ? 'en-US' : 'id-ID',
       type: 'website',
     },
-    robots: {
-      index: true,
-      follow: true,
-    },
   };
 }
 async function getData() {

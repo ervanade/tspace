@@ -72,8 +72,8 @@ export async function generateMetadata({ searchParams }) {
       type: 'website',
     },
     robots: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
   };
 }
