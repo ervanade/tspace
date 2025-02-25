@@ -10,36 +10,10 @@ import { useSelector } from "react-redux";
 import { articles } from "@/public/data";
 
 const RecomendedArticles = ({ data }) => {
+  const dataArticles = data?.data || null;
+  const metaData = data?.metadata || null;
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
-
-  const tvPromotions = [
-    {
-      name: "Promo Good Thing Festival",
-      image: "/assets/article-1.png",
-      link: "#",
-    },
-    {
-      name: "Promo Celebrating 148 Tahun",
-      image: "/assets/article-2.png",
-      link: "#",
-    },
-    {
-      name: "Promo Mega Sale 88",
-      image: "/assets/article-3.png",
-      link: "#",
-    },
-    {
-      name: "Promo Mega Sale 88",
-      image: "/assets/article-1.png",
-      link: "#",
-    },
-    {
-      name: "Promo Mega Sale 88",
-      image: "/assets/article-2.png",
-      link: "#",
-    },
-  ];
 
   // Simulasi loading
   useEffect(() => {
@@ -85,41 +59,86 @@ const RecomendedArticles = ({ data }) => {
               prevEl: ".gallery-button-prev",
             }}
           >
-            {articles.slice(0, 6).map((article, index) => (
-              <SwiperSlide className="mr-2" key={index}>
-                <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl ">
-                  <div className="relative h-56 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-t-lg bg-blue-gray-500 shadow-blue-gray-500/40">
-                    <Image
-                      src={article.image}
-                      alt="card-image"
-                      fill
-                      className="object-cover"
-                      priority={index === 0} // Prioritas pada slide pertama untuk performance
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                      Article T-Space
-                    </h3>
-                    <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                      The place is close to Barceloneta Beach and bus stop just
-                      2 min by walk and near to "Naviglio" where you can enjoy
-                      the main night life in Barcelona.
-                    </p>
-                  </div>
-                  <div className="p-6 pt-0">
-                    <Link
-                      aria-label={`Read more about ${article.title}`}
-                      href={`/articles/${article.slug}?lang=${lang}`}
-                      className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                      type="button"
+            {dataArticles
+              ? dataArticles.slice(0, 6).map((article, index) => (
+                  <SwiperSlide className="mr-2" key={index}>
+                    <div
+                      key={index}
+                      className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl"
                     >
-                      Read Article
-                    </Link>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                      <div className="relative h-56 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-t-lg bg-blue-gray-500 shadow-blue-gray-500/40">
+                        <Image
+                          src={article?.image_default}
+                          alt={
+                            lang === "en" ? article.img_alt : article.img_alt
+                          }
+                          fill
+                          className="object-cover"
+                          priority={index === 0} // Prioritas pada slide pertama untuk performance
+                        />
+                        <div className="px-4 py-2 bg-[#303638] text-white font-medium rounded-full absolute bottom-4 left-2 text-sm ">
+                          {article?.category}
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h5 className="mb-2 font-sans text-lg md:text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 line-clamp-2 lg:line-clamp-3 lg:min-h-[80px] lg:block ">
+                          {lang === "en"
+                            ? article?.title_en
+                            : article?.title_id}
+                        </h5>
+                        <p className="font-sans text-sm md:text-base antialiased font-light leading-relaxed text-inherit line-clamp-3 lg:min-h-[80px] lg:block ">
+                          {lang === "en"
+                            ? article?.subtitle_en
+                            : article?.subtitle_id}
+                        </p>
+                      </div>
+                      <div className="p-6 pt-0">
+                        <Link
+                          href={`/articles/${article.slug}?lang=${lang}`}
+                          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                          type="button"
+                        >
+                          Read More
+                        </Link>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))
+              : articles.slice(0, 6).map((article, index) => (
+                  <SwiperSlide className="mr-2" key={index}>
+                    <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl ">
+                      <div className="relative h-56 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-t-lg bg-blue-gray-500 shadow-blue-gray-500/40">
+                        <Image
+                          src={article.image}
+                          alt="card-image"
+                          fill
+                          className="object-cover"
+                          priority={index === 0} // Prioritas pada slide pertama untuk performance
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                          Article T-Space
+                        </h3>
+                        <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                          The place is close to Barceloneta Beach and bus stop
+                          just 2 min by walk and near to "Naviglio" where you
+                          can enjoy the main night life in Barcelona.
+                        </p>
+                      </div>
+                      <div className="p-6 pt-0">
+                        <Link
+                          aria-label={`Read more about ${article.title}`}
+                          href={`/articles/${article.slug}?lang=${lang}`}
+                          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-full bg-[#303638] text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                          type="button"
+                        >
+                          Read Article
+                        </Link>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
             <div className="gallery-button-prev absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
               <FaChevronLeft className="text-xl" />
             </div>

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 
-const Articles = ({ listCategory }) => {
+const CategoryArticles = ({ listCategory, params }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
   const [visibleCount, setVisibleCount] = useState(6); // Jumlah artikel yang terlihat
 
@@ -23,18 +23,20 @@ const Articles = ({ listCategory }) => {
   const fetchApiNews = async () => {
     await axios({
       method: "get",
-      url: `${process.env.NEXT_PUBLIC_API_KEY}/api/news`,
+      url: `${process.env.NEXT_PUBLIC_API_KEY}/api/news/category/${
+        params ? params : "1"
+      }`,
       headers: {
         "X-Api-Key": process.env.NEXT_PUBLIC_APP_X_API_KEY,
         "Content-Type": "application/json",
       },
     })
       .then(function (response) {
-        setNewsPage(response.data);
         setNewsData(response.data.data);
       })
       .catch((error) => {
         console.log(error);
+        setNewsData([]);
       });
   };
 
@@ -79,7 +81,7 @@ const Articles = ({ listCategory }) => {
         <div className="my-4 overflow-x-auto whitespace-nowrap no-scrollbar">
           <Link
             href={`/articles?lang=${lang}`}
-            className="inline-block mr-4 bg-[#303638] text-white px-4 py-2 rounded-full font-sm md:font-base font-semibold"
+            className="inline-block mr-4 border border-black/80 text-black/80 px-4 py-2 rounded-full font-sm md:font-base "
           >
             All Category
           </Link>
@@ -88,7 +90,11 @@ const Articles = ({ listCategory }) => {
               <Link
                 key={index}
                 href={`/articles/category/${cat.id}-${cat.category_name}?lang=${lang}`}
-                className="inline-block mr-4 border border-black/80 text-black/80 px-4 py-2 rounded-full font-sm md:font-base"
+                className={`inline-block mr-4 ' ${
+                  cat.id === params
+                    ? "bg-[#303638] text-white font-semibold"
+                    : "border border-black/80 text-black/80"
+                }  px-4 py-2 rounded-full font-sm md:font-base font-semibold'`}
               >
                 {cat?.category_name}
               </Link>
@@ -200,7 +206,7 @@ const Articles = ({ listCategory }) => {
           </div>
         )} */}
 
-        <div className="flex justify-center items-center mt-12 lg:mt-16">
+        {/* <div className="flex justify-center items-center mt-12 lg:mt-16">
           <div>
             {newsPage?.total > page ? (
               <button
@@ -213,10 +219,10 @@ const Articles = ({ listCategory }) => {
               ""
             )}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
-export default Articles;
+export default CategoryArticles;

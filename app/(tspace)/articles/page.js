@@ -61,11 +61,28 @@ export async function generateMetadata({ searchParams }) {
   };
 }
 
-export default function Home() {
+async function getDataCategory() {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/category`, {
+      cache: 'no-store', method: 'GET',
+      headers: {
+        'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
+      },
+    })
+    const response = await res.json()
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export default async function Home() {
+  const listCategory = await getDataCategory()
+
   return (
     <>
       <NavbarArticles className="" />
-      <Articles />
+      <Articles listCategory={listCategory} />
       {/* <Footer /> */}
 
     </>
