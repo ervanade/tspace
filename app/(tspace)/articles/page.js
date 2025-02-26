@@ -62,27 +62,29 @@ export async function generateMetadata({ searchParams }) {
 }
 
 async function getDataCategory() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/category`, {
-      cache: 'no-store', method: 'GET',
-      headers: {
-        'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
-      },
-    })
-    const response = await res.json()
-    return response.data
-  } catch (error) {
-    console.log(error)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/category`, {
+    // cache: 'no-store',
+    next: { revalidate: 3600 },
+    method: 'GET',
+    headers: {
+      'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
+    },
+  })
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
   }
+
+  return res.json()
 }
 
 export default async function Home() {
-  const listCategory = await getDataCategory()
+  const {data} = await getDataCategory()
 
   return (
     <>
       <NavbarArticles className="" />
-      <Articles listCategory={listCategory} />
+      <Articles listCategory={data} />
       {/* <Footer /> */}
 
     </>
