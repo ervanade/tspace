@@ -23,11 +23,11 @@ const ArticlesDetails = ({ article, related }) => {
           <div className="flex items-center gap-3">
             <Link
               className="px-4 py-2 bg-[#303638] text-white font-bold rounded-full"
-              href={`/articles/category/${article?.category_id || "1"}-${
-                article?.category
+              href={`/articles/category/${article?.category || "1"}-${
+                article?.category_name
               }?lang=${lang}`}
             >
-              {article?.category || ""}
+              {article?.category_name || ""}
             </Link>
             <p className="font-semibold">
               {article?.publish_at &&

@@ -146,7 +146,7 @@ const Articles = ({ listCategory }) => {
                     priority={index === 0} // Prioritas pada slide pertama untuk performance
                   />
                   <div className="px-4 py-2 bg-[#303638] text-white font-medium rounded-full absolute bottom-4 left-2 text-sm ">
-                    {article?.category}
+                    {article?.category_name}
                   </div>
                 </div>
                 <div className="p-6">

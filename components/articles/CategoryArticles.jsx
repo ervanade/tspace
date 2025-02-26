@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const CategoryArticles = ({ listCategory, params }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
@@ -19,8 +20,10 @@ const CategoryArticles = ({ listCategory, params }) => {
   const [newsData, setNewsData] = useState([]);
   const [newsPage, setNewsPage] = useState([]);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false)
 
   const fetchApiNews = async () => {
+    setLoading(true)
     await axios({
       method: "get",
       url: `${process.env.NEXT_PUBLIC_API_KEY}/api/news/category/${
@@ -33,10 +36,15 @@ const CategoryArticles = ({ listCategory, params }) => {
     })
       .then(function (response) {
         setNewsData(response.data.data);
+        setLoading(false)
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false)
         setNewsData([]);
+        // if(error.status == 404) {
+        //   notFound()
+        // }
       });
   };
 
@@ -152,7 +160,7 @@ const CategoryArticles = ({ listCategory, params }) => {
                     priority={index === 0} // Prioritas pada slide pertama untuk performance
                   />
                   <div className="px-4 py-2 bg-[#303638] text-white font-medium rounded-full absolute bottom-4 left-2 text-sm ">
-                    {article?.category}
+                    {article?.category_name}
                   </div>
                 </div>
                 <div className="p-6">
@@ -176,7 +184,9 @@ const CategoryArticles = ({ listCategory, params }) => {
                 </div>
               </div>
             ))
-          ) : (
+          ) 
+          : newsData?.length === 0 && loading === true ? 
+          (
             <>
               {[...Array(3)].map((_, index) => (
                 <div
@@ -190,7 +200,10 @@ const CategoryArticles = ({ listCategory, params }) => {
                 </div>
               ))}
             </>
-          )}
+          )
+          : 
+          <div className="w-full justify-center items-center col-span-3 p-6"><p className="text-center">Data Tidak Tersedia</p></div>
+          }
         </div>
 
         {/* Tombol Load More */}
