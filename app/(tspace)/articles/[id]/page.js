@@ -43,8 +43,8 @@ export async function generateMetadata({ params, searchParams }) {
 }
 const fetchNews = async (slug) => {
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/slug/${slug}`, {
-            // cache: 'no-store',
+    const res = await fetch(`http://10.29.101.99/api/news/slug/${slug}`, {
+        // cache: 'no-store',
             method: 'GET',
             headers: {
               'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
