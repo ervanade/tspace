@@ -17,12 +17,12 @@ const ArticlesDetails = ({ article, related }) => {
     <div className="w-full bg-gray-50 py-12 px-6 text-textDark">
       <div className="max-w-[1200px] mx-auto w-full overflow-hidden">
         <div className="news-content">
-          <h1 className="text-2xl xl:text-[32px] font-bold mb-4 text-center">
+          <h1 className="text-2xl xl:text-[32px] leading-tight font-bold mb-4 text-center">
             {lang === "en" ? article?.title_en : article?.title_id || ""}
           </h1>
           <div className="flex items-center gap-3">
             <Link
-              className="px-4 py-2 bg-[#303638] text-white font-bold rounded-full"
+              className="px-4 py-2 bg-[#303638] text-white font-semibold rounded-full"
               href={`/articles/category/${article?.category || "1"}-${
                 article?.category_name
               }?lang=${lang}`}

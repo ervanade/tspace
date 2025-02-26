@@ -7,7 +7,7 @@ const HTMLDecoderEncoder = require("html-encoder-decoder");
 
 export async function generateMetadata({ params, searchParams }) {
     const { id } = await params;
-    const {data} = await fetchNews(id)
+    const { data } = await fetchNews(id)
     const news = data?.news || undefined
     if (!news) {
         return notFound()
@@ -44,28 +44,28 @@ export async function generateMetadata({ params, searchParams }) {
 const fetchNews = async (slug) => {
 
     // const res = await fetch(`http://10.29.101.99/api/news/slug/${slug}`, {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/slug/${slug}`, {
-
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/slug/${slug}`, {
+        next: { revalidate: 3600 },
         // cache: 'no-store',
-            method: 'GET',
-            headers: {
-              'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
-            },
-          })
+        method: 'GET',
+        headers: {
+            'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
+        },
+    })
 
-        if (!res.ok) {
-            // This will activate the closest `error.js` Error Boundary
-            throw new Error('Failed to fetch data')
-          }
-        
-          return res.json()
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+    }
+
+    return res.json()
 };
 
 const ArticlePage = async ({ params }) => {
     const { id } = await params;
 
     // Fetch data
-    const {data} = await fetchNews(id);
+    const { data } = await fetchNews(id);
 
     // Jika data tidak ada atau news kosong, redirect ke notFound
     if (!data || !data.news || data.news.length === 0) {

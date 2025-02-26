@@ -11,7 +11,7 @@ import { FaLocationPin } from "react-icons/fa6";
 import Image from "next/image"; // Import Image dari Next.js
 import { useSelector } from "react-redux";
 
-const PopupEvent = () => {
+const PopupEvent = ({ data }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
@@ -34,6 +34,10 @@ const PopupEvent = () => {
       saturday: "Saturday",
       sunday: "Sunday",
     },
+  };
+
+  const formatTime = (timeString) => {
+    return timeString.split(":").slice(0, 2).join(".");
   };
   const reverseDayTranslations = Object.fromEntries(
     Object.entries(dayTranslations.id).map(([en, id]) => [id.toLowerCase(), en])
@@ -141,47 +145,92 @@ const PopupEvent = () => {
             <h2 className="header-title !text-secondary">EVENTS THIS WEEK</h2>
 
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-              {events.map((event) => (
-                <div
-                  key={event.id}
-                  className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
-                >
-                  {/* Gambar */}
-                  <div className="w-full aspect-square overflow-hidden">
-                    <Image
-                      src={event.image} // URL gambar event
-                      alt={event.title}
-                      width={500}
-                      height={500}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              {data
+                ? data.map((event, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+                    >
+                      {/* Gambar */}
+                      <div className="w-full aspect-square overflow-hidden">
+                        <Image
+                          src={event.image_default} // URL gambar event
+                          alt={event.event_name}
+                          width={500}
+                          height={500}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
 
-                  {/* Deskripsi */}
-                  <div className="p-4">
-                    <h3 className="text-sm font-semibold text-orange-600 mb-2">
-                      {event.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-4">
-                      {event.subtitle}
-                    </p>
-                    <div className="text-gray-800 text-sm space-y-2">
-                      <p className="flex items-center">
-                        <FaCalendar className="h-5 w-5 text-gray-500 mr-2" />
-                        {translateDay(event.day, lang)}, {event.date}
-                      </p>
-                      <p className="flex items-center">
-                        <FaLocationPin className="h-5 w-5 text-gray-500 mr-2" />
-                        {event.location}
-                      </p>
-                      <p className="flex items-center">
-                        <FaClock className="h-5 w-5 text-gray-500 mr-2" />
-                        {event.time}
-                      </p>
+                      {/* Deskripsi */}
+                      <div className="p-4">
+                        <h3 className="text-sm font-semibold text-orange-600 mb-4">
+                          {event.event_name}
+                        </h3>
+                        {/* <p className="text-sm text-gray-600 mb-4">
+                          {event.subtitle}
+                        </p> */}
+                        <div className="text-gray-800 text-sm space-y-2">
+                          <p className="flex items-center">
+                            <FaCalendar className="h-5 w-5 text-gray-500 mr-2" />
+                            {translateDay(event.event_day, lang)},{" "}
+                            {event.event_date}
+                          </p>
+                          <p className="flex items-center">
+                            <FaLocationPin className="h-5 w-5 text-gray-500 mr-2" />
+                            {event.location}
+                          </p>
+                          <p className="flex items-center">
+                            <FaClock className="h-5 w-5 text-gray-500 mr-2" />
+                            {`${formatTime(
+                              event.event_start_time
+                            )} - ${formatTime(event.event_end_time)}`}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  ))
+                : events.map((event, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+                    >
+                      {/* Gambar */}
+                      <div className="w-full aspect-square overflow-hidden">
+                        <Image
+                          src={event.image} // URL gambar event
+                          alt={event.title}
+                          width={500}
+                          height={500}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* Deskripsi */}
+                      <div className="p-4">
+                        <h3 className="text-sm font-semibold text-orange-600 mb-2">
+                          {event.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-4">
+                          {event.subtitle}
+                        </p>
+                        <div className="text-gray-800 text-sm space-y-2">
+                          <p className="flex items-center">
+                            <FaCalendar className="h-5 w-5 text-gray-500 mr-2" />
+                            {translateDay(event.day, lang)}, {event.date}
+                          </p>
+                          <p className="flex items-center">
+                            <FaLocationPin className="h-5 w-5 text-gray-500 mr-2" />
+                            {event.location}
+                          </p>
+                          <p className="flex items-center">
+                            <FaClock className="h-5 w-5 text-gray-500 mr-2" />
+                            {event.time}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
             </div>
           </div>
         </div>

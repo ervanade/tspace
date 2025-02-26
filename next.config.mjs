@@ -17,6 +17,7 @@ const nextConfig = {
     defaultLocale: "id",   // Default: Bahasa Indonesia
     localeDetection: false
   },
+  cacheMaxMemorySize: 104857600, // 100 MB dalam byte
   headers: async () => {
     return [
       {

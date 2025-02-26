@@ -96,11 +96,11 @@ export default async function Home() {
       <About data={datas?.serviceDetails || null} />
       <Gallery data={datas?.dataGallery || null} />
       <Space data={datas?.dataSpace || null} />
-      <Event />
+      <Event dataEvent={datas?.dataCallendar || null} />
       <Tenants data={datas?.dataTenants || null} />
       <RecomendedArticles data={data?.articles || null} />
       <Contact />
-      <PopupEvent />
+      <PopupEvent data={datas?.dataPopup || null} />
 
 
     </>
