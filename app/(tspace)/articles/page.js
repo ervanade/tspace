@@ -64,7 +64,7 @@ export async function generateMetadata({ searchParams }) {
 async function getDataCategory() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/news/category`, {
     // cache: 'no-store',
-    next: { revalidate: 3600 },
+    next: { revalidate: 300 },
     method: 'GET',
     headers: {
       'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
@@ -79,7 +79,7 @@ async function getDataCategory() {
 }
 
 export default async function Home() {
-  const {data} = await getDataCategory()
+  const { data } = await getDataCategory()
 
   return (
     <>

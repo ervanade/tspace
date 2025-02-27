@@ -71,7 +71,7 @@ export async function generateMetadata({ searchParams, pathname, params }) {
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/homepage/0`, {
     // cache: 'no-store',
-    next: { revalidate: 3600 },
+    next: { revalidate: 300 },
     method: 'GET',
     headers: {
       'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
