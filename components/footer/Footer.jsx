@@ -12,7 +12,7 @@ import {
 import { FaMessage, FaPhoneFlip } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
-const Footer = ({dataSettings}) => {
+const Footer = ({ dataSettings }) => {
   const data = {
     facebook: "https://www.facebook.com/tspacebintaro9/",
     instagram: "https://www.instagram.com/t_spacebintaro/",
@@ -53,14 +53,18 @@ const Footer = ({dataSettings}) => {
                 <li className="flex items-center gap-2">
                   <FaBuilding size={24} className="!text-2xl" />
                   <span className="text-sm">
-                   {dataSettings?.contact2_address ? dataSettings?.contact2_address : ` PT. AESTHETIC INDAH GEMILANG, Jl. Jombang Raya No.32,
+                    {dataSettings?.contact2_address
+                      ? dataSettings?.contact2_address
+                      : ` PT. AESTHETIC INDAH GEMILANG, Jl. Jombang Raya No.32,
                     Parigi, Pondok Aren, Kota Tangerang Selatan, Banten 15229`}
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <FaMapMarker size={24} className="!text-2xl" />
                   <span className="text-sm">
-                  {dataSettings?.contact_address ? dataSettings?.contact_address : `T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok
+                    {dataSettings?.contact_address
+                      ? dataSettings?.contact_address
+                      : `T Space Bintaro 9, Jl. Jombang Raya No.32, Parigi, Pondok
                     Aren, Kota Tangerang Selatan, Banten 15229`}
                   </span>
                 </li>
@@ -73,12 +77,18 @@ const Footer = ({dataSettings}) => {
                     </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
-                      <span className="text-sm">{dataSettings?.contact_phone ? dataSettings?.contact_phone : `+62 811-8111-0556`}</span>
+                      <span className="text-sm">
+                        {dataSettings?.contact_phone
+                          ? dataSettings?.contact_phone
+                          : `+62 811-8111-0556`}
+                      </span>
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMessage />
                       <span className="text-sm">
-                      {dataSettings?.contact_email ? dataSettings?.contact_email : `marketing@tspacebintaro.com`}
+                        {dataSettings?.contact_email
+                          ? dataSettings?.contact_email
+                          : `marketing@tspacebintaro.com`}
                       </span>
                     </li>
                   </ul>
@@ -90,12 +100,18 @@ const Footer = ({dataSettings}) => {
                     </li>
                     <li className="flex items-center gap-2">
                       <FaPhoneAlt />
-                      <span className="text-sm">{dataSettings?.contact2_phone ? dataSettings?.contact2_phone :`+62 811-979-0556`}</span>
+                      <span className="text-sm">
+                        {dataSettings?.contact2_phone
+                          ? dataSettings?.contact2_phone
+                          : `+62 811-979-0556`}
+                      </span>
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMessage />
                       <span className="text-sm">
-                      {dataSettings?.contact2_email ? dataSettings?.contact2_email : `beyoutiful.clinic@tspacebintaro.com`}
+                        {dataSettings?.contact2_email
+                          ? dataSettings?.contact2_email
+                          : `beyoutiful.clinic@tspacebintaro.com`}
                       </span>
                     </li>
                   </ul>
@@ -174,7 +190,11 @@ const Footer = ({dataSettings}) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={data.facebook || "https://facebook.com"}
+                  href={
+                    dataSettings?.facebook
+                      ? dataSettings?.facebook
+                      : data.facebook
+                  }
                 >
                   <Image
                     src="/assets/icon/facebook-icon.png"
@@ -186,7 +206,11 @@ const Footer = ({dataSettings}) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={data.instagram || "https://instagram.com"}
+                  href={
+                    dataSettings?.instagram
+                      ? dataSettings?.instagram
+                      : data.instagram
+                  }
                 >
                   <Image
                     src="/assets/icon/ig-icon.png"
@@ -200,7 +224,9 @@ const Footer = ({dataSettings}) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={data.tiktok || "https://tiktok.com"}
+                  href={
+                    dataSettings?.tiktok ? dataSettings?.tiktok : data.tiktok
+                  }
                 >
                   <Image
                     src="/assets/icon/tiktok-icon.png"
@@ -218,7 +244,11 @@ const Footer = ({dataSettings}) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={dataBeyoutiful.facebook || "https://facebook.com"}
+                  href={
+                    dataSettings?.facebook2
+                      ? dataSettings?.facebook2
+                      : dataBeyoutiful.facebook
+                  }
                 >
                   <Image
                     src="/assets/icon/facebook-icon.png"
@@ -230,7 +260,11 @@ const Footer = ({dataSettings}) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={dataBeyoutiful.instagram || "https://instagram.com"}
+                  href={
+                    dataSettings?.instagram2
+                      ? dataSettings?.instagram2
+                      : dataBeyoutiful.instagram
+                  }
                 >
                   <Image
                     src="/assets/icon/ig-icon.png"
@@ -244,7 +278,11 @@ const Footer = ({dataSettings}) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={dataBeyoutiful.tiktok || "https://tiktok.com"}
+                  href={
+                    dataSettings?.tiktok2
+                      ? dataSettings?.tiktok2
+                      : dataBeyoutiful.tiktok
+                  }
                 >
                   <Image
                     src="/assets/icon/tiktok-icon.png"

@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-const Contact = () => {
+const Contact = ({ data }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   return (
@@ -47,7 +47,7 @@ const Contact = () => {
 
             <div className="flex items-center gap-2">
               <a
-                href="https://wa.me/+621181110556
+                href="https://wa.me/+6281181110556
                "
                 target="_blank"
                 rel="noopener noreferrer"

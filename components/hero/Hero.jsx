@@ -13,7 +13,7 @@ import Image from "next/image";
 import "./Hero.css";
 import { useSelector } from "react-redux";
 
-const Hero = ({dataHero}) => {
+const Hero = ({ dataHero }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
 
   const data = [
@@ -84,7 +84,7 @@ const Hero = ({dataHero}) => {
                     {lang === "en" ? item.desc_en : item.desc}
                   </p>
                   <a
-                    href="https://wa.me/+621181110556
+                    href="https://wa.me/+6281181110556
                      "
                     target="_blank"
                     rel="noopener noreferrer"

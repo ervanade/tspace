@@ -86,7 +86,7 @@ const About = ({ data }) => {
         </div>
       </div>
       <a
-        href="https://wa.me/+621181110556
+        href="https://wa.me/+6281181110556
 "
         target="_blank"
         rel="noopener noreferrer"

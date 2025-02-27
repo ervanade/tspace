@@ -119,6 +119,7 @@ export async function generateMetadata({ searchParams }) {
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/settings`, {
     // cache: 'no-store',
+    next: { revalidate: 3600 * 24 },
     method: 'GET',
     headers: {
       'X-Api-Key': process.env.NEXT_PUBLIC_APP_X_API_KEY,
@@ -135,9 +136,9 @@ async function getData() {
 
 
 export default async function RootLayout({ children }) {
-  // const { data } = await getData()
-  const data = { data: "" }
-  if (!data) return <p>Error Data Not Found</p>
+  const { data } = await getData()
+  // const data = { data: "" }
+  if (!data) return <p>Server sedang sibuk, harap coba beberapa saat lagi!</p>
   const headScript = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
 
   return (

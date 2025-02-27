@@ -88,19 +88,19 @@ async function getData() {
 export default async function Home() {
   const { data } = await getData()
   const datas = { data: "" }
-  if (!data) return <p>Error Data Not Found</p>
+  if (!data) return <p>Server sedang sibuk, harap coba beberapa saat lagi!</p>
   return (
     <>
       <Navbar className="" />
-      <Hero dataHero={datas?.dataBanner?.tspace || null} />
-      <About data={datas?.serviceDetails || null} />
-      <Gallery data={datas?.dataGallery || null} />
-      <Space data={datas?.dataSpace || null} />
-      <Event dataEvent={datas?.dataCallendar || null} />
-      <Tenants data={datas?.dataTenants || null} />
+      <Hero dataHero={data?.dataBanner?.tspace || null} />
+      <About data={data?.serviceDetails || null} />
+      <Gallery data={data?.dataGallery || null} />
+      <Space data={data?.dataSpace || null} />
+      <Event dataEvent={data?.dataCallendar || null} />
+      <Tenants data={data?.dataTenants || null} />
       <RecomendedArticles data={data?.articles || null} />
-      <Contact />
-      <PopupEvent data={datas?.dataPopup || null} />
+      <Contact data={data?.settings} />
+      <PopupEvent data={data?.dataPopup || null} />
 
 
     </>
