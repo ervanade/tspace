@@ -66,17 +66,17 @@ const Articles = ({ listCategory }) => {
 
   return (
     <div
-      className="w-full bg-cover bg-center py-12 px-6 text-textDark scroll-mt-12"
+      className="w-full bg-cover bg-center py-8 lg:py-12 px-6 text-textDark scroll-mt-12"
       id="articles"
     >
-      <div className="mb-12">
+      <div className="mb-6 lg:mb-12">
         <h2 className="header-title !text-textDark">
           {lang === "en" ? "Articles" : "Artikel"}
         </h2>
       </div>
 
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
-        <div className="my-4 overflow-x-auto whitespace-nowrap no-scrollbar">
+        <div className="mb-4 overflow-x-auto whitespace-nowrap no-scrollbar">
           <Link
             href={`/articles?lang=${lang}`}
             className="inline-block mr-4 bg-[#303638] text-white px-4 py-2 rounded-full font-sm md:font-base font-semibold"
