@@ -83,7 +83,7 @@ const Event = ({ dataEvent }) => {
       )
     : defaultEvents;
 
-  const daysInMonth = 28; // Jumlah hari dalam bulan
+  const daysInMonth = data?.days ? data?.days?.length : 28; // Jumlah hari dalam bulan
   const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
 
   const daysOfWeek = [
@@ -129,6 +129,53 @@ const Event = ({ dataEvent }) => {
     setSelectedDate(day);
   };
 
+  const monthTranslations = {
+    id: {
+      january: "Januari",
+      february: "Februari",
+      march: "Maret",
+      april: "April",
+      may: "Mei",
+      june: "Juni",
+      july: "Juli",
+      august: "Agustus",
+      september: "September",
+      october: "Oktober",
+      november: "November",
+      december: "Desember",
+    },
+    en: {
+      january: "January",
+      february: "February",
+      march: "March",
+      april: "April",
+      may: "May",
+      june: "June",
+      july: "July",
+      august: "August",
+      september: "September",
+      october: "October",
+      november: "November",
+      december: "December",
+    },
+  };
+
+  const reverseMonthTranslations = Object.fromEntries(
+    Object.entries(monthTranslations.id).map(([en, id]) => [
+      id.toLowerCase(),
+      en,
+    ])
+  );
+
+  const translateMonth = (month, lang) => {
+    const lowerMonth = month.toLowerCase();
+
+    // Jika input dalam bahasa Indonesia, konversi dulu ke Inggris
+    const normalizedMonth = reverseMonthTranslations[lowerMonth] || lowerMonth;
+
+    return monthTranslations[lang]?.[normalizedMonth] || month;
+  };
+
   return (
     <section className="w-full bg-[#EE5A2A] bg-cover bg-center py-12 md:py-16 xl:py-20 px-6 text-[#fff] scroll-mt-12">
       <div className="mb-12">
@@ -160,7 +207,9 @@ const Event = ({ dataEvent }) => {
               {/* <FaArrowLeft /> */}
             </button>
             <h2 className="text-xl font-semibold text-textDark text-center">
-              Februari 2025
+              {data?.month_name && data?.year
+                ? `${translateMonth(data?.month_name, lang)} - ${data?.year}`
+                : "Februari 2025"}
             </h2>
             <button
               aria-label="button"
