@@ -47,8 +47,9 @@ const Contact = ({ data }) => {
 
             <div className="flex items-center gap-2">
               <a
-                href="https://wa.me/+6281181110556
-               "
+                href={
+                  data?.wa_chat ? data?.wa_chat : "https://wa.me/+6281181110556"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="button"
@@ -84,7 +85,11 @@ const Contact = ({ data }) => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute top-0 left-0 w-full h-full border-0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9177746361593!2d106.70388011106542!3d-6.27454179368804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd85ea7d32f%3A0x4c08c46a849a4ef!2sT-Space%20Bintaro!5e0!3m2!1sid!2sid!4v1735031320171!5m2!1sid!2sid"
+              src={
+                data?.location_map
+                  ? data?.location_map
+                  : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9177746361593!2d106.70388011106542!3d-6.27454179368804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbd85ea7d32f%3A0x4c08c46a849a4ef!2sT-Space%20Bintaro!5e0!3m2!1sid!2sid!4v1735031320171!5m2!1sid!2sid"
+              }
             ></iframe>
           </div>
         </div>

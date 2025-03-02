@@ -74,16 +74,36 @@ export async function generateMetadata({ searchParams }) {
   };
 }
 
-const page = () => {
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_KEY}/api/homepage/1`, {
+    // cache: 'no-store',
+    next: { revalidate: 300 },
+    method: "GET",
+    headers: {
+      "X-Api-Key": process.env.NEXT_PUBLIC_APP_X_API_KEY,
+    },
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+const page = async () => {
+  const { data } = await getData();
+  const datas = { data: "" };
+  if (!data) return <p>Server sedang sibuk, harap coba beberapa saat lagi!</p>;
   return (
     <div className="font-montserrat">
       <NavbarBeyoutiful />
-      <HeroBeyoutiful />
-      <AboutBeyoutiful />
-      <Services bg="light" />
-      <Facility />
-      <DoctorSchedule bg="light" />
-      <ContactBeyoutiful />
+      <HeroBeyoutiful dataHero={data?.dataBanner || null} />
+      <AboutBeyoutiful data={data?.serviceDetails || null} />
+      <Services bg="light" data={datas?.dataServices || null} />
+      <Facility data={data?.dataFacility || null} />
+      <DoctorSchedule bg="light" data={data?.doctors || null} />
+      <ContactBeyoutiful data={data?.settings} />
       {/* <Footer /> */}
     </div>
   );

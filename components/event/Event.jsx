@@ -83,8 +83,20 @@ const Event = ({ dataEvent }) => {
       )
     : defaultEvents;
 
+  const dayMapping = {
+    Sunday: 0,
+    Monday: 1,
+    Tuesday: 2,
+    Wednesday: 3,
+    Thursday: 4,
+    Friday: 5,
+    Saturday: 6,
+  };
+
   const daysInMonth = data?.days ? data?.days?.length : 28; // Jumlah hari dalam bulan
-  const startDay = 5; // Hari pertama bulan (0: Minggu, 1: Senin, dst.)
+  const startDay = data.days?.[0]?.day_name
+    ? dayMapping[data.days[0].day_name] ?? 6
+    : 6;
 
   const daysOfWeek = [
     "Sunday",
@@ -220,7 +232,7 @@ const Event = ({ dataEvent }) => {
           </div>
           <div className="grid grid-cols-7 gap-2">
             {Array.from({ length: startDay }).map((_, i) => (
-              <div key={`empty-${i}`} className="h-16"></div>
+              <div key={`empty-${i}`} className="h-10 sm:h-16"></div>
             ))}
             {Array.from({ length: daysInMonth }).map((_, i) => {
               const day = i + 1;
@@ -231,7 +243,7 @@ const Event = ({ dataEvent }) => {
               return (
                 <div
                   key={`day-${day}`}
-                  className={`h-16 flex justify-center items-center rounded-lg cursor-pointer transition-all 
+                  className={`h-10 sm:h-16 aspect-square sm:aspect-auto flex justify-center items-center rounded-lg cursor-pointer transition-all 
                     ${
                       hasEvent
                         ? "bg-orange-500 text-white"

@@ -92,7 +92,7 @@ export default async function Home() {
   return (
     <>
       <Navbar className="" />
-      <Hero dataHero={data?.dataBanner?.tspace || null} />
+      <Hero dataHero={data?.dataBanner || null} />
       <About data={data?.serviceDetails || null} />
       <Gallery data={data?.dataGallery || null} />
       <Space data={data?.dataSpace || null} />

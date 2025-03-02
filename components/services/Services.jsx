@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 
 const HTMLDecoderEncoder = require("html-encoder-decoder");
+import parse from "html-react-parser";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -17,9 +18,11 @@ import {
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { dataServices } from "@/public/data";
-const Services = ({ title, subTitle, bg }) => {
+const Services = ({ title, subTitle, bg, data }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+  const dataService = data?.data || null;
+  const metaData = data?.metadata || null;
 
   const dataSpace = [
     {
@@ -96,22 +99,41 @@ const Services = ({ title, subTitle, bg }) => {
     >
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
         <div className="mb-12">
-          <h1
-            className={`title-beyoutiful ${
-              bg === "light" ? "!text-secondary" : "!text-white"
-            }  !font-semibold !text-start`}
-          >
-            {lang === "en" ? "Our Services" : "Servis Kami"}
-          </h1>
-          <p
-            className={`${
-              bg === "light" ? "!text-textDark/80" : "!text-white/80"
-            } sub-title  !text-start`}
-          >
-            {lang === "en"
-              ? "Experience transformative results with our specialized services."
-              : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami."}
-          </p>
+          {metaData?.title_id && metaData?.title_en ? (
+            <h1
+              className={`title-beyoutiful ${
+                bg === "light" ? "!text-secondary" : "!text-white"
+              }  !font-semibold !text-start`}
+            >
+              {lang === "en" ? metaData?.title_en : metaData?.title_id}
+            </h1>
+          ) : (
+            <h1
+              className={`title-beyoutiful ${
+                bg === "light" ? "!text-secondary" : "!text-white"
+              }  !font-semibold !text-start`}
+            >
+              {lang === "en" ? "Our Services" : "Servis Kami"}
+            </h1>
+          )}
+
+          {metaData?.subtitle_id && metaData?.subtitle_en ? (
+            lang === "en" ? (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_en))
+            ) : (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_id))
+            )
+          ) : (
+            <p
+              className={`${
+                bg === "light" ? "!text-textDark/80" : "!text-white/80"
+              } sub-title  !text-start`}
+            >
+              {lang === "en"
+                ? "Experience transformative results with our specialized services."
+                : "Dapatkan hasil transformatif terbaik dengan layanan khusus kami."}
+            </p>
+          )}
         </div>
         <div className="">
           {isLoading ? (
@@ -149,8 +171,49 @@ const Services = ({ title, subTitle, bg }) => {
                 disableOnInteraction: false, // Keeps autoplay running after user interaction
               }}
             >
-              {dataServices
-                ? dataServices.map((item, index) => (
+              {dataService
+                ? dataService.map((item, index) => (
+                    <SwiperSlide className="" key={index}>
+                      <div className="flex flex-col justify-between gap-4 bg-transparent rounded-xl  h-full">
+                        {/* Image Section */}
+                        <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_default}
+                            alt={item?.alt_img || "Beyoutiful Service"}
+                            sizes="100vw"
+                            fill
+                            className="object-cover"
+                            priority={index === 0 || index === 1 || index === 2} // Prioritize first image
+                          />
+                        </div>
+
+                        {/* Text Section */}
+                        <div className="flex flex-col  items-center">
+                          {item.tipe_name && item.tipe_name_en ? (
+                            <h3
+                              className={`font-montserrat text-[16px] lg:text-[24px] font-medium ${
+                                bg === "light" ? "!text-dark" : "!text-white/80"
+                              } text-center line-clamp-3 min-h-9 lg:min-h-[56px]`}
+                            >
+                              {lang === "en"
+                                ? HTMLDecoderEncoder.decode(item?.tipe_name)
+                                : HTMLDecoderEncoder.decode(item?.tipe_name_en)}
+                            </h3>
+                          ) : (
+                            ""
+                          )}
+
+                          <Link
+                            href={`${item.id}?lang=${lang}`}
+                            className="mt-2 py-2.5 px-6 text-xs sm:text-base font-bold text-center  rounded-full bg-secondary text-white border shadow-md hover:shadow-lg hover:opacity-90 transition-all"
+                          >
+                            {lang === "en" ? "More" : "Rincian Layanan"}
+                          </Link>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))
+                : dataServices.map((item, index) => (
                     <SwiperSlide className="" key={index}>
                       <div className="flex flex-col justify-between gap-4 bg-transparent rounded-xl  h-full">
                         {/* Image Section */}
@@ -161,7 +224,7 @@ const Services = ({ title, subTitle, bg }) => {
                             sizes="100vw"
                             fill
                             className="object-cover"
-                            priority={index === 0} // Prioritize first image
+                            priority={index === 0 || index === 1 || index === 2} // Prioritize first image
                           />
                         </div>
 
@@ -186,8 +249,7 @@ const Services = ({ title, subTitle, bg }) => {
                         </div>
                       </div>
                     </SwiperSlide>
-                  ))
-                : ""}
+                  ))}
               <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
                 <FaChevronLeft className="text-xl" />
               </div>
@@ -195,73 +257,6 @@ const Services = ({ title, subTitle, bg }) => {
                 <FaChevronRight className="text-xl" />
               </div>
             </Swiper>
-          )}
-          {isPopupOpen && selectedItem && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
-              onClick={() => setIsPopupOpen(false)}
-            >
-              <div
-                className="relative max-w-4xl w-full bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[90vh]"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  aria-label="button"
-                  className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
-                  onClick={() => setIsPopupOpen(false)}
-                >
-                  ✖
-                </button>
-                <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
-                  <Image
-                    src={selectedItem.image_mid}
-                    width={0}
-                    height={0}
-                    alt={selectedItem?.name || "Image"}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                  <Image
-                    src={selectedItem.image_map}
-                    width={0}
-                    height={0}
-                    alt={selectedItem?.name || "Image"}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                </div>
-                <h2 className="text-2xl font-bold mt-4 text-textDark">
-                  {selectedItem?.name}
-                </h2>
-
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Opsi Acara
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.opsi_acara}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Fasilitas
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.fasilitas}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold mt-3 text-textDark">
-                    Spesifikasi Area
-                  </h3>
-                  <p className="text-textDark mt-2">
-                    {selectedItem?.spesifikasi}
-                  </p>
-                </div>
-              </div>
-            </div>
           )}
         </div>
       </div>

@@ -205,170 +205,310 @@ const Space = ({ title, subTitle, data }) => {
         </p> */}
       </div>
 
-      <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
-        <div className="">
-          {isLoading ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {[...Array(3)].map((_, index) => (
-                <div
-                  key={index}
-                  className="animate-pulse flex flex-col gap-2 bg-gray-200 p-4 rounded-md"
-                >
-                  <div className="h-[250px] bg-gray-300 rounded"></div>
-                  <div className="h-6 bg-gray-300 rounded mt-2"></div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <Swiper
-              // install Swiper modules
-              className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
-              slidesPerView={2.2}
-              breakpoints={{
-                768: {
-                  // width: 768,
-                  slidesPerView: 3.2,
-                },
-                500: {
-                  slidesPerView: 2.2,
-                },
-              }}
-              spaceBetween={10}
-              modules={[Navigation]}
-              navigation={{
-                nextEl: ".gallery-button-next",
-                prevEl: ".gallery-button-prev",
-              }}
-              // navigation={true}
-              // onSwiper={(swiper) => console.log(swiper)}
-              // onSlideChange={() => console.log("slide change")}
-            >
-              {dataSpace
-                ? dataSpace.map((item, index) => (
-                    <SwiperSlide className="mr-2" key={index}>
-                      <div className="recomended-card flex flex-col justify-center gap-2">
-                        {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
-                        <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
-                          <Image
-                            src={item.image_mid}
-                            alt={item?.name || "Rent Space"}
-                            sizes="100vw"
-                            fill
-                            className="object-cover"
-                            priority={index === 0} // Prioritize first image
-                          />
-                        </div>
-
-                        <div className="mt-2 flex flex-col items-center gap-4">
-                          <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-textDark text-center line-clamp-3 mt-4">
-                            {HTMLDecoderEncoder.decode(item?.name)}
-                          </h3>
-                          <button
-                            aria-label="button"
-                            className="align-middle select-none font-poppins font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#303638] text-[#fff] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                            type="button"
-                            onClick={() => {
-                              setSelectedItem(item);
-                              setIsPopupOpen(true);
-                            }}
-                          >
-                            View Detail
-                          </button>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))
-                : ""}
-              <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
-                <FaChevronLeft className="text-xl" />
+      {dataRentSpace && dataRentSpace.length > 0 ? (
+        <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
+          <div className="">
+            {isLoading ? (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                {[...Array(3)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="animate-pulse flex flex-col gap-2 bg-gray-200 p-4 rounded-md"
+                  >
+                    <div className="h-[250px] bg-gray-300 rounded"></div>
+                    <div className="h-6 bg-gray-300 rounded mt-2"></div>
+                  </div>
+                ))}
               </div>
-              <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
-                <FaChevronRight className="text-xl" />
-              </div>
-            </Swiper>
-          )}
-          {isPopupOpen && selectedItem && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
-              onClick={() => setIsPopupOpen(false)}
-            >
-              <div
-                className="relative max-w-4xl w-[80%] bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[85vh]"
-                onClick={(e) => e.stopPropagation()}
+            ) : (
+              <Swiper
+                // install Swiper modules
+                className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
+                slidesPerView={2.2}
+                breakpoints={{
+                  768: {
+                    // width: 768,
+                    slidesPerView: 3.2,
+                  },
+                  500: {
+                    slidesPerView: 2.2,
+                  },
+                }}
+                spaceBetween={10}
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".gallery-button-next",
+                  prevEl: ".gallery-button-prev",
+                }}
+                // navigation={true}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
               >
-                <button
-                  aria-label="button"
-                  className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
-                  onClick={() => setIsPopupOpen(false)}
-                >
-                  ✖
-                </button>
-                <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
-                  <Image
-                    src={selectedItem.image_mid}
-                    width={0}
-                    height={0}
-                    alt={selectedItem?.name || "Image"}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                  <Image
-                    src={selectedItem.image_map}
-                    width={0}
-                    height={0}
-                    alt={selectedItem?.name || "Image"}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                {dataRentSpace
+                  ? dataRentSpace.map((item, index) => (
+                      <SwiperSlide className="mr-2" key={index}>
+                        <div className="recomended-card flex flex-col justify-center gap-2">
+                          {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
+                          <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
+                            <Image
+                              src={item.image_default}
+                              alt={item?.alt_img || "Rent Space"}
+                              sizes="100vw"
+                              fill
+                              className="object-cover"
+                              priority={index === 0} // Prioritize first image
+                            />
+                          </div>
+
+                          <div className="mt-2 flex flex-col items-center gap-4">
+                            <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-textDark text-center line-clamp-3 mt-4">
+                              {HTMLDecoderEncoder.decode(item?.name)}
+                            </h3>
+                            <button
+                              aria-label="button"
+                              className="align-middle select-none font-poppins font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#303638] text-[#fff] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                              type="button"
+                              onClick={() => {
+                                setSelectedItem(item);
+                                setIsPopupOpen(true);
+                              }}
+                            >
+                              View Detail
+                            </button>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))
+                  : ""}
+                <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                  <FaChevronLeft className="text-xl" />
                 </div>
-                <h2 className="text-2xl font-bold mt-4 text-textDark">
-                  {selectedItem?.name}
-                </h2>
-                {selectedItem?.name === "OPERATING ROOM" ? (
-                  <div>
-                    {lang === "en"
-                      ? parse(
-                          HTMLDecoderEncoder.decode(selectedItem?.content_en)
-                        )
-                      : parse(HTMLDecoderEncoder.decode(selectedItem?.content))}
+                <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                  <FaChevronRight className="text-xl" />
+                </div>
+              </Swiper>
+            )}
+            {isPopupOpen && selectedItem && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
+                onClick={() => setIsPopupOpen(false)}
+              >
+                <div
+                  className="relative max-w-4xl w-[80%] bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[85vh]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    aria-label="button"
+                    className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
+                    onClick={() => setIsPopupOpen(false)}
+                  >
+                    ✖
+                  </button>
+                  <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
+                    <Image
+                      src={selectedItem.image_default}
+                      width={0}
+                      height={0}
+                      alt={selectedItem?.alt_img || "Image Space"}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                    <Image
+                      src={selectedItem.image_m_default}
+                      width={0}
+                      height={0}
+                      alt={selectedItem?.alt_img || "Image Map Space"}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
+                    />
                   </div>
-                ) : (
-                  <div>
-                    <div>
-                      <h3 className="text-lg font-bold mt-3 text-textDark">
-                        {lang === "en" ? "Event Options" : "Opsi Acara"}
-                      </h3>
-                      <p className="text-textDark mt-2">
-                        {selectedItem?.opsi_acara}
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-bold mt-3 text-textDark">
-                        {lang === "en" ? "Facilities" : "Fasilitas"}
-                      </h3>
-                      <p className="text-textDark mt-2">
-                        {selectedItem?.fasilitas}
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-bold mt-3 text-textDark">
-                        {lang === "en"
-                          ? "Area Specifications"
-                          : "Spesifikasi Area"}
-                      </h3>
-                      <p className="text-textDark mt-2">
-                        {selectedItem?.spesifikasi}
-                      </p>
-                    </div>
-                  </div>
-                )}
+                  <h2 className="text-2xl font-bold mt-4 text-textDark">
+                    {selectedItem?.name}
+                  </h2>
+                  {selectedItem?.content_id && selectedItem?.content_en ? (
+                    lang === "en" ? (
+                      parse(HTMLDecoderEncoder.decode(selectedItem?.content_en))
+                    ) : (
+                      parse(HTMLDecoderEncoder.decode(selectedItem?.content_id))
+                    )
+                  ) : (
+                    <p className="!text-black/80 sub-title whitespace-pre-line">
+                      Konten Tidak Tersedia
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
+          <div className="">
+            {isLoading ? (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                {[...Array(3)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="animate-pulse flex flex-col gap-2 bg-gray-200 p-4 rounded-md"
+                  >
+                    <div className="h-[250px] bg-gray-300 rounded"></div>
+                    <div className="h-6 bg-gray-300 rounded mt-2"></div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <Swiper
+                // install Swiper modules
+                className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
+                slidesPerView={2.2}
+                breakpoints={{
+                  768: {
+                    // width: 768,
+                    slidesPerView: 3.2,
+                  },
+                  500: {
+                    slidesPerView: 2.2,
+                  },
+                }}
+                spaceBetween={10}
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".gallery-button-next",
+                  prevEl: ".gallery-button-prev",
+                }}
+                // navigation={true}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
+              >
+                {dataSpace
+                  ? dataSpace.map((item, index) => (
+                      <SwiperSlide className="mr-2" key={index}>
+                        <div className="recomended-card flex flex-col justify-center gap-2">
+                          {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
+                          <div className="aspect-[16/13] w-full overflow-hidden rounded-lg relative">
+                            <Image
+                              src={item.image_mid}
+                              alt={item?.name || "Rent Space"}
+                              sizes="100vw"
+                              fill
+                              className="object-cover"
+                              priority={index === 0} // Prioritize first image
+                            />
+                          </div>
+
+                          <div className="mt-2 flex flex-col items-center gap-4">
+                            <h3 className="recomended-title font-bebas text-[20px] lg:text-[28px] leading-tight font-normal text-textDark text-center line-clamp-3 mt-4">
+                              {HTMLDecoderEncoder.decode(item?.name)}
+                            </h3>
+                            <button
+                              aria-label="button"
+                              className="align-middle select-none font-poppins font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2.5 uppercase px-6 rounded-full bg-[#303638] text-[#fff] shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                              type="button"
+                              onClick={() => {
+                                setSelectedItem(item);
+                                setIsPopupOpen(true);
+                              }}
+                            >
+                              View Detail
+                            </button>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))
+                  : ""}
+                <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                  <FaChevronLeft className="text-xl" />
+                </div>
+                <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                  <FaChevronRight className="text-xl" />
+                </div>
+              </Swiper>
+            )}
+            {isPopupOpen && selectedItem && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-y-auto"
+                onClick={() => setIsPopupOpen(false)}
+              >
+                <div
+                  className="relative max-w-4xl w-[80%] bg-white p-6 rounded-md m-4 overflow-y-auto max-h-[85vh]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    aria-label="button"
+                    className="absolute top-4 right-4 text-textDark text-2xl z-[51] bg-black/20 rounded-full p-2"
+                    onClick={() => setIsPopupOpen(false)}
+                  >
+                    ✖
+                  </button>
+                  <div className="w-full justify-start items-center gap-4 grid md:grid-cols-2 grid-cols-1">
+                    <Image
+                      src={selectedItem.image_mid}
+                      width={0}
+                      height={0}
+                      alt={selectedItem?.name || "Image"}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                    <Image
+                      src={selectedItem.image_map}
+                      width={0}
+                      height={0}
+                      alt={selectedItem?.name || "Image"}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  </div>
+                  <h2 className="text-2xl font-bold mt-4 text-textDark">
+                    {selectedItem?.name}
+                  </h2>
+                  {selectedItem?.name === "OPERATING ROOM" ? (
+                    <div>
+                      {lang === "en"
+                        ? parse(
+                            HTMLDecoderEncoder.decode(selectedItem?.content_en)
+                          )
+                        : parse(
+                            HTMLDecoderEncoder.decode(selectedItem?.content)
+                          )}
+                    </div>
+                  ) : (
+                    <div>
+                      <div>
+                        <h3 className="text-lg font-bold mt-3 text-textDark">
+                          {lang === "en" ? "Event Options" : "Opsi Acara"}
+                        </h3>
+                        <p className="text-textDark mt-2">
+                          {selectedItem?.opsi_acara}
+                        </p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mt-3 text-textDark">
+                          {lang === "en" ? "Facilities" : "Fasilitas"}
+                        </h3>
+                        <p className="text-textDark mt-2">
+                          {selectedItem?.fasilitas}
+                        </p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mt-3 text-textDark">
+                          {lang === "en"
+                            ? "Area Specifications"
+                            : "Spesifikasi Area"}
+                        </h3>
+                        <p className="text-textDark mt-2">
+                          {selectedItem?.spesifikasi}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

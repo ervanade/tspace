@@ -10,6 +10,9 @@ import {
 import { FaLocationPin } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { doctors } from "@/public/data";
+import parse from "html-react-parser";
+const HTMLDecoderEncoder = require("html-encoder-decoder");
+
 const doctorSchedules = [
   {
     id: 1,
@@ -94,11 +97,13 @@ const doctorSchedules = [
   // },
 ];
 
-const DoctorSchedule = ({ bg }) => {
+const DoctorSchedule = ({ bg, data }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
   const [activeTab, setActiveTab] = useState(
     lang === "en" ? "Plastic Surgeon" : "Bedah Plastik"
   );
+  const dataDoctors = data?.data || null;
+  const metaData = data?.metadata || null;
   const translateDay = (schedule) => {
     if (lang !== "en") return schedule; // Jika lang bukan 'en', langsung return jadwal asli
 
@@ -151,22 +156,40 @@ const DoctorSchedule = ({ bg }) => {
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden">
         {/* Calendar */}
         <div className="mb-12">
-          <h1
-            className={`title-beyoutiful !text-left ${
-              bg === "light" ? "!text-secondary" : "!text-white"
-            }  !font-semibold`}
-          >
-            {lang === "en" ? "Doctor Schedule" : "Jadwal Dokter"}
-          </h1>
-          <p
-            className={`${
-              bg === "light" ? "!text-textDark/80" : "!text-white/80"
-            } sub-title !text-left`}
-          >
-            {lang === "en"
-              ? "View our doctor's schedules and book your consultation online today."
-              : "Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
-          </p>
+          {metaData?.title_id && metaData?.title_en ? (
+            <h1
+              className={`title-beyoutiful !text-left ${
+                bg === "light" ? "!text-secondary" : "!text-white"
+              }  !font-semibold`}
+            >
+              {lang === "en" ? metaData?.title_en : metaData?.title_id}
+            </h1>
+          ) : (
+            <h1
+              className={`title-beyoutiful !text-left ${
+                bg === "light" ? "!text-secondary" : "!text-white"
+              }  !font-semibold`}
+            >
+              {lang === "en" ? "Doctor Schedule" : "Jadwal Dokter"}
+            </h1>
+          )}
+          {metaData?.subtitle_id && metaData?.subtitle_en ? (
+            lang === "en" ? (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_en))
+            ) : (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_id))
+            )
+          ) : (
+            <p
+              className={`${
+                bg === "light" ? "!text-textDark/80" : "!text-white/80"
+              } sub-title !text-left`}
+            >
+              {lang === "en"
+                ? "View our doctor's schedules and book your consultation online today."
+                : "Lihat jadwal dokter kami dan pesan konsultasi Anda secara online hari ini."}
+            </p>
+          )}
         </div>
 
         <div className="mb-6">

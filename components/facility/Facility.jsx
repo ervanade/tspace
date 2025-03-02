@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 
 const HTMLDecoderEncoder = require("html-encoder-decoder");
+import parse from "html-react-parser";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -10,10 +11,11 @@ import Link from "next/link";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
-const Facility = ({ title, subTitle }) => {
+const Facility = ({ title, subTitle, data }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
-
+  const dataFacility = data?.data || null;
+  const metaData = data?.metadata || null;
   const dataSpace = [
     {
       id: "41",
@@ -142,14 +144,28 @@ const Facility = ({ title, subTitle }) => {
     >
       <div className="max-w-[1280px] mx-auto w-full overflow-hidden ">
         <div className="mb-12">
-          <h1 className="title-beyoutiful !text-secondary !font-semibold !text-left">
-            {lang === "en" ? "Our Facility" : "Fasilitas Kami"}
-          </h1>
-          <p className="!text-textDark/80 sub-title !text-left">
-            {lang === "en"
-              ? "Experience our modern facilities and comfortable environment to ensure your comfort and privacy."
-              : "Nikmati pengalaman treatment dengan fasilitas modern dan lingkungan yang nyaman untuk menjamin kenyamanan dan privasi Anda."}
-          </p>
+          {metaData?.title_id && metaData?.title_en ? (
+            <h1 className="title-beyoutiful !text-secondary !font-semibold !text-left">
+              {lang === "en" ? metaData?.title_en : metaData?.title_id}
+            </h1>
+          ) : (
+            <h1 className="title-beyoutiful !text-secondary !font-semibold !text-left">
+              {lang === "en" ? "Our Facility" : "Fasilitas Kami"}
+            </h1>
+          )}
+          {metaData?.subtitle_id && metaData?.subtitle_en ? (
+            lang === "en" ? (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_en))
+            ) : (
+              parse(HTMLDecoderEncoder.decode(metaData?.subtitle_id))
+            )
+          ) : (
+            <p className="!text-textDark/80 sub-title !text-left">
+              {lang === "en"
+                ? "Experience our modern facilities and comfortable environment to ensure your comfort and privacy."
+                : "Nikmati pengalaman treatment dengan fasilitas modern dan lingkungan yang nyaman untuk menjamin kenyamanan dan privasi Anda."}
+            </p>
+          )}
         </div>
         <div className="">
           {isLoading ? (
@@ -184,12 +200,34 @@ const Facility = ({ title, subTitle }) => {
                 nextEl: ".gallery-button-next",
                 prevEl: ".gallery-button-prev",
               }}
-              // navigation={true}
-              // onSwiper={(swiper) => console.log(swiper)}
-              // onSlideChange={() => console.log("slide change")}
             >
-              {dataSpace
-                ? dataSpace.map((item, index) => (
+              {dataFacility && dataFacility?.length > 0
+                ? dataFacility.map((item, index) => (
+                    <SwiperSlide className="mr-2" key={index}>
+                      <div className="recomended-card flex flex-col justify-center gap-2">
+                        {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
+                        <div className="aspect-[16/12] w-full overflow-hidden rounded-lg relative">
+                          <Image
+                            src={item.image_default}
+                            alt={item?.alt_img || "Beyoutiful Facility"}
+                            sizes="100vw"
+                            fill
+                            className="object-cover"
+                            priority={index === 0 || index === 1 || index === 2} // Prioritize first image
+                          />
+                        </div>
+
+                        <div className="mt-2 flex flex-col items-center gap-4">
+                          <h3 className="recomended-title font-montserrat text-[20px] lg:text-[24px] font-medium text-textDark text-center line-clamp-3 mt-4">
+                            {lang === "en"
+                              ? HTMLDecoderEncoder.decode(item?.title_en)
+                              : HTMLDecoderEncoder.decode(item?.title_id)}
+                          </h3>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))
+                : dataSpace.map((item, index) => (
                     <SwiperSlide className="mr-2" key={index}>
                       <div className="recomended-card flex flex-col justify-center gap-2">
                         {/* <div className="recomended-image w-full object-cover lg:h-[250px] overflow-hidden"> */}
@@ -222,8 +260,7 @@ const Facility = ({ title, subTitle }) => {
                         </div>
                       </div>
                     </SwiperSlide>
-                  ))
-                : ""}
+                  ))}
               <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
                 <FaChevronLeft className="text-xl" />
               </div>

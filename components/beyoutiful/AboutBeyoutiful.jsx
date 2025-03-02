@@ -3,8 +3,10 @@ import Image from "next/image";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import parse from "html-react-parser";
 
-const AboutBeyoutiful = () => {
+const HTMLDecoderEncoder = require("html-encoder-decoder");
+const AboutBeyoutiful = ({ data }) => {
   const contentAbout = {
     title: "Beyoutiful Aesthetic",
     desc: "Rasakan treatment kesehatan holistik di Beyoutiful Aesthetic. Mulai dari bedah estetika hingga terapi khusus, dirancang untuk meningkatkan penampilan dan kesejahteraan Anda secara menyeluruh.",
@@ -13,13 +15,17 @@ const AboutBeyoutiful = () => {
     logo: "/logo_ori.svg",
   };
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
+  const content = data?.data[0] || null;
+  const metaData = data?.metadata || null;
+
   return (
     <section className="py-20 relative">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
         <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
           <div className="relative mx-auto w-2/3 lg:w-full h-full rounded-3xl lg:px-4 overflow-hidden">
             <Image
-              src="/assets/about-2.png"
+              src={content?.image_default || "/assets/about-2.png"}
+              // src="/assets/about-2.png"
               alt="about Us image"
               layout="responsive"
               width={569} // Set the actual width of the image
@@ -29,12 +35,26 @@ const AboutBeyoutiful = () => {
           </div>
           <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
             <div className="w-full flex-col justify-start lg:items-start items-center flex">
-              <h2 className="!text-secondary title-beyoutiful lg:!text-left">
-                {contentAbout.title}
-              </h2>
-              <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
-              </p>
+              {metaData.title_id && metaData.title_en ? (
+                <h2 className="!text-secondary title-beyoutiful lg:!text-left">
+                  {lang === "en" ? metaData.title_id : metaData.title_en}
+                </h2>
+              ) : (
+                <h2 className="!text-secondary title-beyoutiful lg:!text-left">
+                  {contentAbout.title}
+                </h2>
+              )}
+              {content ? (
+                lang === "en" ? (
+                  parse(HTMLDecoderEncoder.decode(content?.content_en))
+                ) : (
+                  parse(HTMLDecoderEncoder.decode(content?.content_id))
+                )
+              ) : (
+                <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                  {lang === "en" ? contentAbout.desc_en : contentAbout.desc}
+                </p>
+              )}
               {/* <Image
             src="/beyoutiful_logo.png"
             alt="Logo Beyoutiful"
