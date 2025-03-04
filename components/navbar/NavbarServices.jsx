@@ -246,6 +246,7 @@ const NavbarServices = () => {
             >
               <Image
                 src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                priority
                 width={24}
                 height={18}
                 alt="Current Language"
@@ -266,6 +267,7 @@ const NavbarServices = () => {
                 >
                   <Image
                     src="/flag_id.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="Bahasa Indonesia"
@@ -281,6 +283,7 @@ const NavbarServices = () => {
                 >
                   <Image
                     src="/flag_us.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="English"
@@ -386,6 +389,7 @@ const NavbarServices = () => {
             >
               <Image
                 src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                priority
                 width={24}
                 height={18}
                 alt="Current Language"
@@ -403,6 +407,7 @@ const NavbarServices = () => {
                 >
                   <Image
                     src="/flag_id.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="Bahasa Indonesia"
@@ -418,6 +423,7 @@ const NavbarServices = () => {
                 >
                   <Image
                     src="/flag_us.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="English"

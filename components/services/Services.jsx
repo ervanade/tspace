@@ -196,8 +196,8 @@ const Services = ({ title, subTitle, bg, data }) => {
                               } text-center line-clamp-3 min-h-9 lg:min-h-[56px]`}
                             >
                               {lang === "en"
-                                ? HTMLDecoderEncoder.decode(item?.tipe_name)
-                                : HTMLDecoderEncoder.decode(item?.tipe_name_en)}
+                                ? HTMLDecoderEncoder.decode(item?.tipe_name_en)
+                                : HTMLDecoderEncoder.decode(item?.tipe_name)}
                             </h3>
                           ) : (
                             ""

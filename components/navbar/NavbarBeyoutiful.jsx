@@ -265,6 +265,7 @@ const NavbarBeyoutiful = () => {
             >
               <Image
                 src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                priority
                 width={24}
                 height={18}
                 alt="Current Language"
@@ -285,6 +286,7 @@ const NavbarBeyoutiful = () => {
                 >
                   <Image
                     src="/flag_id.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="Bahasa Indonesia"
@@ -300,6 +302,7 @@ const NavbarBeyoutiful = () => {
                 >
                   <Image
                     src="/flag_us.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="English"
@@ -426,6 +429,7 @@ const NavbarBeyoutiful = () => {
             >
               <Image
                 src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                priority
                 width={24}
                 height={18}
                 alt="Current Language"
@@ -443,6 +447,7 @@ const NavbarBeyoutiful = () => {
                 >
                   <Image
                     src="/flag_id.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="Bahasa Indonesia"
@@ -458,6 +463,7 @@ const NavbarBeyoutiful = () => {
                 >
                   <Image
                     src="/flag_us.svg"
+                    priority
                     width={24}
                     height={18}
                     alt="English"

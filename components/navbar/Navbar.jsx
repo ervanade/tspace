@@ -147,6 +147,7 @@ const Navbar = () => {
                 src={`/flag_${lang === "en" ? "us" : "id"}.svg`}
                 width={22}
                 height={16}
+                priority
                 alt="Current Language"
               />
             </button>
@@ -164,6 +165,7 @@ const Navbar = () => {
                     src="/flag_id.svg"
                     width={22}
                     height={16}
+                    priority
                     alt="Bahasa Indonesia"
                   />
                 </button>
@@ -179,6 +181,7 @@ const Navbar = () => {
                     src="/flag_us.svg"
                     width={22}
                     height={16}
+                    priority
                     alt="English"
                   />
                 </button>
@@ -277,6 +280,7 @@ const Navbar = () => {
                 src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
                 width={24}
                 height={18}
+                priority
                 alt="Current Language"
               />
             </button>
@@ -294,6 +298,7 @@ const Navbar = () => {
                     src="/flag_id.svg"
                     width={24}
                     height={18}
+                    priority
                     alt="Bahasa Indonesia"
                   />
                 </button>
@@ -309,6 +314,7 @@ const Navbar = () => {
                     src="/flag_us.svg"
                     width={24}
                     height={18}
+                    priority
                     alt="English"
                   />
                 </button>

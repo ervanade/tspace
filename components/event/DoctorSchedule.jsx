@@ -102,6 +102,11 @@ const DoctorSchedule = ({ bg, data }) => {
   const [activeTab, setActiveTab] = useState(
     lang === "en" ? "Plastic Surgeon" : "Bedah Plastik"
   );
+  const removeTags = (html) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    return tempDiv.textContent || tempDiv.innerText || "";
+  };
   const dataDoctors = data?.data || null;
   const metaData = data?.metadata || null;
   const translateDay = (schedule) => {
@@ -118,16 +123,17 @@ const DoctorSchedule = ({ bg, data }) => {
     };
 
     // Ganti setiap nama hari yang ditemukan
-    return schedule.replace(
+    return schedule?.replace(
       /\b(Senin|Selasa|Rabu|Kamis|Jumat|Sabtu|Minggu)\b/g,
       (match) => dayMap[match]
     );
   };
   // Ambil kategori berdasarkan bahasa
+  const doctorsData = dataDoctors ? dataDoctors : doctors;
   const categories = [
     ...new Set(
-      doctors.map((doctor) =>
-        lang === "en" ? doctor.kategori_en : doctor.kategori
+      doctorsData?.map((doctor) =>
+        lang === "en" ? doctor?.kategori_en : doctor?.kategori
       )
     ),
   ];
@@ -140,10 +146,10 @@ const DoctorSchedule = ({ bg, data }) => {
   };
 
   // Filter dokter berdasarkan kategori yang dipilih (sesuai bahasa)
-  const filteredDoctors = doctors.filter((doctor) =>
+  const filteredDoctors = doctorsData?.filter((doctor) =>
     lang === "en"
-      ? doctor.kategori_en === activeTab
-      : doctor.kategori === activeTab
+      ? doctor?.kategori_en === activeTab
+      : doctor?.kategori === activeTab
   );
 
   return (
@@ -212,25 +218,47 @@ const DoctorSchedule = ({ bg, data }) => {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {filteredDoctors.map((doctor) => (
+          {filteredDoctors.map((doctor, index) => (
             <div
-              key={doctor.id}
+              key={index}
               className="bg-secondary rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer"
             >
-              <h3 className="text-lg font-semibold text-white mb-2">
-                {doctor.nama}
-              </h3>
-              <p className="text-sm text-white font-semibold">
-                {doctor.subKategori}
-              </p>
-              <p className="text-sm text-white">
-                {" "}
-                {translateDay(doctor.jadwal)}
-              </p>
-              {/* <div className="mt-2 text-gray-800 text-sm">
-                <p>Born: {doctor.tanggalLahir}</p>
-                <p>Religion: {doctor.agama}</p>
-              </div> */}
+              {dataDoctors ? (
+                <>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {doctor.name}
+                  </h3>
+                  <p className="text-sm text-white font-semibold">
+                    {doctor.subtitle}
+                  </p>
+                  {doctor.content_id && doctor.content_en ? (
+                    <p className="text-sm text-white">
+                      {lang === "en"
+                        ? removeTags(
+                            HTMLDecoderEncoder.decode(doctor?.content_en)
+                          )
+                        : removeTags(
+                            HTMLDecoderEncoder.decode(doctor?.content_id)
+                          )}
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                </>
+              ) : (
+                <>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {doctor.nama}
+                  </h3>
+                  <p className="text-sm text-white font-semibold">
+                    {doctor.subKategori}
+                  </p>
+                  <p className="text-sm text-white">
+                    {" "}
+                    {translateDay(doctor.jadwal)}
+                  </p>
+                </>
+              )}
             </div>
           ))}
         </div>
