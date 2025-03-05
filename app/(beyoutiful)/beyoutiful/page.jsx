@@ -100,7 +100,7 @@ const page = async () => {
       <NavbarBeyoutiful />
       <HeroBeyoutiful dataHero={data?.dataBanner || null} />
       <AboutBeyoutiful data={data?.serviceDetails || null} />
-      <Services bg="light" data={datas?.dataServices || null} />
+      <Services bg="light" data={data?.dataServices || null} />
       <Facility data={data?.dataFacility || null} />
       <DoctorSchedule bg="light" data={data?.doctors || null} />
       <ContactBeyoutiful data={data?.settings} />

@@ -204,7 +204,7 @@ const Services = ({ title, subTitle, bg, data }) => {
                           )}
 
                           <Link
-                            href={`${item.id}?lang=${lang}`}
+                            href={`/beyoutiful/services/${item.slug}?lang=${lang}`}
                             className="mt-2 py-2.5 px-6 text-xs sm:text-base font-bold text-center  rounded-full bg-secondary text-white border shadow-md hover:shadow-lg hover:opacity-90 transition-all"
                           >
                             {lang === "en" ? "More" : "Rincian Layanan"}

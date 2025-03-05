@@ -14,51 +14,51 @@ const Event = ({ dataEvent }) => {
   // Default data jika data dari API null
   const defaultEvents = [
     {
-      date: "2025-02-12",
+      date: "2025-03-12",
       title: "Vocal Clinic with Bertha",
       time: "16:00 - 18:00",
     },
-    { date: "2025-02-12", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
+    { date: "2025-03-12", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
     {
-      date: "2025-02-19",
+      date: "2025-03-19",
       title: "Vocal Clinic with Bertha",
       time: "16:00 - 18:00",
     },
-    { date: "2025-02-19", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
+    { date: "2025-03-19", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
     {
-      date: "2025-02-26",
+      date: "2025-03-26",
       title: "Vocal Clinic with Bertha",
       time: "16:00 - 18:00",
     },
-    { date: "2025-02-26", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
+    { date: "2025-03-26", title: "Jazzed Up Wednesday", time: "20:00 - 22:00" },
     {
-      date: "2025-02-13",
+      date: "2025-03-13",
       title: "Jajal Panggung - Aquarius Nite",
       time: "19:00 - 21:00",
     },
     {
-      date: "2025-02-20",
+      date: "2025-03-20",
       title: "Jajal Panggung - Highschool Nite",
       time: "19:00 - 21:00",
     },
     {
-      date: "2025-02-27",
+      date: "2025-03-27",
       title: "Jajal Panggung Special - Voxxes",
       time: "19:00 - 21:00",
     },
     {
-      date: "2025-02-14",
+      date: "2025-03-14",
       title: "KAMASOGI - Love Songs",
       time: "19:00 - 21:00",
     },
-    { date: "2025-02-21", title: "KAMASOGI", time: "19:00 - 21:00" },
+    { date: "2025-03-21", title: "KAMASOGI", time: "19:00 - 21:00" },
     {
-      date: "2025-02-23",
+      date: "2025-03-23",
       title: "BSJ Bands & Soloist Live Music Performance",
       time: "14.00",
     },
     {
-      date: "2025-02-28",
+      date: "2025-03-28",
       title: "Home Concert Talenta Svara Bertha",
       time: "19:00 - 21:00",
     },
@@ -117,13 +117,13 @@ const Event = ({ dataEvent }) => {
     "Sabtu",
   ];
 
-  const getEventByDate = (day) => {
-    const date = `2025-02-${String(day).padStart(2, "0")}`;
-    return events.filter((event) => event.date === date);
-  };
+ const getEventByDate = (day) => {
+  const date = `2025-${data.month_number || "03"}-${String(day).padStart(2, "0")}`; // Sesuaikan dengan format data event
+  return events.filter((event) => event.date === date);
+};
 
   const getDayName = (day) => {
-    const date = new Date(`2025-02-${String(day).padStart(2, "0")}`);
+    const date = new Date(`2025-${data.month_number || "03"}-${String(day).padStart(2, "0")}`);
     return lang === "en"
       ? daysOfWeek[date.getDay()]
       : hariOfWeek[date.getDay()];
@@ -276,7 +276,7 @@ const Event = ({ dataEvent }) => {
                         <FaCalendar className="h-5 w-5 text-textDark mr-2" />
                         {`${getDayName(
                           hoveredDate || selectedDate
-                        )}, 2025-02-${String(
+                        )}, 2025-03-${String(
                           hoveredDate || selectedDate
                         ).padStart(2, "0")}`}
                       </p>
