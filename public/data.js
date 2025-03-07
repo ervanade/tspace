@@ -257,9 +257,6 @@ export const serviceDetails = [
                     <li>Rhinoplasty Rib Cartilage</li>
                     <li>Buccal Fat Removal</li>
                     <li>Upper Blepharoplasty</li>
-                    <li>Neck Liposuction</li>
-                    <li>Thigh Liposuction</li>
-                    <li>Tummy Tuck</li>
                 </ul>
             </div>
 

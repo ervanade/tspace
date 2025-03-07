@@ -123,6 +123,9 @@ const PopupEvent = ({ data }) => {
   if (!isDrawerOpen) {
     return null;
   }
+  if (data && data?.length === 0) {
+    return null;
+  }
 
   return (
     <>

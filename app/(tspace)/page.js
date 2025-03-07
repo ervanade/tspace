@@ -87,7 +87,7 @@ async function getData() {
 
 export default async function Home() {
   const { data } = await getData()
-  const datas = { data: "" }
+  const datas = { data: "", dataPopup: [] }
   if (!data) return <p>Server sedang sibuk, harap coba beberapa saat lagi!</p>
   return (
     <>
@@ -100,7 +100,7 @@ export default async function Home() {
       <Tenants data={data?.dataTenants || null} />
       <RecomendedArticles data={data?.articles || null} />
       <Contact data={data?.settings} />
-      <PopupEvent data={data?.dataPopup || null} />
+      <PopupEvent data={datas?.dataPopup || null} />
 
 
     </>
