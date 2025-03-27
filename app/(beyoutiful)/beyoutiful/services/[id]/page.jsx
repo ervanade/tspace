@@ -13,7 +13,6 @@ export async function generateMetadata({ searchParams, params }) {
   const { lang } = (await searchParams) || "id";
   const isEnglish = lang?.includes("en");
   const serviceData = data[0] || undefined;
-  console.log(serviceData);
   if (!serviceData && !service) {
     return notFound();
   }
