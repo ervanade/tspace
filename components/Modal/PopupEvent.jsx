@@ -157,7 +157,7 @@ const PopupEvent = ({ data }) => {
                       {/* Gambar */}
                       <div className="w-full aspect-square overflow-hidden">
                         <Image
-                          src={event.image_default} // URL gambar event
+                          src={event.image_default || "/assets/no-image.jpg"} // URL gambar event
                           alt={event.event_name}
                           width={500}
                           height={500}
@@ -201,7 +201,7 @@ const PopupEvent = ({ data }) => {
                       {/* Gambar */}
                       <div className="w-full aspect-square overflow-hidden">
                         <Image
-                          src={event.image} // URL gambar event
+                          src={event.image || "/assets/no-image.jpg"} // URL gambar event
                           alt={event.title}
                           width={500}
                           height={500}

@@ -221,7 +221,7 @@ const Event = ({ dataEvent }) => {
             <h2 className="text-xl font-semibold text-textDark text-center">
               {data?.month_name && data?.year
                 ? `${translateMonth(data?.month_name, lang)} - ${data?.year}`
-                : "Februari 2025"}
+                : "April 2025"}
             </h2>
             <button
               aria-label="button"
@@ -276,7 +276,7 @@ const Event = ({ dataEvent }) => {
                         <FaCalendar className="h-5 w-5 text-textDark mr-2" />
                         {`${getDayName(
                           hoveredDate || selectedDate
-                        )}, 2025-03-${String(
+                        )}, ${data.year + "-" +data.month_number + "-" || "2025-04-"}${String(
                           hoveredDate || selectedDate
                         ).padStart(2, "0")}`}
                       </p>
