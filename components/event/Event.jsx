@@ -70,15 +70,13 @@ const Event = ({ dataEvent }) => {
   const events = data?.days
     ? data.days.flatMap((day) =>
         day.event
-          ? [
-              {
-                date: day.date,
-                title: day.event.event_name,
-                time: `${formatTime(day.event.event_start_time)} - ${formatTime(
-                  day.event.event_end_time
-                )}`,
-              },
-            ]
+          ? day.event.map(singleEvent => ({ // Selalu map melalui day.event (yang selalu array)
+            date: day.date,
+            title: singleEvent.event_name,
+            time: `${formatTime(singleEvent.event_start_time)} - ${formatTime(
+              singleEvent.event_end_time
+            )}`,
+          }))
           : []
       )
     : defaultEvents;
