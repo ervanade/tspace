@@ -214,7 +214,11 @@ const ServicesDetails = ({ service, data }) => {
                 >
                   <div className="w-36 h-36 mx-auto overflow-hidden rounded-full relative">
                     <Image
-                      src={dokter?.image_default}
+                      src={dokter?.image_default || "/assets/user-default.jpg"}
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; // prevents looping
+                        currentTarget.src = "/assets/user-default.jpg";
+                      }}
                       alt={dokter?.alt_img || dokter?.name}
                       sizes="100vw"
                       fill
