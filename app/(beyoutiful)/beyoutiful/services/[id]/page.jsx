@@ -71,7 +71,7 @@ const ServicePage = async ({ params }) => {
   return (
     <div>
       <NavbarServices />
-      <ServicesDetails service={service} data={null} />
+      <ServicesDetails service={service} data={serviceData} />
       {/* <Footer /> */}
     </div>
   );
