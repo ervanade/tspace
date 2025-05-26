@@ -102,10 +102,30 @@ const DoctorSchedule = ({ bg, data }) => {
   const [activeTab, setActiveTab] = useState(
     lang === "en" ? "Plastic Surgeon" : "Bedah Plastik"
   );
-  const removeTags = (html) => {
+  const removeTagsAndPreserveNewlines = (html) => {
+    if (!html) return "";
+  
+    // 1. Dekode entitas HTML terlebih dahulu (seperti '&amp;' menjadi '&')
+    const decodedHtml = HTMLDecoderEncoder.decode(html);
+  
+    // 2. Ganti <br> tags dengan karakter newline (\n)
+    //    Gunakan regex dengan bendera 'gi' untuk global (semua kemunculan) dan case-insensitive
+    let text = decodedHtml.replace(/<br\s*\/?>/gi, '\n');
+  
+    // 3. (Opsional) Ganti tag blok HTML tertentu dengan newline jika diinginkan
+    //    Misalnya, <p> dan <div> yang sering menandakan baris baru
+    text = text.replace(/<(p|div)[^>]*>/gi, '\n'); // Ganti tag pembuka <p>, <div> dengan newline
+    text = text.replace(/<\/(p|div)>/gi, '');    // Hapus tag penutup </p>, </div>
+  
+    // 4. Buat elemen div sementara untuk menghapus semua tag HTML yang tersisa
     const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = html;
-    return tempDiv.textContent || tempDiv.innerText || "";
+    tempDiv.innerHTML = text; // Masukkan teks yang sudah diproses
+  
+    // 5. Ambil textContent murni (akan menghilangkan tag lain, tapi \n akan tetap ada)
+    const plainText = tempDiv.textContent || tempDiv.innerText || "";
+  
+    // 6. Hapus multiple newlines berlebihan dan spasi di awal/akhir
+    return plainText.replace(/\n\s*\n/g, '\n').trim(); // Ganti newline ganda dengan satu, hapus spasi awal/akhir
   };
   const dataDoctors = data?.data || null;
   const metaData = data?.metadata || null;
@@ -232,18 +252,14 @@ const DoctorSchedule = ({ bg, data }) => {
                     {doctor.subtitle}
                   </p>
                   {doctor.content_id && doctor.content_en ? (
-                    <p className="text-sm text-white">
-                      {lang === "en"
-                        ? removeTags(
-                            HTMLDecoderEncoder.decode(doctor?.content_en)
-                          )
-                        : removeTags(
-                            HTMLDecoderEncoder.decode(doctor?.content_id)
-                          )}
-                    </p>
-                  ) : (
-                    ""
-                  )}
+            <p className="text-sm text-white whitespace-pre-line"> {/* Tambahkan class ini */}
+              {lang === "en"
+                ? removeTagsAndPreserveNewlines(doctor?.content_en)
+                : removeTagsAndPreserveNewlines(doctor?.content_id)}
+            </p>
+          ) : (
+            ""
+          )}
                 </>
               ) : (
                 <>

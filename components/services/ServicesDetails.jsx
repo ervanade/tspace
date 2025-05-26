@@ -18,10 +18,30 @@ import "swiper/css";
 const ServicesDetails = ({ service, data }) => {
   const [isLoading, setIsLoading] = useState(true);
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
-  const removeTags = (html) => {
+  const removeTagsAndPreserveNewlines = (html) => {
+    if (!html) return "";
+  
+    // 1. Dekode entitas HTML terlebih dahulu (seperti '&amp;' menjadi '&')
+    const decodedHtml = HTMLDecoderEncoder.decode(html);
+  
+    // 2. Ganti <br> tags dengan karakter newline (\n)
+    //    Gunakan regex dengan bendera 'gi' untuk global (semua kemunculan) dan case-insensitive
+    let text = decodedHtml.replace(/<br\s*\/?>/gi, '\n');
+  
+    // 3. (Opsional) Ganti tag blok HTML tertentu dengan newline jika diinginkan
+    //    Misalnya, <p> dan <div> yang sering menandakan baris baru
+    text = text.replace(/<(p|div)[^>]*>/gi, '\n'); // Ganti tag pembuka <p>, <div> dengan newline
+    text = text.replace(/<\/(p|div)>/gi, '');    // Hapus tag penutup </p>, </div>
+  
+    // 4. Buat elemen div sementara untuk menghapus semua tag HTML yang tersisa
     const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = html;
-    return tempDiv.textContent || tempDiv.innerText || "";
+    tempDiv.innerHTML = text; // Masukkan teks yang sudah diproses
+  
+    // 5. Ambil textContent murni (akan menghilangkan tag lain, tapi \n akan tetap ada)
+    const plainText = tempDiv.textContent || tempDiv.innerText || "";
+  
+    // 6. Hapus multiple newlines berlebihan dan spasi di awal/akhir
+    return plainText.replace(/\n\s*\n/g, '\n').trim(); // Ganti newline ganda dengan satu, hapus spasi awal/akhir
   };
   const translations = {
     id: {
@@ -212,7 +232,7 @@ const ServicesDetails = ({ service, data }) => {
                   key={index}
                   className="text-center p-4 border-2  bg-secondary rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-36 h-36 mx-auto overflow-hidden rounded-full relative">
+                  <div className="w-36 h-36 max-w-full aspect-square mx-auto overflow-hidden rounded-full relative">
                     <Image
                       src={dokter?.image_default || "/assets/user-default.jpg"}
                       onError={({ currentTarget }) => {
@@ -227,14 +247,10 @@ const ServicesDetails = ({ service, data }) => {
                   </div>
                   <p className="font-bold text-sm mt-2">{dokter.name}</p>
                   {dokter?.content_id && dokter?.content_en ? (
-                    <p className="text-xs text-white mt-1">
+                    <p className="text-xs text-white mt-1 whitespace-pre-line">
                       {lang === "en"
-                        ? removeTags(
-                            HTMLDecoderEncoder.decode(dokter?.content_en)
-                          )
-                        : removeTags(
-                            HTMLDecoderEncoder.decode(dokter?.content_id)
-                          )}
+                ? removeTagsAndPreserveNewlines(dokter?.content_en)
+                : removeTagsAndPreserveNewlines(dokter?.content_id)}
                     </p>
                   ) : (
                     ""
