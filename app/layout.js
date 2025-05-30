@@ -139,7 +139,13 @@ export default async function RootLayout({ children }) {
   const { data } = await getData()
   // const data = { data: "" }
   if (!data) return <p>Server sedang sibuk, harap coba beberapa saat lagi!</p>
-  const headScript = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
+  const headScript = data?.head_script || `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
+  const bodyScript = data?.body_script || `<script src="https://chat.sleekflow.io/embed_iframe.js"
+        data-id="travischatwidget"
+        data-companyid="1f335b07-9b8c-4649-b0f5-387f7bf7be75"
+        data-location="southeastasia"
+        type="text/javascript">
+</script>`
 
   return (
     <html lang="en">
@@ -158,6 +164,10 @@ export default async function RootLayout({ children }) {
           {/* </Suspense> */}
           <Footer dataSettings={data || null} />
         </ClientProvider>
+        <>
+          {parse(HTMLDecoderEncoder.decode(bodyScript))}
+        </>
+
       </body>
     </html>
   );
