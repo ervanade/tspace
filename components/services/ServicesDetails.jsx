@@ -20,28 +20,28 @@ const ServicesDetails = ({ service, data }) => {
   const lang = useSelector((state) => state.lang.lang); // Get language from Redux store
   const removeTagsAndPreserveNewlines = (html) => {
     if (!html) return "";
-  
+
     // 1. Dekode entitas HTML terlebih dahulu (seperti '&amp;' menjadi '&')
     const decodedHtml = HTMLDecoderEncoder.decode(html);
-  
+
     // 2. Ganti <br> tags dengan karakter newline (\n)
     //    Gunakan regex dengan bendera 'gi' untuk global (semua kemunculan) dan case-insensitive
-    let text = decodedHtml.replace(/<br\s*\/?>/gi, '\n');
-  
+    let text = decodedHtml.replace(/<br\s*\/?>/gi, "\n");
+
     // 3. (Opsional) Ganti tag blok HTML tertentu dengan newline jika diinginkan
     //    Misalnya, <p> dan <div> yang sering menandakan baris baru
-    text = text.replace(/<(p|div)[^>]*>/gi, '\n'); // Ganti tag pembuka <p>, <div> dengan newline
-    text = text.replace(/<\/(p|div)>/gi, '');    // Hapus tag penutup </p>, </div>
-  
+    text = text.replace(/<(p|div)[^>]*>/gi, "\n"); // Ganti tag pembuka <p>, <div> dengan newline
+    text = text.replace(/<\/(p|div)>/gi, ""); // Hapus tag penutup </p>, </div>
+
     // 4. Buat elemen div sementara untuk menghapus semua tag HTML yang tersisa
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = text; // Masukkan teks yang sudah diproses
-  
+
     // 5. Ambil textContent murni (akan menghilangkan tag lain, tapi \n akan tetap ada)
     const plainText = tempDiv.textContent || tempDiv.innerText || "";
-  
+
     // 6. Hapus multiple newlines berlebihan dan spasi di awal/akhir
-    return plainText.replace(/\n\s*\n/g, '\n').trim(); // Ganti newline ganda dengan satu, hapus spasi awal/akhir
+    return plainText.replace(/\n\s*\n/g, "\n").trim(); // Ganti newline ganda dengan satu, hapus spasi awal/akhir
   };
   const translations = {
     id: {
@@ -71,7 +71,7 @@ const ServicesDetails = ({ service, data }) => {
       if (item.toLowerCase() === "by appointment") {
         return translations[lang]?.by_appointment || item;
       }
-  
+
       return item
         .replace(/Senin/g, translations[lang]?.monday)
         .replace(/Selasa/g, translations[lang]?.tuesday)
@@ -82,7 +82,6 @@ const ServicesDetails = ({ service, data }) => {
         .replace(/Minggu/g, translations[lang]?.sunday);
     });
   };
-  
 
   const dataSpace = [
     {
@@ -169,16 +168,15 @@ const ServicesDetails = ({ service, data }) => {
     <section className="py-12 bg-white">
       <div className="w-full max-w-7xl px-4 md:px-6 lg:px-8 mx-auto">
         {/* Judul Layanan */}
-        {
-          data ? 
+        {data ? (
           <h2 className="text-center text-2xl !font-bold !text-secondary lg:!mb-6 title-beyoutiful">
-          {lang === "en" ? data.title_en : data.title_id}
-        </h2>
-        :
-        <h2 className="text-center text-2xl !font-bold !text-secondary lg:!mb-6 title-beyoutiful">
-        {lang === "en" ? service.name_en : service.name}
-      </h2>
-        }
+            {lang === "en" ? data.title_en : data.title_id}
+          </h2>
+        ) : (
+          <h2 className="text-center text-2xl !font-bold !text-secondary lg:!mb-6 title-beyoutiful">
+            {lang === "en" ? service.name_en : service.name}
+          </h2>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-6 ">
           {/* Area Deskripsi */}
@@ -197,114 +195,113 @@ const ServicesDetails = ({ service, data }) => {
             </div>
             <div className="text-sm leading-relaxed">
               {" "}
-              {data?.content_id && data?.content_en ? (
-            lang === "en" ? (
-              parse(HTMLDecoderEncoder.decode(data?.content_en))
-            ) : (
-              parse(HTMLDecoderEncoder.decode(data?.content_id))
-            )
-          ) : (
-            service?.description && lang === "en"
+              {data?.content_id && data?.content_en
+                ? lang === "en"
+                  ? parse(HTMLDecoderEncoder.decode(data?.content_en))
+                  : parse(HTMLDecoderEncoder.decode(data?.content_id))
+                : service?.description && lang === "en"
                 ? parse(HTMLDecoderEncoder.decode(service?.description_en))
-                : parse(HTMLDecoderEncoder.decode(service?.description))
-          )}
+                : parse(HTMLDecoderEncoder.decode(service?.description))}
             </div>
           </div>
 
           {/* Area Dokter */}
-          {
-            data?.dataDokter ?
+          {data?.dataDokter ? (
             <div className="bg-white rounded-lg p-6 text-dark">
-            <h2 className="text-2xl font-medium mb-4 text-center">
-              {lang === "en" ? "Doctors" : "Dokter"}
-            </h2>
-            <div
-              className={`grid ${
-                data?.dataDokter?.length > 6
-                  ? "sm:grid-cols-3"
-                  : data?.dataDokter?.length >= 4
-                  ? "sm:grid-cols-2"
-                  : "sm:grid-cols-1"
-              } gap-2`}
-            >
-              {data?.dataDokter.map((dokter, index) => (
-                <div
-                  key={index}
-                  className="text-center p-4 border-2  bg-secondary rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-36 h-36 max-w-full aspect-square mx-auto overflow-hidden rounded-full relative">
-                    <Image
-                      src={dokter?.image_default || "/assets/user-default.jpg"}
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = "/assets/user-default.jpg";
-                      }}
-                      alt={dokter?.alt_img || dokter?.name}
-                      sizes="100vw"
-                      fill
-                      className="object-cover"
-                    />
+              <h2 className="text-2xl font-medium mb-4 text-center">
+                {lang === "en" ? "Doctors" : "Dokter"}
+              </h2>
+              <div
+                className={`grid ${
+                  data?.dataDokter?.length > 6
+                    ? "sm:grid-cols-3"
+                    : data?.dataDokter?.length >= 4
+                    ? "sm:grid-cols-2"
+                    : "sm:grid-cols-1"
+                } gap-2`}
+              >
+                {data?.dataDokter.map((dokter, index) => (
+                  <div
+                    key={index}
+                    className="text-center p-4 border-2  bg-secondary rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="w-36 h-36 max-w-full aspect-square mx-auto overflow-hidden rounded-full relative">
+                      <Image
+                        src={
+                          dokter?.image_default || "/assets/user-default.jpg"
+                        }
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null; // prevents looping
+                          currentTarget.src = "/assets/user-default.jpg";
+                        }}
+                        alt={dokter?.alt_img || dokter?.name}
+                        sizes="100vw"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="font-bold text-sm mt-2">{dokter.name}</p>
+                    {dokter?.content_id && dokter?.content_en ? (
+                      <p className="text-xs text-white mt-1 whitespace-pre-line">
+                        {lang === "en"
+                          ? removeTagsAndPreserveNewlines(dokter?.content_en)
+                          : removeTagsAndPreserveNewlines(dokter?.content_id)}
+                      </p>
+                    ) : (
+                      ""
+                    )}
                   </div>
-                  <p className="font-bold text-sm mt-2">{dokter.name}</p>
-                  {dokter?.content_id && dokter?.content_en ? (
-                    <p className="text-xs text-white mt-1 whitespace-pre-line">
-                      {lang === "en"
-                ? removeTagsAndPreserveNewlines(dokter?.content_en)
-                : removeTagsAndPreserveNewlines(dokter?.content_id)}
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white rounded-lg p-6 text-dark">
+              <h2 className="text-2xl font-medium mb-4 text-center">
+                {lang === "en" ? "Doctors" : "Dokter"}
+              </h2>
+              <div
+                className={`grid ${
+                  service?.dokter?.length > 6
+                    ? "sm:grid-cols-3"
+                    : service?.dokter?.length >= 4
+                    ? "sm:grid-cols-2"
+                    : "sm:grid-cols-1"
+                } gap-2`}
+              >
+                {service?.dokter?.map((dokter, index) => (
+                  <div
+                    key={index}
+                    className="text-center p-4 border-2  bg-secondary rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="w-36 h-36 mx-auto overflow-hidden rounded-full relative">
+                      <Image
+                        src={dokter.dokter_foto}
+                        alt={dokter.nama_dokter}
+                        sizes="100vw"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="font-bold text-sm mt-2">
+                      {dokter.nama_dokter}
                     </p>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-            :
-            <div className="bg-white rounded-lg p-6 text-dark">
-            <h2 className="text-2xl font-medium mb-4 text-center">
-              {lang === "en" ? "Doctors" : "Dokter"}
-            </h2>
-            <div
-              className={`grid ${
-                service?.dokter?.length > 6
-                  ? "sm:grid-cols-3"
-                  : service?.dokter?.length >= 4
-                  ? "sm:grid-cols-2"
-                  : "sm:grid-cols-1"
-              } gap-2`}
-            >
-              {service?.dokter?.map((dokter, index) => (
-                <div
-                  key={index}
-                  className="text-center p-4 border-2  bg-secondary rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-36 h-36 mx-auto overflow-hidden rounded-full relative">
-                    <Image
-                      src={dokter.dokter_foto}
-                      alt={dokter.nama_dokter}
-                      sizes="100vw"
-                      fill
-                      className="object-cover"
-                    />
+                    <ul className="mt-1 text-xs">
+                      {translateSchedule(dokter.jadwal_dokter, lang).map(
+                        (jadwal, i) => (
+                          <li key={i}>{jadwal}</li>
+                        )
+                      )}
+                    </ul>
                   </div>
-                  <p className="font-bold text-sm mt-2">{dokter.nama_dokter}</p>
-                  <ul className="mt-1 text-xs">
-  {translateSchedule(dokter.jadwal_dokter, lang).map((jadwal, i) => (
-    <li key={i}>{jadwal}</li>
-  ))}
-</ul>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          }
-         
+          )}
         </div>
 
         {/* Area Foto Before-After */}
-        {
-          data && data?.beforeAfter?.length > 0 ? 
-<div className="mt-6">
+        {data && data?.beforeAfter?.length > 0 ? (
+          <div className="mt-6">
             <div className="bg-white rounded-lg p-6 text-dark">
               <h2 className="text-2xl font-medium mb-5 text-center">
                 Before After
@@ -374,7 +371,9 @@ const ServicesDetails = ({ service, data }) => {
                                       /> */}
                                 <div className="mt-2 flex flex-col items-center gap-4 px-1">
                                   <h3 className="recomended-title font-montserrat text-[16px] lg:text-[24px] font-medium text-dark text-center line-clamp-3 mt-4">
-                                    {lang === "en" ? HTMLDecoderEncoder.decode(item?.name_en) : HTMLDecoderEncoder.decode(item?.name)}
+                                    {lang === "en"
+                                      ? HTMLDecoderEncoder.decode(item?.name_en)
+                                      : HTMLDecoderEncoder.decode(item?.name)}
                                   </h3>
                                 </div>
                               </div>
@@ -409,7 +408,8 @@ const ServicesDetails = ({ service, data }) => {
               </div> */}
             </div>
           </div>
-          : service.before_after_foto?.length > 0 && (
+        ) : (
+          service.before_after_foto?.length > 0 && (
             <div className="mt-6">
               <div className="bg-white rounded-lg p-6 text-dark">
                 <h2 className="text-2xl font-medium mb-5 text-center">
@@ -480,7 +480,11 @@ const ServicesDetails = ({ service, data }) => {
                                         /> */}
                                   <div className="mt-2 flex flex-col items-center gap-4 px-1">
                                     <h3 className="recomended-title font-montserrat text-[16px] lg:text-[24px] font-medium text-dark text-center line-clamp-3 mt-4">
-                                      {lang === "en" ? HTMLDecoderEncoder.decode(item?.name_en) : HTMLDecoderEncoder.decode(item?.name)}
+                                      {lang === "en"
+                                        ? HTMLDecoderEncoder.decode(
+                                            item?.name_en
+                                          )
+                                        : HTMLDecoderEncoder.decode(item?.name)}
                                     </h3>
                                   </div>
                                 </div>
@@ -516,16 +520,14 @@ const ServicesDetails = ({ service, data }) => {
               </div>
             </div>
           )
-        
-        }
-
+        )}
       </div>
       <a
         href="https://wa.me/+628119790556
             "
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
+        className="fixed bottom-[94px] right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 md:gap-3"
       >
         <FaWhatsapp className="h-6 w-6" />
         <span className="hidden md:inline font-medium">

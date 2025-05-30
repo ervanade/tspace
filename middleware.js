@@ -19,6 +19,5 @@ export function middleware(request) {
   return NextResponse.next(); // Lanjutkan ke page
 }
 
-export const config = { matcher: ["/((?!api|_next/static|_next/image|.*\\.png$|.*\\.jpg$).*)"] };
-
+export const config = { matcher: ["/((?!api|_next/static|_next/image|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)"] };
 
