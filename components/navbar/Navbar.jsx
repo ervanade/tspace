@@ -144,7 +144,7 @@ const Navbar = () => {
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/flag_${lang === "en" ? "us" : "id"}.svg`}
+                src={`/flag_${lang === "en" ? "us" : "id"}.png`}
                 width={22}
                 height={16}
                 priority
@@ -162,7 +162,7 @@ const Navbar = () => {
                   }}
                 >
                   <Image
-                    src="/flag_id.svg"
+                    src="/flag_id.png"
                     width={22}
                     height={16}
                     priority
@@ -178,7 +178,7 @@ const Navbar = () => {
                   }}
                 >
                   <Image
-                    src="/flag_us.svg"
+                    src="/flag_us.png"
                     width={22}
                     height={16}
                     priority
@@ -277,7 +277,7 @@ const Navbar = () => {
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                src={`/flag_${lang == "en" ? "us" : "id"}.png`}
                 width={24}
                 height={18}
                 priority
@@ -295,7 +295,7 @@ const Navbar = () => {
                   }}
                 >
                   <Image
-                    src="/flag_id.svg"
+                    src="/flag_id.png"
                     width={24}
                     height={18}
                     priority
@@ -311,7 +311,7 @@ const Navbar = () => {
                   }}
                 >
                   <Image
-                    src="/flag_us.svg"
+                    src="/flag_us.png"
                     width={24}
                     height={18}
                     priority

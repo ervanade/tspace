@@ -264,7 +264,7 @@ const NavbarBeyoutiful = () => {
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                src={`/flag_${lang == "en" ? "us" : "id"}.png`}
                 priority
                 width={24}
                 height={18}
@@ -285,7 +285,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/flag_id.svg"
+                    src="/flag_id.png"
                     priority
                     width={24}
                     height={18}
@@ -301,7 +301,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/flag_us.svg"
+                    src="/flag_us.png"
                     priority
                     width={24}
                     height={18}
@@ -428,7 +428,7 @@ const NavbarBeyoutiful = () => {
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
               <Image
-                src={`/flag_${lang == "en" ? "us" : "id"}.svg`}
+                src={`/flag_${lang == "en" ? "us" : "id"}.png`}
                 priority
                 width={24}
                 height={18}
@@ -446,7 +446,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/flag_id.svg"
+                    src="/flag_id.png"
                     priority
                     width={24}
                     height={18}
@@ -462,7 +462,7 @@ const NavbarBeyoutiful = () => {
                   }}
                 >
                   <Image
-                    src="/flag_us.svg"
+                    src="/flag_us.png"
                     priority
                     width={24}
                     height={18}
