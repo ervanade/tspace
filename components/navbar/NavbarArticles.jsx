@@ -134,6 +134,12 @@ const NavbarArticles = () => {
             >
               <Image
                 src={`/flag_${lang === "en" ? "us" : "id"}.png`}
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = `/assets/icon/flag_${
+                    lang === "en" ? "us" : "id"
+                  }.png`;
+                }}
                 priority
                 width={22}
                 height={16}
@@ -152,6 +158,10 @@ const NavbarArticles = () => {
                 >
                   <Image
                     src="/flag_id.png"
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = "/assets/icon/flag_id.png";
+                    }}
                     priority
                     width={22}
                     height={16}
@@ -168,6 +178,10 @@ const NavbarArticles = () => {
                 >
                   <Image
                     src="/flag_us.png"
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = "/assets/icon/flag_us.png";
+                    }}
                     priority
                     width={22}
                     height={16}
@@ -241,6 +255,12 @@ const NavbarArticles = () => {
             >
               <Image
                 src={`/flag_${lang == "en" ? "us" : "id"}.png`}
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = `/assets/icon/flag_${
+                    lang === "en" ? "us" : "id"
+                  }.png`;
+                }}
                 priority
                 width={24}
                 height={18}
@@ -259,6 +279,10 @@ const NavbarArticles = () => {
                 >
                   <Image
                     src="/flag_id.png"
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = "/assets/icon/flag_id.png";
+                    }}
                     priority
                     width={24}
                     height={18}
@@ -275,6 +299,10 @@ const NavbarArticles = () => {
                 >
                   <Image
                     src="/flag_us.png"
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = "/assets/icon/flag_us.png";
+                    }}
                     priority
                     width={24}
                     height={18}
