@@ -140,12 +140,9 @@ export default async function RootLayout({ children }) {
   // const data = { data: "" }
   if (!data) return <p>Server sedang sibuk, harap coba beberapa saat lagi!</p>
   const headScript = data?.head_script || `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CTBCY618GW"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CTBCY618GW');</script>`;
-  const bodyScript = data?.body_script || `<script src="https://chat.sleekflow.io/embed_iframe.js"
-        data-id="travischatwidget"
-        data-companyid="1f335b07-9b8c-4649-b0f5-387f7bf7be75"
-        data-location="southeastasia"
-        type="text/javascript">
-</script>`
+  const bodyScript = data?.body_script || `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PT9NFKC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+`
 
   return (
     <html lang="en">
