@@ -324,14 +324,14 @@ const ServicesDetails = ({ service, data }) => {
                     <Swiper
                       // install Swiper modules
                       className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
-                      slidesPerView={2.2}
+                      slidesPerView={1.2}
                       breakpoints={{
                         768: {
                           // width: 768,
                           slidesPerView: 3.2,
                         },
-                        500: {
-                          slidesPerView: 1.2,
+                        600: {
+                          slidesPerView: 2.2,
                         },
                       }}
                       spaceBetween={10}
@@ -433,14 +433,14 @@ const ServicesDetails = ({ service, data }) => {
                       <Swiper
                         // install Swiper modules
                         className="h-auto md:!h-400px overflow-hidden relative cursor-grab"
-                        slidesPerView={2.2}
+                        slidesPerView={1.2}
                         breakpoints={{
                           768: {
                             // width: 768,
                             slidesPerView: 3.2,
                           },
-                          500: {
-                            slidesPerView: 1.2,
+                          600: {
+                            slidesPerView: 2.2,
                           },
                         }}
                         spaceBetween={10}
