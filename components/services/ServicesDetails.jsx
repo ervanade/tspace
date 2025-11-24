@@ -304,7 +304,7 @@ const ServicesDetails = ({ service, data }) => {
           <div className="mt-6">
             <div className="bg-white rounded-lg p-6 text-dark">
               <h2 className="text-2xl font-medium mb-5 text-center">
-                Before After
+                Gallery
               </h2>
               <div className="max-w-[1280px] mx-auto w-full overflow-hidden pb-6">
                 <div className="">
@@ -331,7 +331,7 @@ const ServicesDetails = ({ service, data }) => {
                           slidesPerView: 3.2,
                         },
                         500: {
-                          slidesPerView: 2.2,
+                          slidesPerView: 1.2,
                         },
                       }}
                       spaceBetween={10}
@@ -380,10 +380,10 @@ const ServicesDetails = ({ service, data }) => {
                             </SwiperSlide>
                           ))
                         : ""}
-                      <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                      <div className="gallery-button-prev absolute left-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/20 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
                         <FaChevronLeft className="text-xl" />
                       </div>
-                      <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
+                      <div className="gallery-button-next absolute right-2 top-[45%] transform -translate-y-1/2 z-10 p-3 bg-black/20 text-white flex items-center justify-center rounded-full cursor-pointer hover:bg-black/80 transition">
                         <FaChevronRight className="text-xl" />
                       </div>
                     </Swiper>
@@ -440,7 +440,7 @@ const ServicesDetails = ({ service, data }) => {
                             slidesPerView: 3.2,
                           },
                           500: {
-                            slidesPerView: 2.2,
+                            slidesPerView: 1.2,
                           },
                         }}
                         spaceBetween={10}
