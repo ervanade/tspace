@@ -413,7 +413,7 @@ const ServicesDetails = ({ service, data }) => {
             <div className="mt-6">
               <div className="bg-white rounded-lg p-6 text-dark">
                 <h2 className="text-2xl font-medium mb-5 text-center">
-                  Before After
+                {lang === "en" ? " Gallery" : "Galeri"}
                 </h2>
                 <div className="max-w-[1280px] mx-auto w-full overflow-hidden pb-6">
                   <div className="">
