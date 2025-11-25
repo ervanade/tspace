@@ -65,6 +65,12 @@ body {
   font-family: var(--font-poppins);
 }
 
+#rent-space .raw-html-embed p {
+  text-indent: 0 !important;
+  margin-left: 0 !important;
+}
+
+
 /* Tampilkan scrollbar di desktop */
 @media (min-width: 768px) {
   .scrollbar {
