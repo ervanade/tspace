@@ -12,11 +12,11 @@ const nextConfig = {
       },
     ]
   },
-  i18n: {
-    locales: ["id", "en"], // Bahasa Indonesia dan Inggris
-    defaultLocale: "id",   // Default: Bahasa Indonesia
-    localeDetection: false
-  },
+  // i18n: {
+  //   locales: ["id", "en"], // Bahasa Indonesia dan Inggris
+  //   defaultLocale: "id",   // Default: Bahasa Indonesia
+  //   localeDetection: false
+  // },
   cacheMaxMemorySize: 104857600, // 100 MB dalam byte
   headers: async () => {
     return [

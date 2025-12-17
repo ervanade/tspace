@@ -117,7 +117,7 @@ const Event = ({ dataEvent }) => {
 
  const getEventByDate = (day) => {
   const date = `2025-${data.month_number || "03"}-${String(day).padStart(2, "0")}`; // Sesuaikan dengan format data event
-  return events.filter((event) => event.date === date);
+  return events?.filter((event) => event.date === date);
 };
 
   const getDayName = (day) => {

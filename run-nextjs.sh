@@ -4,6 +4,8 @@ rm -rf .next
 
 unzip -o .next.zip
 
-pm2 restart 0
+pm2 delete all
+
+pm2 start npm --name "tspace-deploy" -- run start
 
 pm2 save
